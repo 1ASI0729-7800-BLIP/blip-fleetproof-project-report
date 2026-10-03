@@ -151,8 +151,8 @@ Sabremos que tenemos éxito cuando veamos un menor tiempo de preparación de rep
 
     Sabremos que hemos tenido éxito.
 
-    Cuando disminuya el tiempo promedio que le toma a un administrador identificar un vehículo en estado crítico dentro de la plataforma.
-
+    El tiempo promedio que le toma a un administrador identificar y hacer clic en un vehículo en estado crítico dentro de la plataforma se reduzca de 5 minutos a menos de 1 minuto, medido a través de analíticas de uso durante los primeros 30 días del lanzamiento del semáforo.
+    
 *   **Hypothesis 05:**
 
     Creemos que los administradores de flota evitarán la pérdida de evidencias de regularización si utilizan un sistema de gestión de casos que incluya responsables asignados y registro de evidencias.
