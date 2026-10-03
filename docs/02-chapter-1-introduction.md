@@ -143,7 +143,7 @@ Sabremos que tenemos éxito cuando veamos un menor tiempo de preparación de rep
 
     Sabremos que hemos tenido éxito.
 
-    Cuando aumente el porcentaje de clientes que genera un segundo reporte o mantiene activa su suscripción para monitoreo continuo.
+    La tasa de clientes particulares que mantienen activa su suscripción para monitoreo continuo o generan un segundo reporte pase del 20% a más del 40% al cierre de los 3 meses posteriores a la implementación de los snapshots.
 
 *   **Hypothesis 04:**
 
