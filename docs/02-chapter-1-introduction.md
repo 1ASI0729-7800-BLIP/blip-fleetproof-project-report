@@ -159,7 +159,7 @@ Sabremos que tenemos éxito cuando veamos un menor tiempo de preparación de rep
 
     Sabremos que hemos tenido éxito.
 
-    Cuando aumente el porcentaje de observaciones vehiculares que se cierran exitosamente con un responsable asignado y evidencia adjunta en la plataforma.
+    El porcentaje de observaciones vehiculares cerradas que cuentan con responsable y evidencia adjunta pase de un 15% a superar el 85% evaluado tras 60 días de la adopción del sistema en la plataforma.
 
 #### 1.2.2.4 Lean UX Canvas
 
