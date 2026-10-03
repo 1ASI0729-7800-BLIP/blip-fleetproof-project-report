@@ -127,7 +127,7 @@ Sabremos que tenemos éxito cuando veamos un menor tiempo de preparación de rep
 
     Sabremos que hemos tenido éxito.
 
-    Cuando el porcentaje mayoritario de empresas utilice activamente la función de importación masiva en lugar del registro manual individual.
+    Al menos el 70% de las nuevas empresas registradas utilice la función de importación masiva en lugar del registro manual durante sus primeros 15 días tras crear la cuenta.
 
 *   **Hypothesis 02:**
 
