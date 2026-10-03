@@ -135,7 +135,7 @@ Sabremos que tenemos éxito cuando veamos un menor tiempo de preparación de rep
 
     Sabremos que hemos tenido éxito.
 
-    Cuando aumente el porcentaje de checklists completados correctamente y disminuya el tiempo promedio de revisión documentaria por vehículo.
+    El tiempo promedio de revisión documentaria por vehículo se reduzca de 15 minutos a 8 minutos o menos, y se alcance una tasa de completitud del checklist del 90%, medido durante un periodo de 4 semanas continuas de uso.
 
 *   **Hypothesis 03:**
 
