@@ -2,11 +2,13 @@
 
 ## 2.1 Competidores
 
-El análisis considera competidores directos e indirectos presentes en el mercado peruano. Autofact y Mi Torito compiten en la generación de reportes puntuales para compraventa, mientras Onway compite por el presupuesto empresarial destinado al monitoreo y control de flotas. Esta combinación permite comparar las dos propuestas que FleetProof integra: consulta documentaria trazable y seguimiento recurrente del vehículo.
+El análisis considera competidores directos e indirectos presentes en el mercado peruano. Autofact y Mi Torito compiten en la generación de reportes puntuales para compraventa, mientras Onway compite por el presupuesto empresarial destinado al monitoreo y control de flotas. Esta combinación permite comparar las dos capacidades que FleetProof propone integrar: consulta documentaria trazable y seguimiento recurrente de la información vehicular.
 
 ### 2.1.1 Análisis competitivo
 
 El Competitive Analysis Landscape compara la propuesta de BLIP con servicios que atienden parte del mismo problema. La información comercial fue consultada en los sitios públicos de cada empresa el 13 de septiembre de 2026. Cuando un proveedor no publica una tarifa, se consigna como cotización y no se estima un precio.
+
+La columna de FleetProof describe el producto propuesto, no funcionalidades cuya implementación o validación comercial se haya demostrado en AV1. Su diferenciación depende de la viabilidad de integraciones autorizadas y de la disponibilidad, cobertura y actualización de las fuentes. El monitoreo propuesto es documentario y no equivale a rastreo GPS ni a inspección mecánica del vehículo.
 
 | Criterio | BLIP - FleetProof | Autofact Perú | Mi Torito | Onway by Entel Digital |
 |---|---|---|---|---|
@@ -26,9 +28,9 @@ Fuentes consultadas: [Autofact Perú](https://www.autofact.com.pe/), [Mi Torito 
 
 ### 2.1.2 Estrategias y tácticas frente a competidores
 
-BLIP seguirá una estrategia de diferenciación enfocada. FleetProof no se limitará a entregar una fotografía aislada del vehículo: conservará cada consulta como un snapshot fechado, mostrará la fuente y evidencia disponible, comparará cambios y permitirá asignar una observación a un responsable. Así, el reporte puntual funcionará como entrada a una relación recurrente con propietarios y empresas.
+BLIP propone una estrategia de diferenciación enfocada. FleetProof busca conservar cada consulta como un snapshot fechado, mostrar la fuente y evidencia disponible, comparar cambios y permitir asignar una observación a un responsable. La conexión entre reporte puntual y seguimiento recurrente constituye una hipótesis de producto pendiente de validación con usuarios y de evaluación técnica de las fuentes.
 
-Las tácticas definidas son las siguientes:
+Las tácticas propuestas son las siguientes:
 
 - Ofrecer una consulta inicial por placa con un resumen comprensible, evidencia por fuente y fecha de obtención.
 - Permitir que el usuario active el monitoreo de un vehículo después de revisar su primer reporte.
@@ -69,7 +71,7 @@ Para cumplir la rúbrica de la primera entrega, el equipo trabajó dos segmentos
 
 ### 2.2.2 Registro de entrevistas
 
-Las entrevistas fueron registradas en video y almacenadas en una carpeta compartida de Google Drive. El registro sigue el formato de la guía: datos del entrevistado, evidencia visual, enlace al video, timing, duración y resumen breve. Para los videos con duración mayor a cinco minutos se consigna la duración total y el tramo principal utilizado para el análisis de la primera entrega.
+Las entrevistas fueron registradas en video y almacenadas en una carpeta compartida de Google Drive. El registro incluye datos del entrevistado, evidencia visual, enlace al video, tramo consignado en AV1, duración y resumen breve. En los videos de Cristhian y Roxana, el tramo de 00:00 a 04:59 no acredita por sí solo que todos los detalles del resumen se encuentren dentro de ese intervalo. La ubicación temporal de cada hallazgo permanece pendiente de cotejo con la grabación; la duración total se conserva para hacer explícita esta limitación.
 
 Carpeta de evidencias: [Entrevistas BLIP en Google Drive](https://drive.google.com/drive/folders/1J_CH36gLPBuRfEddE-mYVSuRtR42PupA?usp=sharing).
 
@@ -84,7 +86,7 @@ Carpeta de evidencias: [Entrevistas BLIP en Google Drive](https://drive.google.c
 | Fecha | 14/09/2026 |
 | Video | [Entrevista Cristhian Amaya](https://drive.google.com/file/d/1vuK3760hfVoZ6iQ2w8zH8JjX1x1xN4wV/view?usp=sharing) |
 | Screenshot | ![Entrevista Cristhian Amaya](assets/chapter-2/interviews/interview-cristhian-amaya.png) |
-| Timing analizado | 00:00-04:59 |
+| Tramo consignado en AV1 | 00:00-04:59; correspondencia del resumen pendiente de cotejo |
 | Duración total | 06:09 |
 | Resumen | Cristhian describe el proceso de revisión de información vehicular desde el rol de asesor automotor. Su experiencia evidencia que la consulta no se limita a obtener un dato, sino a interpretar información de distintas fuentes, explicar riesgos a terceros y conservar evidencia suficiente para respaldar una recomendación. El caso refuerza la necesidad de reportes claros, trazables y comprensibles para personas que no dominan términos técnicos del sector automotor. |
 
@@ -116,7 +118,7 @@ Carpeta de evidencias: [Entrevistas BLIP en Google Drive](https://drive.google.c
 | Screenshot | ![Entrevista Carmen Rojas](assets/chapter-2/interviews/interview-carmen-rojas.png) |
 | Timing analizado | 00:00-02:21 |
 | Duración total | 02:21 |
-| Resumen | Carmen refleja la perspectiva de una compradora particular que necesita validar un vehículo antes de tomar una decisión. El principal dolor identificado es la dificultad para interpretar resultados dispersos y saber si un hallazgo es grave, pendiente o simplemente informativo. Este perfil confirma que FleetProof debe presentar riesgos en lenguaje claro y permitir compartir evidencia con personas de confianza. |
+| Resumen | Carmen refleja la perspectiva de una compradora particular que necesita revisar información antes de tomar una decisión. El resumen registrado identifica dificultades para interpretar resultados dispersos y distinguir la importancia de un hallazgo. El equipo propone explorar explicaciones claras y evidencia compartible; estas capacidades no se consideran validadas únicamente por este caso. |
 
 #### Entrevista 4: Roxana Limo
 
@@ -129,7 +131,7 @@ Carpeta de evidencias: [Entrevistas BLIP en Google Drive](https://drive.google.c
 | Fecha | 14/09/2026 |
 | Video | [Entrevista Roxana Limo](https://drive.google.com/file/d/162TzcnpSq3aFRJ9C3_9D3Boq27fG1iA2/view?usp=sharing) |
 | Screenshot | ![Entrevista Roxana Limo](assets/chapter-2/interviews/interview-roxana-limo.png) |
-| Timing analizado | 00:00-04:59 |
+| Tramo consignado en AV1 | 00:00-04:59; correspondencia del resumen pendiente de cotejo |
 | Duración total | 11:47 |
 | Resumen | Roxana trabaja en el sector automotriz desde 2012 y actualmente se desempeña como jefa de marca para Hyundai y Geely, supervisando operaciones comerciales en Trujillo, Huancayo y Chiclayo. Explica que, antes de exhibir o entregar una unidad, intervienen áreas como PDI, lavado y calidad, utilizando checklists para validar estado de pintura, equipamiento, batería, tablero, sistema eléctrico, frenos y otros componentes. Señala que las observaciones se registran primero en checklist y luego en informes enviados a la marca. También menciona que una mala preparación comercial, una batería descargada, una puerta mal cerrada, la pérdida de una llave o una rayadura antes de la entrega pueden generar inseguridad en el cliente y retrasar la compra. Para resolver observaciones, cada área tiene responsables definidos dentro del organigrama y puede intervenir postventa, taller o PDI. Su principal aprendizaje es que la prevención y una preparación con más anticipación reducen riesgos antes del showroom o la entrega. |
 
@@ -176,56 +178,57 @@ Carpeta de evidencias: [Entrevistas BLIP en Google Drive](https://drive.google.c
 | Screenshot | ![Entrevista Mei Lin Tanaka](assets/chapter-2/interviews/interview-mei-lin.png) |
 | Timing analizado | 00:00-03:44 |
 | Duración total | 03:44 |
-| Resumen | Mei Lin representa a negocios gastronómicos pequeños que usan reparto propio o tercerizado. Su entrevista evidencia preocupación por la puntualidad, confiabilidad y disponibilidad de vehículos o repartidores. El dolor principal no es solo consultar una placa, sino reducir riesgos antes de asignar un pedido y recibir alertas cuando un documento, multa o condición del vehículo cambia. |
+| Resumen | Mei Lin aporta la perspectiva de un negocio gastronómico pequeño que utiliza reparto propio o tercerizado. El caso se concentra en la puntualidad y disponibilidad de vehículos o repartidores, por lo que aporta contexto sobre continuidad del servicio. No se utiliza como evidencia directa de necesidades de alertas por multas, vencimientos o cambios registrales. La relación entre ese contexto operativo y el monitoreo documentario de FleetProof requiere investigación adicional. |
 
 ### 2.2.3 Análisis de entrevistas
 
-El análisis se realizó sobre siete entrevistas distribuidas en dos segmentos. En el segmento de propietarios, compradores y asesores automotores se registraron tres entrevistas; en el segmento de responsables comerciales, logísticos y flotas pequeñas se registraron cuatro entrevistas. Esta distribución permite cumplir el mínimo de tres entrevistas por segmento y comparar patrones entre necesidad individual de decisión y necesidad organizacional de seguimiento.
+El registro comprende siete entrevistas: tres del segmento 1 y cuatro del segmento 2. Esta distribución describe la composición del registro y no demuestra que todos los casos aporten evidencia directa sobre el problema documentario. Roxana aporta contexto de preparación comercial y coordinación; Mei Lin aporta contexto de continuidad del reparto.
+
+La muestra es pequeña y no probabilística. El registro no documenta un procedimiento de selección que permita considerarla representativa del mercado. La heterogeneidad de roles limita la comparación directa. Los resultados se interpretan como insumos exploratorios y no como validación de demanda, disposición de pago o eficacia de FleetProof.
 
 #### Resultados generales
 
-| Hallazgo codificado | Frecuencia | Porcentaje | Interpretación para FleetProof |
-|---|---:|---:|---|
-| Consulta de más de una fuente antes de decidir | 7/7 | 100% | El producto debe centralizar fuentes y mostrar claramente origen, fecha y estado de cada consulta. |
-| Conservación manual de evidencia en capturas, Drive, WhatsApp u hojas de cálculo | 7/7 | 100% | Existe oportunidad para guardar evidencia dentro del historial del vehículo. |
-| Necesidad de alertas o seguimiento posterior a la primera revisión | 7/7 | 100% | El reporte puntual debe conectarse con monitoreo recurrente. |
-| Dificultad por datos inconsistentes, incompletos o fuentes no disponibles | 6/7 | 86% | FleetProof debe comunicar indisponibilidad y permitir reintentos sin ocultar incertidumbre. |
-| Coordinación con otra persona para validar o resolver observaciones | 5/7 | 71% | Se justifica incluir responsables, estado de atención y trazabilidad de resolución. |
-| Impacto operativo o comercial por no validar a tiempo | 5/7 | 71% | La propuesta debe comunicar reducción de riesgo antes de compra, venta, reparto o uso de flota. |
+Los conteos de AV1 no se mantienen como resultados verificados porque no disponen de una codificación por participante y minuto que permita auditarlos. No se sustituyen por cifras estimadas. Las siguientes categorías orientan la revisión de evidencia:
+
+| Categoría de análisis | Alcance de la interpretación | Oportunidad propuesta por el equipo |
+|---|---|---|
+| Consulta e interpretación de información vehicular | Los resúmenes del segmento 1 describen revisión previa a una decisión; fuentes y dificultades específicas requieren cotejo temporal. | Explorar reportes comprensibles con origen y fecha de información. |
+| Conservación de evidencia | Diferenciar capturas y documentos consultados de checklists de preparación física. | Evaluar un registro de evidencia según el tipo de revisión. |
+| Coordinación de observaciones | El caso de Roxana aporta contexto de áreas y responsables en preparación comercial. | Explorar seguimiento colaborativo sin equipararlo a monitoreo documentario validado. |
+| Continuidad operativa | El caso de Mei Lin se refiere a puntualidad y disponibilidad del reparto. | Investigar si existe una relación directa con documentos vehiculares antes de proponer alertas documentarias. |
+| Monitoreo recurrente, snapshots y alertas | Hipótesis de solución; no se atribuyen a todos los entrevistados. | Validar necesidad, frecuencia y utilidad mediante preguntas sobre experiencias concretas. |
+
+#### Registro de trazabilidad y estado de evidencia
+
+Las siguientes filas son paráfrasis de los resúmenes registrados, no citas textuales ni una nueva transcripción. Los identificadores permiten relacionar la revisión con los artefactos posteriores. Ningún hallazgo se considera codificado definitivamente mientras falte su ubicación en el video.
+
+| ID | Participante | Paráfrasis del resumen registrado | Alcance | Minuto y estado |
+|---|---|---|---|---|
+| H-II-01 | Cristhian Amaya | Revisión e interpretación de información para asesorar decisiones vehiculares. | Indicio relacionado con claridad de información. | Pendiente de cotejo con video. |
+| H-II-02 | Diego Salazar | Comparación de resultados y uso de capturas o mensajes como respaldo. | Indicio relacionado con organización de evidencia. | Pendiente de cotejo con video. |
+| H-II-03 | Carmen Rojas | Dificultad para interpretar la relevancia de resultados antes de una compra. | Indicio relacionado con explicación de hallazgos. | Pendiente de cotejo con video. |
+| H-II-04 | Roxana Limo | Checklists de preparación, observaciones y responsables de distintas áreas. | Contexto operativo; no prueba necesidad de consultas registrales. | Pendiente de cotejo con video completo y tramo AV1. |
+| H-II-05 | Patricia Valdez | Coordinación de información mediante documentos, hojas y mensajería. | Indicio organizacional; tipo de documento por verificar. | Pendiente de cotejo con video. |
+| H-II-06 | Jorge Quispe | Verificación previa al uso de una unidad y atención de observaciones. | Indicio organizacional; documentos y responsables por verificar. | Pendiente de cotejo con video. |
+| H-II-07 | Mei Lin Tanaka | Preocupación por puntualidad y disponibilidad del reparto. | Contexto operativo; no prueba necesidad de alertas documentarias. | Pendiente de cotejo con video. |
+
+La frecuencia se calculará únicamente con participantes que expresen el patrón de forma verificable. Cada resultado indicará numerador, denominador, participantes incluidos y criterio de codificación. Los porcentajes, cuando exista ese respaldo, describirán exclusivamente la muestra analizada.
 
 #### Segmento 1: propietarios, compradores y asesores automotores
 
-Este segmento agrupa a Cristhian Amaya, Diego Salazar y Carmen Rojas. Los tres participantes relataron procesos de consulta previos a una decisión de compra, venta o recomendación. En todos los casos se utilizaron varias fuentes y se conservaron capturas o enlaces como respaldo. Cristhian y Diego, por su rol asesor, destacaron la necesidad de traducir datos técnicos a lenguaje comprensible; Carmen evidenció la dificultad de una compradora particular para interpretar diferencias entre multa, observación registral o documento pendiente.
-
-| Patrón del segmento | Frecuencia | Porcentaje |
-|---|---:|---:|
-| Consulta de fuentes oficiales o especializadas | 3/3 | 100% |
-| Uso de capturas o mensajes para compartir evidencia | 3/3 | 100% |
-| Necesidad de explicar hallazgos con lenguaje simple | 3/3 | 100% |
-| Dudas por actualización o consistencia de datos | 2/3 | 67% |
-| Interés en volver a consultar si la compra se retrasa o aparece nueva información | 2/3 | 67% |
-
-Para este segmento, FleetProof debe priorizar reportes claros, evidencia descargable, explicación de riesgo y lenguaje no técnico. El valor principal no es solo obtener información, sino convertirla en una decisión confiable y comunicable.
+Este segmento agrupa a Cristhian Amaya, Diego Salazar y Carmen Rojas. Los resúmenes registrados relacionan sus experiencias con decisiones de compra, venta o recomendación y con la interpretación de información vehicular (H-II-01 a H-II-03). El equipo propone explorar claridad del reporte y conservación de evidencia. El uso de fuentes específicas, las dudas de actualización y el seguimiento posterior requieren codificación en video antes de informar frecuencias o atribuirlos a todo el segmento.
 
 #### Segmento 2: responsables comerciales, logísticos y flotas pequeñas
 
-Este segmento agrupa a Roxana Limo, Patricia Valdez, Jorge Quispe y Mei Lin Tanaka. Los cuatro casos muestran que la validación vehicular no ocurre de forma aislada: intervienen responsables comerciales, administración, logística, conductores, repartidores o familiares que apoyan el negocio. Las respuestas evidencian uso de WhatsApp, Drive, hojas de cálculo y carpetas compartidas para coordinar documentos y observaciones.
+Este segmento agrupa a Roxana Limo, Patricia Valdez, Jorge Quispe y Mei Lin Tanaka, pero reúne procesos distintos (H-II-04 a H-II-07). La preparación física y comercial de Roxana y la disponibilidad de reparto de Mei Lin aportan contexto sobre coordinación y continuidad operativa. No constituyen evidencia automática de problemas de multas, vencimientos o cambios registrales. Los resúmenes de Patricia y Jorge contienen indicios más próximos a revisión de documentos y observaciones, cuyo alcance debe verificarse en las grabaciones.
 
-| Patrón del segmento | Frecuencia | Porcentaje |
-|---|---:|---:|
-| Coordinación con más de una persona para validar o usar el vehículo | 4/4 | 100% |
-| Registro distribuido en WhatsApp, Drive, hojas o carpetas | 4/4 | 100% |
-| Necesidad de asignar responsables para resolver observaciones | 4/4 | 100% |
-| Necesidad de alertas de vencimientos, multas o cambios registrales | 4/4 | 100% |
-| Impacto operativo o comercial por retrasos en validación | 3/4 | 75% |
-
-Para este segmento, FleetProof debe funcionar como registro colaborativo por vehículo. Además del reporte inicial, son relevantes el estado de observaciones, la asignación de responsables, el historial de consultas, las alertas y la evidencia centralizada.
+El seguimiento de pendientes y la asignación de responsables se mantienen como oportunidades de diseño. La necesidad de historial documentario y alertas recurrentes permanece como hipótesis específica, sin atribuirse a los cuatro participantes.
 
 #### Conclusiones de Needfinding derivadas de entrevistas
 
-Las entrevistas confirman que el problema no se limita a consultar una placa. Los usuarios necesitan saber qué fuente respondió, cuándo respondió, qué evidencia respalda el dato y qué acción corresponde si aparece una observación. También se valida que la propuesta de BLIP debe integrar dos usos: consulta puntual para decidir y seguimiento recurrente para evitar que cambios posteriores pasen desapercibidos.
+Los resúmenes permiten identificar indicios relacionados con interpretación de información, conservación de evidencia y coordinación de observaciones. Estos resultados describen únicamente los casos registrados y no permiten generalizar al mercado. El contexto operativo se distingue de la investigación directamente relacionada con antecedentes documentarios.
 
-Los hallazgos fortalecen cuatro decisiones de producto: primero, conservar snapshots fechados de cada consulta; segundo, mostrar un resumen de riesgo con explicación; tercero, permitir evidencia compartible; y cuarto, agregar funciones colaborativas para flotas o negocios que requieren responsables y seguimiento de pendientes.
+El equipo propone explorar reportes comprensibles, evidencia compartible y seguimiento de responsables. Los snapshots, la evaluación de riesgo y el monitoreo documentario recurrente constituyen hipótesis de solución pendientes de validación específica y de evaluación de integraciones autorizadas. La relación con personas, historias y criterios de aceptación deberá sustentarse mediante los identificadores de hallazgo una vez completado el cotejo temporal.
 
 ## 2.3 Needfinding
 
@@ -236,7 +239,7 @@ Los User Personas fueron elaborados en UXPressia para representar a actores rele
 Para esta entrega se consideran dos perfiles principales de análisis:
 
 - **Cristhian Amaya**, consultor automotor y creador de contenido digital. Representa a un actor experto que asesora a compradores y vendedores cuando necesitan interpretar información vehicular antes de tomar una decisión.
-- **Roxana Limo**, jefa de marcas de Automotores Inka. Representa a una responsable comercial que necesita validar información de vehículos antes de ofrecerlos a clientes y coordinar decisiones entre diferentes sedes.
+- **Roxana Limo**, responsable comercial del sector automotor. Su caso aporta contexto sobre preparación de unidades, checklists y coordinación de observaciones entre áreas (H-II-04). No representa por sí solo una necesidad validada de monitoreo documentario.
 
 #### User Persona: Cristhian Amaya
 
@@ -256,25 +259,21 @@ Figura 2.2. User Persona de Roxana Limo.
 
 Fuente del artefacto: UXPressia. Evidencia exportada como imagen dentro del repositorio.
 
-Roxana evidencia una necesidad operativa vinculada a la gestión comercial de vehículos. Su principal dificultad es trabajar con información distribuida entre sedes, registros internos y consultas independientes. Para este perfil, FleetProof debe ofrecer una vista centralizada del estado del vehículo, evidencia de la fuente revisada, historial de consultas y soporte para decisiones comerciales con menor riesgo de información incompleta.
+El resumen de Roxana describe preparación física y comercial de unidades, registro de observaciones y coordinación con responsables de PDI, taller o postventa. El equipo interpreta este contexto como una oportunidad para estudiar seguimiento colaborativo. No se atribuyen a Roxana consultas por placa, validación de antecedentes registrales ni demanda de snapshots o alertas documentarias sin evidencia específica. La imagen del perfil debe leerse como artefacto de AV1 pendiente de ajuste a esta delimitación.
 
 ### 2.3.2 User Task Matrix
 
-La matriz de tareas resume las actividades actuales identificadas en los perfiles de usuario. La frecuencia e importancia son preliminares y deberán validarse con entrevistas reales antes de la entrega final.
+La matriz distingue actividades descritas en los resúmenes e hipótesis de tareas documentarias. La frecuencia y la importancia no fueron medidas con criterios documentados; por ello, se consignan como no determinadas. H-II-01 y H-II-04 identifican el respaldo provisional, pendiente de cotejo temporal.
 
-| Tarea actual | Cristhian Amaya - Frecuencia | Cristhian Amaya - Importancia | Roxana Limo - Frecuencia | Roxana Limo - Importancia | Oportunidad para FleetProof |
-|---|---|---|---|---|---|
-| Recibir consultas o necesidades de validación vehicular | Alta | Alta | Alta | Alta | Registrar solicitudes de revisión con motivo, placa y responsable. |
-| Buscar información mediante placa o datos del vehículo | Alta | Alta | Media | Alta | Centralizar consulta vehicular desde una vista única. |
-| Revisar documentos, registros internos o fuentes externas | Media | Alta | Alta | Alta | Guardar evidencia, fuente, fecha y observación por cada revisión. |
-| Comparar información encontrada para detectar riesgos | Alta | Alta | Alta | Alta | Mostrar inconsistencias, alertas y nivel de riesgo explicable. |
-| Comunicar resultados a terceros | Alta | Alta | Media | Alta | Generar resumen claro y reporte compartible. |
-| Coordinar acciones con equipos internos | Baja | Media | Alta | Alta | Asignar pendientes, responsables y estado de resolución. |
-| Conservar historial de consultas o cambios | Media | Alta | Alta | Alta | Mantener historial por vehículo y trazabilidad de decisiones. |
-| Dar seguimiento posterior al vehículo | Media | Media | Media | Alta | Activar monitoreo y alertas ante cambios importantes. |
-| Crear contenido o recomendaciones basadas en datos | Alta | Media | Baja | Baja | Convertir hallazgos en explicaciones comprensibles para usuarios. |
+| Actividad o hipótesis | Cristhian Amaya | Roxana Limo | Frecuencia e importancia | Oportunidad propuesta |
+|---|---|---|---|---|
+| Revisar e interpretar información antes de recomendar | Descrita en H-II-01. | Antecedentes documentarios no establecidos. | No determinadas. | Explorar reportes comprensibles. |
+| Registrar observaciones sobre preparación de unidades | No establecida en su resumen. | Checklists e informes descritos en H-II-04. | No determinadas. | Explorar registro de observaciones, distinguiendo revisión física y documentaria. |
+| Comunicar resultados | Recomendaciones descritas en H-II-01. | Informes a la marca descritos en H-II-04. | No determinadas. | Evaluar evidencia compartible según el proceso. |
+| Coordinar atención entre áreas | No establecida en su resumen. | Responsables de PDI, taller o postventa descritos en H-II-04. | No determinadas. | Explorar responsables y estado de atención. |
+| Consultar por placa, conservar snapshots y activar monitoreo documentario | Hipótesis de solución. | Hipótesis de solución; no atribuida a su preparación comercial. | No determinadas. | Validar necesidad y utilidad con evidencia específica. |
 
-La matriz muestra que ambos perfiles comparten tareas críticas relacionadas con búsqueda, verificación, comparación y comunicación de información vehicular. La diferencia principal se encuentra en el contexto de uso: Cristhian prioriza claridad para orientar a su comunidad, mientras Roxana prioriza coordinación interna, respaldo comercial y reducción de riesgos antes de atender clientes.
+Los perfiles aportan contextos diferentes: asesoría basada en información vehicular y preparación comercial de unidades. Compartir actividades generales de comunicación no demuestra que ambos necesiten las mismas consultas o mecanismos de monitoreo.
 
 ### 2.3.3 User Journey Mapping
 
@@ -298,7 +297,7 @@ Figura 2.4. User Journey Map de Roxana Limo.
 
 Fuente del artefacto: UXPressia. Evidencia exportada como imagen dentro del repositorio.
 
-El recorrido de Roxana inicia con la recepción de información de un vehículo disponible para venta o evaluación. Después coordina con distintas áreas, revisa documentos, valida posibles riesgos y utiliza los datos para preparar información comercial. El mayor dolor ocurre cuando la información se encuentra distribuida o incompleta, ya que puede retrasar decisiones y afectar la confianza del cliente. Esto sustenta funcionalidades vinculadas a historial del vehículo, registro de observaciones, seguimiento entre sedes y reportes verificables.
+El recorrido descrito en el resumen de Roxana comprende preparación de la unidad, revisión mediante checklist, identificación de observaciones, coordinación con las áreas responsables y preparación para exhibición o entrega. Las incidencias físicas o de preparación pueden afectar la confianza del cliente y retrasar el proceso comercial. Su relación con seguimiento colaborativo es una interpretación del equipo; no acredita revisión de antecedentes registrales ni monitoreo documentario. La imagen del Journey Map conserva la versión de AV1 y requiere actualización para coincidir con este alcance.
 
 ### 2.3.4 Empathy Mapping
 
@@ -322,15 +321,15 @@ Figura 2.6. Empathy Map de Roxana Limo.
 
 Fuente del artefacto: UXPressia. Evidencia exportada como imagen dentro del repositorio.
 
-Roxana percibe que la confianza del cliente depende de la claridad y confiabilidad de la información entregada durante el proceso comercial. Sus principales dolores son la información distribuida entre fuentes, la dificultad para validar antecedentes con rapidez y la falta de seguimiento histórico. Sus beneficios esperados se relacionan con coordinación entre sedes, evidencia verificable, reducción de tiempos de validación y toma de decisiones comerciales con mayor seguridad.
+El resumen de Roxana relaciona la confianza del cliente con una preparación adecuada de la unidad y una atención anticipada de observaciones. Los incidentes mencionados incluyen batería descargada, rayaduras, puertas mal cerradas y pérdida de llaves. El equipo interpreta la prevención y coordinación entre áreas como oportunidades de mejora. No se presentan pensamientos, emociones ni beneficios documentarios como declaraciones de Roxana sin respaldo específico. La imagen del Empathy Map conserva la versión de AV1 y requiere ajuste.
 
 ### 2.3.5 As-is Scenario Mapping
 
 En esta sección se registran los As-is Scenario Maps elaborados para representar la situación actual de los actores vinculados al problema de FleetProof, antes de introducir la solución propuesta por BLIP. Los mapas se construyeron con una estructura de tres niveles: acciones realizadas, pensamientos del usuario y emociones experimentadas durante el proceso. Esta lectura permite identificar puntos de dolor, necesidades de información y oportunidades para el diseño posterior de requisitos, historias de usuario y flujos de la aplicación web.
 
-Los mapas enviados deben tratarse como evidencia visual de trabajo del equipo. Antes de la entrega final, se recomienda reemplazar o complementar las descripciones preliminares con hallazgos obtenidos en entrevistas reales, indicando fecha, herramienta utilizada, integrantes participantes y enlace al tablero original.
+Los mapas representan modelos elaborados por el equipo. Las acciones, pensamientos y emociones que no estén vinculados a un hallazgo verificable se consideran supuestos de modelado. Las oportunidades de producto derivadas de estos mapas no constituyen evidencia adicional de entrevista. La numeración de segmentos sigue la utilizada en 2.2: segmento 1 individual y segmento 2 organizacional.
 
-#### Segmento 1: responsables de flotas pequeñas y medianas
+#### Segmento 2: responsables comerciales, logísticos y flotas pequeñas
 
 ![As-is Scenario Map - Responsables de flotas pequeñas y medianas](assets/chapter-2/as-is-scenario-maps/as-is-seg-01-fleet-operations.png)
 
@@ -340,7 +339,7 @@ Fuente y enlace al artefacto: tablero elaborado por el equipo en Miro. URL: [Big
 
 Este mapa representa el recorrido de un responsable que recibe la necesidad de revisar documentación vehicular, busca información en diversas fuentes, verifica datos y documentos, gestiona problemas encontrados y toma decisiones operativas. El principal dolor identificado es la dispersión de información y el seguimiento manual de pendientes, lo que sustenta funciones como checklist por fuente, dashboard de riesgo, registro de evidencia y casos de resolución.
 
-#### Segmento 2: propietarios o compradores particulares
+#### Segmento 1: propietarios, compradores y asesores automotores
 
 ![As-is Scenario Map - Propietarios o compradores particulares](assets/chapter-2/as-is-scenario-maps/as-is-seg-02-buyer-owner.png)
 
@@ -368,7 +367,7 @@ Figura 2.10. As-is Scenario Map para asesor o generador de contenido automotor.
 
 Fuente y enlace al artefacto: tablero elaborado por el equipo en Miro. URL: [Big Picture Event Storming BLIP](https://miro.com/app/board/uXjVHntEsLk=/).
 
-Este mapa representa a un actor que recibe consultas de usuarios, investiga información vehicular, analiza datos, comunica resultados y mantiene confianza con su comunidad. Debe utilizarse como actor complementario, no como segmento principal, salvo que el equipo decida ampliar formalmente el alcance. Su aporte principal para FleetProof es reforzar la importancia de comunicar resultados de manera clara, verificable y útil para la toma de decisiones.
+Este mapa desarrolla el rol asesor incluido en el segmento 1. Representa consultas, investigación, interpretación y comunicación de información vehicular. No constituye un tercer segmento ni una entrevista adicional. Las actividades específicas deben contrastarse con H-II-01 antes de utilizarlas para justificar requisitos.
 
 #### Síntesis de oportunidades derivadas
 
@@ -383,6 +382,8 @@ Este mapa representa a un actor que recibe consultas de usuarios, investiga info
 ## 2.4 Big Picture Event Storming
 
 El equipo desarrolló el Big Picture Event Storming de FleetProof en Miro para representar los sucesos relevantes del dominio, ordenar los flujos principales e identificar riesgos y preguntas pendientes. El tablero se trabajó en tres fases: Open, Explore y Close.
+
+El tablero modela el dominio propuesto y no acredita capacidades implementadas ni necesidades expresadas por todos los entrevistados. La consulta de fuentes se plantea mediante APIs, acuerdos o mecanismos autorizados. Un bloqueo o CAPTCHA se trata como restricción de acceso o indisponibilidad, sin incorporar su elusión como capacidad del sistema.
 
 ### Fase Open
 
@@ -412,6 +413,17 @@ Figura 2.13. Preguntas abiertas documentadas durante la fase Close.
 
 Estas preguntas no deben convertirse todavía en reglas definitivas. Se utilizarán como insumo para entrevistas, Ubiquitous Language, Product Backlog y Design-Level Event Storming.
 
+| Tema de Close | Criterio propuesto o decisión pendiente |
+|---|---|
+| Disponibilidad de fuentes | Informar fuente no disponible, timeout o bloqueo; conservar intento y resultado. No interpretar fallo como ausencia de antecedentes. |
+| Cobertura del reporte | Distinguir reporte completo y parcial; mostrar categorías faltantes y fecha de consulta. |
+| Reintentos | Registrar intentos; frecuencia, límite y condiciones permanecen pendientes de definición técnica. |
+| Placa y consistencia | Validar formato antes de consultar y señalar datos contradictorios sin resolverlos mediante suposiciones. |
+| Actualización y vigencia | Frecuencia de monitoreo y vigencia del reporte pendientes de evaluación de fuentes y usuarios. |
+| Riesgo | Reglas y umbrales pendientes de validación; explicar causas y limitaciones. |
+| Pago y suscripción | Propuesta: habilitar servicio después de confirmación; tratamiento de rechazo y conciliación pendiente de especificación. |
+| Destinatarios de alertas | Reglas de asignación y autorización pendientes; distinguir cambio documentario de fallo de consulta. |
+
 ### Resultado consolidado
 
 ![Vista consolidada del Big Picture Event Storming](assets/chapter-2/big-picture-event-storming/overview.png)
@@ -431,23 +443,25 @@ El Ubiquitous Language establece términos compartidos entre especialistas del d
 | License Plate | Identificador registral ingresado por el usuario para consultar o registrar un vehículo. |
 | Report Request | Solicitud iniciada por un usuario para obtener un tipo específico de Vehicle Report. |
 | Vehicle Report | Documento consolidado que presenta información vehicular, fuentes consultadas, fecha de obtención, hallazgos y limitaciones. |
-| Complete Report | Vehicle Report que incluye todas las categorías ofrecidas por el servicio y que terminó sus consultas previstas. |
+| Complete Report | Vehicle Report con información obtenida para todas las categorías comprometidas en la solicitud, sin consultas obligatorias pendientes o fallidas. Finalizar intentos no garantiza cobertura completa ni exactitud de la fuente. |
+| Partial Report | Vehicle Report con categorías sin información por indisponibilidad, error o cobertura insuficiente; muestra las limitaciones de forma explícita. |
 | Official Source | Servicio o registro de una entidad pública del cual se obtiene información vehicular. |
 | External Source | Proveedor ajeno a FleetProof que complementa o facilita una consulta. |
 | Source Check | Registro del intento de consulta a una fuente, incluyendo fecha, resultado, disponibilidad y evidencia obtenida. |
 | Source Unavailability | Estado en el que una fuente no permite completar la consulta; debe mostrarse al usuario y no interpretarse como ausencia de antecedentes. |
-| Evidence | Dato, respuesta o referencia conservada para sustentar un Source Check o Finding. |
+| Evidence | Dato, respuesta o referencia conservada para sustentar un Source Check o Finding, vinculada a fuente, fecha de obtención y consulta correspondiente. Su conservación no convierte el resultado en certificación oficial. |
 | Finding | Resultado relevante que requiere explicación, atención o seguimiento; no implica por sí solo una irregularidad. |
-| Snapshot | Estado consolidado de la información conocida de un Vehicle en una fecha determinada. |
-| Risk Assessment | Evaluación explicable que agrupa Findings mediante reglas conocidas y produce un Risk Level. |
+| Snapshot | Estado consolidado de la información conocida de un Vehicle en una fecha determinada, con fuentes, fechas de consulta, cobertura y limitaciones. No garantiza conocer el estado real completo del vehículo. |
+| Risk Assessment | Evaluación propuesta que agrupa Findings y produce un Risk Level mediante reglas explícitas. Reglas y umbrales requieren validación; la evaluación no constituye certificación oficial. |
 | Risk Level | Clasificación resumida del riesgo acompañada por las causas que la originaron. No constituye certificación oficial. |
 | Fleet | Conjunto de vehículos administrados por una organización o responsable para fines de seguimiento. |
 | Fleet Vehicle | Vehicle registrado dentro de una Fleet y asociado a un responsable y estado de monitoreo. |
 | Responsible Person | Usuario encargado de revisar un Finding, atender una alerta o gestionar un Fleet Vehicle. |
 | Monitoring Subscription | Acceso activo que habilita revisiones recurrentes para uno o más vehículos según las condiciones del plan. |
 | Monitoring Cycle | Ejecución programada que genera nuevos Source Checks y compara el Snapshot reciente con el anterior. |
-| Vehicle Change | Diferencia relevante detectada entre dos snapshots consecutivos del mismo vehículo. |
-| Alert | Aviso generado por un Vehicle Change, Finding o fallo que cumple una regla de notificación. |
+| Vehicle Change | Diferencia relevante en información comparable entre snapshots del mismo vehículo. Un cambio de cobertura o disponibilidad de una fuente no demuestra un cambio del vehículo. |
+| Alert | Aviso documentario generado por un Vehicle Change o Finding que cumple una regla de notificación. Debe distinguirse de un aviso técnico de consulta fallida. |
+| Source Failure Notice | Aviso técnico sobre una consulta fallida, bloqueada o incompleta. Informa incertidumbre y no implica una nueva multa o irregularidad del vehículo. |
 | Resolution Case | Registro de seguimiento creado para atender un Finding o Alert, con responsable, estado, evidencia y resolución. |
 | Manual Comparison | Revisión realizada por una persona cuando FleetProof no puede determinar automáticamente si dos resultados son equivalentes. |
 | Retry Request | Nueva solicitud de consulta para una fuente que falló o estuvo temporalmente indisponible. |
