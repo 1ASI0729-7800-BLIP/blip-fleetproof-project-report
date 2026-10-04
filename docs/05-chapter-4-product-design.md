@@ -908,8 +908,7 @@ El diagrama modela exactamente los 6 Bounded Contexts y sus respectivos comandos
 
 ### 4.8.1 Database Diagrams
 
-El diagrama de base de datos representa el modelo físico relacional implementado en PostgreSQL/MySQL mediante Entity Framework Core, organizando las tablas normalizadas en función de los seis Bounded Contexts del sistema.
-
+El diagrama de base de datos representa el modelo físico relacional propuesto para PostgreSQL mediante Entity Framework Core, organizado en función de los seis Bounded Contexts definidos para FleetProof.
 ```mermaid
 erDiagram
     %% 1. User Management Context
