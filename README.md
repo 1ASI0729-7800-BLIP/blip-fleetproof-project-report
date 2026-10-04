@@ -105,6 +105,6 @@
 | Producto | Repositorio | Versiones requeridas |
 |---|---|---|
 | Project Report | https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-project-report | AV1|
-| Landing Page | Terminado | v1.0.0 |
-| Frontend Web Application | Terminado | v1.0.0 |
-| Web Services | Terminado | v1.0.0 |
+| Landing Page | https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-LandingPage | v1.0.0 |
+| Frontend Web Application | https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-frontend | v1.0.0 |
+| Web Services | https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-backend | v1.0.0 |
