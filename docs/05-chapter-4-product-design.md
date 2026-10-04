@@ -530,30 +530,38 @@ Step 10: Bounded Contexts
 ### 4.6.2 Software Architecture Context Diagram
 
 ```mermaid
-flowchart TB
-    classDef person fill:#08427b,stroke:#073b6f,stroke-width:2px,color:#fff;
-    classDef internal fill:#1168bd,stroke:#0b4884,stroke-width:2px,color:#fff;
-    classDef external fill:#999999,stroke:#666666,stroke-width:2px,color:#fff;
+flowchart TD
+    %% Actores / Usuarios
+    U1["Usuario Final"]
+    U2["Usuario de Monitoreo"]
+    U3["Gestor de Flota"]
 
-    user1["Usuario Final"]:::person
-    user2["Usuario de Monitoreo"]:::person
-    user3["Gestor de Flota"]:::person
+    %% Sistema Central
+    SYS["Sistema de Consulta y\nMonitoreo Vehicular\n(FleetProof)"]
 
-    core["Sistema de Consulta y Monitoreo Vehicular"]:::internal
+    %% Sistemas Externos Autorizados
+    EXT_PAY["Taypi Payment System"]
+    EXT_SRC["Fuentes Oficiales y\nProveedores Habilitados\n(APIs Autorizadas / Convenios)"]
+    EXT_NOT["Notification Provider"]
 
-    ext1["Taypi Payment System"]:::external
-    ext2["CAPTCHA Resolution Service"]:::external
-    ext3["Fuentes Oficiales"]:::external
-    ext4["Notification Provider"]:::external
+    %% Relaciones Superiores
+    U1 -->|"Solicita reportes y paga consultas"| SYS
+    U2 -->|"Activa suscripción y monitorea"| SYS
+    U3 -->|"Registra flotas y atiende riesgos"| SYS
 
-    user1 -->|Solicita reportes y paga consultas| core
-    user2 -->|Activa suscripcion y monitorea| core
-    user3 -->|Registra flotas y atiende riesgos| core
+    %% Relaciones Inferiores (Sistemas Externos)
+    SYS -->|"Procesa transacciones de pago"| EXT_PAY
+    SYS -->|"Consulta datos registrales, gravámenes\ny papeletas (o gestiona indisponibilidad)"| EXT_SRC
+    SYS -->|"Despacha alertas y notificaciones"| EXT_NOT
 
-    core -->|Procesa transacciones| ext1
-    core -->|Resuelve desafios visuales| ext2
-    core -->|Consulta datos registrales y papeletas| ext3
-    core -->|Despacha alertas y avisos| ext4
+    %% Estilos visuales
+    classDef user fill:#004b87,stroke:#002d54,color:#fff,font-weight:bold;
+    classDef system fill:#0066cc,stroke:#004080,color:#fff,font-weight:bold;
+    classDef external fill:#7f7f7f,stroke:#4d4d4d,color:#fff,font-weight:bold;
+
+    class U1,U2,U3 user;
+    class SYS system;
+    class EXT_PAY,EXT_SRC,EXT_NOT external;
 ```
 
 **Explicación, decisiones y relación con otros artefactos:** El diagrama de contexto representa los límites del sistema central y sus interacciones con los tres perfiles de usuario identificados, así como los servicios externos para procesamiento de pagos, resolución de CAPTCHA, consulta de fuentes oficiales y envío de notificaciones.
