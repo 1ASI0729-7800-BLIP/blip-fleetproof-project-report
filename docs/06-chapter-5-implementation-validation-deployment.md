@@ -209,15 +209,15 @@ Ahora con la Landing Page desplegada, cada vez que se realize un push en la rama
 | Attendees (to planning meeting) | Sebastian Reyes Limo, Gonzalo Quintanilla, Jefferson Morales, Rodrigo Gómez De La Torre y Eduardo Gorbeña |
 | **Sprint Goal & User Stories** | |
 | Sprint 1 Goal | Nuestro enfoque está en presentar una landing page que muestre todas las funcionalidades y características de FleetProof a los visitantes.<br>Creemos que esto generará una sólida primera impresión sobre qué es FleetProof para nuestros segmentos objetivo.<br>Esto se confirmará cuando los usuarios accedan a la landing page y naveguen por sus secciones. |
-| Sprint 1 Velocity | 21 |
-| Sum of story points | 21 |
+| Sprint 1 Commitment | 21 Story Points |
+| Sum of Planned Story Points | 21 |
 
 #### 5.2.1.2 Aspect Leaders and Collaborators
 
 Ahora presentaremos nuestro LACX (Leadership-and-Collaboration Matrix) que nos ayudará a saber quién lidera y quién colabora en cada aspecto de este primer sprint.
 Los aspectos que tomamos en cuenta para este primer sprint fueron los features de nuestra Landing Page.
 
-| Team Member Last Name, First Name | GitHub Username | Hero L/C | About us L/C | Benefits L/C | Pricing L/C | Contact L/C | Footer L/C |
+| Team Member Last Name, First Name | GitHub Username | Hero L/C | Nosotros L/C | Beneficios L/C | Precios L/C | Contacto L/C | Footer L/C |
 |---|---|:---:|:---:|:---:|:---:|:---:|:---:|
 | **Reyes Limo Sebastian** | llegastian11 | C | C | C | C | L | C |
 | **Quintanilla Gonzalo** | GoldQP | L | C | C | C | C | C |
@@ -779,8 +779,8 @@ La Landing Page constituye el primer punto de interacción con los usuarios, mos
 El desarrollo se centró en:
 
 * Diseño responsive y navegación entre secciones.
-* Secciones implementadas: *Hero, Entidades, Servicios, Nosotros, Precios, Contacto*.
-* Formulario de contacto funcional.
+* Secciones implementadas: *Hero, Nosotros, Beneficios, Precios, Contacto, Footer*.
+* Formulario de contacto con validaciones frontend implementadas.
 
 A continuación, se presentan capturas de las principales vistas desarrolladas:
 
