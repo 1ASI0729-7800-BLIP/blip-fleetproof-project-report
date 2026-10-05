@@ -749,6 +749,7 @@ flowchart TB
 
 El diagrama de clases de diseño modela las entidades de dominio, raíces de agregado y métodos de comando organizados estrictamente en los seis Bounded Contexts definidos para el sistema.
 
+```mermaid
 classDiagram
     %% Enumeraciones
     class SubscriptionStatus {
@@ -899,6 +900,7 @@ classDiagram
 
     VehicleMonitoring "1" *-- "0..*" MonitoringAlert : genera
     Fleet "1" *-- "0..*" FleetVehicleAssignment : contiene
+```
 **Explicación, decisiones y relación con otros artefactos:**
 El diagrama modela exactamente los 6 Bounded Contexts y sus respectivos comandos del sistema:
 * **User Management:** La raíz de agregado `User` centraliza la autenticación y la gestión de identidad.
