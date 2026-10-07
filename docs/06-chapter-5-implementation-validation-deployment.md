@@ -905,10 +905,10 @@ C = *Collaborator* (apoya el desarrollo del aspecto). La matriz representa la di
     <tr><td>-</td><td>-</td><td>T22</td><td>Implementar gestión de flotas y casos</td><td>Crear flotas y registrar responsables, estados y evidencia de resolución de observaciones.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>To-Review</td></tr>
     <tr><td>-</td><td>-</td><td>T23</td><td>Aplicar identidad visual de FleetProof</td><td>Incorporar logo, paleta del capítulo IV, tipografía Inter y adaptación móvil.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>To-Review</td></tr>
     <tr><td>-</td><td>-</td><td>T24</td><td>Integrar y validar el frontend</td><td>Revisar las ramas de los contextos y comprobar la aplicación integrada.</td><td>Por confirmar</td><td>Todo el equipo</td><td>To-do</td></tr>
-    <tr><td>-</td><td>-</td><td>T25</td><td>Configurar hosting y despliegue</td><td>Publicar el frontend y configurar una API accesible desde el entorno de despliegue.</td><td>Por confirmar</td><td>Por confirmar</td><td>To-do</td></tr>
+    <tr><td>-</td><td>-</td><td>T25</td><td>Configurar hosting y despliegue</td><td>Publicar el frontend en Netlify y configurar la Fake API en Render; validar disponibilidad y conexión pública.</td><td>Por confirmar</td><td>Por confirmar</td><td>To-Review</td></tr>
 </table>
 
-Las tareas continúan la numeración del Sprint 1, desde T12. Las estimaciones en horas requieren confirmación del equipo. El estado `To-Review` identifica implementaciones disponibles en las ramas de trabajo que aún requieren revisión e integración; no declara completados los criterios de las historias en un entorno de producción.
+Las tareas continúan la numeración del Sprint 1, desde T12. Las estimaciones en horas requieren confirmación del equipo. El estado `To-Review` identifica implementaciones disponibles o evidencia presentada que aún requieren aceptación; no declara completados todos los criterios de las historias. T25 pasa a revisión por la evidencia de publicación en Netlify. T24 sigue pendiente de documentar la integración de ramas y su validación completa.
 
 #### 5.2.2.4 Development Evidence for Sprint Review
 
@@ -952,14 +952,69 @@ Las vistas utilizan el logotipo de FleetProof, la paleta cromática azul marino 
 
 La ejecución local utiliza `npm run dev`: el frontend se sirve en `http://127.0.0.1:4200` y la API simulada en `http://127.0.0.1:3000/api/v1`. Esta demostración no representa una consulta real a fuentes oficiales ni un servicio de autenticación de producción.
 
-A continuación se incorporarán las capturas de las principales vistas desarrolladas:
+A continuación se presentan las capturas reales de la versión local completa utilizada para la demostración. Se verificaron el inicio de sesión con la cuenta demo, la navegación, la apertura del diálogo CSV y el cambio de idioma. No se registraron errores de ejecución JavaScript durante este recorrido; se observó una advertencia de rendimiento por la resolución del logo.
 
-<!-- Captura de inicio de sesión y perfil. -->
-<!-- Captura del Dashboard en escritorio. -->
-<!-- Captura de la aplicación en dispositivo móvil. -->
-<!-- Captura de vehículos y reporte con fuentes. -->
-<!-- Captura de comparación, monitoreo y alertas. -->
-<!-- Captura de importación CSV y gestión de casos. -->
+Para esta captura, el puerto 3000 estaba ocupado por otra API. El JSON Server propio se ejecutó en `127.0.0.1:3001` y el navegador de prueba redirigió las solicitudes a ese puerto, sin modificar el código. Las imágenes locales no acreditan el despliegue ni la integración remota de las ramas.
+
+##### Acceso y perfil
+
+![Inicio de sesión de FleetProof](assets/chapter-5/sprint-2/01-inicio-sesion.png)
+
+**Figura 5.5.** Formulario de inicio de sesión con identidad visual de FleetProof.
+
+![Perfil del usuario demo](assets/chapter-5/sprint-2/10-perfil.png)
+
+**Figura 5.6.** Vista de perfil. La captura acredita su visualización, no una actualización de datos.
+
+##### Dashboard, internacionalización y adaptación móvil
+
+![Dashboard en español](assets/chapter-5/sprint-2/02-dashboard.png)
+
+**Figura 5.7.** Indicadores y resumen de flota con datos de demostración.
+
+![Dashboard en inglés](assets/chapter-5/sprint-2/12-dashboard-ingles.png)
+
+**Figura 5.8.** Resultado del cambio a inglés mediante el control EN.
+
+<img src="assets/chapter-5/sprint-2/11-movil.png" alt="Dashboard móvil de FleetProof" width="390">
+
+**Figura 5.9.** Adaptación del dashboard a un viewport de 390 × 844 píxeles; captura de página completa.
+
+##### Vehículos y reportes
+
+![Listado de vehículos](assets/chapter-5/sprint-2/03-vehiculos.png)
+
+**Figura 5.10.** Listado de vehículos y sus estados de riesgo.
+
+![Listado de reportes](assets/chapter-5/sprint-2/04-reportes.png)
+
+**Figura 5.11.** Reportes y versiones históricas disponibles.
+
+![Detalle del reporte](assets/chapter-5/sprint-2/05-detalle-reporte.png)
+
+**Figura 5.12.** Detalle de un reporte existente con fuentes, fechas y riesgo. No se presenta como prueba de generación nueva o descarga PDF.
+
+![Comparación de snapshots](assets/chapter-5/sprint-2/05b-comparacion.png)
+
+**Figura 5.13.** Vista de comparación histórica de snapshots.
+
+##### Monitoreo, alertas y gestión de flotas
+
+![Monitoreo vehicular](assets/chapter-5/sprint-2/07-monitoreo.png)
+
+**Figura 5.14.** Vista de monitoreo. La captura no acredita la ejecución de un nuevo ciclo.
+
+![Alertas vehiculares](assets/chapter-5/sprint-2/08-alertas.png)
+
+**Figura 5.15.** Visualización de alertas existentes.
+
+![Importación CSV](assets/chapter-5/sprint-2/06-importacion-csv.png)
+
+**Figura 5.16.** Diálogo de importación CSV abierto desde la interfaz. No se ejecutó una importación ni se acredita su resultado con esta imagen.
+
+![Casos de resolución](assets/chapter-5/sprint-2/09-casos.png)
+
+**Figura 5.17.** Vista de casos de resolución en el estado disponible de la demostración.
 
 #### 5.2.2.6 Services Documentation Evidence for Sprint Review
 
@@ -978,9 +1033,9 @@ Durante el Sprint 2, la Web Application consume datos de una API simulada local 
 
 Para la internacionalización, ngx-translate carga los archivos `/i18n/es.json` y `/i18n/en.json` desde el frontend. Postman permite consultar los recursos HTTP y los diccionarios, pero no realiza la traducción de la interfaz.
 
-La colección de consultas de lectura se encuentra en [FleetProof local API and i18n](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend/blob/main/docs/postman/fleetproof.postman_collection.json). Las capturas de respuestas se incorporarán como evidencia de su ejecución. No se declara una documentación Swagger del backend, porque esta entrega utiliza una API simulada.
+La tabla anterior documenta los contratos HTTP de la versión local utilizada en la demostración. No se declara documentación Swagger del backend, porque esta entrega utiliza una API simulada. Tampoco se presenta una captura de Render como prueba de una solicitud ejecutada en Postman: las capturas de solicitudes y respuestas siguen pendientes.
 
-<!-- Capturas de solicitudes y respuestas en Postman. -->
+La configuración de alojamiento de la Fake API se muestra en la sección 5.2.2.7. La disponibilidad pública de cada endpoint y su equivalencia con estos contratos requieren verificación adicional.
 
 #### 5.2.2.7 Software Deployment Evidence for Sprint Review
 
@@ -988,15 +1043,34 @@ Para el Sprint 2, el equipo utiliza Netlify para el despliegue del Frontend Web 
 
 * **Plataforma de despliegue del frontend:** Netlify.
 * **Plataforma de despliegue de la Fake API:** Render.
-* **Rama y commit de despliegue:** por confirmar después de integrar los bounded contexts.
-* **URL de la Web Application:** pendiente de publicación.
-* **URL pública de la Fake API:** pendiente de incorporar.
+* **Commit del frontend mostrado en Netlify:** `635fe67`. La captura muestra una rama abreviada como `feature/spri...`; su nombre completo queda pendiente de confirmar.
+* **URL de la Web Application:** [blip-fleetproof.netlify.app](https://blip-fleetproof.netlify.app/).
+* **URL configurada de la Fake API:** [fleetproof-fake-api.onrender.com](https://fleetproof-fake-api.onrender.com/).
+* **Repositorio de la Fake API mostrado en Render:** `1ASI0729-7800-BLIP/blip-fleetproof-fake-api`, rama `main`, commit `13dffa7`.
 
-Los enlaces públicos y las capturas del despliegue se incorporarán para verificar la ejecución del frontend conectado a la Fake API. La ejecución en localhost y la publicación del código en GitHub no sustituyen esa evidencia. La Landing Page del Sprint 1 corresponde a un entregable distinto.
+Las siguientes evidencias fueron proporcionadas por el equipo. Se diferencia la configuración y construcción en progreso de la publicación completada. Las URLs se transcriben de las capturas; estas imágenes no constituyen una comprobación actual de disponibilidad ni prueban por sí solas la conexión del frontend con todos los endpoints.
 
-A continuación se incorporará la evidencia del despliegue:
+##### Configuración de la Fake API en Render
 
-<!-- Captura del despliegue y URL pública del frontend. -->
+![Configuración de la Fake API en Render](assets/chapter-5/sprint-2/14-render-fake-api.png)
+
+**Figura 5.18.** Servicio `fleetproof-fake-api` y URL configurada en Render. El estado visible es `Building`, por lo que esta imagen no acredita una publicación completada. La interfaz muestra el runtime `Elixir`; queda pendiente revisar su correspondencia con la Fake API basada en JSON Server descrita en el proyecto.
+
+##### Construcción y publicación del frontend en Netlify
+
+![Frontend en proceso de despliegue](assets/chapter-5/sprint-2/15-netlify-en-progreso.png)
+
+**Figura 5.19.** Proyecto `blip-fleetproof` en Netlify durante el despliegue, con detección de Angular.
+
+![Frontend publicado en Netlify](assets/chapter-5/sprint-2/17-netlify-publicado.png)
+
+**Figura 5.20.** Publicación del frontend confirmada por el estado `Published`, la URL pública y el commit abreviado `635fe67` visibles en Netlify.
+
+![Dashboard de la versión publicada aportado por el equipo](assets/chapter-5/sprint-2/16-dashboard-publicado.png)
+
+**Figura 5.21.** Dashboard identificado por el equipo como correspondiente a la versión desplegada. La captura muestra la interfaz y datos de demostración, pero no incluye la barra de direcciones; se complementa con la evidencia de publicación de Netlify.
+
+Queda pendiente añadir evidencia de Render en estado publicado y una solicitud/respuesta pública que compruebe la conexión con la Fake API. La Landing Page del Sprint 1 corresponde a un entregable distinto.
 
 #### 5.2.2.8 Team Collaboration Insights during Sprint
 
