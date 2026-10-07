@@ -209,15 +209,15 @@ Ahora con la Landing Page desplegada, cada vez que se realize un push en la rama
 | Attendees (to planning meeting) | Sebastian Reyes Limo, Gonzalo Quintanilla, Jefferson Morales, Rodrigo Gómez De La Torre y Eduardo Gorbeña |
 | **Sprint Goal & User Stories** | |
 | Sprint 1 Goal | Nuestro enfoque está en presentar una landing page que muestre todas las funcionalidades y características de FleetProof a los visitantes.<br>Creemos que esto generará una sólida primera impresión sobre qué es FleetProof para nuestros segmentos objetivo.<br>Esto se confirmará cuando los usuarios accedan a la landing page y naveguen por sus secciones. |
-| Sprint 1 Velocity | 21 |
-| Sum of story points | 21 |
+| Sprint 1 Commitment | 21 Story Points |
+| Sum of Planned Story Points | 21 |
 
 #### 5.2.1.2 Aspect Leaders and Collaborators
 
 Ahora presentaremos nuestro LACX (Leadership-and-Collaboration Matrix) que nos ayudará a saber quién lidera y quién colabora en cada aspecto de este primer sprint.
 Los aspectos que tomamos en cuenta para este primer sprint fueron los features de nuestra Landing Page.
 
-| Team Member Last Name, First Name | GitHub Username | Hero L/C | About us L/C | Benefits L/C | Pricing L/C | Contact L/C | Footer L/C |
+| Team Member Last Name, First Name | GitHub Username | Hero L/C | Nosotros L/C | Beneficios L/C | Precios L/C | Contacto L/C | Footer L/C |
 |---|---|:---:|:---:|:---:|:---:|:---:|:---:|
 | **Reyes Limo Sebastian** | llegastian11 | C | C | C | C | L | C |
 | **Quintanilla Gonzalo** | GoldQP | L | C | C | C | C | C |
@@ -771,7 +771,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
     </tbody>
 </table>
 
-#### 5.2.1.5 Execution Evidence for Sprint Review
+#### 5.2.1.5 Execution Evidence for Sprint Review 
 
 Durante el **Sprint 1** se implementó la Landing Page de la plataforma FleetProof, cumpliendo con los objetivos definidos en el Sprint Backlog.
 La Landing Page constituye el primer punto de interacción con los usuarios, mostrando de forma clara los valores de la plataforma, los servicios ofrecidos, el perfil de la startup y los planes de suscripción disponibles.
@@ -779,8 +779,8 @@ La Landing Page constituye el primer punto de interacción con los usuarios, mos
 El desarrollo se centró en:
 
 * Diseño responsive y navegación entre secciones.
-* Secciones implementadas: *Hero, Entidades, Servicios, Nosotros, Precios, Contacto*.
-* Formulario de contacto funcional.
+* Secciones implementadas: *Hero, Nosotros, Beneficios, Precios, Contacto, Footer*.
+* Formulario de contacto con validaciones frontend implementadas.
 
 A continuación, se presentan capturas de las principales vistas desarrolladas:
 
@@ -836,3 +836,274 @@ A continuación se presentan los **analíticos de GitHub**, que muestran la part
 <img src="https://res.cloudinary.com/dehoql1oc/image/upload/v1789677063/Captura_de_pantalla_2026-09-17_153043_hqzs5r.png" alt="inicio" width="800">
 <img src="https://res.cloudinary.com/dehoql1oc/image/upload/v1789677175/Captura_de_pantalla_2026-09-17_153236_uvfxjo.png" alt="inicio" width="800">
 
+### 5.2.2 Sprint 2
+
+#### 5.2.2.1 Sprint Planning 2
+
+A continuación se presenta el sprint planning de esta segunda entrega, donde se definen el trabajo a realizar, las metas y el enfoque del equipo para el desarrollo del frontend de FleetProof.
+
+| Sprint # | Sprint 2 |
+|---|---|
+| Sprint planning background | En este sprint se aborda la implementación del Frontend Web Application de FleetProof con Angular, integrando los bounded contexts Identity and Access Management, Vehicle Information, Report Management, Vehicle Monitoring y Fleet Management.<br>Los módulos consumen una API simulada local mediante JSON Server y `db.json`, y reutilizan componentes e infraestructura de `shared`.<br>El objetivo es preparar la primera versión funcional de la aplicación para demostrar el acceso, la consulta de vehículos y reportes, la importación de flotas y el seguimiento de cambios documentarios. |
+| Date | Por confirmar con el equipo |
+| Time | Por confirmar con el equipo |
+| Location | Por confirmar con el equipo |
+| Prepared By | Sebastian Reyes Limo |
+| Attendees (to planning meeting) | Asistencia por confirmar: Sebastian Reyes Limo, Gonzalo Quintanilla, Jefferson Morales, Rodrigo Gómez De La Torre y Eduardo Gorbeña. |
+| Sprint 1 Review Summary | Durante el Sprint 1 se implementó la Landing Page de FleetProof para presentar la propuesta de valor, los servicios, los beneficios, los planes y los canales de contacto dirigidos a nuestros segmentos objetivo.<br>El reporte registra su publicación en Netlify y la elaboración de los artefactos iniciales de requisitos y diseño. Estos entregables constituyen la base para desarrollar la Web Application en el Sprint 2. |
+| Sprint 1 Retrospective Summary | Como aprendizaje para la siguiente etapa, se identifica la necesidad de mantener coherencia entre los requisitos, el diseño y la implementación, y de delimitar las responsabilidades sobre los archivos del proyecto.<br>Para el Sprint 2 se establece una distribución por bounded context, con una base común y reutilización de `shared`, para reducir cambios simultáneos y facilitar la revisión de las contribuciones. Esta síntesis se fundamenta en los ajustes del proyecto; no atribuye acuerdos ni comentarios a una reunión de retrospectiva no documentada. |
+| **Sprint Goal & User Stories** | |
+| Sprint 2 Goal | Nuestro enfoque está en desarrollar la primera versión del Frontend Web Application de FleetProof.<br>Buscamos que nuestros usuarios puedan registrar y consultar vehículos, revisar reportes con información trazable, identificar riesgos, importar vehículos mediante CSV y comparar estados históricos.<br>Esto se confirmará al revisar los recorridos de la aplicación con datos locales de demostración y validar la integración de los bounded contexts. |
+| Sprint 2 Velocity | Pendiente de determinar al cierre del sprint con las historias aceptadas. |
+| Sum of story points | 24: US03 (5), US04 (3), US06 (8) y US07 (8), según el Product Backlog actualizado del capítulo III. |
+
+#### 5.2.2.2 Aspect Leaders and Collaborators
+
+Ahora presentaremos nuestro LACX (Leadership-and-Collaboration Matrix) que nos ayudará a saber quién lidera y quién colabora en cada aspecto de este segundo sprint.
+Los aspectos que tomamos en cuenta para este sprint fueron los bounded contexts de nuestra Web Application y la base reutilizable de `shared`.
+
+| Team Member Last Name, First Name | GitHub Username | Shared L/C | Fleet Management L/C | IAM L/C | Report Management L/C | Vehicle Monitoring L/C | Vehicle Information L/C |
+|---|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Reyes Limo Sebastian** | llegastian11 | L | L | C | C | C | C |
+| **Quintanilla Gonzalo** | GoldQP | C | C | L | C | C | C |
+| **Morales Jefferson** | Fenfito | C | C | C | C | L | C |
+| **Gómez De La Torre Rodrigo** | rod670 | C | C | C | L | C | C |
+| **Gorbeña Eduardo** | EduardooGV | C | C | C | C | C | L |
+
+**Nota.** L = *Leader* (responsable principal del aspecto).
+C = *Collaborator* (apoya el desarrollo del aspecto). La matriz representa la distribución de responsabilidades acordada.
+
+#### 5.2.2.3 Sprint Backlog 2
+
+<table>
+    <tr>
+        <td>Sprint #</td>
+        <td colspan="7">Sprint 2</td>
+    </tr>
+    <tr>
+        <td colspan="2">User Story</td>
+        <td colspan="2">Work-Item / Task</td>
+        <td>Description</td>
+        <td>Estimation (Hours)</td>
+        <td>Assigned To</td>
+        <td>Status (To-do / In-Process / To-Review / Done)</td>
+    </tr>
+    <tr>
+        <td>Id</td><td>Title</td><td>Id</td><td>Title</td>
+        <td></td><td></td><td></td><td></td>
+    </tr>
+    <tr><td>-</td><td>-</td><td>T12</td><td>Configurar el Frontend Web Application</td><td>Preparar Angular, Angular Material, environments y API local con db.json.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>To-Review</td></tr>
+    <tr><td>-</td><td>-</td><td>T13</td><td>Implementar shared e internacionalización</td><td>Reutilizar contratos HTTP, formularios, layout y diccionarios español e inglés.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>To-Review</td></tr>
+    <tr><td>-</td><td>-</td><td>T14</td><td>Implementar acceso y perfil</td><td>Desarrollar inicio de sesión, registro y edición de perfil con datos de demostración.</td><td>Por confirmar</td><td>Gonzalo Quintanilla</td><td>To-Review</td></tr>
+    <tr><td>US03</td><td>Consulta inicial por placa</td><td>T15</td><td>Implementar registro y consulta de vehículos</td><td>Desarrollar listado, formulario y detalle de vehículos para la consulta por placa.</td><td>Por confirmar</td><td>Eduardo Gorbeña</td><td>To-Review</td></tr>
+    <tr><td>US03</td><td>Consulta inicial por placa</td><td>T16</td><td>Implementar consulta de reportes</td><td>Generar y presentar reportes con datos locales, fuentes, fechas y estados de disponibilidad.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>To-Review</td></tr>
+    <tr><td>US04</td><td>Evaluación con Semáforo de Riesgo</td><td>T17</td><td>Implementar evaluación visual de riesgo</td><td>Mostrar nivel de riesgo con texto, icono y color, acompañado de las causas de la clasificación.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>To-Review</td></tr>
+    <tr><td>-</td><td>-</td><td>T18</td><td>Implementar exportación PDF</td><td>Generar un archivo PDF del reporte consultado desde la aplicación.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>To-Review</td></tr>
+    <tr><td>US06</td><td>Carga masiva mediante CSV</td><td>T19</td><td>Implementar importación de vehículos</td><td>Validar columnas y placas, detectar duplicados y comunicar el resultado de la importación.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>To-Review</td></tr>
+    <tr><td>US07</td><td>Comparación histórica de Snapshots</td><td>T20</td><td>Implementar comparación de reportes</td><td>Presentar diferencias entre dos estados históricos de un vehículo.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>To-Review</td></tr>
+    <tr><td>US07</td><td>Comparación histórica de Snapshots</td><td>T21</td><td>Implementar monitoreo y alertas</td><td>Ejecutar ciclos manuales de demostración y registrar alertas relacionadas con cambios vehiculares.</td><td>Por confirmar</td><td>Jefferson Morales</td><td>To-Review</td></tr>
+    <tr><td>-</td><td>-</td><td>T22</td><td>Implementar gestión de flotas y casos</td><td>Crear flotas y registrar responsables, estados y evidencia de resolución de observaciones.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>To-Review</td></tr>
+    <tr><td>-</td><td>-</td><td>T23</td><td>Aplicar identidad visual de FleetProof</td><td>Incorporar logo, paleta del capítulo IV, tipografía Inter y adaptación móvil.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>To-Review</td></tr>
+    <tr><td>-</td><td>-</td><td>T24</td><td>Integrar y validar el frontend</td><td>Revisar las ramas de los contextos y comprobar la aplicación integrada.</td><td>Por confirmar</td><td>Todo el equipo</td><td>To-do</td></tr>
+    <tr><td>-</td><td>-</td><td>T25</td><td>Configurar hosting y despliegue</td><td>Publicar el frontend en Netlify y configurar la Fake API en Render; validar disponibilidad y conexión pública.</td><td>Por confirmar</td><td>Por confirmar</td><td>To-Review</td></tr>
+</table>
+
+Las tareas continúan la numeración del Sprint 1, desde T12. Las estimaciones en horas requieren confirmación del equipo. El estado `To-Review` identifica implementaciones disponibles o evidencia presentada que aún requieren aceptación; no declara completados todos los criterios de las historias. T25 pasa a revisión por la evidencia de publicación en Netlify. T24 sigue pendiente de documentar la integración de ramas y su validación completa.
+
+#### 5.2.2.4 Development Evidence for Sprint Review
+
+Durante el Sprint 2 se preparó la primera versión del Frontend Web Application de FleetProof. La implementación utiliza Angular, Angular Material y TypeScript, con persistencia local mediante JSON Server y `db.json`. Se reutilizó la estructura del proyecto docente Learning Center y se organizaron los módulos mediante bounded contexts y capas de dominio, aplicación, infraestructura y presentación.
+
+El desarrollo se encuentra en el repositorio público de la organización BLIP, utilizando ramas por contexto y la convención de *Conventional Commits*.
+
+<h3>Development Evidence – Sprint 2</h3>
+
+<table>
+    <thead><tr><th>Repository</th><th>Branch</th><th>Commit Id</th><th>Commit Message</th><th>Commit Message Body</th><th>Committed on (Date)</th></tr></thead>
+    <tbody>
+        <tr><td>1ASI0729-7800-BLIP/blip-fleetproof-frontend</td><td>feature/sprint2-fleet-management</td><td><a href="https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend/commit/c9d1829">c9d1829</a></td><td>feat(shared): add src/app/shared/application/language.store.ts</td><td>—</td><td>05/10/2026</td></tr>
+        <tr><td>1ASI0729-7800-BLIP/blip-fleetproof-frontend</td><td>feature/sprint2-fleet-management</td><td><a href="https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend/commit/ad9e14f">ad9e14f</a></td><td>feat(fleet): add src/app/fleet-management/application/csv-import.service.ts</td><td>—</td><td>05/10/2026</td></tr>
+        <tr><td>1ASI0729-7800-BLIP/blip-fleetproof-frontend</td><td>feature/sprint2-iam</td><td><a href="https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend/commit/b763165">b763165</a></td><td>feat(user): add UserAssembler for transforming User entities and API resources</td><td>—</td><td>06/10/2026</td></tr>
+        <tr><td>1ASI0729-7800-BLIP/blip-fleetproof-frontend</td><td>feature/sprint2-report-management</td><td><a href="https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend/commit/a79e65f">a79e65f</a></td><td>feat(report): implement PDF export service for vehicle reports</td><td>—</td><td>06/10/2026</td></tr>
+        <tr><td>1ASI0729-7800-BLIP/blip-fleetproof-frontend</td><td>feature/sprint2-vehicle-monitoring</td><td><a href="https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend/commit/784d8e1">784d8e1</a></td><td>feat: Add Monitoring and Alert classes for vehicle monitoring</td><td>—</td><td>06/10/2026</td></tr>
+        <tr><td>1ASI0729-7800-BLIP/blip-fleetproof-frontend</td><td>feature/sprint2-vehicle-monitoring</td><td><a href="https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend/commit/78e79a4">78e79a4</a></td><td>feat: Add MonitoringView component for vehicle monitoring</td><td>—</td><td>06/10/2026</td></tr>
+        <tr><td>1ASI0729-7800-BLIP/blip-fleetproof-frontend</td><td>main, historial original</td><td><a href="https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend/commit/b33f249">b33f249</a></td><td>feat(vehicle-information): add vehicle information module, domain, infrastructure and presentation components</td><td>—</td><td>06/10/2026</td></tr>
+    </tbody>
+</table>
+
+El commit original de Vehicle Information fue realizado por Eduardo en `main`. Sus archivos se conservaron posteriormente en `feature/sprint2-vehicle-information`. El traslado administrativo no se presenta como un nuevo commit de Eduardo. Los commits de los demás contextos mantienen su autoría original.
+
+#### 5.2.2.5 Execution Evidence for Sprint Review
+
+En este sprint se prepararon las principales vistas de FleetProof para el acceso a la plataforma, la consulta de vehículos, la visualización de reportes y el seguimiento documentario de flotas.
+
+La versión local permite demostrar:
+
+* Inicio de sesión y registro con datos de demostración, así como edición del perfil.
+* Dashboard con indicadores de vehículos, riesgos y alertas.
+* Registro, listado y detalle de vehículos.
+* Reportes con fuentes, fechas de consulta, estados de disponibilidad y exportación PDF.
+* Comparación histórica de snapshots.
+* Monitoreo mediante ciclos manuales y revisión de alertas.
+* Importación de vehículos mediante CSV y gestión de casos de resolución.
+* Cambio de idioma español/inglés y adaptación a dispositivos móviles.
+
+Las vistas utilizan el logotipo de FleetProof, la paleta cromática azul marino y verde petróleo y la tipografía Inter definidas en el capítulo IV.
+
+La ejecución local utiliza `npm run dev`: el frontend se sirve en `http://127.0.0.1:4200` y la API simulada en `http://127.0.0.1:3000/api/v1`. Esta demostración no representa una consulta real a fuentes oficiales ni un servicio de autenticación de producción.
+
+A continuación se presentan las capturas reales de la versión local completa utilizada para la demostración. Se verificaron el inicio de sesión con la cuenta demo, la navegación, la apertura del diálogo CSV y el cambio de idioma. No se registraron errores de ejecución JavaScript durante este recorrido; se observó una advertencia de rendimiento por la resolución del logo.
+
+Para esta captura, el puerto 3000 estaba ocupado por otra API. El JSON Server propio se ejecutó en `127.0.0.1:3001` y el navegador de prueba redirigió las solicitudes a ese puerto, sin modificar el código. Las imágenes locales no acreditan el despliegue ni la integración remota de las ramas.
+
+##### Acceso y perfil
+
+![Inicio de sesión de FleetProof](assets/chapter-5/sprint-2/01-inicio-sesion.png)
+
+**Figura 5.5.** Formulario de inicio de sesión con identidad visual de FleetProof.
+
+![Perfil del usuario demo](assets/chapter-5/sprint-2/10-perfil.png)
+
+**Figura 5.6.** Vista de perfil. La captura acredita su visualización, no una actualización de datos.
+
+##### Dashboard, internacionalización y adaptación móvil
+
+![Dashboard en español](assets/chapter-5/sprint-2/02-dashboard.png)
+
+**Figura 5.7.** Indicadores y resumen de flota con datos de demostración.
+
+![Dashboard en inglés](assets/chapter-5/sprint-2/12-dashboard-ingles.png)
+
+**Figura 5.8.** Resultado del cambio a inglés mediante el control EN.
+
+<img src="assets/chapter-5/sprint-2/11-movil.png" alt="Dashboard móvil de FleetProof" width="390">
+
+**Figura 5.9.** Adaptación del dashboard a un viewport de 390 × 844 píxeles; captura de página completa.
+
+##### Vehículos y reportes
+
+![Listado de vehículos](assets/chapter-5/sprint-2/03-vehiculos.png)
+
+**Figura 5.10.** Listado de vehículos y sus estados de riesgo.
+
+![Listado de reportes](assets/chapter-5/sprint-2/04-reportes.png)
+
+**Figura 5.11.** Reportes y versiones históricas disponibles.
+
+![Detalle del reporte](assets/chapter-5/sprint-2/05-detalle-reporte.png)
+
+**Figura 5.12.** Detalle de un reporte existente con fuentes, fechas y riesgo. No se presenta como prueba de generación nueva o descarga PDF.
+
+![Comparación de snapshots](assets/chapter-5/sprint-2/05b-comparacion.png)
+
+**Figura 5.13.** Vista de comparación histórica de snapshots.
+
+##### Monitoreo, alertas y gestión de flotas
+
+![Monitoreo vehicular](assets/chapter-5/sprint-2/07-monitoreo.png)
+
+**Figura 5.14.** Vista de monitoreo. La captura no acredita la ejecución de un nuevo ciclo.
+
+![Alertas vehiculares](assets/chapter-5/sprint-2/08-alertas.png)
+
+**Figura 5.15.** Visualización de alertas existentes.
+
+![Importación CSV](assets/chapter-5/sprint-2/06-importacion-csv.png)
+
+**Figura 5.16.** Diálogo de importación CSV abierto desde la interfaz. No se ejecutó una importación ni se acredita su resultado con esta imagen.
+
+![Casos de resolución](assets/chapter-5/sprint-2/09-casos.png)
+
+**Figura 5.17.** Vista de casos de resolución en el estado disponible de la demostración.
+
+#### 5.2.2.6 Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 2, la Web Application consume datos de una API simulada local con JSON Server. Los recursos se almacenan en `db.json` y se accede a ellos mediante servicios HTTP organizados por bounded context. Este alcance permite demostrar el frontend antes de integrar el backend definitivo.
+
+| Nombre del Endpoint | Acciones Implementadas | Sintaxis de Llamada | Especificación de Parámetros |
+|---|---|---|---|
+| Users | GET, POST, PATCH | `GET /api/v1/users`; `POST /api/v1/users`; `PATCH /api/v1/users/{id}` | Consulta de usuario para acceso simulado, registro y actualización de perfil. |
+| Vehicles | GET, POST, PUT | `GET /api/v1/vehicles`; `POST /api/v1/vehicles`; `PUT /api/v1/vehicles/{id}` | Identificador, usuario, flota, placa, marca, modelo, año y responsable. |
+| Reports | GET, POST | `GET /api/v1/reports`; `POST /api/v1/reports` | Vehículo, placa, fecha, versión y fuentes del reporte. |
+| Source Fixtures | GET | `GET /api/v1/sourceFixtures` | Datos sintéticos utilizados para demostrar la consulta y disponibilidad de fuentes. |
+| Fleets | GET, POST | `GET /api/v1/fleets`; `POST /api/v1/fleets` | Usuario y nombre de la flota. |
+| Cases | GET, POST, PUT | `GET /api/v1/cases`; `POST /api/v1/cases`; `PUT /api/v1/cases/{id}` | Vehículo, reporte, observación, responsable, estado y evidencia de resolución. |
+| Monitoring | GET, POST, PUT | `GET /api/v1/monitoring`; `POST /api/v1/monitoring`; `PUT /api/v1/monitoring/{id}` | Usuario, vehículo, estado y fecha del último ciclo. |
+| Alerts | GET, POST, PUT | `GET /api/v1/alerts`; `POST /api/v1/alerts`; `PUT /api/v1/alerts/{id}` | Usuario, vehículo, reporte, tipo, estado, fecha y mensaje de la alerta. |
+
+Para la internacionalización, ngx-translate carga los archivos `/i18n/es.json` y `/i18n/en.json` desde el frontend. Postman permite consultar los recursos HTTP y los diccionarios, pero no realiza la traducción de la interfaz.
+
+La tabla anterior documenta los contratos HTTP de la versión local utilizada en la demostración. No se declara documentación Swagger del backend, porque esta entrega utiliza una API simulada. Tampoco se presenta una captura de Render como prueba de una solicitud ejecutada en Postman: las capturas de solicitudes y respuestas siguen pendientes.
+
+La configuración de alojamiento de la Fake API se muestra en la sección 5.2.2.7. La disponibilidad pública de cada endpoint y su equivalencia con estos contratos requieren verificación adicional.
+
+#### 5.2.2.7 Software Deployment Evidence for Sprint Review
+
+Para el Sprint 2, el equipo utiliza Netlify para el despliegue del Frontend Web Application y Render para alojar la Fake API basada en JSON Server. La configuración permite separar la publicación de la interfaz y el servicio de datos de demostración.
+
+* **Plataforma de despliegue del frontend:** Netlify.
+* **Plataforma de despliegue de la Fake API:** Render.
+* **Commit del frontend mostrado en Netlify:** `635fe67`. La captura muestra una rama abreviada como `feature/spri...`; su nombre completo queda pendiente de confirmar.
+* **URL de la Web Application:** [blip-fleetproof.netlify.app](https://blip-fleetproof.netlify.app/).
+* **URL configurada de la Fake API:** [fleetproof-fake-api.onrender.com](https://fleetproof-fake-api.onrender.com/).
+* **Repositorio de la Fake API mostrado en Render:** `1ASI0729-7800-BLIP/blip-fleetproof-fake-api`, rama `main`, commit `13dffa7`.
+
+Las siguientes evidencias fueron proporcionadas por el equipo. Se diferencia la configuración y construcción en progreso de la publicación completada. Las URLs se transcriben de las capturas; estas imágenes no constituyen una comprobación actual de disponibilidad ni prueban por sí solas la conexión del frontend con todos los endpoints.
+
+##### Configuración de la Fake API en Render
+
+![Configuración de la Fake API en Render](assets/chapter-5/sprint-2/14-render-fake-api.png)
+
+**Figura 5.18.** Servicio `fleetproof-fake-api` y URL configurada en Render. El estado visible es `Building`, por lo que esta imagen no acredita una publicación completada. La interfaz muestra el runtime `Elixir`; queda pendiente revisar su correspondencia con la Fake API basada en JSON Server descrita en el proyecto.
+
+##### Construcción y publicación del frontend en Netlify
+
+![Frontend en proceso de despliegue](assets/chapter-5/sprint-2/15-netlify-en-progreso.png)
+
+**Figura 5.19.** Proyecto `blip-fleetproof` en Netlify durante el despliegue, con detección de Angular.
+
+![Frontend publicado en Netlify](assets/chapter-5/sprint-2/17-netlify-publicado.png)
+
+**Figura 5.20.** Publicación del frontend confirmada por el estado `Published`, la URL pública y el commit abreviado `635fe67` visibles en Netlify.
+
+![Dashboard de la versión publicada aportado por el equipo](assets/chapter-5/sprint-2/16-dashboard-publicado.png)
+
+**Figura 5.21.** Dashboard identificado por el equipo como correspondiente a la versión desplegada. La captura muestra la interfaz y datos de demostración, pero no incluye la barra de direcciones; se complementa con la evidencia de publicación de Netlify.
+
+Queda pendiente añadir evidencia de Render en estado publicado y una solicitud/respuesta pública que compruebe la conexión con la Fake API. La Landing Page del Sprint 1 corresponde a un entregable distinto.
+
+#### 5.2.2.8 Team Collaboration Insights during Sprint
+
+Durante el Sprint 2, el equipo organizó el desarrollo de la Web Application mediante ramas específicas para cada bounded context. Los archivos base se mantienen en `main`, mientras que `shared` y Fleet Management se encuentran en la rama de Sebastian.
+
+| Integrante | Rama de trabajo | Aspecto |
+|---|---|---|
+| Sebastian Reyes Limo | `feature/sprint2-fleet-management` | Shared y Fleet Management |
+| Gonzalo Quintanilla | `feature/sprint2-iam` | Identity and Access Management |
+| Rodrigo Gómez De La Torre | `feature/sprint2-report-management` | Report Management |
+| Jefferson Morales | `feature/sprint2-vehicle-monitoring` | Vehicle Monitoring |
+| Eduardo Gorbeña | `feature/sprint2-vehicle-information` | Vehicle Information |
+
+Los historiales de las ramas registran aportes de los integrantes. La revisión e integración mediante Pull Requests permitirá consolidar la versión del sprint conservando los commits y sus autores. No se presenta esa integración como realizada mientras siga pendiente.
+
+A continuación se presentan los analíticos del repositorio frontend proporcionados por el equipo:
+
+![Network graph del repositorio frontend](assets/chapter-5/sprint-2/18-github-network.png)
+
+**Figura 5.22.** Network graph de GitHub con las referencias `main`, `feature/sprint2` y las ramas de los bounded contexts. El gráfico representa el historial visible en el momento de la captura; no constituye por sí solo evidencia de revisión mediante Pull Requests.
+
+![Contributors del Sprint 2](assets/chapter-5/sprint-2/19-github-contributors.png)
+
+**Figura 5.23.** Contributors de GitHub para `feature/sprint2`, con el filtro de los últimos tres meses y exclusión de merge commits. Se visualizan los cinco integrantes del equipo.
+
+| GitHub Username | Commits visibles en la captura |
+|---|---:|
+| llegastian11 | 69 |
+| GoldQP | 13 |
+| EduardooGV | 9 |
+| rod670 | 8 |
+| Fenfito | 7 |
+
+Estos valores corresponden al alcance y periodo del gráfico, no necesariamente a commits exclusivos del Sprint 2. La cantidad de commits no mide por sí sola la calidad, el esfuerzo ni la aceptación de las tareas. Queda pendiente incorporar evidencia de los Pull Requests y revisiones del frontend; estos analíticos no prueban su integración en `develop`.
+
+[Repositorio del Frontend Web Application](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend)
