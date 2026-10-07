@@ -1086,11 +1086,24 @@ Durante el Sprint 2, el equipo organizó el desarrollo de la Web Application med
 
 Los historiales de las ramas registran aportes de los integrantes. La revisión e integración mediante Pull Requests permitirá consolidar la versión del sprint conservando los commits y sus autores. No se presenta esa integración como realizada mientras siga pendiente.
 
-A continuación se incorporarán los analíticos de GitHub que muestran la participación del equipo durante el sprint:
+A continuación se presentan los analíticos del repositorio frontend proporcionados por el equipo:
 
-<!-- Captura del listado de ramas. -->
-<!-- Captura del historial de commits con sus autores. -->
-<!-- Captura de Pull Requests e integración, cuando se realicen. -->
-<!-- Capturas de Insights, Contributors y Network. -->
+![Network graph del repositorio frontend](assets/chapter-5/sprint-2/18-github-network.png)
+
+**Figura 5.22.** Network graph de GitHub con las referencias `main`, `feature/sprint2` y las ramas de los bounded contexts. El gráfico representa el historial visible en el momento de la captura; no constituye por sí solo evidencia de revisión mediante Pull Requests.
+
+![Contributors del Sprint 2](assets/chapter-5/sprint-2/19-github-contributors.png)
+
+**Figura 5.23.** Contributors de GitHub para `feature/sprint2`, con el filtro de los últimos tres meses y exclusión de merge commits. Se visualizan los cinco integrantes del equipo.
+
+| GitHub Username | Commits visibles en la captura |
+|---|---:|
+| llegastian11 | 69 |
+| GoldQP | 13 |
+| EduardooGV | 9 |
+| rod670 | 8 |
+| Fenfito | 7 |
+
+Estos valores corresponden al alcance y periodo del gráfico, no necesariamente a commits exclusivos del Sprint 2. La cantidad de commits no mide por sí sola la calidad, el esfuerzo ni la aceptación de las tareas. Queda pendiente incorporar evidencia de los Pull Requests y revisiones del frontend; estos analíticos no prueban su integración en `develop`.
 
 [Repositorio del Frontend Web Application](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend)
