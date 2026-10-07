@@ -4,6 +4,7 @@
 |---|---|---|---|
 | 0.1.0 | 2026-09-12 | BLIP | Estructura base del informe de Open Source; el aporte del Capítulo II se desarrolla en una rama independiente. |
 | 0.2.0 | 2026-09-17 | Reyes Limo, Sebastian | Corrección de roles y responsabilidades del equipo (README), actualización del estado real de los capítulos en Estado AV1, y completado del cuadro de Student Outcome con las acciones de todos los integrantes. |
+| 0.3.0 | 2026-10-06 | Reyes Limo, Sebastian | Documentación de Sprint 2, 19 capturas y colaboración; actualización de conclusiones, anexos, workplan y estados para TB1. Revisión final de entrega pendiente. |
 
 # Project Report Collaboration Insights
 
@@ -19,10 +20,10 @@ El equipo BLIP elaborará el informe en Markdown usando GitHub como sistema de c
 
 | Entrega | Evidencia requerida | Estado |
 |---|---|---|
-| AV1 | Commits, ramas, Pull Requests, merges y capturas de colaboración del informe. | En progreso |
-| TB1 | Actualización de commits, mejoras sobre feedback y nueva versión del informe. | TODO |
-| AV2 | Evidencias ampliadas de colaboración, validación y mejoras. | TODO |
-| TB2 | Evidencia final de colaboración durante todo el ciclo. | TODO |
+| AV1 | Commits, ramas, Pull Requests, merges y capturas de colaboración del informe. | Completado: registro histórico de Sprint 1. |
+| TB1 | Actualización de commits, mejoras sobre feedback y nueva versión del informe. | En progreso: Sprint 2 integrado en develop; cierre y evidencias finales pendientes. |
+| AV2 | Evidencias ampliadas de colaboración, validación y mejoras. | Pendiente: entrega posterior. |
+| TB2 | Evidencia final de colaboración durante todo el ciclo. | Pendiente: entrega posterior. |
 
 ## Convenciones de GitFlow
 

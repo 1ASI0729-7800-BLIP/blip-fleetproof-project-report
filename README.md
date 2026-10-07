@@ -84,7 +84,7 @@
 - [Capítulo III: Requirements Specification](docs/04-chapter-3-requirements-specification.md)
 - [Capítulo IV: Product Design](docs/05-chapter-4-product-design.md)
 - [Capítulo V: Product Implementation, Validation & Deployment](docs/06-chapter-5-implementation-validation-deployment.md)
-- [Plan de Trabajo AV1](docs/10-av1-work-plan.md)
+- [Plan de Trabajo AV1 y TB1](docs/10-av1-work-plan.md)
 - [Control de Calidad de Rúbrica](docs/11-rubric-quality-control.md)
 - [Conclusiones](docs/07-conclusions.md)
 - [Bibliografía](docs/08-bibliography.md)
@@ -104,7 +104,18 @@
 
 | Producto | Repositorio | Versiones requeridas |
 |---|---|---|
-| Project Report | https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-project-report | AV1|
-| Landing Page | Terminado | v1.0.0 |
-| Frontend Web Application | Terminado | v1.0.0 |
-| Web Services | Terminado | v1.0.0 |
+| Project Report | https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-project-report | AV1 y TB1 en revisión |
+| Landing Page | https://fleetproof-landingpage.netlify.app/ | AV1 publicada; actualización TB1 pendiente de verificar |
+| Frontend Web Application | https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend | Primera versión publicada; aceptación y release por confirmar |
+| Fake API | https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-fake-api | Configuración Render; publicación pendiente de acreditar |
+| Web Services definitivos | Pendiente de implementar y documentar | No confundir con Fake API |
+
+## Estado TB1 — Sprint 2
+
+| Bloque | Estado | Evidencia o pendiente |
+|---|---|---|
+| Planning, LACX y backlog | Completado como documentación | Capítulo V, T12–T25; aceptación y horas por confirmar. |
+| Frontend e i18n | En revisión | Ejecución local, ES/EN, móvil y Netlify Published. |
+| Colaboración | En revisión | Network, cinco Contributors y merge 39c9d93 del capítulo V a develop; revisión frontend pendiente. |
+| Conclusiones, anexos y workplan | En revisión | Actualización TB1 preparada. |
+| Videos, performance report y cierre | Pendiente | Confirmar archivos finales, evaluación del Team Leader y evidencias faltantes. |
