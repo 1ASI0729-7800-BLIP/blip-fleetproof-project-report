@@ -54,8 +54,8 @@ Este control asegura que el informe, la presentación, los videos y los reposito
 
 | Categoría | Pregunta de control | Estado |
 |---|---|---|
-| Programación | ¿El producto cumple el alcance técnico del hito? | TODO |
-| Redacción | ¿El texto usa términos oficiales y no presenta errores de ortografía o gramática? | TODO |
-| GitHub | ¿Existen ramas, commits, Pull Requests, merges y releases suficientes? | TODO |
-| Evidencia | ¿Cada afirmación importante tiene captura, enlace, video o fuente? | TODO |
-| Trazabilidad | ¿Cada User Story se relaciona con backlog, rama, commit, sprint y evidencia? | TODO |
+| Programación | ¿El producto cumple el alcance técnico del hito? | En revisión: frontend publicado; aceptación completa y conexión pública con Fake API pendientes. |
+| Redacción | ¿El texto usa términos oficiales y no presenta errores de ortografía o gramática? | En revisión: cierre TB1 actualizado; revisión integral final pendiente. |
+| GitHub | ¿Existen ramas, commits, Pull Requests, merges y releases suficientes? | En revisión: ramas, commits, Contributors y merge del capítulo V disponibles; PRs y releases pendientes de acreditar. |
+| Evidencia | ¿Cada afirmación importante tiene captura, enlace, video o fuente? | En progreso: 19 capturas Sprint 2; faltan Postman, Render publicado y videos. |
+| Trazabilidad | ¿Cada User Story se relaciona con backlog, rama, commit, sprint y evidencia? | En revisión: backlog y commits documentados; pruebas de aceptación y cierre de historias pendientes. |

@@ -241,7 +241,7 @@ C = *Collaborator* (apoya el desarrollo del aspecto).
         <td>Description</td>
         <td>Estimation (Hours)</td>
         <td>Assigned To</td>
-        <td>Status (To-do / In-Process / To-Review / Done)</td>
+        <td>Status (Pendiente / En progreso / En revisión / Completado)</td>
     </tr>
     <tr>
         <td>Id</td>
@@ -261,7 +261,7 @@ C = *Collaborator* (apoya el desarrollo del aspecto).
         <td>Crear wireframe simple con encabezado, Hero section y pie de página de FleetProof.</td>
         <td>4</td>
         <td>Equipo UX</td>
-        <td>Done</td>
+        <td>Completado</td>
     </tr>
     <tr>
         <td>US01</td>
@@ -271,7 +271,7 @@ C = *Collaborator* (apoya el desarrollo del aspecto).
         <td>Desarrollar HTML/CSS base de la página principal aplicando diseño Responsive.</td>
         <td>6</td>
         <td>Dev Front</td>
-        <td>Done</td>
+        <td>Completado</td>
     </tr>
     <tr>
         <td>US01</td>
@@ -281,7 +281,7 @@ C = *Collaborator* (apoya el desarrollo del aspecto).
         <td>Elaborar contenido con los pilares clave de la plataforma (Checklist, Semáforo, Alertas).</td>
         <td>2</td>
         <td>PO/Equipo</td>
-        <td>Done</td>
+        <td>Completado</td>
     </tr>
     <tr>
         <td>US01</td>
@@ -291,7 +291,7 @@ C = *Collaborator* (apoya el desarrollo del aspecto).
         <td>Codificar la sección en la landing page usando CSS Grid y Flexbox.</td>
         <td>4</td>
         <td>Dev Front</td>
-        <td>Done</td>
+        <td>Completado</td>
     </tr>
     <tr>
         <td>US02</td>
@@ -301,7 +301,7 @@ C = *Collaborator* (apoya el desarrollo del aspecto).
         <td>Definir estructura visual del equipo fundador y beneficios del Startup Profile.</td>
         <td>3</td>
         <td>Equipo UX</td>
-        <td>Done</td>
+        <td>Completado</td>
     </tr>
     <tr>
         <td>US02</td>
@@ -311,7 +311,7 @@ C = *Collaborator* (apoya el desarrollo del aspecto).
         <td>Programar en frontend con estructura responsiva e imágenes adaptables.</td>
         <td>5</td>
         <td>Dev Front</td>
-        <td>Done</td>
+        <td>Completado</td>
     </tr>
     <tr>
         <td>US01</td>
@@ -321,7 +321,7 @@ C = *Collaborator* (apoya el desarrollo del aspecto).
         <td>Diseñar estructura de planes de suscripción con beneficios y precios diferenciados.</td>
         <td>3</td>
         <td>Equipo UX</td>
-        <td>Done</td>
+        <td>Completado</td>
     </tr>
     <tr>
         <td>US01</td>
@@ -331,7 +331,7 @@ C = *Collaborator* (apoya el desarrollo del aspecto).
         <td>Codificar sección de Pricing en HTML y CSS con diseño corporativo.</td>
         <td>5</td>
         <td>Dev Front</td>
-        <td>Done</td>
+        <td>Completado</td>
     </tr>
     <tr>
         <td>US01</td>
@@ -341,7 +341,7 @@ C = *Collaborator* (apoya el desarrollo del aspecto).
         <td>Crear contenido con correo corporativo, sedes y canales de WhatsApp.</td>
         <td>2</td>
         <td>PO/Equipo</td>
-        <td>Done</td>
+        <td>Completado</td>
     </tr>
     <tr>
         <td>US01</td>
@@ -351,7 +351,7 @@ C = *Collaborator* (apoya el desarrollo del aspecto).
         <td>Agregar formulario funcional simulado con validaciones básicas en JavaScript.</td>
         <td>4</td>
         <td>Dev Front</td>
-        <td>Done</td>
+        <td>Completado</td>
     </tr>
     <tr>
         <td>-</td>
@@ -361,7 +361,7 @@ C = *Collaborator* (apoya el desarrollo del aspecto).
         <td>Preparar entorno y publicar el Landing Page de FleetProof en Netlify.</td>
         <td>6</td>
         <td>DevOps</td>
-        <td>Done</td>
+        <td>Completado</td>
     </tr>
 </table>
 
@@ -886,29 +886,29 @@ C = *Collaborator* (apoya el desarrollo del aspecto). La matriz representa la di
         <td>Description</td>
         <td>Estimation (Hours)</td>
         <td>Assigned To</td>
-        <td>Status (To-do / In-Process / To-Review / Done)</td>
+        <td>Status (Pendiente / En progreso / En revisión / Completado)</td>
     </tr>
     <tr>
         <td>Id</td><td>Title</td><td>Id</td><td>Title</td>
         <td></td><td></td><td></td><td></td>
     </tr>
-    <tr><td>-</td><td>-</td><td>T12</td><td>Configurar el Frontend Web Application</td><td>Preparar Angular, Angular Material, environments y API local con db.json.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>To-Review</td></tr>
-    <tr><td>-</td><td>-</td><td>T13</td><td>Implementar shared e internacionalización</td><td>Reutilizar contratos HTTP, formularios, layout y diccionarios español e inglés.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>To-Review</td></tr>
-    <tr><td>-</td><td>-</td><td>T14</td><td>Implementar acceso y perfil</td><td>Desarrollar inicio de sesión, registro y edición de perfil con datos de demostración.</td><td>Por confirmar</td><td>Gonzalo Quintanilla</td><td>To-Review</td></tr>
-    <tr><td>US03</td><td>Consulta inicial por placa</td><td>T15</td><td>Implementar registro y consulta de vehículos</td><td>Desarrollar listado, formulario y detalle de vehículos para la consulta por placa.</td><td>Por confirmar</td><td>Eduardo Gorbeña</td><td>To-Review</td></tr>
-    <tr><td>US03</td><td>Consulta inicial por placa</td><td>T16</td><td>Implementar consulta de reportes</td><td>Generar y presentar reportes con datos locales, fuentes, fechas y estados de disponibilidad.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>To-Review</td></tr>
-    <tr><td>US04</td><td>Evaluación con Semáforo de Riesgo</td><td>T17</td><td>Implementar evaluación visual de riesgo</td><td>Mostrar nivel de riesgo con texto, icono y color, acompañado de las causas de la clasificación.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>To-Review</td></tr>
-    <tr><td>-</td><td>-</td><td>T18</td><td>Implementar exportación PDF</td><td>Generar un archivo PDF del reporte consultado desde la aplicación.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>To-Review</td></tr>
-    <tr><td>US06</td><td>Carga masiva mediante CSV</td><td>T19</td><td>Implementar importación de vehículos</td><td>Validar columnas y placas, detectar duplicados y comunicar el resultado de la importación.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>To-Review</td></tr>
-    <tr><td>US07</td><td>Comparación histórica de Snapshots</td><td>T20</td><td>Implementar comparación de reportes</td><td>Presentar diferencias entre dos estados históricos de un vehículo.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>To-Review</td></tr>
-    <tr><td>US07</td><td>Comparación histórica de Snapshots</td><td>T21</td><td>Implementar monitoreo y alertas</td><td>Ejecutar ciclos manuales de demostración y registrar alertas relacionadas con cambios vehiculares.</td><td>Por confirmar</td><td>Jefferson Morales</td><td>To-Review</td></tr>
-    <tr><td>-</td><td>-</td><td>T22</td><td>Implementar gestión de flotas y casos</td><td>Crear flotas y registrar responsables, estados y evidencia de resolución de observaciones.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>To-Review</td></tr>
-    <tr><td>-</td><td>-</td><td>T23</td><td>Aplicar identidad visual de FleetProof</td><td>Incorporar logo, paleta del capítulo IV, tipografía Inter y adaptación móvil.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>To-Review</td></tr>
-    <tr><td>-</td><td>-</td><td>T24</td><td>Integrar y validar el frontend</td><td>Revisar las ramas de los contextos y comprobar la aplicación integrada.</td><td>Por confirmar</td><td>Todo el equipo</td><td>To-do</td></tr>
-    <tr><td>-</td><td>-</td><td>T25</td><td>Configurar hosting y despliegue</td><td>Publicar el frontend en Netlify y configurar la Fake API en Render; validar disponibilidad y conexión pública.</td><td>Por confirmar</td><td>Por confirmar</td><td>To-Review</td></tr>
+    <tr><td>-</td><td>-</td><td>T12</td><td>Configurar el Frontend Web Application</td><td>Preparar Angular, Angular Material, environments y API local con db.json.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>En revisión</td></tr>
+    <tr><td>-</td><td>-</td><td>T13</td><td>Implementar shared e internacionalización</td><td>Reutilizar contratos HTTP, formularios, layout y diccionarios español e inglés.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>En revisión</td></tr>
+    <tr><td>-</td><td>-</td><td>T14</td><td>Implementar acceso y perfil</td><td>Desarrollar inicio de sesión, registro y edición de perfil con datos de demostración.</td><td>Por confirmar</td><td>Gonzalo Quintanilla</td><td>En revisión</td></tr>
+    <tr><td>US03</td><td>Consulta inicial por placa</td><td>T15</td><td>Implementar registro y consulta de vehículos</td><td>Desarrollar listado, formulario y detalle de vehículos para la consulta por placa.</td><td>Por confirmar</td><td>Eduardo Gorbeña</td><td>En revisión</td></tr>
+    <tr><td>US03</td><td>Consulta inicial por placa</td><td>T16</td><td>Implementar consulta de reportes</td><td>Generar y presentar reportes con datos locales, fuentes, fechas y estados de disponibilidad.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>En revisión</td></tr>
+    <tr><td>US04</td><td>Evaluación con Semáforo de Riesgo</td><td>T17</td><td>Implementar evaluación visual de riesgo</td><td>Mostrar nivel de riesgo con texto, icono y color, acompañado de las causas de la clasificación.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>En revisión</td></tr>
+    <tr><td>-</td><td>-</td><td>T18</td><td>Implementar exportación PDF</td><td>Generar un archivo PDF del reporte consultado desde la aplicación.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>En revisión</td></tr>
+    <tr><td>US06</td><td>Carga masiva mediante CSV</td><td>T19</td><td>Implementar importación de vehículos</td><td>Validar columnas y placas, detectar duplicados y comunicar el resultado de la importación.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>En revisión</td></tr>
+    <tr><td>US07</td><td>Comparación histórica de Snapshots</td><td>T20</td><td>Implementar comparación de reportes</td><td>Presentar diferencias entre dos estados históricos de un vehículo.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>En revisión</td></tr>
+    <tr><td>US07</td><td>Comparación histórica de Snapshots</td><td>T21</td><td>Implementar monitoreo y alertas</td><td>Ejecutar ciclos manuales de demostración y registrar alertas relacionadas con cambios vehiculares.</td><td>Por confirmar</td><td>Jefferson Morales</td><td>En revisión</td></tr>
+    <tr><td>-</td><td>-</td><td>T22</td><td>Implementar gestión de flotas y casos</td><td>Crear flotas y registrar responsables, estados y evidencia de resolución de observaciones.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>En revisión</td></tr>
+    <tr><td>-</td><td>-</td><td>T23</td><td>Aplicar identidad visual de FleetProof</td><td>Incorporar logo, paleta del capítulo IV, tipografía Inter y adaptación móvil.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>En revisión</td></tr>
+    <tr><td>-</td><td>-</td><td>T24</td><td>Integrar y validar el frontend</td><td>Revisar las ramas de los contextos y comprobar la aplicación integrada.</td><td>Por confirmar</td><td>Todo el equipo</td><td>Pendiente</td></tr>
+    <tr><td>-</td><td>-</td><td>T25</td><td>Configurar hosting y despliegue</td><td>Publicar el frontend en Netlify y configurar la Fake API en Render; validar disponibilidad y conexión pública.</td><td>Por confirmar</td><td>Por confirmar</td><td>En revisión</td></tr>
 </table>
 
-Las tareas continúan la numeración del Sprint 1, desde T12. Las estimaciones en horas requieren confirmación del equipo. El estado `To-Review` identifica implementaciones disponibles o evidencia presentada que aún requieren aceptación; no declara completados todos los criterios de las historias. T25 pasa a revisión por la evidencia de publicación en Netlify. T24 sigue pendiente de documentar la integración de ramas y su validación completa.
+Las tareas continúan la numeración del Sprint 1, desde T12. Las estimaciones en horas requieren confirmación del equipo. El estado `En revisión` identifica implementaciones disponibles o evidencia presentada que aún requieren aceptación; no declara completados todos los criterios de las historias. T25 pasa a revisión por la evidencia de publicación en Netlify. T24 sigue pendiente de documentar la integración de ramas y su validación completa.
 
 #### 5.2.2.4 Development Evidence for Sprint Review
 
