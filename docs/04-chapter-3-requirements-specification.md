@@ -17,6 +17,11 @@
 | EPIC04 | Autenticación y Seguridad | Como negocio, deseo que la aplicación web cuente con flujos de autenticación seguros para garantizar que cada segmento de usuario acceda únicamente a sus paneles e información privada. | - | - |
 | US08 | Autenticación de Usuario (Login) | Como usuario registrado, deseo un formulario de inicio de sesión para ingresar al panel de control de mis vehículos. | Escenario 1: Validación visual de campos. Dado que el usuario interactúa con el formulario de login, Cuando ingresa sus credenciales, Entonces la interfaz valida reactivamente el formato del correo y enmascara la contraseña. | EPIC04 |
 | US09 | Interfaz interactiva de consulta por placa | Como administrador de flota, deseo un campo de búsqueda con validación en tiempo real para ingresar una placa vehicular. | Escenario 1: Estado de carga interactivo. Dado que el usuario hace clic en "Buscar", Cuando el sistema envía la petición al backend, Entonces la UI muestra un estado de carga (skeleton/spinner) bloqueando temporalmente el botón para evitar clics duplicados. | EPIC02 |
+| US10 | Componente visual de Semáforo de Riesgo | Como supervisor de flota, deseo visualizar un componente gráfico interactivo en el perfil del vehículo para identificar rápidamente su nivel de riesgo. | Escenario 1: Visualización de tooltips. Dado que el componente renderiza el nivel de riesgo con los colores corporativos, Cuando el usuario pasa el cursor (hover) sobre el badge, Entonces se despliega un tooltip dinámico explicando las causas del riesgo. | EPIC02 |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
 
 ## 3.2 Impact Mapping
 
