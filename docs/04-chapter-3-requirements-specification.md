@@ -14,6 +14,8 @@
 | EPIC03 | Gestión y Monitoreo de Flotas | Como negocio, deseo que los usuarios puedan registrar múltiples vehículos y comparar su historial para un monitoreo continuo. | - | - |
 | US06 | Carga masiva mediante CSV | Como administrador de flota, deseo importar un archivo CSV con placas para registrar mis vehículos masivamente sin esfuerzo manual. | Escenario 1: Importación correcta. Dado que el administrador sube un archivo CSV,Cuando el sistema valida que el formato y las placas son correctos,Entonces el sistema registra los elementos como Fleet Vehicle asociados a la cuenta del usuario. | EPIC03 |
 | US07 | Comparación histórica de Snapshots | Como analista documentario, deseo que el sistema compare dos estados históricos para detectar nueva información de forma inmediata. | Escenario 1: Detección de cambios. Dado que un vehículo posee más de un Snapshot guardado,Cuando el sistema ejecuta un Monitoring Cycle,Entonces el sistema compara el último estado con el anterior y resalta un Vehicle Change si existen diferencias. | EPIC03 |
+| EPIC04 | Autenticación y Seguridad | Como negocio, deseo que la aplicación web cuente con flujos de autenticación seguros para garantizar que cada segmento de usuario acceda únicamente a sus paneles e información privada. | - | - |
+| US08 | Autenticación de Usuario (Login) | CComo usuario registrado, deseo un formulario de inicio de sesión para ingresar al panel de control de mis vehículos. | Escenario 1: Validación visual de campos. Dado que el usuario interactúa con el formulario de login, Cuando ingresa sus credenciales, Entonces la interfaz valida reactivamente el formato del correo y enmascara la contraseña. | EPIC04 |
 
 ## 3.2 Impact Mapping
 
