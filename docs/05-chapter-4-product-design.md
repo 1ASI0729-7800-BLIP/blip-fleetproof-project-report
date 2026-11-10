@@ -912,7 +912,7 @@ El diagrama modela exactamente los 6 Bounded Contexts y sus respectivos comandos
 
 ### 4.8.1 Database Diagrams
 
-El diagrama de base de datos representa el modelo físico relacional implementado en PostgreSQL mediante Entity Framework Core, organizando las tablas normalizadas en función de los seis Bounded Contexts del sistema.
+El diagrama de base de datos representa el modelo físico relacional implementado en PostgreSQL y mapeado mediante entidades de Spring Data JPA / Hibernate, organizando las tablas normalizadas en función de los seis Bounded Contexts del sistema.
 
 ```mermaid
 erDiagram
@@ -1020,11 +1020,15 @@ erDiagram
     FLEETS ||--o{ FLEET_VEHICLE_ASSIGNMENTS : "contiene"
     VEHICLE_MONITORINGS ||--o{ MONITORING_ALERTS : "dispara"
 ```
+Explicación, decisiones y relación con otros artefactos:
 
-**Explicación, decisiones y relación con otros artefactos:**
 El diseño físico de la base de datos implementa las siguientes decisiones técnicas:
-* **Normalización y consistencia:** El esquema se encuentra normalizado en Tercera Forma Normal (3FN), evitando redundancia de datos vehiculares en `VEHICLES` y desacoplando el histórico de consultas en `SOURCE_CHECKS` y reportes consolidados en `VEHICLE_REPORTS`.
-* **Identificadores UUID:** Se utilizan llaves primarias de tipo UUID en todas las tablas para evitar colisiones en entornos distribuidos y permitir sincronización segura con la API.
-* **Separación de responsabilidades de monitoreo y flota:** La tabla `FLEET_VEHICLE_ASSIGNMENTS` actúa como tabla intermedia que relaciona flotas con vehículos y delega formalmente la supervisión a un usuario responsable (`responsible_user_id`), mientras que `VEHICLE_MONITORINGS` y `MONITORING_ALERTS` administran de forma independiente las alertas generadas por cambios en las fuentes.
 
+Normalización y consistencia relacional: El esquema se encuentra normalizado en Tercera Forma Normal (3FN), desacoplando los datos estáticos de la unidad en VEHICLES, la trazabilidad de consultas externas en SOURCE_CHECKS y la consolidación histórica en VEHICLE_REPORTS.
+
+Identificadores UUID: Se emplean claves primarias de tipo UUID en todas las tablas para garantizar unicidad global sin depender de secuencias centralizadas, facilitando la integración con los agregados del dominio en Spring Boot.
+
+Persistencia con Spring Data JPA: Las relaciones entre tablas están mapeadas mediante entidades JPA gestionadas por repositorios relacionales en PostgreSQL, aplicando integridad referencial explícita a través de llaves foráneas y control transaccional declarativo (@Transactional).
+
+Separación de responsabilidades de monitoreo y flota: La tabla FLEET_VEHICLE_ASSIGNMENTS actúa como tabla intermedia que relaciona flotas con vehículos y delega formalmente la supervisión a un usuario responsable (responsible_user_id), mientras que VEHICLE_MONITORINGS y MONITORING_ALERTS administran de forma independiente las alertas generadas por cambios en las fuentes.
 
