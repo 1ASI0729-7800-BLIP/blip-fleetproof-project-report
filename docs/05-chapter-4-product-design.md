@@ -583,20 +583,19 @@ flowchart TB
     classDef external fill:#757575,stroke:#424242,stroke-width:2px,color:#fff;
 
     %% Clientes Frontend
-    spa["Frontend Web Application<br/>Vue 3 / PrimeVue"]:::client
+    spa["Frontend Web Application<br/>Angular / Angular Material"]:::client
 
     %% Sistemas Externos y BD
-    db[("Core Database<br/>PostgreSQL / MySQL")]:::db
+    db[("Core Database<br/>PostgreSQL")]:::db
     ext_taypi["Taypi Payment System"]:::external
-    ext_captcha["CAPTCHA Resolution Service"]:::external
-    ext_sources["Fuentes Oficiales<br/>SUNARP / Transito"]:::external
+    ext_sources["Fuentes Oficiales Autorizadas<br/>APIs y Convenios (SUNARP / Tránsito)"]:::external
     ext_notif["Notification Provider<br/>Email / SMS / Push"]:::external
 
     %% Componentes del Backend API
-    subgraph BackendAPI ["Backend RESTful API - ASP.NET Core"]
+    subgraph BackendAPI ["Backend RESTful API - Java / Spring Boot"]
         
         subgraph Sub_Module ["Subscriptions Context"]
-            sub_ctrl["SubscriptionController<br/>Manejo de endpoints de planes"]:::controller
+            sub_ctrl["SubscriptionController<br/>Endpoints de planes y cobros"]:::controller
             sub_srv["SubscriptionService<br/>Logica de activacion y cuotas"]:::appService
             sub_agg["Aggregate: Subscription<br/>Plan, Status, Limits"]:::domain
         end
@@ -609,9 +608,9 @@ flowchart TB
 
         subgraph Veh_Module ["Vehicle Information Context"]
             veh_ctrl["VehicleController<br/>Validacion y consultas"]:::controller
-            veh_srv["VehicleQueryService<br/>Orquestacion de consultas y retry"]:::appService
+            veh_srv["VehicleQueryService<br/>Orquestacion y resiliencia"]:::appService
             veh_agg["Aggregate: Vehicle<br/>Plate, TechnicalData, History"]:::domain
-            veh_conn["SourceConnectorAdapter<br/>Llamadas HTTP y bypass CAPTCHA"]:::infra
+            veh_conn["SourceConnectorAdapter<br/>Cliente HTTP y fallback indisponibilidad"]:::infra
         end
 
         subgraph Rep_Module ["Report Management Context"]
@@ -621,7 +620,7 @@ flowchart TB
         end
 
         subgraph Mon_Module ["Vehicle Monitoring Context"]
-            mon_wrk["MonitoringBackgroundWorker<br/>Cron/Scheduler de revisiones"]:::appService
+            mon_wrk["MonitoringBackgroundWorker<br/>Scheduler de revisiones periodicas"]:::appService
             mon_srv["ChangeDetectionService<br/>Comparador de snapshots"]:::appService
             mon_agg["Aggregate: VehicleMonitoring<br/>Schedule, Alerts, Discrepancies"]:::domain
         end
@@ -632,8 +631,8 @@ flowchart TB
             flt_agg["Aggregate: Fleet<br/>Vehicles, AssignedPersons, Risks"]:::domain
         end
 
-        infra_ef["EF Core DbContext<br/>Unit of Work y Repositorios"]:::infra
-        infra_notif["NotificationAdapter<br/>Cliente HTTP para envios"]:::infra
+        infra_jpa["Spring Data JPA / Repositories<br/>Capa de Acceso a Datos"]:::infra
+        infra_notif["NotificationAdapter<br/>Cliente HTTP para notificaciones"]:::infra
     end
 
     %% Peticiones desde Frontend
@@ -654,8 +653,7 @@ flowchart TB
     veh_ctrl --> veh_srv
     veh_srv --> veh_agg
     veh_srv --> veh_conn
-    veh_conn -->|Resuelve token| ext_captcha
-    veh_conn -->|Extrae datos| ext_sources
+    veh_conn -->|Consulta autorizada / Snapshot| ext_sources
 
     rep_ctrl --> rep_srv
     rep_srv --> rep_agg
@@ -674,14 +672,14 @@ flowchart TB
     infra_notif -->|Despacha mensaje| ext_notif
 
     %% Persistencia hacia la BD
-    user_agg --> infra_ef
-    sub_agg --> infra_ef
-    veh_agg --> infra_ef
-    rep_agg --> infra_ef
-    mon_agg --> infra_ef
-    flt_agg --> infra_ef
+    user_agg --> infra_jpa
+    sub_agg --> infra_jpa
+    veh_agg --> infra_jpa
+    rep_agg --> infra_jpa
+    mon_agg --> infra_jpa
+    flt_agg --> infra_jpa
 
-    infra_ef --> db
+    infra_jpa --> db
 ```
 
 **Explicación, decisiones y relación con otros artefactos:**
