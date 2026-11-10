@@ -793,7 +793,6 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
         </tr>
     </tbody>
 </table>
-
 #### 5.2.1.5 Execution Evidence for Sprint Review 
 
 Durante el **Sprint 1** se implementó la Landing Page de la plataforma FleetProof, cumpliendo con los objetivos definidos en el Sprint Backlog.
