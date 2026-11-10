@@ -681,11 +681,13 @@ flowchart TB
     infra_jpa --> db
 ```
 
-**Explicación, decisiones y relación con otros artefactos:**
-El diagrama de nivel C3 desglosa los componentes internos de la API desarrollada en ASP.NET Core bajo el principio de diseño dirigido por el dominio (DDD):
-* **VehicleQueryService y SourceConnectorAdapter:** Implementan la política de resiliencia frente a la caída de portales externos, ejecutando reintentos exponenciales y coordinando la resolución de retos CAPTCHA antes de persistir los datos de la placa.
-* **MonitoringBackgroundWorker y ChangeDetectionService:** Ejecutan tareas en segundo plano (*IHostedService* en ASP.NET Core) para consultar fuentes periódicamente, comparar los estados de los vehículos y despachar alertas a través de *NotificationAdapter*.
-* **Capa de Persistencia (EF Core):** Centraliza el acceso a la base de datos relacional mediante el patrón repositorio y Unit of Work, asegurando consistencia transaccional en el guardado de reportes, historiales de monitoreo y membresías de usuarios.
+**El diagrama de nivel C3 desglosa los componentes internos de la API desarrollada en Java con Spring Boot bajo el enfoque de diseño guiado por el dominio (DDD):**
+
+Integración y resiliencia en VehicleQueryService y SourceConnectorAdapter: Se comunican exclusivamente con APIs de fuentes oficiales y proveedores autorizados. Ante caídas de servicio o demoras de respuesta, el adaptador aplica políticas de reintento controlado y retorno del último estado verificado (snapshot previo), descartando cualquier técnica de elusión automatizada de controles de acceso o CAPTCHA.
+
+Tareas periódicas en MonitoringBackgroundWorker y ChangeDetectionService: Utilizan tareas programadas (@Scheduled en Spring Boot) para ejecutar revisiones automatizadas sobre las unidades monitoreadas, contrastar versiones documentarias y despachar avisos a través de NotificationAdapter.
+
+Persistencia unificada en PostgreSQL: Se define PostgreSQL como único motor de base de datos relacional para el sistema, gestionado mediante repositorios de Spring Data JPA / Hibernate bajo transaccionalidad declarativa (@Transactional) para asegurar la consistencia entre agregados.
 
 ### 4.6.4 Software Architecture Components Diagrams
 ```mermaid
