@@ -21,9 +21,9 @@ Los enlaces de despliegue se registran según las evidencias aportadas; no impli
 | Commits por contexto | Capítulo V, 5.2.2.4 | Historial de implementación. |
 | 13 capturas locales | Capítulo V, 5.2.2.5 | Acceso, vistas, idiomas y móvil. |
 | Cuatro capturas Render/Netlify | Capítulo V, 5.2.2.7 | Distinguir construcción de publicación. |
-| Network y Contributors | Capítulo V, 5.2.2.8 | Participación de cinco integrantes. |
+| Network y Contributors | Capítulo V, 5.2.2.8 | Cinco identidades visibles; no acredita horas ni aceptación individual. |
 
-Las 19 imágenes se conservan en `docs/assets/chapter-5/sprint-2/`, con descripciones en el capítulo V.
+Las 19 imágenes se conservan en `assets/chapter-5/sprint-2/` (ruta relativa a este archivo), con descripciones en el capítulo V.
 
 ## Anexo C. Investigación y diseño
 
@@ -35,10 +35,16 @@ Las 19 imágenes se conservan en `docs/assets/chapter-5/sprint-2/`, con descripc
 
 | Archivo o evidencia | Estado |
 |---|---|
-| Presentación TB1 | Elaborada localmente; pendiente adjuntar versión final. |
-| Participant Performance Report TB1 | Responsabilidades preparadas; cumplimiento y notas por evaluar por Team Leader. |
+| Presentación TB1 | Elaboración declarada en el registro histórico; incorporar enlace al archivo final antes de cerrar el inventario. |
+| Participant Performance Report TB1 | Responsabilidades documentadas; adjuntar archivo final y evaluación del Team Leader. |
 | Video de exposición y About-the-Team | Pendiente URL, captura y duración. |
 | Prototipo web | Diseño en capítulo IV; enlace público final por confirmar. |
 | Postman | Pendiente capturas de solicitudes y respuestas. |
-| Fake API publicada | Pendiente evidencia y prueba de conexión. |
+| Fake API | URL y captura de construcción disponibles; completar evidencia de publicación y prueba de conexión. |
 | ZIP complementario | Pendiente consolidar y verificar. |
+
+## Anexo E. Criterios de incorporación de nuevas evidencias
+
+Cada evidencia nueva debe indicar fecha, autor o responsable, historia o tarea relacionada, entorno (local o público), resultado observado y limitaciones. Conservar las evidencias de Sprint 1 y Sprint 2; las nuevas ramas de Sprint 3 no sustituyen los antecedentes de las entregas.
+
+Los videos de entrevistas permanecen enlazados individualmente en el capítulo II. No duplicar grabaciones ni publicar credenciales. Las nuevas pruebas no deben atribuirse a fechas o participantes distintos de los reales.

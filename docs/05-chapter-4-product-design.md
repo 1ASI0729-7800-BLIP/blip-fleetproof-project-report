@@ -5,7 +5,7 @@ En este capítulo se presenta el diseño de FleetProof, una plataforma web de in
 
 ## 4.1 Style Guidelines
 
-Los lineamientos de estilo de FleetProof buscan unificar la identidad visual y la comunicación del producto en todos sus puntos de contacto, tomando como base los principios de Material Design. Para ello, se estableció un Web Style Guide como repositorio común que contiene tipografías, paleta de colores, íconos e isotipos, asegurando consistencia visual entre la Web Application y el Landing Page. Además, estos lineamientos integran criterios de accesibilidad, como la comunicación del nivel de riesgo documentario mediante la combinación obligatoria de color, texto e íconos, garantizando una experiencia inclusiva.
+Los lineamientos de estilo de FleetProof buscan unificar la identidad visual y la comunicación del producto en todos sus puntos de contacto, tomando como base los principios de Material Design. Para ello, se estableció un Web Style Guide como repositorio común que contiene tipografías, paleta de colores, íconos e isotipos, asegurando consistencia visual entre la Web Application y el Landing Page. Además, estos lineamientos integran criterios de accesibilidad, como la comunicación del nivel de riesgo documentario mediante la combinación obligatoria de color, texto e íconos, con el objetivo de favorecer una experiencia inclusiva.
 
 ### 4.1.1 General Style Guidelines
 
@@ -239,20 +239,20 @@ Para todas las vistas se utilizará **“Equipo FleetProof”** como Author, **U
 
 | Página o vista        | Title                          | Description                                                                                                                | Keywords                                                 |
 | --------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| **Inicio de sesión**  | Iniciar sesión | FleetProof    | Accede a tu cuenta de FleetProof para consultar vehículos, revisar reportes y dar seguimiento a tus alertas documentarias. | FleetProof, iniciar sesión, acceso                       |
-| **Panel de control**  | Panel de control | FleetProof  | Consulta el resumen de tu flota, identifica observaciones pendientes y accede a las alertas y reportes recientes.          | panel de control, flotas, observaciones, alertas         |
-| **Flota**             | Flota | FleetProof             | Organiza los vehículos de tu empresa, importa registros y consulta el estado documentario de cada unidad.                  | flota vehicular, importar vehículos, estado documentario |
-| **Mi panel**          | Mi panel | FleetProof          | Revisa el resumen de tus vehículos, los reportes disponibles y las alertas que requieren tu atención.                      | panel personal, vehículos, reportes, alertas             |
-| **Mis vehículos**     | Mis vehículos | FleetProof     | Registra tus vehículos y accede a sus antecedentes, reportes y novedades documentarias desde un mismo lugar.               | mis vehículos, placas, antecedentes vehiculares          |
-| **Solicitar reporte** | Solicitar reporte | FleetProof | Selecciona un vehículo y solicita la revisión de sus antecedentes para obtener un reporte con fuentes y evidencias.        | solicitar reporte, consulta vehicular, evidencias        |
-| **Reportes**          | Reportes | FleetProof          | Consulta, compara y descarga los reportes vehiculares de tu organización, con acceso a sus fuentes y fechas de revisión.   | reportes de flota, comparación, descarga PDF             |
-| **Mis reportes**      | Mis reportes | FleetProof      | Accede al historial de tus reportes vehiculares, revisa sus hallazgos y descarga los documentos disponibles.               | mis reportes, historial vehicular, hallazgos             |
-| **Alertas**           | Alertas | FleetProof           | Revisa avisos sobre cambios documentarios y observaciones que requieren atención en los vehículos monitoreados.            | alertas vehiculares, cambios documentarios, monitoreo    |
-| **Casos**             | Casos | FleetProof             | Asigna responsables y registra acciones y evidencias para dar seguimiento a las observaciones de tu flota.                 | casos, observaciones, responsables, evidencias           |
-| **Equipo**            | Equipo | FleetProof            | Administra los miembros de tu organización y sus permisos para colaborar en la revisión y el seguimiento vehicular.        | equipo, miembros, roles, permisos                        |
-| **Suscripción**       | Suscripción | FleetProof       | Consulta tu plan de FleetProof, revisa el consumo disponible y administra las opciones de tu suscripción.                  | suscripción, planes, límites, consumo                    |
-| **Mi perfil**         | Mi perfil | FleetProof         | Consulta y actualiza tus datos personales y preferencias de cuenta en FleetProof.                                          | perfil, cuenta, preferencias                             |
-| **Configuración**     | Configuración | FleetProof     | Ajusta las preferencias de tu cuenta y las opciones de tu organización según tus permisos de acceso.                       | configuración, organización, preferencias                |
+| **Inicio de sesión**  | Iniciar sesión \| FleetProof | Accede a tu cuenta de FleetProof para consultar vehículos, revisar reportes y dar seguimiento a tus alertas documentarias. | FleetProof, iniciar sesión, acceso                       |
+| **Panel de control**  | Panel de control \| FleetProof | Consulta el resumen de tu flota, identifica observaciones pendientes y accede a las alertas y reportes recientes.          | panel de control, flotas, observaciones, alertas         |
+| **Flota**             | Flota \| FleetProof | Organiza los vehículos de tu empresa, importa registros y consulta el estado documentario de cada unidad.                  | flota vehicular, importar vehículos, estado documentario |
+| **Mi panel**          | Mi panel \| FleetProof | Revisa el resumen de tus vehículos, los reportes disponibles y las alertas que requieren tu atención.                      | panel personal, vehículos, reportes, alertas             |
+| **Mis vehículos**     | Mis vehículos \| FleetProof | Registra tus vehículos y accede a sus antecedentes, reportes y novedades documentarias desde un mismo lugar.               | mis vehículos, placas, antecedentes vehiculares          |
+| **Solicitar reporte** | Solicitar reporte \| FleetProof | Selecciona un vehículo y solicita la revisión de sus antecedentes para obtener un reporte con fuentes y evidencias.        | solicitar reporte, consulta vehicular, evidencias        |
+| **Reportes**          | Reportes \| FleetProof | Consulta, compara y descarga los reportes vehiculares de tu organización, con acceso a sus fuentes y fechas de revisión.   | reportes de flota, comparación, descarga PDF             |
+| **Mis reportes**      | Mis reportes \| FleetProof | Accede al historial de tus reportes vehiculares, revisa sus hallazgos y descarga los documentos disponibles.               | mis reportes, historial vehicular, hallazgos             |
+| **Alertas**           | Alertas \| FleetProof | Revisa avisos sobre cambios documentarios y observaciones que requieren atención en los vehículos monitoreados.            | alertas vehiculares, cambios documentarios, monitoreo    |
+| **Casos**             | Casos \| FleetProof | Asigna responsables y registra acciones y evidencias para dar seguimiento a las observaciones de tu flota.                 | casos, observaciones, responsables, evidencias           |
+| **Equipo**            | Equipo \| FleetProof | Administra los miembros de tu organización y sus permisos para colaborar en la revisión y el seguimiento vehicular.        | equipo, miembros, roles, permisos                        |
+| **Suscripción**       | Suscripción \| FleetProof | Consulta tu plan de FleetProof, revisa el consumo disponible y administra las opciones de tu suscripción.                  | suscripción, planes, límites, consumo                    |
+| **Mi perfil**         | Mi perfil \| FleetProof | Consulta y actualiza tus datos personales y preferencias de cuenta en FleetProof.                                          | perfil, cuenta, preferencias                             |
+| **Configuración**     | Configuración \| FleetProof | Ajusta las preferencias de tu cuenta y las opciones de tu organización según tus permisos de acceso.                       | configuración, organización, preferencias                |
 
 Las vistas privadas incorporarán la directiva `noindex` para indicar que no deben aparecer en los resultados de búsqueda. El acceso a su contenido dependerá de la autenticación y los permisos de la aplicación; esta etiqueta no sustituye esos controles.
 
@@ -484,6 +484,9 @@ https://www.figma.com/make/LkD3mKP9wjNjnOPTRRzoCt/Create-web-wireframes?t=wjEZRv
 
 ## 4.6 Domain-Driven Software Architecture
 
+**Alcance del diseño:** los diagramas de esta sección representan la arquitectura objetivo. Los conectores oficiales, pagos, servicios externos, tareas programadas y persistencia relacional requieren evidencia de implementación; no se consideran funcionalidades acreditadas por el uso de una Fake API. Los cinco módulos del frontend y `shared` no equivalen a seis contextos de negocio implementados.
+
+
 ### 4.6.1 Design-Level Event Storming
 
 Step 1: Unstructured Exploration
@@ -569,7 +572,7 @@ flowchart TD
 
 ### 4.6.3 Software Architecture Container Diagrams
 
-El diagrama de componentes desglosa la aplicación backend RESTful API (monolito modular en ASP.NET Core) en sus módulos y componentes internos organizados por Bounded Contexts, detallando el flujo desde los controladores HTTP hasta los adaptadores externos y la persistencia relacional con Entity Framework Core.
+El diagrama de componentes desglosa la aplicación backend RESTful API (monolito modular en Spring Boot / Java) en sus módulos y componentes internos organizados por Bounded Contexts, detallando el flujo desde los controladores HTTP hasta los adaptadores externos y la persistencia relacional con Spring Data JPA.
 
 ```mermaid
 flowchart TB
@@ -583,7 +586,7 @@ flowchart TB
     classDef external fill:#757575,stroke:#424242,stroke-width:2px,color:#fff;
 
     %% Clientes Frontend
-    spa["Frontend Web Application<br/>Vue 3 / PrimeVue"]:::client
+    spa["Frontend Web Application<br/>Angular / Angular Material"]:::client
 
     %% Sistemas Externos y BD
     db[("Core Database<br/>PostgreSQL / MySQL")]:::db
@@ -593,7 +596,7 @@ flowchart TB
     ext_notif["Notification Provider<br/>Email / SMS / Push"]:::external
 
     %% Componentes del Backend API
-    subgraph BackendAPI ["Backend RESTful API - ASP.NET Core"]
+    subgraph BackendAPI ["Backend RESTful API - Spring Boot / Java"]
         
         subgraph Sub_Module ["Subscriptions Context"]
             sub_ctrl["SubscriptionController<br/>Manejo de endpoints de planes"]:::controller
@@ -632,7 +635,7 @@ flowchart TB
             flt_agg["Aggregate: Fleet<br/>Vehicles, AssignedPersons, Risks"]:::domain
         end
 
-        infra_ef["EF Core DbContext<br/>Unit of Work y Repositorios"]:::infra
+        infra_ef["Spring Data JPA<br/>Unit of Work y Repositorios"]:::infra
         infra_notif["NotificationAdapter<br/>Cliente HTTP para envios"]:::infra
     end
 
@@ -685,10 +688,10 @@ flowchart TB
 ```
 
 **Explicación, decisiones y relación con otros artefactos:**
-El diagrama de nivel C3 desglosa los componentes internos de la API desarrollada en ASP.NET Core bajo el principio de diseño dirigido por el dominio (DDD):
+El diagrama de nivel C3 desglosa los componentes internos de la API propuesta en Spring Boot / Java bajo el principio de diseño dirigido por el dominio (DDD):
 * **VehicleQueryService y SourceConnectorAdapter:** Implementan la política de resiliencia frente a la caída de portales externos, ejecutando reintentos exponenciales y coordinando la resolución de retos CAPTCHA antes de persistir los datos de la placa.
-* **MonitoringBackgroundWorker y ChangeDetectionService:** Ejecutan tareas en segundo plano (*IHostedService* en ASP.NET Core) para consultar fuentes periódicamente, comparar los estados de los vehículos y despachar alertas a través de *NotificationAdapter*.
-* **Capa de Persistencia (EF Core):** Centraliza el acceso a la base de datos relacional mediante el patrón repositorio y Unit of Work, asegurando consistencia transaccional en el guardado de reportes, historiales de monitoreo y membresías de usuarios.
+* **MonitoringBackgroundWorker y ChangeDetectionService:** Ejecutan tareas en segundo plano (planificación de tareas propuesta para Spring Boot) para consultar fuentes periódicamente, comparar los estados de los vehículos y despachar alertas a través de *NotificationAdapter*.
+* **Capa de Persistencia (JPA):** Centraliza el acceso a la base de datos relacional mediante el patrón repositorio y Unit of Work, asegurando consistencia transaccional en el guardado de reportes, historiales de monitoreo y membresías de usuarios.
 
 ### 4.6.4 Software Architecture Components Diagrams
 ```mermaid
@@ -706,11 +709,11 @@ flowchart TB
 
     subgraph Hosting_Static [Hosting Estatico Vercel / Netlify]
         landing_art[Landing Page HTML5 / CSS3 / JS]:::artifact
-        spa_art[Frontend SPA Vue 3 / PrimeVue]:::artifact
+        spa_art[Frontend SPA Angular / Angular Material]:::artifact
     end
 
     subgraph Cloud_PaaS [Plataforma Cloud Render / Azure]
-        api_art[FleetProof Web API ASP.NET Core]:::artifact
+        api_art[FleetProof Web API Spring Boot / Java]:::artifact
         worker_art[Background Task Runner Monitoring Worker]:::artifact
     end
 
@@ -730,8 +733,8 @@ flowchart TB
     browser -->|HTTPS 443| spa_art
     browser -->|JSON HTTPS 443| api_art
 
-    api_art -->|TCP 5432 EF Core| db_engine
-    worker_art -->|TCP 5432 EF Core| db_engine
+    api_art -->|TCP 5432 JPA| db_engine
+    worker_art -->|TCP 5432 JPA| db_engine
 
     api_art -->|HTTPS 443| srv_pay
     api_art -->|HTTPS 443| srv_captcha
@@ -916,7 +919,7 @@ El diagrama modela exactamente los 6 Bounded Contexts y sus respectivos comandos
 
 ### 4.8.1 Database Diagrams
 
-El diagrama de base de datos representa el modelo físico relacional implementado en PostgreSQL mediante Entity Framework Core, organizando las tablas normalizadas en función de los seis Bounded Contexts del sistema.
+El diagrama de base de datos representa el modelo relacional propuesto para PostgreSQL mediante Spring Data JPA, organizando las tablas normalizadas en función de los seis Bounded Contexts del sistema.
 
 ```mermaid
 erDiagram
