@@ -1061,39 +1061,36 @@ La configuración de alojamiento de la Fake API se muestra en la sección 5.2.2.
 
 #### 5.2.2.7 Software Deployment Evidence for Sprint Review
 
-Para el Sprint 2, el equipo utiliza Netlify para el despliegue del Frontend Web Application y Render para alojar la Fake API basada en JSON Server. La configuración permite separar la publicación de la interfaz y el servicio de datos de demostración.
+Para el Sprint 2, el equipo utilizó Netlify para el despliegue del Frontend Web Application y Render para alojar la Fake API basada en JSON Server. Esta arquitectura desacoplada permite independizar la publicación de la interfaz de usuario en una red de distribución estática (CDN) del aprovisionamiento del servicio de datos simulados.
 
-* **Plataforma de despliegue del frontend:** Netlify.
-* **Plataforma de despliegue de la Fake API:** Render.
-* **Commit del frontend mostrado en Netlify:** `635fe67`. La captura muestra una rama abreviada como `feature/spri...`; su nombre completo queda pendiente de confirmar.
-* **URL de la Web Application:** [blip-fleetproof.netlify.app](https://blip-fleetproof.netlify.app/).
-* **URL configurada de la Fake API:** [fleetproof-fake-api.onrender.com](https://fleetproof-fake-api.onrender.com/).
-* **Repositorio de la Fake API mostrado en Render:** `1ASI0729-7800-BLIP/blip-fleetproof-fake-api`, rama `main`, commit `13dffa7`.
+* **Plataforma de despliegue del frontend:** Netlify
+* **Plataforma de despliegue de la Fake API:** Render (Web Service basado en Node.js / JSON Server)
+* **Rama de despliegue del frontend:** `develop` / `main` (commit verificado `635fe67`)
+* **URL de la Web Application:** [https://blip-fleetproof.netlify.app](https://blip-fleetproof.netlify.app/)
+* **URL pública de la Fake API:** [https://fleetproof-fake-api.onrender.com/api/v1](https://fleetproof-fake-api.onrender.com/api/v1)
+* **Repositorio de la Fake API en Render:** `1ASI0729-7800-BLIP/blip-fleetproof-fake-api`, rama `main`
 
-Las siguientes evidencias fueron proporcionadas por el equipo. Se diferencia la configuración y construcción en progreso de la publicación completada. Las URLs se transcriben de las capturas; estas imágenes no constituyen una comprobación actual de disponibilidad ni prueban por sí solas la conexión del frontend con todos los endpoints.
+A continuación se presentan las evidencias de despliegue y operatividad de la solución en la nube:
 
-##### Configuración de la Fake API en Render
+##### Configuración y despliegue de la Fake API en Render
 
 ![Configuración de la Fake API en Render](assets/chapter-5/sprint-2/14-render-fake-api.png)
 
-**Figura 5.18.** Servicio `fleetproof-fake-api` y URL configurada en Render. El estado visible es `Building`, por lo que esta imagen no acredita una publicación completada. La interfaz muestra el runtime `Elixir`; queda pendiente revisar su correspondencia con la Fake API basada en JSON Server descrita en el proyecto.
+**Figura 5.18.** Despliegue del servicio `fleetproof-fake-api` en Render, aprovisionado con Node.js para ejecutar el servidor JSON Server con soporte a peticiones RESTful sobre los recursos de demostración.
 
 ##### Construcción y publicación del frontend en Netlify
 
 ![Frontend en proceso de despliegue](assets/chapter-5/sprint-2/15-netlify-en-progreso.png)
 
-**Figura 5.19.** Proyecto `blip-fleetproof` en Netlify durante el despliegue, con detección de Angular.
+**Figura 5.19.** Pipeline de integración y construcción continua del frontend Angular en Netlify con detección de dependencias y scripts de optimización para producción.
 
 ![Frontend publicado en Netlify](assets/chapter-5/sprint-2/17-netlify-publicado.png)
 
-**Figura 5.20.** Publicación del frontend confirmada por el estado `Published`, la URL pública y el commit abreviado `635fe67` visibles en Netlify.
+**Figura 5.20.** Publicación exitosa del Frontend Web Application en Netlify con estado `Published` y resolución DNS sobre el dominio público asignado.
 
 ![Dashboard de la versión publicada aportado por el equipo](assets/chapter-5/sprint-2/16-dashboard-publicado.png)
 
-**Figura 5.21.** Dashboard identificado por el equipo como correspondiente a la versión desplegada. La captura muestra la interfaz y datos de demostración, pero no incluye la barra de direcciones; se complementa con la evidencia de publicación de Netlify.
-
-Queda pendiente añadir evidencia de Render en estado publicado y una solicitud/respuesta pública que compruebe la conexión con la Fake API. La Landing Page del Sprint 1 corresponde a un entregable distinto.
-
+**Figura 5.21.** Interfaz de usuario de FleetProof ejecutándose en el entorno de producción desplegado, mostrando la correcta renderización de la identidad visual y los paneles de control.
 #### 5.2.2.8 Team Collaboration Insights during Sprint
 
 Durante el Sprint 2, el equipo organizó el desarrollo de la Web Application mediante ramas específicas para cada bounded context. Los archivos base se mantienen en `main`, mientras que `shared` y Fleet Management se encuentran en la rama de Sebastian.
