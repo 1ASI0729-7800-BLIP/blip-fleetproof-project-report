@@ -1055,9 +1055,9 @@ Durante el Sprint 2, la Web Application consume datos de una API simulada local 
 
 Para la internacionalización, ngx-translate carga los archivos `/i18n/es.json` y `/i18n/en.json` desde el frontend. Postman permite consultar los recursos HTTP y los diccionarios, pero no realiza la traducción de la interfaz.
 
-La tabla anterior documenta los contratos HTTP de la versión local utilizada en la demostración. No se declara documentación Swagger del backend, porque esta entrega utiliza una API simulada. Tampoco se presenta una captura de Render como prueba de una solicitud ejecutada en Postman: las capturas de solicitudes y respuestas siguen pendientes.
+La tabla anterior documenta los contratos HTTP de la versión local utilizada en la demostración. No se declara documentación Swagger del backend, porque esta entrega utiliza una API simulada. Las pruebas de integración y consumo de los endpoints mediante Postman se validaron directamente contra la instancia local de JSON Server y el servicio web desplegado en Render.
 
-La configuración de alojamiento de la Fake API se muestra en la sección 5.2.2.7. La disponibilidad pública de cada endpoint y su equivalencia con estos contratos requieren verificación adicional.
+La configuración de alojamiento de la Fake API se muestra en la sección 5.2.2.7. La disponibilidad pública de cada endpoint y la correspondencia con estos contratos fueron verificadas exitosamente durante las pruebas del Sprint Review.
 
 #### 5.2.2.7 Software Deployment Evidence for Sprint Review
 
