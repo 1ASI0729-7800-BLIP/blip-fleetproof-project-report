@@ -863,8 +863,8 @@ classDiagram
         +string FleetName
         +DateTime RegisteredAt
         +RegisterFleet() void
-        +AssignVehicleToFleet(vehicleId: Guid) void
-        +AssignResponsiblePerson(personId: Guid) void
+        +AssignVehicleToFleet(Guid vehicleId) void
+        +AssignResponsiblePerson(Guid personId) void
         +CheckFleetStatus() void
         +IdentifyFleetRisk() bool
         +NotifyResponsiblePerson() void
@@ -905,6 +905,15 @@ El diagrama modela exactamente los 6 Bounded Contexts y sus respectivos comandos
 * **Report Management:** `VehicleReport` procesa reportes completos, de tránsito o SUNARP, aplicando la política de emitir el documento solo cuando los datos se encuentran consolidados.
 * **Vehicle Monitoring:** `VehicleMonitoring` maneja el cronograma de revisiones periódicas, la detección de discrepancias entre snapshots y la creación de `MonitoringAlert`.
 * **Fleet Management:** `Fleet` y `FleetVehicleAssignment` agrupan las unidades vehiculares, delegan la supervisión a una persona responsable y ejecutan la política de notificación inmediata ante la identificación de riesgos en la flota.
+
+
+**Eventos de Dominio y Flujo de Integración entre Contextos:**  
+Para garantizar el desacoplamiento y la consistencia eventual entre los módulos, la interacción entre Bounded Contexts se articula mediante eventos de dominio asíncronos:
+1. `VehiculoRegistradoEvent`: Emitido por *Vehicle Information* cuando una placa válida es ingresada; consumido por *Fleet Management* para asociar la unidad a la flota.
+2. `ObservacionDetectadaEvent`: Emitido por *Vehicle Monitoring* tras identificar un cambio crítico o documento próximo a vencer (SOAT/Revisión Técnica); consumido por *Fleet Management* para generar el registro de atención.
+3. `ResponsableAsignadoEvent`: Emitido por *Fleet Management* cuando el gestor delega la resolución de una alerta a un operador.
+4. `EvidenciaIncorporadaEvent`: Emitido cuando el responsable adjunta constancia de trámite o subsanación documental.
+5. `ObservacionRegularizadaEvent`: Emitido para el cierre formal del caso una vez validada la vigencia del documento. Solo los usuarios con rol de Gestor o Administrador tienen autorización para cerrar una observación, requiriendo evidencia verificable y registro en la trazabilidad histórica de la unidad.
 
 
 ## 4.8 Database Design
