@@ -738,7 +738,7 @@ flowchart TB
     api_art -->|HTTPS 443| srv_media
 ```
 
-**Explicación, decisiones y relación con otros artefactos:** El diagrama de despliegue representa la distribución en infraestructura cloud de los artefactos del sistema: Landing Page y Frontend SPA distribuidos en CDN, API RESTful y Background Workers en contenedor Linux PaaS, base de datos relacional PostgreSQL gestionada, y conexiones seguras vía HTTPS/TLS hacia servicios externos de pagos, resolución de CAPTCHA, portales vehiculares, almacenamiento y notificaciones.
+**Explicación, decisiones y relación con otros artefactos:** El diagrama de despliegue representa la distribución en infraestructura cloud de los artefactos del sistema: Landing Page y Frontend SPA distribuidos en CDN, API RESTful y Background Workers en contenedor Linux PaaS, base de datos relacional PostgreSQL gestionada, y conexiones seguras vía HTTPS/TLS hacia servicios externos autorizados para procesamiento de pagos, almacenamiento multimedia, notificaciones y consultas registrales oficiales con manejo de indisponibilidad.s.
 
 ## 4.7 Software Object-Oriented Design
 
