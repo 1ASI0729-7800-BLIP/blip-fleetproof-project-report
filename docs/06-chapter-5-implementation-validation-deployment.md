@@ -93,7 +93,7 @@ Se implementará el esquema Semantic Versioning 2.0.0, con el formato:
 
 Los mensajes de commit seguirán el estándar Conventional Commits para asegurar trazabilidad y generar changelogs automáticos.
 
-Formato general: `tipo(scope opcional): descripción breve`
+Formato general: `<tipo>(<alcance-opcional>): <descripción breve>`
 
 Tipos de commit definidos:
 * `feat`: nueva funcionalidad
