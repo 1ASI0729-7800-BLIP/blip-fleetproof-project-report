@@ -108,59 +108,81 @@ Tipos de commit definidos:
 
 Con el objetivo de mantener un código ordenado, consistente y fácil de mantener entre todos los miembros del equipo, se han definido las siguientes convenciones. Todas las variables, funciones, clases, archivos y elementos estarán en inglés.
 
-* Se utilizará inglés para identificadores del código. El informe se redacta en español y conserva los nombres de artefactos definidos por la guía; la interfaz ofrece textos ES/EN mediante i18n.
+* Se utilizará inglés como idioma único para nombres de variables, funciones, clases, comentarios y documentación técnica.
 * Se evitarán abreviaciones innecesarias y nombres genéricos como `data1`, `temp`, `info`, etc.
 
-**HTML**
-Atributos en minúsculas y nombres de clase con `kebab-case` (`section-title`, `hero-grid`).
+#### HTML
+
+* Atributos en minúsculas y nombres de clase con `kebab-case` (`section-title`, `hero-grid`).
 * Estructura semántica clara: uso de etiquetas como `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`.
 * Sangría con 4 espacios.
 * Atributos ordenados de manera lógica: `id`, `class`, `type`, `name`, `placeholder`, `value`, `required`, etc.
 
-**CSS**
+#### CSS
+
 * Para clases personalizadas: usar `kebab-case`.
 * Se agruparán variables globales en la sección `:root` (paleta de colores y espaciado).
 
-**Google TypeScript Style Guide**
-Basado en el Google TypeScript Style Guide, se adoptan las siguientes reglas para mantener un código limpio y coherente en el desarrollo de la Web Application (Angular):
+#### Google TypeScript Style Guide
+
+Basado en el Google TypeScript Style Guide, se adoptan las siguientes reglas para mantener un código limpio y coherente en el desarrollo de la Web Application en Angular:
 
 Nombres y sintaxis:
-* `camelCase` para variables, funciones y parámetros.
-* `PascalCase` para clases, interfaces, enums y tipos.
-* Constantes con `UPPER_CASE_WITH_UNDERSCORES` si son globales.
+* `camelCase` para variables, funciones, métodos y propiedades.
+* `PascalCase` para clases, interfaces, enums, tipos y componentes.
+* Constantes con `UPPER_CASE_WITH_UNDERSCORES` si son valores inmutables globales.
 
-Módulos y imports:
-* Preferir imports explícitos y ordenados: primero bibliotecas externas, luego internas.
-* Evitar `default exports`, usar siempre `export const` o `export class`.
+Módulos e imports:
+* Preferir imports explícitos y ordenados: primero bibliotecas del framework (`@angular/*`), luego dependencias externas, y finalmente módulos internos del proyecto.
+* Evitar `default exports`, usar siempre exportaciones nombradas (`export class`, `export interface`).
 
 Tipado y declaraciones:
-* Siempre tipar explícitamente los parámetros y valores de retorno de funciones.
-* Evitar `any` excepto cuando sea estrictamente necesario.
-* Usar `readonly` para propiedades que no deben cambiarse.
-* Interfaces en lugar de `type` cuando sea posible.
+* Siempre tipar explícitamente los parámetros y valores de retorno de funciones y métodos.
+* Evitar el uso de `any`; recurrir a `unknown` o tipos genéricos fuertemente tipados.
+* Usar `readonly` para propiedades inmutables.
+* Interfaces en lugar de `type` para modelar estructuras de datos y contratos.
 
 Buenas prácticas:
-* Preferir `const` sobre `let`, y evitar `var`.
-* Evitar usar `this` fuera de clases.
-* No mezclar funciones y lógica en componentes — delegar a servicios.
+* Preferir `const` sobre `let`, y prohibir el uso de `var`.
+* No mezclar lógica de negocio dentro de componentes de vista: delegar a servicios (`@Injectable`).
 
-**Convenciones del frontend Angular**
+#### Angular Style Guide
 
-- Mantener la estructura de los bounded contexts: dominio, aplicación, infraestructura y presentación.
-- Reutilizar `shared` para componentes y servicios comunes.
-- Mantener nombres coherentes con los archivos existentes; separar lógica de negocio y presentación.
-- Centralizar textos traducibles mediante i18n y conservar las versiones ES/EN.
+Siguiendo las directrices oficiales de Angular y la arquitectura por Bounded Contexts:
 
-**Convenciones del backend objetivo: Java y Spring Boot**
+* **Estructura modular:** Organización estricta por Bounded Contexts, dividiendo cada contexto en capas: `domain` (modelos, entidades), `application` (servicios de orquestación, fachadas), `infrastructure` (adaptadores HTTP, repositorios) y `presentation` (componentes, vistas).
+* **Nombres de archivo:** En `kebab-case` con sufijos descriptivos:
+  * Componentes: `feature-name.component.ts` / `.html` / `.css`
+  * Servicios: `feature-name.service.ts`
+  * Modelos / Entidades: `entity-name.model.ts`
+  * Interfaces / DTOs: `contract-name.interface.ts`
+* **Componentes:**
+  * Uso de *Standalone Components* para reducir acoplamiento y prescindir de `NgModule` redundantes.
+  * Nombres de clases en `PascalCase` con sufijo `Component` (ej. `VehicleReportComponent`).
+  * Selectores con prefijo estándar del proyecto en `kebab-case` (ej. `app-vehicle-report`).
 
-- Usar `PascalCase` para clases e interfaces y `camelCase` para métodos, variables y parámetros.
-- Organizar el código por bounded context y capas DDD.
-- Documentar contratos HTTP mediante OpenAPI cuando estén implementados.
+#### Java & Spring Boot Coding Conventions
 
-**Pruebas / Gherkin**
+Para el desarrollo del Backend RESTful API alineado a Domain-Driven Design (DDD):
+
+* **Estructura de paquetes:** Paquetes nombrados en minúsculas organizados por contexto delimitado y arquitectura hexagonal/DDD:
+  * `com.blip.fleetproof.{bounded_context}.domain.model`: Agregados, entidades, objetos de valor y eventos de dominio.
+  * `com.blip.fleetproof.{bounded_context}.application.internal`: Servicios de aplicación y manejo de comandos/consultas (CQRS).
+  * `com.blip.fleetproof.{bounded_context}.infrastructure.persistence.jpa`: Repositorios Spring Data JPA y entidades de persistencia.
+  * `com.blip.fleetproof.{bounded_context}.interfaces.rest`: Controladores REST (`@RestController`), DTOs y ensambladores (*Assemblers*).
+* **Nomenclatura:**
+  * Clases e interfaces en `PascalCase` (ej. `VehicleQueryService`, `SubscriptionRepository`).
+  * Métodos y variables en `camelCase` descriptivo (ej. `findVehicleByPlate`, `lastCheckDate`).
+  * Constantes estáticas finales en `UPPER_SNAKE_CASE`.
+* **Anotaciones y principios:**
+  * Inyección de dependencias mediante constructores asistidos por Lombok (`@RequiredArgsConstructor`), evitando `@Autowired` directo sobre campos.
+  * Transaccionalidad declarativa explícita (`@Transactional`) en servicios de aplicación.
+  * Validación de entrada con Bean Validation (`@Valid`, `@NotNull`, `@NotBlank`).
+
+#### Pruebas / Gherkin
+
 En caso de usar Gherkin (para especificaciones o pruebas de los escenarios descritos en las User Stories):
 * Usaremos el formato estandarizado `Given`, `When` y `Then`.
-
 ### 5.1.4 Software Deployment Configuration
 
 1. **Ingresar a Netlify**<br>
