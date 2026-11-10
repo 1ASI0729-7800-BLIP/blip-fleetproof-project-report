@@ -26,10 +26,12 @@ En esta sección se describen las herramientas de software seleccionadas para da
 |---|---|---|
 | **Visual Studio Code** | Entorno de desarrollo ligero para la edición del Landing Page con HTML5, CSS3 y JavaScript. | [https://code.visualstudio.com](https://code.visualstudio.com) |
 | **WebStorm** | IDE principal para el desarrollo del Frontend SPA utilizando Angular y TypeScript. | [https://www.jetbrains.com/webstorm/](https://www.jetbrains.com/webstorm/) |
-| **IDE para Java** | Herramienta del backend objetivo; registrar el IDE utilizado cuando exista evidencia de desarrollo. | No se atribuye un IDE sin evidencia. |
+| **IntelliJ IDEA** | Entorno de desarrollo integrado para la construcción del Backend API RESTful con Java y Spring Boot. | https://www.jetbrains.com/idea/ |
 | **HTML5** | Lenguaje de marcado para estructurar el contenido de la Landing Page. | [https://developer.mozilla.org/es/docs/Web/HTML](https://developer.mozilla.org/es/docs/Web/HTML) |
 | **CSS3** | Lenguaje de estilos para definir la apariencia visual y responsiva de la Landing Page. | [https://developer.mozilla.org/es/docs/Web/CSS](https://developer.mozilla.org/es/docs/Web/CSS) |
 | **Angular** | Framework del frontend desarrollado con TypeScript y Angular Material. | [Angular](https://angular.dev/) |
+| **Java (JDK 21+)** |Lenguaje de programación fuertemente tipado para la implementación de la lógica de dominio y servicios backend. | https://www.oracle.com/java/technologies/downloads/ |
+| **Spring Boot** | Framework de backend en Java para la creación de microservicios y APIs RESTful desacopladas mediante Domain-Driven Design (DDD). | https://spring.io/projects/spring-boot |
 
 * **Diseño de Arquitectura de Software**
 
@@ -42,7 +44,7 @@ En esta sección se describen las herramientas de software seleccionadas para da
 | Herramienta / Plataforma | Uso principal | Enlace / Ruta de Acceso |
 |---|---|---|
 | **Netlify** | Despliegue automático y gratuito de la Landing Page estática y el Frontend SPA. | [https://www.netlify.com](https://www.netlify.com) |
-| **Render** | Servicio utilizado para la Fake API. El despliegue del backend definitivo y de la base relacional debe documentarse por separado. | [Render](https://render.com) |
+| **Render** | Alojamiento en la nube del Backend API (Java / Spring Boot en contenedores Docker) y base de datos relacional PostgreSQL gestionada. | [Render](https://render.com) |
 
 * **Documentación de Software**
 
