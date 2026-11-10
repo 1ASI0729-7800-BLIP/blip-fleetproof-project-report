@@ -564,8 +564,7 @@ flowchart TD
     class EXT_PAY,EXT_SRC,EXT_NOT external;
 ```
 
-**Explicación, decisiones y relación con otros artefactos:** El diagrama de contexto representa los límites del sistema central y sus interacciones con los tres perfiles de usuario identificados, así como los servicios externos para procesamiento de pagos, resolución de CAPTCHA, consulta de fuentes oficiales y envío de notificaciones.
-
+**Explicación, decisiones y relación con otros artefactos:** El diagrama de contexto representa los límites del sistema central y sus interacciones con los tres perfiles de usuario identificados, así como los servicios externos para procesamiento de pagos, consulta de fuentes oficiales mediante APIs autorizadas y proveedores habilitados (con políticas formales de manejo de indisponibilidad) y despacho de notificaciones.
 
 ### 4.6.3 Software Architecture Container Diagrams
 
