@@ -704,22 +704,21 @@ flowchart TB
 
     subgraph Hosting_Static [Hosting Estatico Vercel / Netlify]
         landing_art[Landing Page HTML5 / CSS3 / JS]:::artifact
-        spa_art[Frontend SPA Vue 3 / PrimeVue]:::artifact
+        spa_art[Frontend SPA Angular / Angular Material]:::artifact
     end
 
-    subgraph Cloud_PaaS [Plataforma Cloud Render / Azure]
-        api_art[FleetProof Web API ASP.NET Core]:::artifact
-        worker_art[Background Task Runner Monitoring Worker]:::artifact
+    subgraph Cloud_PaaS [Plataforma Cloud Render / Azure Container Apps]
+        api_art[FleetProof Web API Java / Spring Boot]:::artifact
+        worker_art[Background Task Runner Spring Scheduled Worker]:::artifact
     end
 
     subgraph Cloud_DB [Base de Datos Gestionada]
         db_engine[(PostgreSQL Engine Schemas IAM / Fleet / Reports)]:::artifact
     end
 
-    subgraph External_Cloud [Servicios Externos Integrados]
+    subgraph External_Cloud [Servicios Externos Autorizados]
         srv_pay[Taypi Payment Gateway]:::extNode
-        srv_captcha[2Captcha Service]:::extNode
-        srv_gov[Portales Oficiales SUNARP / SAT]:::extNode
+        srv_gov[Portales y APIs Oficiales SUNARP / SAT]:::extNode
         srv_notif[Notification Provider Resend / SendGrid]:::extNode
         srv_media[Cloudinary Storage]:::extNode
     end
@@ -728,11 +727,10 @@ flowchart TB
     browser -->|HTTPS 443| spa_art
     browser -->|JSON HTTPS 443| api_art
 
-    api_art -->|TCP 5432 EF Core| db_engine
-    worker_art -->|TCP 5432 EF Core| db_engine
+    api_art -->|TCP 5432 Spring Data JPA| db_engine
+    worker_art -->|TCP 5432 Spring Data JPA| db_engine
 
     api_art -->|HTTPS 443| srv_pay
-    api_art -->|HTTPS 443| srv_captcha
     api_art -->|HTTPS 443| srv_gov
     worker_art -->|HTTPS 443| srv_gov
     worker_art -->|HTTPS 443| srv_notif
