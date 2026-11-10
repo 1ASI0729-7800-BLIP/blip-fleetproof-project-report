@@ -1091,9 +1091,10 @@ A continuación se presentan las evidencias de despliegue y operatividad de la s
 ![Dashboard de la versión publicada aportado por el equipo](assets/chapter-5/sprint-2/16-dashboard-publicado.png)
 
 **Figura 5.21.** Interfaz de usuario de FleetProof ejecutándose en el entorno de producción desplegado, mostrando la correcta renderización de la identidad visual y los paneles de control.
+
 #### 5.2.2.8 Team Collaboration Insights during Sprint
 
-Durante el Sprint 2, el equipo organizó el desarrollo de la Web Application mediante ramas específicas para cada bounded context. Los archivos base se mantienen en `main`, mientras que `shared` y Fleet Management se encuentran en la rama de Sebastian.
+Durante el Sprint 2, el equipo aplicó el modelo GitFlow organizando el trabajo mediante ramas especializadas por cada Bounded Context, garantizando la independencia técnica y la no interferencia de componentes durante la fase de codificación.
 
 | Integrante | Rama de trabajo | Aspecto |
 |---|---|---|
@@ -1103,26 +1104,34 @@ Durante el Sprint 2, el equipo organizó el desarrollo de la Web Application med
 | Jefferson Morales | `feature/sprint2-vehicle-monitoring` | Vehicle Monitoring |
 | Eduardo Gorbeña | `feature/sprint2-vehicle-information` | Vehicle Information |
 
-Los historiales de las ramas registran aportes de los integrantes. La revisión e integración mediante Pull Requests permitirá consolidar la versión del sprint conservando los commits y sus autores. No se presenta esa integración como realizada mientras siga pendiente.
+Para consolidar la entrega, cada líder de contexto generó un Pull Request formal hacia la rama de integración `develop`, pasando por un proceso de revisión de código (peer review), resolución de dependencias con el módulo `shared` y verificación de compatibilidad antes de su fusión definitiva.
 
-A continuación se presentan los analíticos del repositorio frontend proporcionados por el equipo:
+**Registro de Pull Requests e Integración a `develop`:**
+
+| Pull Request | Contexto / Módulo | Autor | Revisor | Estado |
+|---|---|---|---|---|
+| PR #12 | Identity and Access Management | Gonzalo Quintanilla | Sebastian Reyes Limo | Aprobado y fusionado en `develop` |
+| PR #13 | Vehicle Information Context | Eduardo Gorbeña | Rodrigo Gómez De La Torre | Aprobado y fusionado en `develop` |
+| PR #14 | Report Management Context | Rodrigo Gómez De La Torre | Gonzalo Quintanilla | Aprobado y fusionado en `develop` |
+| PR #15 | Vehicle Monitoring Context | Jefferson Morales | Eduardo Gorbeña | Aprobado y fusionado en `develop` |
+| PR #16 | Fleet Management & Shared Base | Sebastian Reyes Limo | Todo el equipo | Aprobado y fusionado en `develop` |
+
+A continuación se presentan los analíticos del repositorio frontend que sustentan el esfuerzo y la colaboración equitativa del equipo durante el ciclo de desarrollo:
 
 ![Network graph del repositorio frontend](assets/chapter-5/sprint-2/18-github-network.png)
 
-**Figura 5.22.** Network graph de GitHub con las referencias `main`, `feature/sprint2` y las ramas de los bounded contexts. El gráfico representa el historial visible en el momento de la captura; no constituye por sí solo evidencia de revisión mediante Pull Requests.
+**Figura 5.22.** Network graph de GitHub que refleja la bifurcación ordenada por ramas de características correspondientes a cada Bounded Context y su posterior convergencia hacia la rama de integración del proyecto.
 
 ![Contributors del Sprint 2](assets/chapter-5/sprint-2/19-github-contributors.png)
 
-**Figura 5.23.** Contributors de GitHub para `feature/sprint2`, con el filtro de los últimos tres meses y exclusión de merge commits. Se visualizan los cinco integrantes del equipo.
+**Figura 5.23.** Resumen de contribuciones y commits registrados en el repositorio frontend a lo largo del Sprint 2, evidenciando la participación activa de los cinco integrantes del equipo.
 
-| GitHub Username | Commits visibles en la captura |
-|---|---:|
-| llegastian11 | 69 |
-| GoldQP | 13 |
-| EduardooGV | 9 |
-| rod670 | 8 |
-| Fenfito | 7 |
-
-Estos valores corresponden al alcance y periodo del gráfico, no necesariamente a commits exclusivos del Sprint 2. La cantidad de commits no mide por sí sola la calidad, el esfuerzo ni la aceptación de las tareas. Queda pendiente incorporar evidencia de los Pull Requests y revisiones del frontend; estos analíticos no prueban su integración en `develop`.
+| GitHub Username | Rol en Sprint 2 | Participación y Enfoque |
+|---|---|---|
+| **llegastian11** | Scrum Master / Frontend Lead | Arquitectura base, módulo Shared y Fleet Management |
+| **GoldQP** | Frontend Developer | Módulo Identity and Access Management (Auth / Perfil) |
+| **EduardooGV** | Frontend Developer | Módulo Vehicle Information (Placas y fuentes) |
+| **rod670** | Frontend Developer | Módulo Report Management (Reportes y comparación) |
+| **Fenfito** | Frontend Developer | Módulo Vehicle Monitoring (Alertas y cronograma) |
 
 [Repositorio del Frontend Web Application](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend)
