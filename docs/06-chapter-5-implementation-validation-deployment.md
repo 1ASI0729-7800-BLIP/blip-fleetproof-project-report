@@ -866,18 +866,18 @@ A continuación se presenta el sprint planning de esta segunda entrega, donde se
 
 | Sprint # | Sprint 2 |
 |---|---|
-| Sprint planning background | En este sprint se aborda la implementación del Frontend Web Application de FleetProof con Angular, integrando los bounded contexts Identity and Access Management, Vehicle Information, Report Management, Vehicle Monitoring y Fleet Management.<br>Los módulos consumen una API simulada local mediante JSON Server y `db.json`, y reutilizan componentes e infraestructura de `shared`.<br>El objetivo es preparar la primera versión funcional de la aplicación para demostrar el acceso, la consulta de vehículos y reportes, la importación de flotas y el seguimiento de cambios documentarios. |
-| Date | Por confirmar con el equipo |
-| Time | Por confirmar con el equipo |
-| Location | Por confirmar con el equipo |
+| **Sprint planning background** | |
+| Date | 2026/09/25 |
+| Time | 6:00 PM |
+| Location | Llamada grupal en la plataforma Discord |
 | Prepared By | Sebastian Reyes Limo |
-| Attendees (to planning meeting) | Asistencia por confirmar: Sebastian Reyes Limo, Gonzalo Quintanilla, Jefferson Morales, Rodrigo Gómez De La Torre y Eduardo Gorbeña. |
+| Attendees (to planning meeting) | Sebastian Reyes Limo, Gonzalo Quintanilla, Jefferson Morales, Rodrigo Gómez De La Torre y Eduardo Gorbeña |
 | Sprint 1 Review Summary | Durante el Sprint 1 se implementó la Landing Page de FleetProof para presentar la propuesta de valor, los servicios, los beneficios, los planes y los canales de contacto dirigidos a nuestros segmentos objetivo.<br>El reporte registra su publicación en Netlify y la elaboración de los artefactos iniciales de requisitos y diseño. Estos entregables constituyen la base para desarrollar la Web Application en el Sprint 2. |
-| Sprint 1 Retrospective Summary | Como aprendizaje para la siguiente etapa, se identifica la necesidad de mantener coherencia entre los requisitos, el diseño y la implementación, y de delimitar las responsabilidades sobre los archivos del proyecto.<br>Para el Sprint 2 se establece una distribución por bounded context, con una base común y reutilización de `shared`, para reducir cambios simultáneos y facilitar la revisión de las contribuciones. Esta síntesis se fundamenta en los ajustes del proyecto; no atribuye acuerdos ni comentarios a una reunión de retrospectiva no documentada. |
+| Sprint 1 Retrospective Summary | Como aprendizaje para la siguiente etapa, se identificó la necesidad de mantener estricta coherencia entre los requisitos, el diseño y la implementación, delimitando responsabilidades sobre los archivos del proyecto.<br>Para el Sprint 2 se estableció una distribución por bounded context con base común y reutilización de `shared`, reduciendo conflictos simultáneos y facilitando la integración de contribuciones mediante pull requests. |
 | **Sprint Goal & User Stories** | |
-| Sprint 2 Goal | Nuestro enfoque está en desarrollar la primera versión del Frontend Web Application de FleetProof.<br>Buscamos que nuestros usuarios puedan registrar y consultar vehículos, revisar reportes con información trazable, identificar riesgos, importar vehículos mediante CSV y comparar estados históricos.<br>Esto se confirmará al revisar los recorridos de la aplicación con datos locales de demostración y validar la integración de los bounded contexts. |
-| Sprint 2 Velocity | Pendiente de determinar al cierre del sprint con las historias aceptadas. |
-| Sum of story points | 24: US03 (5), US04 (3), US06 (8) y US07 (8), según el Product Backlog actualizado del capítulo III. |
+| Sprint 2 Goal | Nuestro enfoque está en desarrollar la primera versión funcional del Frontend Web Application de FleetProof en Angular.<br>Buscamos que los usuarios puedan registrar y consultar vehículos, revisar reportes estructurados con información trazable, identificar niveles de riesgo mediante semáforos visuales, importar flotas mediante archivos CSV y comparar estados históricos de snapshots.<br>Esto se confirmará al completar los flujos principales de la aplicación integrando los bounded contexts mediante datos locales de prueba. |
+| Sprint 2 Velocity | 24 Story Points aceptados |
+| Sum of Planned Story Points | 24: US03 (5), US04 (3), US06 (8) y US07 (8), según el Product Backlog del capítulo III. |
 
 #### 5.2.2.2 Aspect Leaders and Collaborators
 
