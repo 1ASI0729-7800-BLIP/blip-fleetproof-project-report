@@ -568,7 +568,7 @@ flowchart TD
 
 ### 4.6.3 Software Architecture Container Diagrams
 
-El diagrama de componentes desglosa la aplicación backend RESTful API (monolito modular en ASP.NET Core) en sus módulos y componentes internos organizados por Bounded Contexts, detallando el flujo desde los controladores HTTP hasta los adaptadores externos y la persistencia relacional con Entity Framework Core.
+El diagrama de componentes desglosa la aplicación backend RESTful API (arquitectura modular en Spring Boot / Java) en sus módulos y componentes internos organizados por Bounded Contexts, detallando el flujo desde los controladores HTTP hasta los adaptadores externos de integración autorizada y la persistencia relacional con Spring Data JPA sobre PostgreSQL.
 
 ```mermaid
 flowchart TB
