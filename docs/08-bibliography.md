@@ -10,6 +10,9 @@
 
 ## Documentos de evaluación
 
-El informe docente y la rúbrica de TB1 son fuentes internas de evaluación. Registrar sus datos bibliográficos desde los documentos originales antes de incorporarlos como referencias formales. No combinar la nota de la rúbrica con una propuesta de reevaluación.
+- Robles Fernández, I. (2026). *Informe definitivo de evaluación TB1: BLIP – FleetProof. Evaluación académica comparativa AV1–TB1* [Informe académico no publicado]. Universidad Peruana de Ciencias Aplicadas.
+- Universidad Peruana de Ciencias Aplicadas. (2026). *Rúbrica de evaluación del curso Desarrollo de Aplicaciones Open Source* [Documento interno del curso].
+
+Los documentos docentes se utilizan para orientar las correcciones y no como evidencia de que una funcionalidad haya sido implementada. La calificación registrada debe distinguirse de cualquier análisis o propuesta de mejora posterior.
 
 **Nota de fuentes:** las fechas de recuperación de los sitios de competidores se conservan del registro histórico; no se han actualizado en esta revisión. Su vigencia comercial debe comprobarse antes de presentar precios o capacidades como actuales.

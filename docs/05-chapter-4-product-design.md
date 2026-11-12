@@ -484,7 +484,7 @@ https://www.figma.com/make/LkD3mKP9wjNjnOPTRRzoCt/Create-web-wireframes?t=wjEZRv
 
 ## 4.6 Domain-Driven Software Architecture
 
-**Alcance del diseño:** los diagramas de esta sección representan la arquitectura objetivo. Los conectores oficiales, pagos, servicios externos, tareas programadas y persistencia relacional requieren evidencia de implementación; no se consideran funcionalidades acreditadas por el uso de una Fake API. Los cinco módulos del frontend y `shared` no equivalen a seis contextos de negocio implementados.
+**Alcance del diseño:** los diagramas de esta sección representan la arquitectura objetivo. Los conectores oficiales, pagos, servicios externos, tareas programadas y persistencia relacional requieren evidencia de implementación; no se consideran funcionalidades acreditadas por el uso de una Fake API. El frontend contiene actualmente seis módulos de negocio y `shared`; esto no significa que todos los bounded contexts estén completamente validados ni que el backend definitivo se encuentre integrado.
 
 
 ### 4.6.1 Design-Level Event Storming
@@ -739,7 +739,7 @@ flowchart TB
     api_art -->|HTTPS 443| srv_media
 ```
 
-**Explicación, decisiones y relación con otros artefactos:** El diagrama de despliegue representa la distribución en infraestructura cloud de los artefactos del sistema: Landing Page y Frontend SPA distribuidos en CDN, API RESTful y Background Workers en contenedor Linux PaaS, base de datos relacional PostgreSQL gestionada, y conexiones seguras vía HTTPS/TLS hacia servicios externos autorizados para procesamiento de pagos, almacenamiento multimedia, notificaciones y consultas registrales oficiales con manejo de indisponibilidad.s.
+**Explicación, decisiones y relación con otros artefactos:** El diagrama de despliegue representa la distribución objetivo en infraestructura cloud: Landing Page y Frontend SPA en CDN, API RESTful y procesos programados en un contenedor Linux PaaS, base de datos relacional PostgreSQL gestionada y conexiones seguras vía HTTPS/TLS hacia proveedores autorizados de pagos, almacenamiento, notificaciones y consultas registrales. Estos componentes externos no se consideran implementados mientras no exista integración y evidencia verificable; la solución actual utiliza datos simulados y el backend se encuentra en desarrollo.
 
 ## 4.7 Software Object-Oriented Design
 
@@ -1037,9 +1037,9 @@ El diseño físico de la base de datos implementa las siguientes decisiones téc
 
 Normalización y consistencia relacional: El esquema se encuentra normalizado en Tercera Forma Normal (3FN), desacoplando los datos estáticos de la unidad en VEHICLES, la trazabilidad de consultas externas en SOURCE_CHECKS y la consolidación histórica en VEHICLE_REPORTS.
 
-Identificadores UUID: Se emplean claves primarias de tipo UUID en todas las tablas para garantizar unicidad global sin depender de secuencias centralizadas, facilitando la integración con los agregados del dominio en Spring Boot.
+Identificadores UUID: El diseño objetivo propone claves primarias UUID para garantizar unicidad global. La implementación inicial del backend utiliza identificadores numéricos `Long`; antes de integrar los bounded contexts se debe decidir y documentar una única estrategia de identidad y migración.
 
-Persistencia con Spring Data JPA: Las relaciones entre tablas están mapeadas mediante entidades JPA gestionadas por repositorios relacionales en PostgreSQL, aplicando integridad referencial explícita a través de llaves foráneas y control transaccional declarativo (@Transactional).
+Persistencia con Spring Data JPA: El diseño objetivo contempla entidades JPA, repositorios relacionales, llaves foráneas y control transaccional declarativo (`@Transactional`) sobre PostgreSQL. Las ramas iniciales del backend utilizan H2 para ejecución local y mantienen compatibilidad de configuración con un DBMS relacional; la persistencia de producción todavía debe desplegarse y verificarse.
 
 Separación de responsabilidades de monitoreo y flota: La tabla FLEET_VEHICLE_ASSIGNMENTS actúa como tabla intermedia que relaciona flotas con vehículos y delega formalmente la supervisión a un usuario responsable (responsible_user_id), mientras que VEHICLE_MONITORINGS y MONITORING_ALERTS administran de forma independiente las alertas generadas por cambios en las fuentes.
 

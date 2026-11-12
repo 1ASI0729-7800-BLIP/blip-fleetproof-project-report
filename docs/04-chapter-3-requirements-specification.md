@@ -2,44 +2,63 @@
 
 ## 3.1 User Stories
 
-| Epic / Story ID | Título | Descripción | Criterios de aceptación | Relacionado con |
+| ID | Título | User Story | Acceptance Criteria principales | Relación |
 |---|---|---|---|---|
-| EPIC01 | Sitio Web Estático (Landing Page) | Como negocio, deseo contar con un sitio web estático para presentar la propuesta de valor de FleetProof y captar a los segmentos objetivo. | - | - |
-| US01 | Presentación de propuesta para flotas | Como visitante del segmento empresas, deseo conocer la propuesta de valor del producto para entender cómo reduce mi riesgo operativo. | Escenario 1: Carga de propuesta.<br>Dado que un visitante del segmento empresas ingresa al sitio web,<br>Cuando el sistema procesa la petición de la página principal,<br>Entonces el sistema muestra el título y la descripción del servicio orientado a la gestión de flotas. | EPIC01 |
-| US02 | Beneficios para usuarios particulares | Como visitante del segmento compradores particulares, deseo leer los beneficios de consultar una placa para decidir mi compra. | Escenario 1: Visualización de beneficios.<br>Dado que un visitante navega por el sitio web,<br>Cuando el visitante accede a la sección de particulares,<br>Entonces el sistema despliega la información sobre prevención de multas y evaluación de riesgos vehiculares. | EPIC01 |
-| EPIC02 | Generación de Vehicle Report | Como negocio, deseo que el sistema centralice la información vehicular en un reporte para reducir el trabajo manual del usuario. | - | - |
-| US03 | Consulta inicial por placa | Como administrador de flota, deseo ingresar una placa vehicular para generar un reporte con sus antecedentes unificados. | Escenario 1: Generación exitosa.<br>Dado que un administrador de flota posee una cuenta activa,<br>Cuando el sistema recibe una solicitud de consulta con una placa válida,<br>Entonces el sistema genera y almacena un Vehicle Report inicial.<br>Escenario 2: Indisponibilidad de fuente.<br>Dado que el sistema intenta realizar un Source Check,<br>Cuando una fuente oficial externa no responde,<br>Entonces el sistema registra un estado de Source Unavailability y conserva los demás datos obtenidos. | EPIC02 |
-| US04 | Evaluación con Semáforo de Riesgo | Como supervisor de flota, deseo visualizar un semáforo de riesgo para identificar unidades vehiculares críticas rápidamente. | Escenario 1: Cálculo de riesgo.<br>Dado que el sistema consolida un Vehicle Report,<br>Cuando el sistema evalúa los Findings registrados,<br>Entonces el sistema asigna un Risk Level (Alto, Medio o Bajo) al vehículo.<br>Escenario 2: Explicación del riesgo.<br>Dado que un supervisor consulta un reporte finalizado,<br>Cuando el sistema despliega el Risk Level,<br>Entonces el sistema detalla textualmente las reglas y causas que originaron dicha clasificación. | EPIC02 |
-| US05 | API Endpoint: Consulta de Vehicle Report (Technical Story) | Como Developer, deseo disponer de un endpoint RESTful para consultar el estado de un vehículo mediante su placa para su integración. | Escenario 1: Petición válida.<br>Dado que el cliente realiza un HTTP GET request a /api/v1/vehicles/{plate},<br>Cuando la placa existe en la base de datos,<br>Entonces el sistema retorna un HTTP Status 200 OK con el payload en formato JSON del vehículo.<br>Escenario 2: Vehículo no encontrado.<br>Dado que el cliente realiza un HTTP GET request a /api/v1/vehicles/{plate},<br>Cuando la placa no tiene registros previos,<br>Entonces el sistema retorna un HTTP Status 404 Not Found con un mensaje de error estandarizado. | EPIC02 |
-| EPIC03 | Gestión y Monitoreo de Flotas | Como negocio, deseo que los usuarios puedan registrar múltiples vehículos y comparar su historial para un monitoreo continuo. | - | - |
-| US06 | Carga masiva mediante CSV | Como administrador de flota, deseo importar un archivo CSV con placas para registrar mis vehículos masivamente sin esfuerzo manual. | Escenario 1: Importación correcta.<br>Dado que el administrador sube un archivo CSV,<br>Cuando el sistema valida que el formato y las placas son correctos,<br>Entonces el sistema registra los elementos como Fleet Vehicle asociados a la cuenta del usuario. | EPIC03 |
-| US07 | Comparación histórica de Snapshots | Como analista documentario, deseo que el sistema compare dos estados históricos para detectar nueva información de forma inmediata. | Escenario 1: Detección de cambios.<br>Dado que un vehículo posee más de un Snapshot guardado,<br>Cuando el sistema ejecuta un Monitoring Cycle,<br>Entonces el sistema compara el último estado con el anterior y resalta un Vehicle Change si existen diferencias. | EPIC03 |
+| EPIC01 | Landing Page | Como negocio, deseo presentar la propuesta de FleetProof para comunicar su valor a los segmentos objetivo. | - | - |
+| US01 | Presentación para flotas | Como visitante empresarial, deseo conocer la propuesta para entender cómo apoya el control documentario de flotas. | Dado que visita la Landing Page, cuando revisa la propuesta, entonces identifica el segmento, problema y beneficio esperado sin confundirlo con una fuente oficial. | EPIC01 |
+| US02 | Beneficios para particulares | Como comprador o propietario, deseo comprender los beneficios de una consulta para evaluar si responde a mi necesidad. | Dado que navega por la Landing Page, cuando revisa la sección correspondiente, entonces distingue consulta puntual y seguimiento posterior. | EPIC01 |
+| EPIC02 | Vehicle Report | Como negocio, deseo consolidar información vehicular en reportes trazables. | - | - |
+| US03 | Consulta inicial por placa | Como administrador de flota, deseo ingresar una placa para generar un reporte con antecedentes unificados. | Si la placa es válida, genera un Vehicle Report inicial. Si una fuente simulada no responde, registra `Source Unavailability`, conserva los demás resultados y no interpreta la ausencia como falta de antecedentes. | EPIC02 |
+| US04 | Semáforo explicable | Como supervisor, deseo visualizar el nivel de riesgo y sus causas para priorizar vehículos. | Evalúa Findings mediante reglas conocidas, asigna un nivel y muestra una explicación textual. El resultado no se presenta como certificación oficial. | EPIC02 |
+| US05 | Consulta REST de vehículo | Como desarrollador, deseo consultar un vehículo mediante el contrato implementado para integrarlo con otros módulos. | `GET /api/v1/vehicles/{id}` retorna HTTP 200 y el recurso cuando existe, o HTTP 404 con error estandarizado cuando no existe. La consulta directa por placa queda como evolución pendiente hasta alinear frontend, backend y Swagger. | EPIC02 |
+| EPIC03 | Fleet and Vehicle Monitoring | Como negocio, deseo registrar varios vehículos y comparar sus estados para ofrecer seguimiento continuo. | - | - |
+| US06 | Importación CSV | Como administrador, deseo importar vehículos mediante CSV para evitar registrarlos individualmente. | Valida encabezados, formato, placas y duplicados; informa filas rechazadas y registra únicamente los elementos válidos confirmados por el usuario. | EPIC03 |
+| US07 | Comparación histórica | Como analista, deseo comparar snapshots para detectar nueva información. | Cuando existen dos estados comparables, identifica diferencias por fuente; si una fuente no está disponible, comunica la limitación sin producir una conclusión falsa. | EPIC03 |
+| EPIC04 | Identity and Access Management | Como negocio, deseo identificar usuarios para proteger sus vehículos, reportes y flotas. | - | - |
+| US08 | Acceso y perfil | Como usuario, deseo registrarme, iniciar sesión y actualizar mi perfil. | Con credenciales válidas de demostración accede al workspace; al actualizar datos válidos, la aplicación conserva y muestra los cambios. La autenticación actual no se declara como seguridad de producción. | EPIC04 |
+| EPIC05 | Subscription Management | Como negocio, deseo ofrecer planes con límites y estados comprensibles. | - | - |
+| US09 | Activación simulada | Como usuario, deseo seleccionar un plan para conocer el estado y alcance del monitoreo. | Al confirmar la activación simulada, muestra plan y estado activo e indica que no constituye un pago real. | EPIC05 |
+| EPIC06 | Fleet and Resolution Management | Como administrador, deseo organizar vehículos y atender observaciones con responsables y evidencia. | - | - |
+| US10 | Crear una flota | Como administrador, deseo crear una flota y asociar vehículos para organizar el seguimiento. | Con un nombre válido registra la agrupación y permite consultar los vehículos asociados. | EPIC06 |
+| US11 | Generar alertas | Como supervisor, deseo recibir una alerta cuando aparece un cambio relevante. | Cuando un cambio cumple una regla, registra vehículo, reporte, tipo, fecha, estado y explicación. | EPIC06 |
+| US12 | Resolver con evidencia | Como responsable, deseo actualizar un caso y adjuntar evidencia para demostrar la atención de una observación. | Conserva responsable, estado, notas e historial; no permite cerrar el caso sin evidencia. | EPIC06 |
 
 ## 3.2 Impact Mapping
 
-<img src="assets/Impact map 1.png" alt="Impact Map de FleetProof: objetivos, actores e impactos" />
+![Impact Map de FleetProof: objetivos, actores e impactos](<assets/Impact map 1.png>)
 
-<img src="assets/Impact map 2.png" alt="Continuación del Impact Map de FleetProof" />
+![Continuación del Impact Map de FleetProof](<assets/Impact map 2.png>)
+
+Los Impact Maps relacionan el objetivo de reducir la dispersión de información con actores empresariales y particulares. La prioridad inicial corresponde a empresas con flotas pequeñas y medianas; los particulares se mantienen como segmento complementario.
 
 ## 3.3 Product Backlog
 
-| Orden | User Story ID | Título | Descripción | Story Points |
-|---:|---|---|---|---:|
-| 1 | US01 | Presentación de propuesta para flotas | Como visitante del segmento empresas, deseo conocer la propuesta de valor del producto para entender cómo reduce mi riesgo operativo. | 3 |
-| 2 | US02 | Beneficios para usuarios particulares | Como visitante del segmento compradores particulares, deseo leer los beneficios de consultar una placa para decidir mi compra. | 2 |
-| 3 | US03 | Consulta inicial por placa | Como administrador de flota, deseo ingresar una placa vehicular para generar un reporte con sus antecedentes unificados. | 5 |
-| 4 | US05 | API Endpoint: Consulta de Vehicle Report | Como Developer, deseo disponer de un endpoint RESTful para consultar el estado de un vehículo mediante su placa para su integración. | 3 |
-| 5 | US04 | Evaluación con Semáforo de Riesgo | Como supervisor de flota, deseo visualizar un semáforo de riesgo para identificar unidades vehiculares críticas rápidamente. | 5 |
-| 6 | US06 | Carga masiva mediante CSV | Como administrador de flota, deseo importar un archivo CSV con placas para registrar mis vehículos masivamente sin esfuerzo manual. | 8 |
-| 7 | US07 | Comparación histórica de Snapshots | Como analista documentario, deseo que el sistema compare dos estados históricos para detectar nueva información de forma inmediata. | 8 |
+| Orden | ID | Título | Story Points | Estado documentado |
+|---:|---|---|---:|---|
+| 1 | US01 | Presentación para flotas | 3 | Implementado históricamente en Landing Page; verificar publicación actual |
+| 2 | US02 | Beneficios para particulares | 2 | Implementado históricamente en Landing Page; verificar publicación actual |
+| 3 | US08 | Acceso y perfil | 5 | Implementado con datos de demostración; aceptación completa pendiente |
+| 4 | US03 | Consulta inicial por placa | 5 | Demostrada con Source Fixtures; fuentes oficiales no integradas |
+| 5 | US04 | Semáforo explicable | 5 | Visible en reportes; reglas y pruebas requieren trazabilidad final |
+| 6 | US10 | Crear una flota | 5 | Demostrado en sesión moderada; asignación autónoma pendiente |
+| 7 | US06 | Importación CSV | 8 | Implementado en frontend; prueba de aceptación pendiente |
+| 8 | US07 | Comparación histórica | 8 | Implementado con datos simulados; ciclo completo pendiente |
+| 9 | US11 | Generar alertas | 5 | Vista implementada; generación resultante debe demostrarse |
+| 10 | US12 | Resolver con evidencia | 8 | Caso implementado parcialmente; recorrido completo pendiente |
+| 11 | US09 | Activación simulada | 5 | Demostrada como simulación; pago real fuera del alcance actual |
+| 12 | US05 | Consulta REST de vehículo | 5 | Implementada inicialmente en rama del backend; integración pendiente |
 
+Los Story Points representan estimación relativa, no horas ejecutadas ni aceptación. El estado se actualiza únicamente con evidencia verificable.
 
-## 3.4 Trazabilidad de Requerimientos
+## 3.4 Trazabilidad de requisitos
 
-| Hallazgo / Entrevista                                                         | Necesidad                                                    | Requisito                           | US   | Criterio de Aceptación                                                    | Prueba (BDD / Técnica)                                                                       |
-|-------------------------------------------------------------------------------|--------------------------------------------------------------|-------------------------------------|------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| **Roxana Limo (E4):** Información distribuida retrasa toma de decisiones.         | Centralizar consultas vehiculares desde una única vista.     | Consulta inicial por placa.         | **US03** | Genera y almacena un Vehicle Report inicial si la placa es válida.        | **Given** admin con cuenta, **When** consulta placa válida, **Then** sistema genera el reporte.          |
-| **Cristhian Amaya (E1):** Dificultad para interpretar datos técnicos registrales. | Resumen visual explicable del riesgo encontrado.             | Semáforo determinístico de riesgo.  | **US04** | Asigna un Risk Level (Alto/Medio/Bajo) y detalla textualmente las causas. | **Given** reporte consolidado, **When** sistema evalúa Findings, **Then** clasifica y explica el riesgo. |
-| **Arquitectura (Technical Story):** Sistemas B2B requieren interoperar.           | Consultar reportes desde sistemas externos (ERP/Logística).  | API Endpoint de consulta.           | **US05** | Retorna Status 200 y JSON del vehículo al consultar por placa.            | **Given** API endpoint disponible, **When** se realiza solicitud GET, **Then** se retorna HTTP 200 con datos del vehículo.              |
-| **Jorge Quispe (E6):** Revisar flota uno por uno exige mucho esfuerzo.            | Registrar múltiples vehículos simultáneamente.               | Carga masiva mediante CSV.          | **US06** | Importa archivo CSV, valida formato y registra Fleet Vehicles.            | **Given** CSV válido, **When** administrador importa archivo, **Then** sistema registra los vehículos.   |
-| **Mei Lin Tanaka (E7):** Necesidad de detectar qué documentos vencen o cambian.   | Comparar estados históricos para detectar información nueva. | Comparación histórica de Snapshots. | **US07** | Compara el último estado con el anterior y resalta el "Vehicle Change".   | **Given** 2 snapshots, **When** ejecuta Monitoring Cycle, **Then** resalta diferencias.                  |
+| Evidencia de necesidad | Necesidad | US | Prueba esperada | Estado actual |
+|---|---|---|---|---|
+| Roxana Limo (E4) trabaja con información distribuida entre áreas y sedes. | Centralizar vehículos, riesgo y responsables. | US03, US04, US10 | Crear flota, asociar vehículo, consultar reporte y explicar riesgo. | Creación de flota y reporte mostrados en sesión moderada; asociación autónoma pendiente. |
+| Cristhian Amaya (E1 y validación Sprint 3) consulta varias fuentes y pregunta por cambios posteriores. | Diferenciar reporte puntual y monitoreo. | US03, US07, US11 | Generar reporte, crear segundo snapshot y comprobar alerta explicable. | Reporte mostrado; ciclo posterior y alerta resultante pendientes. |
+| Patricia Valdez (E5) coordina observaciones mediante mensajería. | Asignar responsables y conservar evidencia de cierre. | US12 | Abrir caso, asignar responsable, adjuntar evidencia, resolver y revisar historial. | Flujo completo pendiente de evidencia. |
+| Jorge Quispe (E6) revisa vehículos uno por uno. | Reducir registro manual repetitivo. | US06 | Importar CSV válido, informar errores y confirmar registros creados. | Implementación disponible; aceptación reproducible pendiente. |
+| Mei Lin Tanaka (E7) necesita detectar documentos vencidos o modificados. | Comparar estados y comunicar cambios. | US07, US11 | Comparar snapshots y registrar alerta con fecha y fuente. | Implementado con datos simulados; prueba integral pendiente. |
+| Arquitectura de integración | Consultar recursos mediante API documentada. | US05 | Ejecutar petición desde Postman/Swagger y registrar status y payload. | Endpoint inicial disponible en ramas del backend; capturas pendientes. |
+
+Cada historia debe vincularse en el Sprint Backlog con tarea, responsable, rama, commit, Pull Request, resultado de prueba y evidencia. Un escenario redactado no equivale a una prueba aprobada.

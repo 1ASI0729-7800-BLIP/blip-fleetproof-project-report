@@ -184,7 +184,7 @@ El análisis se realizó sobre siete entrevistas distribuidas en dos segmentos. 
 
 #### Resultados generales
 
-| Hallazgo codificado | Frecuencia | Evidencia (Entrevista y Minuto) | Interpretación para FleetProof |
+| Hallazgo codificado | Frecuencia | Evidencia (entrevista) | Interpretación para FleetProof |
 |---|---:|---:|---|
 | Consulta de más de una fuente antes de decidir | 7/7 | E1, E4, E2, E3, E5, E6, E7 | El producto debe centralizar fuentes y mostrar claramente origen, fecha y estado de cada consulta. |
 | Conservación manual de evidencia en capturas, Drive, WhatsApp u hojas de cálculo | 7/7 | E4, E1, E5, E6, E7 | Existe oportunidad para guardar evidencia dentro del historial del vehículo. |
@@ -197,7 +197,7 @@ El análisis se realizó sobre siete entrevistas distribuidas en dos segmentos. 
 
 Este segmento agrupa a Cristhian Amaya, Diego Salazar y Carmen Rojas. Los tres participantes relataron procesos de consulta previos a una decisión de compra, venta o recomendación. Destaca el caso de Cristhian Amaya (Entrevista 1,), quien evidenció que la validación no se limita a un dato crudo, sino que requiere traducir términos técnicos a un lenguaje claro para evitar que el comprador asuma riesgos ocultos. Asimismo, Carmen Rojas (Entrevista 3,) confirmó la confusión que genera no saber si un hallazgo es grave o informativo.
 
-| Patrón del segmento | Frecuencia | Evidencia (Entrevista y Minuto) |
+| Patrón del segmento | Frecuencia | Evidencia (entrevista) |
 |---|---:|---:|
 | Consulta de fuentes oficiales o especializadas | 3/3 | E1, E2, E3 |
 | Uso de capturas o mensajes para compartir evidencia | 3/3 | E1, E2, E3 |
@@ -211,7 +211,7 @@ Para este segmento, FleetProof debe priorizar reportes claros, evidencia descarg
 
 Este segmento agrupa a Roxana Limo, Patricia Valdez, Jorge Quispe y Mei Lin Tanaka. Destaca fuertemente el caso de Roxana Limo (Entrevista 4,), quien demostró que una mala preparación documentaria o un registro desactualizado puede retrasar ventas e impactar comercialmente a múltiples sedes. Roxana validó que las observaciones se manejan en checklists y hojas externas, lo cual concuerda con Patricia Valdez (Entrevista 5,), quien indicó que depender de WhatsApp hace que la trazabilidad de los responsables se pierda.
 
-| Patrón del segmento | Frecuencia | Evidencia (Entrevista y Minuto) |
+| Patrón del segmento | Frecuencia | Evidencia (entrevista) |
 |---|---:|---:|
 | Coordinación con más de una persona para validar o usar el vehículo | 4/4 | E4, E5, E6, E7 |
 | Registro distribuido en WhatsApp, Drive, hojas o carpetas | 4/4 | E4, E5, E6, E7 |

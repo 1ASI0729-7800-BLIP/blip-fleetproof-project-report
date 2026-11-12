@@ -1104,17 +1104,7 @@ Durante el Sprint 2, el equipo aplicó el modelo GitFlow organizando el trabajo 
 | Jefferson Morales | `feature/sprint2-vehicle-monitoring` | Vehicle Monitoring |
 | Eduardo Gorbeña | `feature/sprint2-vehicle-information` | Vehicle Information |
 
-Para consolidar la entrega, cada líder de contexto generó un Pull Request formal hacia la rama de integración `develop`, pasando por un proceso de revisión de código (peer review), resolución de dependencias con el módulo `shared` y verificación de compatibilidad antes de su fusión definitiva.
-
-**Registro de Pull Requests e Integración a `develop`:**
-
-| Pull Request | Contexto / Módulo | Autor | Revisor | Estado |
-|---|---|---|---|---|
-| PR #12 | Identity and Access Management | Gonzalo Quintanilla | Sebastian Reyes Limo | Aprobado y fusionado en `develop` |
-| PR #13 | Vehicle Information Context | Eduardo Gorbeña | Rodrigo Gómez De La Torre | Aprobado y fusionado en `develop` |
-| PR #14 | Report Management Context | Rodrigo Gómez De La Torre | Gonzalo Quintanilla | Aprobado y fusionado en `develop` |
-| PR #15 | Vehicle Monitoring Context | Jefferson Morales | Eduardo Gorbeña | Aprobado y fusionado en `develop` |
-| PR #16 | Fleet Management & Shared Base | Sebastian Reyes Limo | Todo el equipo | Aprobado y fusionado en `develop` |
+Para consolidar Sprint 2 se utilizaron ramas especializadas y una rama de integración. Las capturas históricas acreditan ramas, commits y Contributors; los identificadores de Pull Request no se reconstruyen en esta sección cuando no existe una referencia verificable. Los Pull Requests #9 a #14 corresponden a la integración posterior de Sprint 3 y se registran en 5.2.3.8.
 
 A continuación se presentan los analíticos del repositorio frontend que sustentan el esfuerzo y la colaboración equitativa del equipo durante el ciclo de desarrollo:
 
@@ -1124,7 +1114,7 @@ A continuación se presentan los analíticos del repositorio frontend que susten
 
 ![Contributors del Sprint 2](assets/chapter-5/sprint-2/19-github-contributors.png)
 
-**Figura 5.23.** Resumen de contribuciones y commits registrados en el repositorio frontend a lo largo del Sprint 2, evidenciando la participación activa de los cinco integrantes del equipo.
+**Figura 5.23.** Resumen de contribuciones y commits registrados en el repositorio frontend. Esta evidencia acredita actividad registrada en GitHub; no sustituye la evaluación de calidad, esfuerzo, aceptación ni dominio individual del producto.
 
 | GitHub Username | Rol en Sprint 2 | Participación y Enfoque |
 |---|---|---|
@@ -1137,6 +1127,48 @@ A continuación se presentan los analíticos del repositorio frontend que susten
 [Repositorio del Frontend Web Application](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend)
 
 ### 5.2.3 Sprint 3
+
+#### 5.2.3.1 Sprint Planning 3
+
+| Elemento | Definición |
+|---|---|
+| Sprint Goal | Corregir las observaciones de TB1, alinear el informe con el stack oficial, completar los seis bounded contexts del frontend, validar la comprensión del producto e iniciar el backend Spring Boot. |
+| Alcance | Capítulos I–V, frontend Angular, documentación de validaciones y base del backend. |
+| Criterio de cierre | Pull Requests integrados, aplicación compilable, evidencia reproducible y limitaciones declaradas. |
+| Fuera del alcance acreditado | Fuentes oficiales, pagos reales, notificaciones reales, autenticación de producción y despliegue definitivo del backend. |
+
+#### 5.2.3.2 Aspect Leaders and Collaborators
+
+| Aspecto | Responsable principal documentado | Colaboración |
+|---|---|---|
+| Revisión del informe e integración | Gonzalo Quintanilla | Equipo BLIP |
+| Validaciones moderadas | Sebastian Reyes Limo | Participantes entrevistados y equipo |
+| Requirements y Report Management | Rodrigo Gómez De La Torre | Revisión del equipo |
+| Product Design y Vehicle Information | Eduardo Gorbeña | Revisión del equipo |
+| Vehicle Monitoring | Jefferson Morales | Revisión del equipo |
+| Fleet Management y `shared` | Sebastian Reyes Limo | Revisión del equipo |
+| Backend Spring Boot inicial | Equipo por bounded context | Revisión e integración pendientes |
+
+#### 5.2.3.3 Sprint Backlog 3
+
+| ID | Trabajo | Responsable | Estado | Evidencia / limitación |
+|---|---|---|---|---|
+| S3-T01 | Priorizar el segmento empresarial y separar hipótesis de resultados medidos | Capítulo I | Completado | Integrado mediante PR #34 del informe |
+| S3-T02 | Reorganizar evidencia de entrevistas por segmento | Capítulo II | Completado | Integrado mediante PR #35 del informe |
+| S3-T03 | Refinar Acceptance Criteria y trazabilidad | Capítulo III | En revisión | Integrado mediante PR #36; faltan resultados de aceptación para todas las historias |
+| S3-T04 | Alinear arquitectura con Angular, Spring Boot y Spring Data JPA | Capítulo IV | Completado como diseño | Integrado mediante PR #37; distingue arquitectura objetivo |
+| S3-T05 | Revisar planificación, stack, despliegue y colaboración | Capítulo V | Completado documentalmente | Integrado mediante PR #38 |
+| S3-T06 | Integrar seis bounded contexts del frontend | Equipo frontend | Completado | PR #9 a PR #14 fusionados en `develop` |
+| S3-T07 | Realizar validaciones con un participante particular y uno empresarial | Sebastian Reyes Limo | Completado como sesión moderada | Dos grabaciones; no mide ejecución autónoma |
+| S3-T08 | Preparar base DDD del backend con Swagger | Equipo backend | En progreso | Repositorio Spring Boot y ramas iniciales publicadas |
+| S3-T09 | Demostrar flujo completo de resolución | Equipo | Pendiente | Falta evidencia de alerta, responsable, evidencia, cierre e historial en una sola ejecución |
+| S3-T10 | Completar artefactos finales | Equipo | Pendiente | About-the-Team, exposición, Performance Report, Postman, release y ZIP |
+
+#### 5.2.3.4 Development Evidence for Sprint Review
+
+El repositorio del informe registra los Pull Requests #34 a #38 para los capítulos I–V. El frontend registra los Pull Requests #9 a #14 para Fleet Management, Subscription Management, Vehicle Information, Report Management, Identity and Access Management y Vehicle Monitoring. Estas integraciones acreditan cambios en Git; la aceptación funcional se determina mediante pruebas y evidencia adicional.
+
+El backend definitivo se inició como una aplicación Spring Boot con Java 25, Gradle, Spring Web MVC, Spring Data JPA y Springdoc OpenAPI. Las ramas `feature/vehicle-information`, `feature/fleet-management` y `feature/report-management` contienen los primeros bounded contexts. En esta etapa no se declara integración con el frontend ni despliegue de producción.
 
 #### 5.2.3.5 Execution Evidence for Sprint Review
 
@@ -1185,3 +1217,51 @@ Ambas sesiones apuntan al valor de centralizar la información vehicular. Cristh
 | Media | Evaluar sede, kilometraje y movimiento como requisitos para el segmento empresarial. | Confirmar qué información necesita cada responsable, cómo se obtiene y con qué frecuencia debe actualizarse. |
 
 En la demostración se mencionaron consultas en tiempo real y alertas por correo. Las grabaciones muestran el frontend local con registros de demostración y una activación simulada. La integración con fuentes externas, el envío efectivo de correos y la reducción de tiempo en la operación siguen como puntos por verificar.
+
+#### 5.2.3.6 Services Documentation Evidence for Sprint Review
+
+Los siguientes contratos corresponden a la implementación inicial disponible en ramas del backend. No se consideran integrados en `develop` ni consumidos por el frontend hasta completar Pull Requests, pruebas y configuración común.
+
+| Bounded Context | Método y ruta | Propósito | Estado |
+|---|---|---|---|
+| Vehicle Information | `GET /api/v1/vehicles` | Listar vehículos; admite filtro por usuario en la implementación inicial | Implementado en rama |
+| Vehicle Information | `GET /api/v1/vehicles/{id}` | Consultar vehículo por identificador | Implementado en rama |
+| Vehicle Information | `POST /api/v1/vehicles` | Registrar vehículo | Implementado en rama |
+| Vehicle Information | `PUT /api/v1/vehicles/{id}` | Actualizar vehículo | Implementado en rama |
+| Fleet Management | `GET /api/v1/fleets` | Listar flotas | Implementado en rama |
+| Fleet Management | `POST /api/v1/fleets` | Crear flota | Implementado en rama |
+| Fleet Management | `GET /api/v1/cases` | Listar casos de resolución | Implementado en rama |
+| Fleet Management | `POST /api/v1/cases` | Crear caso | Implementado en rama |
+| Fleet Management | `PUT /api/v1/cases/{id}` | Actualizar caso y su estado | Implementado en rama |
+| Report Management | `GET /api/v1/reports` | Listar reportes | Implementado en rama |
+| Report Management | `GET /api/v1/reports/{id}` | Consultar reporte | Implementado en rama |
+| Report Management | `POST /api/v1/reports` | Crear reporte con snapshot de fuentes | Implementado en rama |
+
+Springdoc genera el documento OpenAPI en `/v3/api-docs` y Swagger UI en `/swagger-ui/index.html`. Antes de integrar se debe decidir el contrato definitivo de búsqueda por placa o identificador, evitar configuraciones duplicadas entre ramas y registrar solicitudes/respuestas en Postman.
+
+#### 5.2.3.7 Software Deployment Evidence for Sprint Review
+
+El frontend y la Fake API conservan las URLs documentadas de Netlify y Render. Su disponibilidad debe comprobarse nuevamente y acompañarse de fecha, status HTTP y captura antes de la entrega. El backend Spring Boot se ejecuta localmente con una base H2 de desarrollo; no existe evidencia de un despliegue público del backend definitivo ni de una base de datos de producción.
+
+#### 5.2.3.8 Team Collaboration Insights during Sprint
+
+Las correcciones del informe se integraron mediante los Pull Requests #34 a #38. Las ramas del frontend convergieron mediante los Pull Requests #9 a #14. El historial permite identificar autores, commits y merges, pero no debe utilizarse por sí solo para afirmar esfuerzo equitativo o aceptación funcional.
+
+| Pull Request | Contexto / módulo | Estado verificado en `develop` |
+|---|---|---|
+| PR #9 | Fleet Management | Fusionado |
+| PR #10 | Subscription Management | Fusionado |
+| PR #11 | Vehicle Information | Fusionado |
+| PR #12 | Report Management | Fusionado |
+| PR #13 | Identity and Access Management | Fusionado |
+| PR #14 | Vehicle Monitoring | Fusionado |
+
+| Pull Request del informe | Alcance | Estado verificado en `develop` |
+|---|---|---|
+| PR #34 | Capítulo I | Fusionado |
+| PR #35 | Capítulo II | Fusionado |
+| PR #36 | Capítulo III | Fusionado |
+| PR #37 | Capítulo IV | Fusionado |
+| PR #38 | Capítulo V y revisión transversal | Fusionado |
+
+Para la siguiente revisión, cada integrante debe vincular su funcionalidad con una User Story, una demostración reproducible y una explicación oral. Los artefactos About-the-Team, exposición y Participant Performance Report completarán la evidencia individual cuando se incorporen sus enlaces finales.

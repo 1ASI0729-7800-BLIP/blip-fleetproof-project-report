@@ -4,9 +4,10 @@
 
 | Artefacto | Enlace | Estado documentado |
 |---|---|---|
-| Informe | [Project Report](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-project-report) | Capítulo V de Sprint 2 integrado en develop, merge 39c9d93. |
-| Frontend | [Repositorio frontend](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend) | Implementación y aportes de cinco integrantes registrados. |
+| Informe | [Project Report](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-project-report) | Correcciones de capítulos I–V y validación de Sprint 3 integradas en `develop`. |
+| Frontend | [Repositorio frontend](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend) | Seis bounded contexts integrados en `develop`. |
 | Fake API | [Repositorio Fake API](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-fake-api) | Configuración en Render aportada por el equipo. |
+| Backend | [Repositorio backend](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-backend) | Base Spring Boot y primeros contextos publicados en ramas; integración y despliegue pendientes. |
 | Landing Page AV1 | [Landing Page](https://fleetproof-landingpage.netlify.app/) | Publicación documentada en Sprint 1. |
 | Frontend TB1 | [Web Application](https://blip-fleetproof.netlify.app/) | Evidencia Published en Netlify. |
 | Fake API TB1 | [Servicio Render](https://fleetproof-fake-api.onrender.com/) | URL configurada; captura Building. Conexión pública pendiente de verificar. |
@@ -31,7 +32,17 @@ Las 19 imágenes se conservan en `assets/chapter-5/sprint-2/` (ruta relativa a e
 - [Capítulo III](04-chapter-3-requirements-specification.md): historias y criterios de aceptación.
 - [Capítulo IV](05-chapter-4-product-design.md): identidad visual y artefactos de diseño.
 
-## Anexo D. Archivos finales de entrega
+## Anexo D. Evidencias de Sprint 3
+
+| Evidencia | Ubicación | Alcance |
+|---|---|---|
+| Correcciones del informe | Pull Requests #34–#38 del Project Report | Capítulos I–V integrados en `develop` |
+| Contextos del frontend | Pull Requests #9–#14 del frontend | Fleet, Subscription, Vehicle Information, Report, IAM y Monitoring |
+| Validación con Cristhian Amaya | Capítulo V, 5.2.3.5 | Sesión moderada con perfil particular |
+| Validación con Roxana Limo | Capítulo V, 5.2.3.5 | Sesión moderada con perfil empresarial |
+| Servicios iniciales del backend | Capítulo V, 5.2.3.6 | Vehicle Information, Fleet Management y Report Management en ramas independientes |
+
+## Anexo E. Archivos finales de entrega
 
 | Archivo o evidencia | Estado |
 |---|---|
@@ -39,11 +50,11 @@ Las 19 imágenes se conservan en `assets/chapter-5/sprint-2/` (ruta relativa a e
 | Participant Performance Report TB1 | Responsabilidades documentadas; adjuntar archivo final y evaluación del Team Leader. |
 | Video de exposición y About-the-Team | Pendiente URL, captura y duración. |
 | Prototipo web | Diseño en capítulo IV; enlace público final por confirmar. |
-| Postman | Pendiente capturas de solicitudes y respuestas. |
+| Postman y Swagger | Pendiente incorporar capturas, rutas, status HTTP y payloads del backend. |
 | Fake API | URL y captura de construcción disponibles; completar evidencia de publicación y prueba de conexión. |
 | ZIP complementario | Pendiente consolidar y verificar. |
 
-## Anexo E. Criterios de incorporación de nuevas evidencias
+## Anexo F. Criterios de incorporación de nuevas evidencias
 
 Cada evidencia nueva debe indicar fecha, autor o responsable, historia o tarea relacionada, entorno (local o público), resultado observado y limitaciones. Conservar las evidencias de Sprint 1 y Sprint 2; las nuevas ramas de Sprint 3 no sustituyen los antecedentes de las entregas.
 

@@ -1,25 +1,36 @@
 # Conclusiones
 
-## Investigación y propuesta de valor — AV1
+## Investigación y propuesta de valor
 
-FleetProof propone reunir información vehicular y facilitar el seguimiento documentario. Las entrevistas registradas en el capítulo II aportan indicios de dispersión de información y coordinación manual; sus resúmenes no demuestran por sí solos representatividad del mercado, viabilidad comercial ni reducción del tiempo de consulta.
+FleetProof aborda un problema reconocible: la dispersión de información documentaria y la coordinación manual de observaciones vehiculares. La investigación orienta el producto principalmente a empresas con flotas pequeñas y medianas, mientras que propietarios y compradores particulares constituyen un segmento complementario.
 
-Las hipótesis Lean UX orientan el diseño de reportes, alertas y gestión de flotas. Los beneficios esperados deben contrastarse con mediciones y criterios de éxito previamente definidos. El despliegue de la Landing Page constituye un avance técnico, pero no acredita demanda comercial.
+Las entrevistas y validaciones aportan evidencia cualitativa sobre el problema y la comprensión de la propuesta. No demuestran todavía representatividad del mercado, demanda comercial, reducción de tiempos ni disminución de sanciones. Esos beneficios permanecen como hipótesis que deben medirse mediante tareas, tiempos, errores y trazabilidad observada.
 
-## Implementación y evidencia — TB1, Sprint 2
+## Diseño e implementación
 
-- **Frontend:** se documenta una primera versión en Angular y Angular Material, con cinco módulos de negocio y soporte transversal `shared`. El mapa de dominio objetivo debe distinguirse de los módulos efectivamente implementados.
-- **Ejecución:** el capítulo V reúne capturas de acceso, navegación, vehículos, reportes, comparación, monitoreo, alertas, perfil, idiomas y vista móvil. Estas imágenes acreditan lo visible; no sustituyen las pruebas completas de aceptación de cada historia.
-- **Despliegue:** la evidencia histórica de Netlify muestra publicación del frontend. La captura de Render muestra construcción de la Fake API; se requiere evidencia adicional para afirmar el funcionamiento del flujo público completo.
-- **Colaboración:** el historial y las capturas de GitHub muestran aportes del equipo. La cantidad de commits no mide esfuerzo, calidad ni dominio individual del producto.
-- **Alcance:** JSON Server y los datos de demostración permiten probar la interfaz. No equivalen a fuentes oficiales, autenticación de producción ni backend definitivo.
+El frontend utiliza Angular, TypeScript y Angular Material, y está organizado en seis bounded contexts: Identity and Access Management, Subscription Management, Vehicle Information, Fleet Management, Report Management y Vehicle Monitoring, además de `shared`. La versión actual utiliza datos ficticios y JSON Server; no equivale a una integración con fuentes oficiales ni a autenticación o pagos de producción.
 
-## Recomendaciones para la siguiente entrega
+La arquitectura objetivo propone un monolito modular en Java y Spring Boot, organizado mediante Domain-Driven Design y persistencia relacional con Spring Data JPA. El backend definitivo se encuentra en desarrollo: la base, Swagger y los primeros contextos de Vehicle Information, Fleet Management y Report Management están disponibles en ramas independientes, pero todavía no están conectados al frontend ni desplegados como servicio de producción.
 
-Priorizar la trazabilidad entre necesidades, historias, tareas y pruebas. Descomponer el backlog en tareas estimadas de 4 a 8 horas y registrar sus estados reales. Complementar las capturas con solicitudes y respuestas HTTP, resultados de pruebas y evidencia fechada de despliegue.
+## Validación y evidencia
 
-Actualizar los diagramas conforme al stack del curso: Angular/TypeScript/Angular Material para el frontend y Java/Spring Boot/Spring Data JPA para el backend objetivo. Documentar la base relacional y OpenAPI cuando exista implementación verificable.
+Las evidencias de Sprint 2 muestran pantallas, navegación, internacionalización y despliegues documentados. Sprint 3 incorpora dos sesiones moderadas con perfiles particular y empresarial. Estas sesiones ayudan a comprender expectativas sobre reportes, monitoreo, riesgo, planes y flotas, pero el moderador operó el navegador; por ello, no acreditan usabilidad autónoma ni tiempos de ejecución.
 
-Realizar pruebas con usuarios antes de concluir que FleetProof reduce tiempos, evita sanciones o satisface las necesidades del segmento. Registrar metodología, resultados y limitaciones. Las mejoras posteriores deben conservar su fecha real y no atribuirse retrospectivamente a TB1.
+La evidencia pendiente más importante es un recorrido integral desde el registro del vehículo hasta el cierre de una observación: detección, alerta, responsable, evidencia, resolución e historial. También se requiere alinear historias, contratos HTTP, frontend, backend, OpenAPI y pruebas.
 
-El video About-the-Team y la exposición se registran en el inventario de anexos, junto con su enlace, duración y participantes, cuando dichos archivos estén disponibles.
+## Colaboración
+
+El equipo utilizó ramas, commits y Pull Requests para integrar las correcciones de los capítulos I–V y los seis módulos del frontend. El historial de GitHub acredita cambios registrados, pero la cantidad de commits no sustituye la evaluación de calidad, esfuerzo, aceptación o dominio individual. Cada integrante debe poder explicar y demostrar su aporte en la exposición final.
+
+## Recomendaciones
+
+1. Completar la trazabilidad entre necesidad, User Story, tarea, rama, commit, Pull Request, prueba y evidencia.
+2. Ejecutar pruebas autónomas con administradores de flota y medir tiempo, errores y comprensión.
+3. Demostrar el recorrido completo de resolución y conservar su historial.
+4. Alinear la consulta de vehículos por identificador o placa en requisitos, backend, frontend y Swagger.
+5. Integrar progresivamente el backend mediante Pull Requests, resolver configuraciones compartidas y definir la estrategia definitiva de identificadores y DBMS.
+6. Registrar capturas de Postman y Swagger, status HTTP, payloads y resultados de pruebas.
+7. Verificar las URLs públicas antes de la entrega y distinguir construcción, publicación y funcionamiento.
+8. Incorporar About-the-Team, exposición, Participant Performance Report, presentación, release y ZIP complementario.
+
+FleetProof presenta avances técnicos y documentales verificables, pero debe continuar diferenciando claramente lo diseñado, implementado, simulado, validado y desplegado.
