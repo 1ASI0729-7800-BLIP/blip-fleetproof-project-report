@@ -44,7 +44,7 @@ En esta sección se describen las herramientas de software seleccionadas para da
 | Herramienta / Plataforma | Uso principal | Enlace / Ruta de Acceso |
 |---|---|---|
 | **Netlify** | Despliegue automático y gratuito de la Landing Page estática y el Frontend SPA. | [https://www.netlify.com](https://www.netlify.com) |
-| **Render** | Alojamiento en la nube del Backend API (Java / Spring Boot en contenedores Docker) y base de datos relacional PostgreSQL gestionada. | [Render](https://render.com) |
+| **Railway** | Despliegue previsto del Backend API desarrollado con Java y Spring Boot, junto con las variables de entorno requeridas para su conexión de datos. | [Railway](https://railway.com/) |
 
 * **Documentación de Software**
 
@@ -1130,138 +1130,300 @@ A continuación se presentan los analíticos del repositorio frontend que susten
 
 #### 5.2.3.1 Sprint Planning 3
 
-| Elemento | Definición |
+A continuación se presenta el sprint planning de esta tercera entrega, donde se definen el trabajo, las metas y el enfoque del equipo para desarrollar el backend de FleetProof y comenzar su conexión con el frontend.
+
+| Sprint # | Sprint 3 |
 |---|---|
-| Sprint Goal | Corregir las observaciones de TB1, alinear el informe con el stack oficial, completar los seis bounded contexts del frontend, validar la comprensión del producto e iniciar el backend Spring Boot. |
-| Alcance | Capítulos I–V, frontend Angular, documentación de validaciones y base del backend. |
-| Criterio de cierre | Pull Requests integrados, aplicación compilable, evidencia reproducible y limitaciones declaradas. |
-| Fuera del alcance acreditado | Fuentes oficiales, pagos reales, notificaciones reales, autenticación de producción y despliegue definitivo del backend. |
+| **Sprint planning background** | |
+| Date | 2026/11/12 |
+| Time | 6:00 PM |
+| Location | Llamada grupal en la plataforma Discord |
+| Prepared By | Gonzalo Quintanilla |
+| Attendees (to planning meeting) | Sebastian Reyes Limo, Gonzalo Quintanilla, Jefferson Morales, Rodrigo Gómez De La Torre y Eduardo Gorbeña |
+| Sprint 2 Review Summary | Durante el Sprint 2 se desarrolló la primera versión funcional del Frontend Web Application de FleetProof con Angular, organizada mediante los bounded contexts Identity and Access Management, Vehicle Information, Report Management, Vehicle Monitoring, Fleet Management y Subscription Management.<br>Los flujos se implementaron con datos simulados y se integraron en la rama `develop`, dejando preparada la interfaz que consumirá los servicios REST del backend durante el Sprint 3. |
+| Sprint 2 Retrospective Summary | Como aprendizaje para la siguiente etapa, se identificó la necesidad de sustituir progresivamente los datos simulados por contratos REST, mantener la misma estructura DDD en cada bounded context y centralizar las clases transversales en `shared`.<br>También se acordó documentar los endpoints mediante OpenAPI y Swagger antes de iniciar la conexión con Angular. |
+| **Sprint Goal & User Stories** | |
+| Sprint 3 Goal | Nuestro enfoque está en desarrollar la primera versión funcional del Backend Web Service de FleetProof utilizando Java, Spring Boot y Domain-Driven Design.<br>Buscamos implementar la base compartida y los bounded contexts Vehicle Information, Fleet Management y Report Management, exponiendo endpoints REST documentados con OpenAPI y Swagger.<br>Esto se confirmará al ejecutar localmente las operaciones de vehículos, flotas, casos de resolución y reportes, dejando iniciada la conexión con el frontend Angular y preparado el trabajo posterior de despliegue en Railway. |
+| Sprint 3 Velocity | 28 Story Points desarrollados |
+| Sum of Planned Story Points | 28: US03 (5), US04 (5), US05 (5), US10 (5) y US12 (8), según el Product Backlog del capítulo III. |
 
 #### 5.2.3.2 Aspect Leaders and Collaborators
 
-| Aspecto | Responsable principal documentado | Colaboración |
-|---|---|---|
-| Revisión del informe e integración | Gonzalo Quintanilla | Equipo BLIP |
-| Validaciones moderadas | Sebastian Reyes Limo | Participantes entrevistados y equipo |
-| Requirements y Report Management | Rodrigo Gómez De La Torre | Revisión del equipo |
-| Product Design y Vehicle Information | Eduardo Gorbeña | Revisión del equipo |
-| Vehicle Monitoring | Jefferson Morales | Revisión del equipo |
-| Fleet Management y `shared` | Sebastian Reyes Limo | Revisión del equipo |
-| Backend Spring Boot inicial | Equipo por bounded context | Revisión e integración pendientes |
+La matriz LACX representa los aspectos técnicos del backend abordados durante el Sprint 3. La integración y el despliegue continúan como trabajo del equipo para cerrar la iteración.
+
+| Team Member Last Name, First Name | GitHub Username | Backend Base & Shared L/C | Vehicle Information L/C | Fleet Management L/C | Report Management L/C | Frontend Integration L/C | Railway Deployment L/C |
+|---|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Reyes Limo Sebastian** | llegastian11 | C | C | C | C | C | C |
+| **Quintanilla Gonzalo** | GoldQP | L | L | L | L | L | L |
+| **Morales Jefferson** | Fenfito | C | C | C | C | C | C |
+| **Gómez De La Torre Rodrigo** | rod670 | C | C | C | C | C | C |
+| **Gorbeña Eduardo** | EduardooGV | C | C | C | C | C | C |
+
+**Nota.** L = *Leader*; C = *Collaborator*. La matriz representa responsabilidades funcionales. La autoría concreta de cada archivo o commit se verifica en GitHub y puede incluir correcciones realizadas por otro integrante durante la integración.
 
 #### 5.2.3.3 Sprint Backlog 3
 
-| ID | Trabajo | Responsable | Estado | Evidencia / limitación |
-|---|---|---|---|---|
-| S3-T01 | Priorizar el segmento empresarial y separar hipótesis de resultados medidos | Capítulo I | Completado | Integrado mediante PR #34 del informe |
-| S3-T02 | Reorganizar evidencia de entrevistas por segmento | Capítulo II | Completado | Integrado mediante PR #35 del informe |
-| S3-T03 | Refinar Acceptance Criteria y trazabilidad | Capítulo III | En revisión | Integrado mediante PR #36; faltan resultados de aceptación para todas las historias |
-| S3-T04 | Alinear arquitectura con Angular, Spring Boot y Spring Data JPA | Capítulo IV | Completado como diseño | Integrado mediante PR #37; distingue arquitectura objetivo |
-| S3-T05 | Revisar planificación, stack, despliegue y colaboración | Capítulo V | Completado documentalmente | Integrado mediante PR #38 |
-| S3-T06 | Integrar seis bounded contexts del frontend | Equipo frontend | Completado | PR #9 a PR #14 fusionados en `develop` |
-| S3-T07 | Realizar validaciones con un participante particular y uno empresarial | Sebastian Reyes Limo | Completado como sesión moderada | Dos grabaciones; no mide ejecución autónoma |
-| S3-T08 | Preparar base DDD del backend con Swagger | Equipo backend | En progreso | Repositorio Spring Boot y ramas iniciales publicadas |
-| S3-T09 | Demostrar flujo completo de resolución | Equipo | Pendiente | Falta evidencia de alerta, responsable, evidencia, cierre e historial en una sola ejecución |
-| S3-T10 | Completar artefactos finales | Equipo | Pendiente | About-the-Team, exposición, Performance Report, Postman, release y ZIP |
+<table>
+    <tr>
+        <td>Sprint #</td>
+        <td colspan="7">Sprint 3</td>
+    </tr>
+    <tr>
+        <td colspan="2">User Story</td>
+        <td colspan="2">Work-Item / Task</td>
+        <td>Description</td>
+        <td>Estimation (Hours)</td>
+        <td>Assigned To</td>
+        <td>Status (Pendiente / En progreso / En revisión / Completado)</td>
+    </tr>
+    <tr>
+        <td>Id</td><td>Title</td><td>Id</td><td>Title</td>
+        <td></td><td></td><td></td><td></td>
+    </tr>
+    <tr><td>-</td><td>Backend base</td><td>T26</td><td>Configurar proyecto Spring Boot</td><td>Preparar Gradle, aplicación principal, configuración local y dependencias de Spring Web, JPA, H2 y Springdoc.</td><td>5</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
+    <tr><td>-</td><td>Backend base</td><td>T27</td><td>Implementar capa Shared</td><td>Crear las clases base compartidas para persistencia, auditoría y estructura DDD.</td><td>5</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
+    <tr><td>-</td><td>Documentación de API</td><td>T28</td><td>Configurar OpenAPI y Swagger</td><td>Habilitar el documento OpenAPI y Swagger UI aun cuando un contexto no exponga endpoints.</td><td>3</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
+    <tr><td>US03, US05</td><td>Vehicle Information API</td><td>T29</td><td>Desarrollar Vehicle Information</td><td>Implementar agregado, capa de aplicación, persistencia JPA y controladores REST para vehículos.</td><td>8</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
+    <tr><td>US10, US12</td><td>Fleet Management API</td><td>T30</td><td>Desarrollar Fleet Management</td><td>Implementar flotas y casos de resolución mediante capas DDD y endpoints REST.</td><td>8</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
+    <tr><td>US03, US04</td><td>Report Management API</td><td>T31</td><td>Desarrollar Report Management</td><td>Implementar reportes, fuentes, hallazgos y nivel de riesgo mediante capas DDD y endpoints REST.</td><td>8</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
+    <tr><td>US03–US12</td><td>Integración técnica</td><td>T32</td><td>Consolidar los contextos del backend</td><td>Integrar la base compartida y los tres bounded contexts en una versión común del backend.</td><td>6</td><td>Gonzalo Quintanilla</td><td>En progreso</td></tr>
+    <tr><td>US03–US12</td><td>Conexión frontend–backend</td><td>T33</td><td>Conectar servicios Angular</td><td>Reemplazar progresivamente los datos simulados por solicitudes HTTP a los contratos REST.</td><td>8</td><td>Equipo BLIP</td><td>En progreso</td></tr>
+    <tr><td>-</td><td>Persistencia de producción</td><td>T34</td><td>Configurar MySQL</td><td>Configurar la conexión MySQL mediante variables de entorno sin almacenar credenciales en el repositorio.</td><td>5</td><td>Equipo BLIP</td><td>Pendiente</td></tr>
+    <tr><td>-</td><td>Despliegue del backend</td><td>T35</td><td>Desplegar en Railway</td><td>Publicar Spring Boot en Railway, configurar la conexión de datos y verificar Swagger y endpoints públicos.</td><td>6</td><td>Equipo BLIP</td><td>Pendiente</td></tr>
+</table>
+
+Las tareas continúan la numeración de Sprint 2, desde T26 hasta T35, y suman 62 horas planificadas. El desarrollo base y los tres bounded contexts se encuentran implementados; la consolidación, la conexión con Angular, MySQL de producción y el despliegue en Railway permanecen en progreso o pendientes según la tabla.
 
 #### 5.2.3.4 Development Evidence for Sprint Review
 
-El repositorio del informe registra los Pull Requests #34 a #38 para los capítulos I–V. El frontend registra los Pull Requests #9 a #14 para Fleet Management, Subscription Management, Vehicle Information, Report Management, Identity and Access Management y Vehicle Monitoring. Estas integraciones acreditan cambios en Git; la aceptación funcional se determina mediante pruebas y evidencia adicional.
+El backend se desarrolló como una aplicación Spring Boot con Java 25, Gradle, Spring Web MVC, Spring Data JPA y Springdoc OpenAPI, siguiendo una organización DDD. Las ramas `feature/vehicle-information`, `feature/fleet-management` y `feature/report-management` registran la implementación de los tres bounded contexts incluidos en el Sprint 3. La conexión con Angular está en progreso y el despliegue en Railway aún no se presenta como completado.
 
-El backend definitivo se inició como una aplicación Spring Boot con Java 25, Gradle, Spring Web MVC, Spring Data JPA y Springdoc OpenAPI. Las ramas `feature/vehicle-information`, `feature/fleet-management` y `feature/report-management` contienen los primeros bounded contexts. En esta etapa no se declara integración con el frontend ni despliegue de producción.
+<h3>Development Evidence – Sprint 3</h3>
+
+<table>
+    <thead><tr><th>Repository</th><th>Branch</th><th>Commit Id</th><th>Commit Message</th><th>Commit Message Body</th><th>Committed on (Date)</th></tr></thead>
+    <tbody>
+        <tr><td>blip-fleetproof-backend</td><td>feature/vehicle-information</td><td><a href="https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-backend/commit/3b3b3a5">3b3b3a5</a></td><td>feat: add Vehicle REST controller</td><td>Cierra la primera versión del contexto Vehicle Information.</td><td>11/11/2026</td></tr>
+        <tr><td>blip-fleetproof-backend</td><td>feature/fleet-management</td><td><a href="https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-backend/commit/bf57c99">bf57c99</a></td><td>feat: add ResolutionCaseRepository for resolution case data access</td><td>Cierra la primera versión de Fleet Management y casos.</td><td>11/11/2026</td></tr>
+        <tr><td>blip-fleetproof-backend</td><td>feature/report-management</td><td><a href="https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-backend/commit/cac8527">cac8527</a></td><td>feat: add Report REST controller</td><td>Cierra la primera versión del contexto Report Management.</td><td>11/11/2026</td></tr>
+    </tbody>
+</table>
+
+La tabla selecciona un commit representativo por bounded context. La configuración base, `shared` y Swagger forman parte de la estructura común del backend. El historial completo conserva los cambios por archivo; el número de commits no se utiliza como medida de esfuerzo o calidad.
 
 #### 5.2.3.5 Execution Evidence for Sprint Review
 
-##### Entrevistas de validación del frontend
+En Sprint 3 se ejecutó localmente el backend y se revisaron mediante Swagger los contratos implementados en las ramas de Vehicle Information, Fleet Management y Report Management. La ejecución disponible permite demostrar:
 
-El 11 de noviembre de 2026 se realizaron dos sesiones moderadas para recoger comentarios sobre la consulta de reportes vehiculares, el monitoreo y la gestión de flotas en FleetProof. Sebastian Reyes Limo compartió su pantalla y operó la aplicación en un entorno local con datos de demostración. Los participantes observaron el recorrido, respondieron preguntas y comentaron su utilidad para sus propios casos. La validación recoge comprensión, expectativas e intención de uso. Como el moderador controló el navegador, no se midió la capacidad de completar tareas de forma autónoma ni el tiempo de ejecución por participante.
+* Inicio de la aplicación Spring Boot en `http://localhost:8080`.
+* Generación del documento OpenAPI en `/v3/api-docs`.
+* Acceso a Swagger UI en `/swagger-ui/index.html`.
+* Operaciones REST para registrar y consultar vehículos.
+* Operaciones REST para crear flotas y administrar casos de resolución.
+* Operaciones REST para crear y consultar reportes vehiculares.
+
+##### Evidencias pendientes del backend desplegado
+
+Cuando el backend se encuentre desplegado en Railway, se deberán incorporar en este apartado capturas legibles que incluyan la URL pública y la fecha de ejecución. Los siguientes espacios dejan definida la evidencia que debe añadirse sin afirmar que el despliegue ya fue completado.
+
+**Evidencia 1: Backend desplegado en Railway**
+
+<!-- Reemplazar este comentario por:
+![Backend de FleetProof desplegado en Railway](assets/chapter-5/sprint-3/01-railway-backend-deployed.png)
+-->
+
+**Figura 5.24.** Servicio Spring Boot de FleetProof desplegado en Railway y mostrado con estado disponible.
+
+**Evidencia 2: Swagger UI del backend desplegado**
+
+<!-- Reemplazar este comentario por:
+![Swagger UI del backend de FleetProof desplegado](assets/chapter-5/sprint-3/02-railway-swagger-ui.png)
+-->
+
+**Figura 5.25.** Swagger UI servido desde la URL pública de Railway con los endpoints REST del backend.
+
+**Evidencia 3: Ejecución de un endpoint desde Swagger**
+
+<!-- Reemplazar este comentario por:
+![Ejecución de endpoint del backend desde Swagger](assets/chapter-5/sprint-3/03-swagger-endpoint-execution.png)
+-->
+
+**Figura 5.26.** Ejecución de una operación REST desde Swagger, mostrando URL, parámetros, código de estado y cuerpo de respuesta.
+
+**Evidencia 4: Contextos disponibles en Swagger**
+
+<!-- Reemplazar este comentario por:
+![Endpoints de los bounded contexts en Swagger](assets/chapter-5/sprint-3/04-swagger-bounded-contexts.png)
+-->
+
+**Figura 5.27.** Endpoints correspondientes a Vehicle Information, Fleet Management y Report Management disponibles en el backend desplegado.
+
+El backend constituye el incremento desarrollado en este sprint. La sustitución de los datos simulados del frontend por estas APIs se encuentra en progreso; por ello todavía no se declara un recorrido frontend–backend completamente conectado.
+
+#### 5.2.3.6 Services Documentation Evidence for Sprint Review
+
+Los siguientes contratos corresponden al backend desarrollado durante Sprint 3. Su consumo desde Angular continúa en implementación, por lo que la tabla documenta la API y no afirma que todos los flujos del frontend ya estén conectados.
+
+| Nombre del Endpoint | Acciones Implementadas | Sintaxis de Llamada | Especificación de Parámetros |
+|---|---|---|---|
+| Vehicles | GET, POST, PUT | `GET /api/v1/vehicles`; `GET /api/v1/vehicles/{id}`; `POST /api/v1/vehicles`; `PUT /api/v1/vehicles/{id}` | Usuario, flota, placa, marca, modelo, año, responsable, VIN y propietario. |
+| Fleets | GET, POST | `GET /api/v1/fleets`; `POST /api/v1/fleets` | Usuario y nombre de la flota. |
+| Resolution Cases | GET, POST, PUT | `GET /api/v1/cases`; `POST /api/v1/cases`; `PUT /api/v1/cases/{id}` | Usuario, vehículo, reporte, Finding, responsable, fecha límite, estado, evidencia y notas. |
+| Reports | GET, POST | `GET /api/v1/reports`; `GET /api/v1/reports/{id}`; `POST /api/v1/reports` | Usuario, vehículo, placa, fecha, versión y snapshot de fuentes y Findings. |
+| OpenAPI | GET | `GET /v3/api-docs` | Documento OpenAPI generado por Springdoc. |
+| Swagger UI | GET | `GET /swagger-ui/index.html` | Interfaz de exploración de los endpoints disponibles en la rama ejecutada. |
+
+Springdoc genera el documento OpenAPI en `/v3/api-docs` y Swagger UI en `/swagger-ui/index.html`. Durante la conexión se deben unificar las URLs base, configurar CORS, acordar el contrato de búsqueda por placa o identificador y registrar solicitudes y respuestas en Postman.
+
+#### 5.2.3.7 Software Deployment Evidence for Sprint Review
+
+El frontend conserva su despliegue en Netlify mientras el backend se ejecuta localmente. El destino acordado para publicar Spring Boot es Railway. Como el despliegue todavía no se ha completado, no se consigna una URL pública inexistente.
+
+* **Plataforma del frontend:** Netlify.
+* **URL documentada del frontend:** [https://blip-fleetproof.netlify.app/](https://blip-fleetproof.netlify.app/).
+* **Backend definitivo:** ejecución local en `http://localhost:8080`.
+* **Swagger UI local:** `http://localhost:8080/swagger-ui/index.html`.
+* **Base de datos local del backend:** H2 en memoria para desarrollo.
+* **Plataforma prevista para el backend:** Railway.
+* **Base de datos de producción prevista:** MySQL, configurada mediante variables de entorno.
+* **Estado del despliegue:** pendiente.
+
+##### Evidencias pendientes de configuración y despliegue en Railway
+
+Cuando se configure el entorno de producción, se deberán incorporar las siguientes capturas. Las imágenes deben ocultar contraseñas, tokens, cadenas de conexión y cualquier otro dato sensible.
+
+**Evidencia 1: Creación del proyecto y servicio en Railway**
+
+<!-- Reemplazar este comentario por:
+![Creación del proyecto y servicio backend en Railway](assets/chapter-5/sprint-3/05-railway-project-service.png)
+-->
+
+**Figura 5.28.** Proyecto de FleetProof y servicio destinado al backend Spring Boot creados en Railway.
+
+**Evidencia 2: Conexión del repositorio del backend**
+
+<!-- Reemplazar este comentario por:
+![Repositorio del backend conectado con Railway](assets/chapter-5/sprint-3/06-railway-github-repository.png)
+-->
+
+**Figura 5.29.** Repositorio y rama del backend seleccionados como fuente del despliegue automático en Railway.
+
+**Evidencia 3: Configuración de variables de entorno**
+
+<!-- Reemplazar este comentario por:
+![Variables de entorno configuradas en Railway](assets/chapter-5/sprint-3/07-railway-environment-variables.png)
+-->
+
+**Figura 5.30.** Variables de entorno requeridas por Spring Boot y la conexión MySQL configuradas en Railway, con los valores sensibles ocultos.
+
+**Evidencia 4: Configuración y resultado del despliegue**
+
+<!-- Reemplazar este comentario por:
+![Configuración y despliegue exitoso del backend en Railway](assets/chapter-5/sprint-3/08-railway-deployment-success.png)
+-->
+
+**Figura 5.31.** Configuración de construcción y ejecución del servicio, junto con el despliegue exitoso del backend en Railway.
+
+Cuando se complete el despliegue se deberá registrar la URL pública de Railway, las variables de entorno utilizadas sin revelar credenciales, el estado HTTP, una captura de Swagger y una prueba de conexión desde Netlify. La ejecución local actual no se presenta como despliegue público.
+
+#### 5.2.3.8 Team Collaboration Insights during Sprint
+
+El trabajo del backend se dividió por bounded context para evitar mezclar cambios durante la construcción inicial. Las ramas `feature/vehicle-information`, `feature/fleet-management` y `feature/report-management` comparten la misma base Spring Boot, la capa `shared` y la configuración de Swagger. Esta organización permitió desarrollar y revisar cada módulo de forma independiente antes de consolidarlo.
+
+| Participación registrada | Alcance técnico | Estado |
+|---|---|---|
+| Gonzalo Quintanilla (`GoldQP`) | Base Spring Boot, `shared`, Swagger, Vehicle Information, Fleet Management y Report Management. | Desarrollo completado; consolidación y conexión en progreso. |
+| Equipo BLIP | Revisión de contratos, conexión de los servicios Angular y preparación del entorno Railway. | En progreso / pendiente según el Sprint Backlog 3. |
+
+La principal lección del sprint es que cada bounded context debe conservar la misma estructura DDD y compartir únicamente elementos transversales mediante `shared`. La conexión con el frontend requiere acordar DTOs, URLs base, CORS y manejo de errores antes de reemplazar los datos simulados. El despliegue en Railway debe realizarse después de consolidar el backend y configurar MySQL mediante variables de entorno.
+
+## 5.3 Validation Interviews
+
+### 5.3.1 Diseño de Entrevistas
+
+Las entrevistas de validación se diseñaron para contrastar la comprensión y utilidad percibida del frontend de FleetProof en los dos segmentos definidos por el equipo: personas que evalúan o monitorean un vehículo y empresas que administran una flota. Las sesiones se realizaron sobre una versión local con datos de demostración; por ello, sus resultados no acreditan integración con fuentes oficiales, pagos reales ni envío efectivo de alertas.
+
+| Elemento | Diseño aplicado |
+|---|---|
+| Objetivo | Identificar si las personas comprenden la consulta por placa, el nivel de riesgo, el monitoreo, la gestión de flotas y la activación de una suscripción. |
+| Participantes | Un participante del segmento particular y una participante del segmento empresarial. |
+| Modalidad | Sesión remota moderada con pantalla compartida y grabación. |
+| Prototipo evaluado | Frontend local de FleetProof con datos simulados. |
+| Recorrido | Inicio de sesión; consulta y revisión de un reporte; explicación de fuentes y riesgos; monitoreo; flotas; y activación simulada de un plan. |
+| Preguntas de cierre | Utilidad percibida, información faltante, confianza en el resultado, intención de uso y recomendación. |
+| Evidencia | Grabación de cada sesión y registro de observaciones con marcas de tiempo. |
+
+El moderador controló el navegador mientras los participantes observaban el recorrido y respondían preguntas. En consecuencia, estas sesiones permiten recoger comprensión, expectativas e intención de uso, pero no miden la capacidad de completar tareas de manera autónoma ni el tiempo de ejecución de cada participante.
+
+### 5.3.2 Registro de Entrevistas
+
+El 11 de noviembre de 2026 se realizaron dos sesiones moderadas. Sebastian Reyes Limo compartió su pantalla y operó la aplicación en un entorno local. Los tiempos consignados son aproximados y se cuentan desde el inicio de cada grabación enlazada.
 
 | Participante | Segmento representado | Duración | Evidencia |
 |---|---|---:|---|
 | Cristhian Amaya | Particular. Escenario de compra de un vehículo usado y seguimiento posterior. | 3 min 50 s | [Ver grabación de Cristhian](https://drive.google.com/file/d/1CtNP9LyLidYjLD7K_gaAsz1zfq1H0Lq8/view?usp=sharing) |
 | Roxana Limo | Empresa. Jefa de marca con vehículos de prueba de manejo en tres ciudades. | 4 min 09 s | [Ver grabación de Roxana](https://drive.google.com/file/d/1rnyaSSVS_42uR4PmsGFv6SOQrKGxjh5N/view?usp=sharing) |
 
-Los tiempos que se indican a continuación son aproximados y se cuentan desde el inicio de cada grabación enlazada.
-
-###### Validación 1. Cristhian Amaya
+#### Entrevista 1. Cristhian Amaya
 
 El moderador inició sesión y mostró la consulta por placa, el reporte `ABC-123` en su versión 3, las fuentes y hallazgos, y los planes de monitoreo individual.
 
 | Minuto | Observación | Implicación para el producto |
 |---|---|---|
-| 00:16–00:35 | Ante el escenario de compra, Cristhian indicó que buscaría por placa en distintas fuentes y tendría que consultarlas una por una. | La placa coincide con su punto de partida. Reunir los resultados en un reporte responde a la dispersión de información que describió. |
-| 01:19–01:47 | Preguntó qué datos podrían obtenerse de SUNARP. Mostró interés en el historial de propietarios, los precios anteriores y la existencia de garantías asociadas al vehículo. | Explicar qué campos están disponibles por fuente y qué datos quedan fuera de la cobertura. El interés por esos datos no acredita que la versión actual los ofrezca. |
-| 02:33–03:16 | Preguntó si la información se consulta al momento o se obtiene de una base previa. También planteó qué ocurriría si apareciera una papeleta una semana después de generar el reporte. | Mostrar la fecha de la información y diferenciar la consulta puntual del seguimiento posterior. Precisar cuándo se revisan los cambios y por qué canal se notificarían. |
-| 03:24–03:41 | Dijo que usaría el producto tanto para evaluar una compra como para monitorear su vehículo. Mencionó que algunas fotopapeletas se conocen tarde y pueden tener consecuencias en la cuenta bancaria. | Priorizar alertas comprensibles y oportunas para cambios posteriores a la consulta. El comentario expresa intención de uso. |
+| 00:16–00:35 | Ante el escenario de compra, Cristhian indicó que buscaría por placa en distintas fuentes y tendría que consultarlas una por una. | Reunir los resultados en un reporte responde a la dispersión de información que describió. |
+| 01:19–01:47 | Preguntó qué datos podrían obtenerse de SUNARP. Mostró interés en el historial de propietarios, precios anteriores y garantías asociadas al vehículo. | Explicar qué campos están disponibles por fuente y cuáles quedan fuera de la cobertura. El interés expresado no acredita que la versión actual ofrezca esos datos. |
+| 02:33–03:16 | Preguntó si la información se consulta al momento o se obtiene de una base previa. También planteó qué ocurriría si apareciera una papeleta una semana después. | Mostrar la fecha de la información y diferenciar la consulta puntual del seguimiento; precisar la frecuencia y el canal de notificación. |
+| 03:24–03:41 | Dijo que usaría el producto para evaluar una compra y para monitorear su vehículo. | Priorizar alertas comprensibles y oportunas para cambios posteriores a la consulta. El comentario expresa intención de uso. |
 
-###### Validación 2. Roxana Limo
+#### Entrevista 2. Roxana Limo
 
-El moderador mostró el inicio con reportes recientes, el detalle del reporte `ABC-123`, la vista de Flota y la activación simulada de una suscripción mediante QR. En esta sesión se mostró un plan individual, aunque el escenario consultado correspondía al segmento empresarial.
+El moderador mostró el inicio con reportes recientes, el detalle del reporte `ABC-123`, la vista de Flota y la activación simulada de una suscripción mediante QR. Se mostró un plan individual, aunque el escenario correspondía al segmento empresarial.
 
 | Minuto | Observación | Implicación para el producto |
 |---|---|---|
-| 00:50–01:17 | Roxana identificó la columna **Riesgo** como lo primero que llamó su atención. El moderador abrió el reporte y mostró la explicación de un riesgo alto asociado a una papeleta del escenario. | Mantener visible el nivel de riesgo y facilitar el acceso al hallazgo que lo explica. |
-| 02:00–02:55 | Valoró tener la información centralizada. Indicó que coordina alrededor de 25 vehículos de prueba de manejo en tres ciudades y que hoy consulta a distintas personas y áreas para conocer kilometraje, movimiento y papeletas. | Explorar la agrupación por sede y el seguimiento de responsables. Kilometraje y movimiento son necesidades mencionadas en la entrevista. La sesión no acredita que FleetProof los registre. |
-| 03:06–03:12 | El moderador abrió el QR del plan semanal individual por S/ 9 y confirmó la activación. Al cerrarse el diálogo, la pantalla mostró **Semanal** y **Activa**. | Se observó el cambio de estado en el flujo simulado. Queda por validar el recorrido con una cuenta empresarial y un plan cuyo límite sea adecuado para una operación de aproximadamente 25 vehículos. |
-| 03:12–03:52 | El moderador creó una flota y la nueva agrupación apareció con cero vehículos asignados. Roxana calificó la plataforma como amigable, dijo que la usaría y señaló que la recomendaría a clientes corporativos que compran flotas. | La creación de la agrupación fue visible. Queda por observar si una persona del segmento puede asignar vehículos y responsables sin ayuda. |
+| 00:50–01:17 | Roxana identificó la columna **Riesgo** como lo primero que llamó su atención. | Mantener visible el nivel de riesgo y facilitar el acceso al hallazgo que lo explica. |
+| 02:00–02:55 | Valoró la información centralizada. Indicó que coordina alrededor de 25 vehículos de prueba de manejo en tres ciudades y consulta a distintas áreas para conocer kilometraje, movimiento y papeletas. | Explorar la agrupación por sede y el seguimiento de responsables. La sesión no acredita que FleetProof registre kilometraje o movimiento. |
+| 03:06–03:12 | El moderador abrió el QR del plan semanal individual por S/ 9 y confirmó la activación. La pantalla mostró **Semanal** y **Activa**. | Se observó el cambio de estado del flujo simulado. Falta probar una cuenta empresarial y un plan adecuado para aproximadamente 25 vehículos. |
+| 03:12–03:52 | El moderador creó una flota y apareció la nueva agrupación con cero vehículos asignados. Roxana calificó la plataforma como amigable y señaló que la recomendaría. | La creación de la agrupación fue visible. Falta observar si una persona puede asignar vehículos y responsables sin ayuda. |
 
-###### Síntesis y acciones propuestas
+#### Síntesis de resultados
 
-Ambas sesiones apuntan al valor de centralizar la información vehicular. Cristhian distinguió dos momentos de uso: la decisión de compra y el seguimiento posterior. Roxana destacó la visibilidad del riesgo y la posibilidad de reunir información que hoy solicita a varias áreas. Sus respuestas sirven para orientar el siguiente refinamiento del backlog.
+Ambas sesiones apuntan al valor percibido de centralizar la información vehicular. Cristhian distinguió la decisión de compra del seguimiento posterior; Roxana destacó la visibilidad del riesgo y la gestión centralizada. Las grabaciones muestran el frontend local con registros de demostración y una activación simulada. No demuestran conexión con fuentes externas, alertas por correo, pagos reales ni reducción de tiempo operativo.
 
-| Prioridad propuesta | Cambio a evaluar | Cómo validarlo en la siguiente sesión |
+| Prioridad | Mejora derivada | Próxima comprobación |
 |---|---|---|
-| Alta | Diferenciar **Reporte por placa** de **Monitoreo** y mostrar la fecha de los datos, la frecuencia de revisión y el canal de alertas. | Pedir a una persona que explique qué ocurriría si aparece una papeleta después de generar un reporte y cómo sabría cuándo se revisó el dato. |
-| Alta | Explicar la cobertura por fuente y el alcance de cada hallazgo en el reporte. | Pedir a una persona que identifique qué información registral puede usar para una decisión de compra y qué dato tendría que verificar por otro medio. |
-| Alta | Revisar la capacidad de los planes empresariales y probar la gestión de flotas con una cuenta de empresa. | Usar un escenario de 25 vehículos en varias sedes y observar la selección del plan y la asignación de vehículos a una flota. |
-| Media | Evaluar sede, kilometraje y movimiento como requisitos para el segmento empresarial. | Confirmar qué información necesita cada responsable, cómo se obtiene y con qué frecuencia debe actualizarse. |
+| Alta | Diferenciar **Reporte por placa** de **Monitoreo** y mostrar fecha de datos, frecuencia y canal de alertas. | Pedir que la persona explique qué ocurriría si aparece una papeleta después del reporte. |
+| Alta | Explicar la cobertura y alcance de cada fuente. | Pedir que identifique qué información puede usar y cuál debe verificar por otro medio. |
+| Alta | Revisar capacidad de planes empresariales y probar la gestión de flotas con una cuenta empresarial. | Utilizar un escenario de 25 vehículos en varias sedes. |
+| Media | Evaluar sede, kilometraje y movimiento como requisitos empresariales. | Confirmar responsables, origen de los datos y frecuencia de actualización. |
 
-En la demostración se mencionaron consultas en tiempo real y alertas por correo. Las grabaciones muestran el frontend local con registros de demostración y una activación simulada. La integración con fuentes externas, el envío efectivo de correos y la reducción de tiempo en la operación siguen como puntos por verificar.
+### 5.3.3 Evaluaciones según heurísticas
 
-#### 5.2.3.6 Services Documentation Evidence for Sprint Review
+Se realizó una revisión documental preliminar de la interfaz mostrada durante las sesiones, tomando como referencia las heurísticas de usabilidad de Nielsen. Esta evaluación no reemplaza una inspección completa realizada por varios especialistas ni una prueba autónoma con usuarios; su propósito es convertir los hallazgos observados en acciones verificables.
 
-Los siguientes contratos corresponden a la implementación inicial disponible en ramas del backend. No se consideran integrados en `develop` ni consumidos por el frontend hasta completar Pull Requests, pruebas y configuración común.
+| Heurística | Evidencia o riesgo observado | Recomendación | Severidad preliminar |
+|---|---|---|---:|
+| Visibilidad del estado del sistema | El riesgo y el estado de la suscripción son visibles, pero no siempre se explicitan fecha de consulta, frecuencia de monitoreo o vigencia de la información. | Mostrar última actualización, próxima revisión y canal de alerta. | 3 |
+| Correspondencia con el mundo real | Términos como *Finding*, fuente y monitoreo pueden interpretarse de manera distinta por una persona no técnica. | Usar vocabulario en español y explicaciones breves asociadas a cada fuente y hallazgo. | 2 |
+| Control y libertad del usuario | La demostración no permitió comprobar cancelación, retroceso o edición en todos los flujos. | Incorporar acciones claras para volver, cancelar, editar y confirmar operaciones. | 2 |
+| Consistencia y estándares | Los estados de reportes, riesgos, casos y suscripciones requieren una terminología uniforme. | Definir un catálogo único de estados, colores y etiquetas para todos los contextos. | 2 |
+| Prevención de errores | La activación y la creación de flotas usan datos simulados; no se observó prevención completa de selecciones incompatibles. | Validar límites del plan, campos obligatorios y confirmaciones antes de guardar. | 3 |
+| Reconocimiento antes que recuerdo | La columna de riesgo ayuda a priorizar, pero la cobertura de fuentes y los pasos siguientes no siempre permanecen visibles. | Mostrar resumen de fuentes, explicación del riesgo y acción recomendada en el mismo contexto. | 2 |
+| Flexibilidad y eficiencia de uso | El recorrido individual no cubre las necesidades de una operación empresarial de aproximadamente 25 vehículos. | Añadir agrupación por sede, filtros, asignación masiva y vistas según rol, luego validarlas. | 3 |
+| Diseño estético y minimalista | Las pantallas centralizan información útil, aunque el detalle puede crecer conforme se incorporen nuevas fuentes. | Aplicar jerarquía visual y divulgación progresiva para evitar sobrecarga. | 1 |
+| Ayuda para reconocer y recuperarse de errores | No se comprobó el comportamiento ante una fuente no disponible, una consulta fallida o un pago rechazado. | Presentar mensajes específicos, conservar los datos ingresados y ofrecer reintento. | 3 |
+| Ayuda y documentación | Las sesiones revelaron dudas sobre cobertura, actualidad de datos y funcionamiento de alertas. | Incorporar ayuda contextual y una página de cobertura, frecuencia y limitaciones. | 2 |
 
-| Bounded Context | Método y ruta | Propósito | Estado |
-|---|---|---|---|
-| Vehicle Information | `GET /api/v1/vehicles` | Listar vehículos; admite filtro por usuario en la implementación inicial | Implementado en rama |
-| Vehicle Information | `GET /api/v1/vehicles/{id}` | Consultar vehículo por identificador | Implementado en rama |
-| Vehicle Information | `POST /api/v1/vehicles` | Registrar vehículo | Implementado en rama |
-| Vehicle Information | `PUT /api/v1/vehicles/{id}` | Actualizar vehículo | Implementado en rama |
-| Fleet Management | `GET /api/v1/fleets` | Listar flotas | Implementado en rama |
-| Fleet Management | `POST /api/v1/fleets` | Crear flota | Implementado en rama |
-| Fleet Management | `GET /api/v1/cases` | Listar casos de resolución | Implementado en rama |
-| Fleet Management | `POST /api/v1/cases` | Crear caso | Implementado en rama |
-| Fleet Management | `PUT /api/v1/cases/{id}` | Actualizar caso y su estado | Implementado en rama |
-| Report Management | `GET /api/v1/reports` | Listar reportes | Implementado en rama |
-| Report Management | `GET /api/v1/reports/{id}` | Consultar reporte | Implementado en rama |
-| Report Management | `POST /api/v1/reports` | Crear reporte con snapshot de fuentes | Implementado en rama |
+La escala preliminar utilizada es: 0 = no representa un problema; 1 = cosmético; 2 = menor; 3 = importante; 4 = crítico. Antes de declarar cerrados estos hallazgos, el equipo debe asignar evaluadores, repetir el recorrido de forma independiente y adjuntar capturas o registros que permitan comprobar cada corrección.
 
-Springdoc genera el documento OpenAPI en `/v3/api-docs` y Swagger UI en `/swagger-ui/index.html`. Antes de integrar se debe decidir el contrato definitivo de búsqueda por placa o identificador, evitar configuraciones duplicadas entre ramas y registrar solicitudes/respuestas en Postman.
+## 5.4 Video About-the-Product
 
-#### 5.2.3.7 Software Deployment Evidence for Sprint Review
+Al cierre documental actual no se ha incorporado una URL final verificable para el video About-the-Product. Para completar esta sección sin presentar evidencia inexistente, el equipo debe añadir el enlace público, duración, fecha y una captura cuando el video esté publicado.
 
-El frontend y la Fake API conservan las URLs documentadas de Netlify y Render. Su disponibilidad debe comprobarse nuevamente y acompañarse de fecha, status HTTP y captura antes de la entrega. El backend Spring Boot se ejecuta localmente con una base H2 de desarrollo; no existe evidencia de un despliegue público del backend definitivo ni de una base de datos de producción.
-
-#### 5.2.3.8 Team Collaboration Insights during Sprint
-
-Las correcciones del informe se integraron mediante los Pull Requests #34 a #38. Las ramas del frontend convergieron mediante los Pull Requests #9 a #14. El historial permite identificar autores, commits y merges, pero no debe utilizarse por sí solo para afirmar esfuerzo equitativo o aceptación funcional.
-
-| Pull Request | Contexto / módulo | Estado verificado en `develop` |
-|---|---|---|
-| PR #9 | Fleet Management | Fusionado |
-| PR #10 | Subscription Management | Fusionado |
-| PR #11 | Vehicle Information | Fusionado |
-| PR #12 | Report Management | Fusionado |
-| PR #13 | Identity and Access Management | Fusionado |
-| PR #14 | Vehicle Monitoring | Fusionado |
-
-| Pull Request del informe | Alcance | Estado verificado en `develop` |
-|---|---|---|
-| PR #34 | Capítulo I | Fusionado |
-| PR #35 | Capítulo II | Fusionado |
-| PR #36 | Capítulo III | Fusionado |
-| PR #37 | Capítulo IV | Fusionado |
-| PR #38 | Capítulo V y revisión transversal | Fusionado |
-
-Para la siguiente revisión, cada integrante debe vincular su funcionalidad con una User Story, una demostración reproducible y una explicación oral. Los artefactos About-the-Team, exposición y Participant Performance Report completarán la evidencia individual cuando se incorporen sus enlaces finales.
+| Elemento requerido | Estado |
+|---|---|
+| Enlace público del video | Pendiente de incorporar. |
+| Duración | Pendiente de registrar. |
+| Fecha de publicación | Pendiente de registrar. |
+| Contenido mínimo | Problema, segmentos, propuesta de valor, recorrido del producto, principales funcionalidades y cierre del equipo. |
+| Evidencia visual | Pendiente de incorporar una captura con el video publicado. |
