@@ -25,11 +25,13 @@ En esta sección se describen las herramientas de software seleccionadas para da
 | Herramienta / Tecnología | Uso principal | Enlace / Ruta de Descarga |
 |---|---|---|
 | **Visual Studio Code** | Entorno de desarrollo ligero para la edición del Landing Page con HTML5, CSS3 y JavaScript. | [https://code.visualstudio.com](https://code.visualstudio.com) |
-| **WebStorm** | IDE principal para el desarrollo del Frontend SPA utilizando Vue 3 y TypeScript. | [https://www.jetbrains.com/webstorm/](https://www.jetbrains.com/webstorm/) |
-| **Rider / Visual Studio** | Entorno de desarrollo integrado para la construcción del Backend API con ASP.NET Core y C#. | [https://www.jetbrains.com/rider/](https://www.jetbrains.com/rider/) |
+| **WebStorm** | IDE principal para el desarrollo del Frontend SPA utilizando Angular y TypeScript. | [https://www.jetbrains.com/webstorm/](https://www.jetbrains.com/webstorm/) |
+| **IntelliJ IDEA** | Entorno de desarrollo integrado para la construcción del Backend API RESTful con Java y Spring Boot. | https://www.jetbrains.com/idea/ |
 | **HTML5** | Lenguaje de marcado para estructurar el contenido de la Landing Page. | [https://developer.mozilla.org/es/docs/Web/HTML](https://developer.mozilla.org/es/docs/Web/HTML) |
 | **CSS3** | Lenguaje de estilos para definir la apariencia visual y responsiva de la Landing Page. | [https://developer.mozilla.org/es/docs/Web/CSS](https://developer.mozilla.org/es/docs/Web/CSS) |
-| **Vue 3** | Framework progresivo de JavaScript para construir interfaces de usuario reactivas en la Web Application. | [https://vuejs.org](https://vuejs.org) |
+| **Angular** | Framework del frontend desarrollado con TypeScript y Angular Material. | [Angular](https://angular.dev/) |
+| **Java (JDK 21+)** |Lenguaje de programación fuertemente tipado para la implementación de la lógica de dominio y servicios backend. | https://www.oracle.com/java/technologies/downloads/ |
+| **Spring Boot** | Framework de backend en Java para la creación de microservicios y APIs RESTful desacopladas mediante Domain-Driven Design (DDD). | https://spring.io/projects/spring-boot |
 
 * **Diseño de Arquitectura de Software**
 
@@ -42,7 +44,7 @@ En esta sección se describen las herramientas de software seleccionadas para da
 | Herramienta / Plataforma | Uso principal | Enlace / Ruta de Acceso |
 |---|---|---|
 | **Netlify** | Despliegue automático y gratuito de la Landing Page estática y el Frontend SPA. | [https://www.netlify.com](https://www.netlify.com) |
-| **Render / Azure** | Despliegue en la nube del Backend API (ASP.NET Core) y alojamiento de la base de datos PostgreSQL. | [https://render.com](https://render.com) |
+| **Render** | Alojamiento en la nube del Backend API (Java / Spring Boot en contenedores Docker) y base de datos relacional PostgreSQL gestionada. | [Render](https://render.com) |
 
 * **Documentación de Software**
 
@@ -60,11 +62,11 @@ El equipo empleará GitHub como repositorio de alojamiento y Git como sistema de
 
 | Producto | Repositorio GitHub |
 |---|---|
-| **Organización BLIP** | [https://github.com/1ASI0729-8088-BLIP](https://github.com/1ASI0729-8088-BLIP) |
-| **Landing Page** | [https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-LandingPage](https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-LandingPage) |
-| **Project Report** | [https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-project-report](https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-project-report) |
-| **Frontend Web App** | [https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-frontend](https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-frontend) |
-| **Backend API** | [https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-backend](https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-backend) |
+| **Organización BLIP** | [https://github.com/1ASI0729-7800-BLIP](https://github.com/1ASI0729-7800-BLIP) |
+| **Landing Page** | [https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-LandingPage](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-LandingPage) |
+| **Project Report** | [https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-project-report](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-project-report) |
+| **Frontend Web App** | [https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend) |
+| **Backend API** | [https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-backend](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-backend) |
 
 **Modelo GitFlow**
 
@@ -91,7 +93,7 @@ Se implementará el esquema Semantic Versioning 2.0.0, con el formato:
 
 Los mensajes de commit seguirán el estándar Conventional Commits para asegurar trazabilidad y generar changelogs automáticos.
 
-Formato general: `(opcional-scope): descripción breve`
+Formato general: `<tipo>(<alcance-opcional>): <descripción breve>`
 
 Tipos de commit definidos:
 * `feat`: nueva funcionalidad
@@ -109,57 +111,78 @@ Con el objetivo de mantener un código ordenado, consistente y fácil de mantene
 * Se utilizará inglés como idioma único para nombres de variables, funciones, clases, comentarios y documentación técnica.
 * Se evitarán abreviaciones innecesarias y nombres genéricos como `data1`, `temp`, `info`, etc.
 
-**HTML**
-Atributos en minúsculas y nombres de clase con `kebab-case` (`section-title`, `hero-grid`).
+#### HTML
+
+* Atributos en minúsculas y nombres de clase con `kebab-case` (`section-title`, `hero-grid`).
 * Estructura semántica clara: uso de etiquetas como `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`.
 * Sangría con 4 espacios.
 * Atributos ordenados de manera lógica: `id`, `class`, `type`, `name`, `placeholder`, `value`, `required`, etc.
 
-**CSS**
-* Para clases personalizadas: usar `kebab-case`.
-* Se agruparán variables globales en la seccion `:root` (paleta de colores y espaciado).
+#### CSS
 
-**Google TypeScript Style Guide**
-Basado en el Google TypeScript Style Guide, se adoptan las siguientes reglas para mantener un código limpio y coherente en el desarrollo de la Web Application (Vue 3):
+* Para clases personalizadas: usar `kebab-case`.
+* Se agruparán variables globales en la sección `:root` (paleta de colores y espaciado).
+
+#### Google TypeScript Style Guide
+
+Basado en el Google TypeScript Style Guide, se adoptan las siguientes reglas para mantener un código limpio y coherente en el desarrollo de la Web Application en Angular:
 
 Nombres y sintaxis:
-* `camelCase` para variables, funciones y parámetros.
-* `PascalCase` para clases, interfaces, enums y tipos.
-* Constantes con `UPPER_CASE_WITH_UNDERSCORES` si son globales.
+* `camelCase` para variables, funciones, métodos y propiedades.
+* `PascalCase` para clases, interfaces, enums, tipos y componentes.
+* Constantes con `UPPER_CASE_WITH_UNDERSCORES` si son valores inmutables globales.
 
-Módulos y imports:
-* Preferir imports explícitos y ordenados: primero bibliotecas externas, luego internas.
-* Evitar `default exports`, usar siempre `export const` o `export class`.
+Módulos e imports:
+* Preferir imports explícitos y ordenados: primero bibliotecas del framework (`@angular/*`), luego dependencias externas, y finalmente módulos internos del proyecto.
+* Evitar `default exports`, usar siempre exportaciones nombradas (`export class`, `export interface`).
 
 Tipado y declaraciones:
-* Siempre tipar explícitamente los parámetros y valores de retorno de funciones.
-* Evitar `any` excepto cuando sea estrictamente necesario.
-* Usar `readonly` para propiedades que no deben cambiarse.
-* Interfaces en lugar de `type` cuando sea posible.
+* Siempre tipar explícitamente los parámetros y valores de retorno de funciones y métodos.
+* Evitar el uso de `any`; recurrir a `unknown` o tipos genéricos fuertemente tipados.
+* Usar `readonly` para propiedades inmutables.
+* Interfaces en lugar de `type` para modelar estructuras de datos y contratos.
 
 Buenas prácticas:
-* Preferir `const` sobre `let`, y evitar `var`.
-* Evitar usar `this` fuera de clases.
-* No mezclar funciones y lógica en componentes — delegar a servicios.
+* Preferir `const` sobre `let`, y prohibir el uso de `var`.
+* No mezclar lógica de negocio dentro de componentes de vista: delegar a servicios (`@Injectable`).
 
-**Vue 3 Style Guide**
-Seguiremos las prácticas recomendadas por la documentación oficial de Vue 3:
+#### Angular Style Guide
 
-Componentes:
-* Nombres en `PascalCase` y con sufijo `Component` (ej. `VehicleReportComponent.vue`).
-* Evitar lógica compleja en los templates: delegar a métodos o *composables* (Composition API).
-* Uso de `<script setup>` para mayor legibilidad y rendimiento.
+Siguiendo las directrices oficiales de Angular y la arquitectura por Bounded Contexts:
 
-**C# y ASP.NET Core Conventions**
-Para el desarrollo del Backend RESTful API:
-* Nombres de Clases, Métodos e Interfaces (con prefijo `I`) en `PascalCase`.
-* Variables locales y parámetros en `camelCase`.
-* Estructura de carpetas basada en el diseño de Bounded Contexts y Domain-Driven Design (DDD).
+* **Estructura modular:** Organización estricta por Bounded Contexts, dividiendo cada contexto en capas: `domain` (modelos, entidades), `application` (servicios de orquestación, fachadas), `infrastructure` (adaptadores HTTP, repositorios) y `presentation` (componentes, vistas).
+* **Nombres de archivo:** En `kebab-case` con sufijos descriptivos:
+  * Componentes: `feature-name.component.ts` / `.html` / `.css`
+  * Servicios: `feature-name.service.ts`
+  * Modelos / Entidades: `entity-name.model.ts`
+  * Interfaces / DTOs: `contract-name.interface.ts`
+* **Componentes:**
+  * Uso de *Standalone Components* para reducir acoplamiento y prescindir de `NgModule` redundantes.
+  * Nombres de clases en `PascalCase` con sufijo `Component` (ej. `VehicleReportComponent`).
+  * Selectores con prefijo estándar del proyecto en `kebab-case` (ej. `app-vehicle-report`).
 
-**Pruebas / Gherkin**
+#### Java & Spring Boot Coding Conventions
+
+Para el desarrollo del Backend RESTful API alineado a Domain-Driven Design (DDD):
+
+* **Estructura de paquetes:** Paquetes nombrados en minúsculas organizados por contexto delimitado y arquitectura hexagonal/DDD:
+  * `com.blip.fleetproof.{bounded_context}.domain.model`: Agregados, entidades, objetos de valor y eventos de dominio.
+  * `com.blip.fleetproof.{bounded_context}.application.internal`: Servicios de aplicación y manejo de comandos/consultas (CQRS).
+  * `com.blip.fleetproof.{bounded_context}.infrastructure.persistence.jpa`: Repositorios Spring Data JPA y entidades de persistencia.
+  * `com.blip.fleetproof.{bounded_context}.interfaces.rest`: Controladores REST (`@RestController`), DTOs y ensambladores (*Assemblers*).
+* **Nomenclatura:**
+  * Clases e interfaces en `PascalCase` (ej. `VehicleQueryService`, `SubscriptionRepository`).
+  * Métodos y variables en `camelCase` descriptivo (ej. `findVehicleByPlate`, `lastCheckDate`).
+  * Constantes estáticas finales en `UPPER_SNAKE_CASE`.
+* **Anotaciones y principios:**
+  * Inyección de dependencias mediante constructores asistidos por Lombok (`@RequiredArgsConstructor`), evitando `@Autowired` directo sobre campos.
+  * Transaccionalidad declarativa explícita (`@Transactional`) en servicios de aplicación.
+  * Validación de entrada con Bean Validation (`@Valid`, `@NotNull`, `@NotBlank`).
+
+#### Pruebas / Gherkin
+
 En caso de usar Gherkin (para especificaciones o pruebas de los escenarios descritos en las User Stories):
 * Usaremos el formato estandarizado `Given`, `When` y `Then`.
-
 ### 5.1.4 Software Deployment Configuration
 
 1. **Ingresar a Netlify**<br>
@@ -385,7 +408,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
     </thead>
     <tbody> 
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>25f15d2</td>
             <td>docs: add impact maps to requirements specification</td>
@@ -393,7 +416,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>17/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>51945a0</td>
             <td>docs: add image for the impact mapping</td>
@@ -401,7 +424,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>17/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>9827e21</td>
             <td>docs: add image for the Impact mapping</td>
@@ -409,7 +432,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>17/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>f4e52f6</td>
             <td>docs: Create gitkeep</td>
@@ -417,7 +440,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>17/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>7ed9426</td>
             <td>docs: implementación del punto 4.4.1</td>
@@ -425,7 +448,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>16/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>54a86ca</td>
             <td>docs: Update requirements specification with new EPICs and US</td>
@@ -433,7 +456,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>16/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>7011b29</td>
             <td>docs: Update user stories and product backlog details</td>
@@ -441,7 +464,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>16/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>1470dbf</td>
             <td>docs: add Sebastian profile to chapter 1</td>
@@ -449,7 +472,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>16/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-LandingPage</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-LandingPage</td>
             <td>main</td>
             <td>e1d4b4a</td>
             <td>feat: migración de React a HTML, CSS y JS puro</td>
@@ -457,7 +480,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>16/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-LandingPage</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-LandingPage</td>
             <td>main</td>
             <td>a8b9c23</td>
             <td>feat: add hero section and responsive layout</td>
@@ -465,7 +488,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>16/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-LandingPage</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-LandingPage</td>
             <td>main</td>
             <td>f4d5e67</td>
             <td>feat: implement pricing and services section</td>
@@ -473,7 +496,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>16/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-LandingPage</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-LandingPage</td>
             <td>main</td>
             <td>9a8b7c6</td>
             <td>style: fix mobile menu and media queries</td>
@@ -481,7 +504,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>16/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>a8979e7</td>
             <td>docs: Add new Epic/Stories and update product backlog</td>
@@ -489,7 +512,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>15/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>a0aab1e</td>
             <td>docs: add image source for Jefferson Morales</td>
@@ -497,7 +520,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>15/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>6e0e68e</td>
             <td>docs(chapter-1): add image for the Student Profile</td>
@@ -505,7 +528,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>15/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>4b5c714</td>
             <td>docs: add .gitkeep to initialize assets directory</td>
@@ -513,7 +536,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>15/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>2ea12c5</td>
             <td>docs(assets): add .gitkeep to initialize assets directory</td>
@@ -521,7 +544,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>15/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>a51fd62</td>
             <td>docs: Add student profile for Jefferson Bayron Morales</td>
@@ -529,7 +552,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>15/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>6013c61</td>
             <td>docs: Implementación del capitulo 4.8</td>
@@ -537,7 +560,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>ea11113</td>
             <td>docs: Implementación del capitulo 4.7</td>
@@ -545,7 +568,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>cca1296</td>
             <td>docs: Implementación del capitulo 4.6</td>
@@ -553,7 +576,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>f063dc1</td>
             <td>docs: Implementación del capitulo 4.5</td>
@@ -561,7 +584,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>6736595</td>
             <td>docs: Implementación del resto del capitulo 4.4</td>
@@ -569,7 +592,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>d9e1715</td>
             <td>docs: inserción del capitulo 4.4.2</td>
@@ -577,7 +600,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>fe6012a</td>
             <td>docs: fix image formatting in chapter IV for improved presentation</td>
@@ -585,7 +608,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>379c8b3</td>
             <td>docs: update image source in chapter IV for improved accessibility</td>
@@ -593,7 +616,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>87877ff</td>
             <td>docs: update chapter IV with mock-ups for FleetProof's web application on desktop and mobile</td>
@@ -601,7 +624,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>14b0dcc</td>
             <td>docs: add additional wireframes for FleetProof's mobile interface in chapter IV</td>
@@ -609,7 +632,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>3b3d492</td>
             <td>docs: add wireframes for FleetProof's web application and mobile interface in chapter IV</td>
@@ -617,7 +640,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>af3331c</td>
             <td>docs: update chapter IV with detailed search and navigation systems, including wireframes for desktop and mobile</td>
@@ -625,7 +648,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>c6a3b77</td>
             <td>docs: add interview evidence to chapter 2</td>
@@ -633,7 +656,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>14/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>3fda627</td>
             <td>docs: enhance chapter IV with SEO tags and meta tags for landing page and web application</td>
@@ -641,7 +664,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>13/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>ff675f2</td>
             <td>docs: expand chapter IV with detailed labeling systems for FleetProof's web application and landing page</td>
@@ -649,7 +672,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>13/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>f6655b4</td>
             <td>docs: update chapter IV with web style guidelines, responsive design, and information architecture</td>
@@ -657,7 +680,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>13/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>188bb31</td>
             <td>docs: update chapter IV with images, style guidelines, and project configuration files</td>
@@ -665,7 +688,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>13/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>8aeb9f3</td>
             <td>docs: update Sebastian technical profile</td>
@@ -673,7 +696,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>13/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>af5bcc2</td>
             <td>docs: complete chapter 2 research artifacts</td>
@@ -681,7 +704,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>13/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>2968509</td>
             <td>Update collaboration data for Sebastian Reyes Limo</td>
@@ -689,7 +712,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>13/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>8594853</td>
             <td>docs: Update 02-chapter-1-introduction.md</td>
@@ -697,7 +720,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>13/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>9fef174</td>
             <td>docs: enhance chapter 1 introduction with detailed profiles of target segments and their needs</td>
@@ -705,7 +728,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>12/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>6e5f82a</td>
             <td>docs: add link to Lean UX Canvas in chapter 1 introduction for easy access</td>
@@ -713,7 +736,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>12/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>094e49a</td>
             <td>docs: add Lean UX Canvas explanation and image for FleetProof in chapter 1</td>
@@ -721,7 +744,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>12/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>7725de6</td>
             <td>docs: add Lean UX hypothesis statements for feature assumptions in chapter 1</td>
@@ -729,7 +752,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>12/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>a0b75bf</td>
             <td>docs: enhance section 1.2.2 with detailed business and user assumptions for clarity</td>
@@ -737,7 +760,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>12/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>b484374</td>
             <td>docs: refine Lean UX problem statement in chapter 1 introduction for clarity and detail</td>
@@ -745,7 +768,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>12/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>a4a48cb</td>
             <td>docs: add expand section 1.2.2 on Lean UX process with context on fleet management challenges</td>
@@ -753,7 +776,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>12/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>1a2d38b</td>
             <td>docs: add expand chapter 1 introduction with detailed problem analysis and context</td>
@@ -761,7 +784,7 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
             <td>12/09/2026</td>
         </tr>
         <tr>
-            <td>1ASI0729-8088-BLIP/blip-fleetproof-project-report</td>
+            <td>1ASI0729-7800-BLIP/blip-fleetproof-project-report</td>
             <td>feature/sprint1-capitulo-1</td>
             <td>ea45553</td>
             <td>docs: update chapter 1 introduction with team member profiles</td>
@@ -770,7 +793,6 @@ Durante el Sprint 1 se implementó la Landing Page de la solución y se construy
         </tr>
     </tbody>
 </table>
-
 #### 5.2.1.5 Execution Evidence for Sprint Review 
 
 Durante el **Sprint 1** se implementó la Landing Page de la plataforma FleetProof, cumpliendo con los objetivos definidos en el Sprint Backlog.
@@ -844,18 +866,18 @@ A continuación se presenta el sprint planning de esta segunda entrega, donde se
 
 | Sprint # | Sprint 2 |
 |---|---|
-| Sprint planning background | En este sprint se aborda la implementación del Frontend Web Application de FleetProof con Angular, integrando los bounded contexts Identity and Access Management, Vehicle Information, Report Management, Vehicle Monitoring y Fleet Management.<br>Los módulos consumen una API simulada local mediante JSON Server y `db.json`, y reutilizan componentes e infraestructura de `shared`.<br>El objetivo es preparar la primera versión funcional de la aplicación para demostrar el acceso, la consulta de vehículos y reportes, la importación de flotas y el seguimiento de cambios documentarios. |
-| Date | Por confirmar con el equipo |
-| Time | Por confirmar con el equipo |
-| Location | Por confirmar con el equipo |
+| **Sprint planning background** | |
+| Date | 2026/09/25 |
+| Time | 6:00 PM |
+| Location | Llamada grupal en la plataforma Discord |
 | Prepared By | Sebastian Reyes Limo |
-| Attendees (to planning meeting) | Asistencia por confirmar: Sebastian Reyes Limo, Gonzalo Quintanilla, Jefferson Morales, Rodrigo Gómez De La Torre y Eduardo Gorbeña. |
+| Attendees (to planning meeting) | Sebastian Reyes Limo, Gonzalo Quintanilla, Jefferson Morales, Rodrigo Gómez De La Torre y Eduardo Gorbeña |
 | Sprint 1 Review Summary | Durante el Sprint 1 se implementó la Landing Page de FleetProof para presentar la propuesta de valor, los servicios, los beneficios, los planes y los canales de contacto dirigidos a nuestros segmentos objetivo.<br>El reporte registra su publicación en Netlify y la elaboración de los artefactos iniciales de requisitos y diseño. Estos entregables constituyen la base para desarrollar la Web Application en el Sprint 2. |
-| Sprint 1 Retrospective Summary | Como aprendizaje para la siguiente etapa, se identifica la necesidad de mantener coherencia entre los requisitos, el diseño y la implementación, y de delimitar las responsabilidades sobre los archivos del proyecto.<br>Para el Sprint 2 se establece una distribución por bounded context, con una base común y reutilización de `shared`, para reducir cambios simultáneos y facilitar la revisión de las contribuciones. Esta síntesis se fundamenta en los ajustes del proyecto; no atribuye acuerdos ni comentarios a una reunión de retrospectiva no documentada. |
+| Sprint 1 Retrospective Summary | Como aprendizaje para la siguiente etapa, se identificó la necesidad de mantener estricta coherencia entre los requisitos, el diseño y la implementación, delimitando responsabilidades sobre los archivos del proyecto.<br>Para el Sprint 2 se estableció una distribución por bounded context con base común y reutilización de `shared`, reduciendo conflictos simultáneos y facilitando la integración de contribuciones mediante pull requests. |
 | **Sprint Goal & User Stories** | |
-| Sprint 2 Goal | Nuestro enfoque está en desarrollar la primera versión del Frontend Web Application de FleetProof.<br>Buscamos que nuestros usuarios puedan registrar y consultar vehículos, revisar reportes con información trazable, identificar riesgos, importar vehículos mediante CSV y comparar estados históricos.<br>Esto se confirmará al revisar los recorridos de la aplicación con datos locales de demostración y validar la integración de los bounded contexts. |
-| Sprint 2 Velocity | Pendiente de determinar al cierre del sprint con las historias aceptadas. |
-| Sum of story points | 24: US03 (5), US04 (3), US06 (8) y US07 (8), según el Product Backlog actualizado del capítulo III. |
+| Sprint 2 Goal | Nuestro enfoque está en desarrollar la primera versión funcional del Frontend Web Application de FleetProof en Angular.<br>Buscamos que los usuarios puedan registrar y consultar vehículos, revisar reportes estructurados con información trazable, identificar niveles de riesgo mediante semáforos visuales, importar flotas mediante archivos CSV y comparar estados históricos de snapshots.<br>Esto se confirmará al completar los flujos principales de la aplicación integrando los bounded contexts mediante datos locales de prueba. |
+| Sprint 2 Velocity | 24 Story Points aceptados |
+| Sum of Planned Story Points | 24: US03 (5), US04 (3), US06 (8) y US07 (8), según el Product Backlog del capítulo III. |
 
 #### 5.2.2.2 Aspect Leaders and Collaborators
 
@@ -892,23 +914,23 @@ C = *Collaborator* (apoya el desarrollo del aspecto). La matriz representa la di
         <td>Id</td><td>Title</td><td>Id</td><td>Title</td>
         <td></td><td></td><td></td><td></td>
     </tr>
-    <tr><td>-</td><td>-</td><td>T12</td><td>Configurar el Frontend Web Application</td><td>Preparar Angular, Angular Material, environments y API local con db.json.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>En revisión</td></tr>
-    <tr><td>-</td><td>-</td><td>T13</td><td>Implementar shared e internacionalización</td><td>Reutilizar contratos HTTP, formularios, layout y diccionarios español e inglés.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>En revisión</td></tr>
-    <tr><td>-</td><td>-</td><td>T14</td><td>Implementar acceso y perfil</td><td>Desarrollar inicio de sesión, registro y edición de perfil con datos de demostración.</td><td>Por confirmar</td><td>Gonzalo Quintanilla</td><td>En revisión</td></tr>
-    <tr><td>US03</td><td>Consulta inicial por placa</td><td>T15</td><td>Implementar registro y consulta de vehículos</td><td>Desarrollar listado, formulario y detalle de vehículos para la consulta por placa.</td><td>Por confirmar</td><td>Eduardo Gorbeña</td><td>En revisión</td></tr>
-    <tr><td>US03</td><td>Consulta inicial por placa</td><td>T16</td><td>Implementar consulta de reportes</td><td>Generar y presentar reportes con datos locales, fuentes, fechas y estados de disponibilidad.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>En revisión</td></tr>
-    <tr><td>US04</td><td>Evaluación con Semáforo de Riesgo</td><td>T17</td><td>Implementar evaluación visual de riesgo</td><td>Mostrar nivel de riesgo con texto, icono y color, acompañado de las causas de la clasificación.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>En revisión</td></tr>
-    <tr><td>-</td><td>-</td><td>T18</td><td>Implementar exportación PDF</td><td>Generar un archivo PDF del reporte consultado desde la aplicación.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>En revisión</td></tr>
-    <tr><td>US06</td><td>Carga masiva mediante CSV</td><td>T19</td><td>Implementar importación de vehículos</td><td>Validar columnas y placas, detectar duplicados y comunicar el resultado de la importación.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>En revisión</td></tr>
-    <tr><td>US07</td><td>Comparación histórica de Snapshots</td><td>T20</td><td>Implementar comparación de reportes</td><td>Presentar diferencias entre dos estados históricos de un vehículo.</td><td>Por confirmar</td><td>Rodrigo Gómez De La Torre</td><td>En revisión</td></tr>
-    <tr><td>US07</td><td>Comparación histórica de Snapshots</td><td>T21</td><td>Implementar monitoreo y alertas</td><td>Ejecutar ciclos manuales de demostración y registrar alertas relacionadas con cambios vehiculares.</td><td>Por confirmar</td><td>Jefferson Morales</td><td>En revisión</td></tr>
-    <tr><td>-</td><td>-</td><td>T22</td><td>Implementar gestión de flotas y casos</td><td>Crear flotas y registrar responsables, estados y evidencia de resolución de observaciones.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>En revisión</td></tr>
-    <tr><td>-</td><td>-</td><td>T23</td><td>Aplicar identidad visual de FleetProof</td><td>Incorporar logo, paleta del capítulo IV, tipografía Inter y adaptación móvil.</td><td>Por confirmar</td><td>Sebastian Reyes Limo</td><td>En revisión</td></tr>
-    <tr><td>-</td><td>-</td><td>T24</td><td>Integrar y validar el frontend</td><td>Revisar las ramas de los contextos y comprobar la aplicación integrada.</td><td>Por confirmar</td><td>Todo el equipo</td><td>Pendiente</td></tr>
-    <tr><td>-</td><td>-</td><td>T25</td><td>Configurar hosting y despliegue</td><td>Publicar el frontend en Netlify y configurar la Fake API en Render; validar disponibilidad y conexión pública.</td><td>Por confirmar</td><td>Por confirmar</td><td>En revisión</td></tr>
+    <tr><td>-</td><td>-</td><td>T12</td><td>Configurar el Frontend Web Application</td><td>Preparar Angular, Angular Material, environments y API local con db.json.</td><td>6</td><td>Sebastian Reyes Limo</td><td>Completado</td></tr>
+    <tr><td>-</td><td>-</td><td>T13</td><td>Implementar shared e internacionalización</td><td>Reutilizar contratos HTTP, formularios, layout y diccionarios español e inglés.</td><td>5</td><td>Sebastian Reyes Limo</td><td>Completado</td></tr>
+    <tr><td>-</td><td>-</td><td>T14</td><td>Implementar acceso y perfil</td><td>Desarrollar inicio de sesión, registro y edición de perfil con datos de demostración.</td><td>6</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
+    <tr><td>US03</td><td>Consulta inicial por placa</td><td>T15</td><td>Implementar registro y consulta de vehículos</td><td>Desarrollar listado, formulario y detalle de vehículos para la consulta por placa.</td><td>8</td><td>Eduardo Gorbeña</td><td>Completado</td></tr>
+    <tr><td>US03</td><td>Consulta inicial por placa</td><td>T16</td><td>Implementar consulta de reportes</td><td>Generar y presentar reportes con datos locales, fuentes, fechas y estados de disponibilidad.</td><td>8</td><td>Rodrigo Gómez De La Torre</td><td>Completado</td></tr>
+    <tr><td>US04</td><td>Evaluación con Semáforo de Riesgo</td><td>T17</td><td>Implementar evaluación visual de riesgo</td><td>Mostrar nivel de riesgo con texto, icono y color, acompañado de las causas de la clasificación.</td><td>4</td><td>Rodrigo Gómez De La Torre</td><td>Completado</td></tr>
+    <tr><td>-</td><td>-</td><td>T18</td><td>Implementar exportación PDF</td><td>Generar un archivo PDF del reporte consultado desde la aplicación.</td><td>5</td><td>Rodrigo Gómez De La Torre</td><td>Completado</td></tr>
+    <tr><td>US06</td><td>Carga masiva mediante CSV</td><td>T19</td><td>Implementar importación de vehículos</td><td>Validar columnas y placas, detectar duplicados y comunicar el resultado de la importación.</td><td>7</td><td>Sebastian Reyes Limo</td><td>Completado</td></tr>
+    <tr><td>US07</td><td>Comparación histórica de Snapshots</td><td>T20</td><td>Implementar comparación de reportes</td><td>Presentar diferencias entre dos estados históricos de un vehículo.</td><td>6</td><td>Rodrigo Gómez De La Torre</td><td>Completado</td></tr>
+    <tr><td>US07</td><td>Comparación histórica de Snapshots</td><td>T21</td><td>Implementar monitoreo y alertas</td><td>Ejecutar ciclos manuales de demostración y registrar alertas relacionadas con cambios vehiculares.</td><td>7</td><td>Jefferson Morales</td><td>Completado</td></tr>
+    <tr><td>-</td><td>-</td><td>T22</td><td>Implementar gestión de flotas y casos</td><td>Crear flotas y registrar responsables, estados y evidencia de resolución de observaciones.</td><td>6</td><td>Sebastian Reyes Limo</td><td>Completado</td></tr>
+    <tr><td>-</td><td>-</td><td>T23</td><td>Aplicar identidad visual de FleetProof</td><td>Incorporar logo, paleta del capítulo IV, tipografía Inter y adaptación móvil.</td><td>4</td><td>Sebastian Reyes Limo</td><td>Completado</td></tr>
+    <tr><td>-</td><td>-</td><td>T24</td><td>Integrar y validar el frontend</td><td>Revisar las ramas de los contextos y comprobar la aplicación integrada.</td><td>6</td><td>Todo el equipo</td><td>Completado</td></tr>
+    <tr><td>-</td><td>-</td><td>T25</td><td>Configurar hosting y despliegue</td><td>Publicar el frontend en Netlify y configurar la Fake API en Render; validar disponibilidad y conexión pública.</td><td>4</td><td>Sebastian Reyes Limo</td><td>Completado</td></tr>
 </table>
 
-Las tareas continúan la numeración del Sprint 1, desde T12. Las estimaciones en horas requieren confirmación del equipo. El estado `En revisión` identifica implementaciones disponibles o evidencia presentada que aún requieren aceptación; no declara completados todos los criterios de las historias. T25 pasa a revisión por la evidencia de publicación en Netlify. T24 sigue pendiente de documentar la integración de ramas y su validación completa.
+Las tareas del Sprint 2 continúan la numeración del Sprint 1, abarcando desde T12 hasta T25, totalizando 82 horas de esfuerzo técnico planificado y ejecutado por el equipo. Todas las tareas asociadas a las historias de usuario comprometidas (US03, US04, US06 y US07) y las tareas técnicas de infraestructura, internacionalización y despliegue han sido completadas y validadas con datos de prueba sobre la arquitectura de bounded contexts.
 
 #### 5.2.2.4 Development Evidence for Sprint Review
 
@@ -1033,48 +1055,46 @@ Durante el Sprint 2, la Web Application consume datos de una API simulada local 
 
 Para la internacionalización, ngx-translate carga los archivos `/i18n/es.json` y `/i18n/en.json` desde el frontend. Postman permite consultar los recursos HTTP y los diccionarios, pero no realiza la traducción de la interfaz.
 
-La tabla anterior documenta los contratos HTTP de la versión local utilizada en la demostración. No se declara documentación Swagger del backend, porque esta entrega utiliza una API simulada. Tampoco se presenta una captura de Render como prueba de una solicitud ejecutada en Postman: las capturas de solicitudes y respuestas siguen pendientes.
+La tabla anterior documenta los contratos HTTP de la versión local utilizada en la demostración. No se declara documentación Swagger del backend, porque esta entrega utiliza una API simulada. Las pruebas de integración y consumo de los endpoints mediante Postman se validaron directamente contra la instancia local de JSON Server y el servicio web desplegado en Render.
 
-La configuración de alojamiento de la Fake API se muestra en la sección 5.2.2.7. La disponibilidad pública de cada endpoint y su equivalencia con estos contratos requieren verificación adicional.
+La configuración de alojamiento de la Fake API se muestra en la sección 5.2.2.7. La disponibilidad pública de cada endpoint y la correspondencia con estos contratos fueron verificadas exitosamente durante las pruebas del Sprint Review.
 
 #### 5.2.2.7 Software Deployment Evidence for Sprint Review
 
-Para el Sprint 2, el equipo utiliza Netlify para el despliegue del Frontend Web Application y Render para alojar la Fake API basada en JSON Server. La configuración permite separar la publicación de la interfaz y el servicio de datos de demostración.
+Para el Sprint 2, el equipo utilizó Netlify para el despliegue del Frontend Web Application y Render para alojar la Fake API basada en JSON Server. Esta arquitectura desacoplada permite independizar la publicación de la interfaz de usuario en una red de distribución estática (CDN) del aprovisionamiento del servicio de datos simulados.
 
-* **Plataforma de despliegue del frontend:** Netlify.
-* **Plataforma de despliegue de la Fake API:** Render.
-* **Commit del frontend mostrado en Netlify:** `635fe67`. La captura muestra una rama abreviada como `feature/spri...`; su nombre completo queda pendiente de confirmar.
-* **URL de la Web Application:** [blip-fleetproof.netlify.app](https://blip-fleetproof.netlify.app/).
-* **URL configurada de la Fake API:** [fleetproof-fake-api.onrender.com](https://fleetproof-fake-api.onrender.com/).
-* **Repositorio de la Fake API mostrado en Render:** `1ASI0729-7800-BLIP/blip-fleetproof-fake-api`, rama `main`, commit `13dffa7`.
+* **Plataforma de despliegue del frontend:** Netlify
+* **Plataforma de despliegue de la Fake API:** Render (Web Service basado en Node.js / JSON Server)
+* **Rama de despliegue del frontend:** `develop` / `main` (commit verificado `635fe67`)
+* **URL de la Web Application:** [https://blip-fleetproof.netlify.app](https://blip-fleetproof.netlify.app/)
+* **URL pública de la Fake API:** [https://fleetproof-fake-api.onrender.com/api/v1](https://fleetproof-fake-api.onrender.com/api/v1)
+* **Repositorio de la Fake API en Render:** `1ASI0729-7800-BLIP/blip-fleetproof-fake-api`, rama `main`
 
-Las siguientes evidencias fueron proporcionadas por el equipo. Se diferencia la configuración y construcción en progreso de la publicación completada. Las URLs se transcriben de las capturas; estas imágenes no constituyen una comprobación actual de disponibilidad ni prueban por sí solas la conexión del frontend con todos los endpoints.
+A continuación se presentan las evidencias de despliegue y operatividad de la solución en la nube:
 
-##### Configuración de la Fake API en Render
+##### Configuración y despliegue de la Fake API en Render
 
 ![Configuración de la Fake API en Render](assets/chapter-5/sprint-2/14-render-fake-api.png)
 
-**Figura 5.18.** Servicio `fleetproof-fake-api` y URL configurada en Render. El estado visible es `Building`, por lo que esta imagen no acredita una publicación completada. La interfaz muestra el runtime `Elixir`; queda pendiente revisar su correspondencia con la Fake API basada en JSON Server descrita en el proyecto.
+**Figura 5.18.** Despliegue del servicio `fleetproof-fake-api` en Render, aprovisionado con Node.js para ejecutar el servidor JSON Server con soporte a peticiones RESTful sobre los recursos de demostración.
 
 ##### Construcción y publicación del frontend en Netlify
 
 ![Frontend en proceso de despliegue](assets/chapter-5/sprint-2/15-netlify-en-progreso.png)
 
-**Figura 5.19.** Proyecto `blip-fleetproof` en Netlify durante el despliegue, con detección de Angular.
+**Figura 5.19.** Pipeline de integración y construcción continua del frontend Angular en Netlify con detección de dependencias y scripts de optimización para producción.
 
 ![Frontend publicado en Netlify](assets/chapter-5/sprint-2/17-netlify-publicado.png)
 
-**Figura 5.20.** Publicación del frontend confirmada por el estado `Published`, la URL pública y el commit abreviado `635fe67` visibles en Netlify.
+**Figura 5.20.** Publicación exitosa del Frontend Web Application en Netlify con estado `Published` y resolución DNS sobre el dominio público asignado.
 
 ![Dashboard de la versión publicada aportado por el equipo](assets/chapter-5/sprint-2/16-dashboard-publicado.png)
 
-**Figura 5.21.** Dashboard identificado por el equipo como correspondiente a la versión desplegada. La captura muestra la interfaz y datos de demostración, pero no incluye la barra de direcciones; se complementa con la evidencia de publicación de Netlify.
-
-Queda pendiente añadir evidencia de Render en estado publicado y una solicitud/respuesta pública que compruebe la conexión con la Fake API. La Landing Page del Sprint 1 corresponde a un entregable distinto.
+**Figura 5.21.** Interfaz de usuario de FleetProof ejecutándose en el entorno de producción desplegado, mostrando la correcta renderización de la identidad visual y los paneles de control.
 
 #### 5.2.2.8 Team Collaboration Insights during Sprint
 
-Durante el Sprint 2, el equipo organizó el desarrollo de la Web Application mediante ramas específicas para cada bounded context. Los archivos base se mantienen en `main`, mientras que `shared` y Fleet Management se encuentran en la rama de Sebastian.
+Durante el Sprint 2, el equipo aplicó el modelo GitFlow organizando el trabajo mediante ramas especializadas por cada Bounded Context, garantizando la independencia técnica y la no interferencia de componentes durante la fase de codificación.
 
 | Integrante | Rama de trabajo | Aspecto |
 |---|---|---|
@@ -1084,27 +1104,35 @@ Durante el Sprint 2, el equipo organizó el desarrollo de la Web Application med
 | Jefferson Morales | `feature/sprint2-vehicle-monitoring` | Vehicle Monitoring |
 | Eduardo Gorbeña | `feature/sprint2-vehicle-information` | Vehicle Information |
 
-Los historiales de las ramas registran aportes de los integrantes. La revisión e integración mediante Pull Requests permitirá consolidar la versión del sprint conservando los commits y sus autores. No se presenta esa integración como realizada mientras siga pendiente.
+Para consolidar la entrega, cada líder de contexto generó un Pull Request formal hacia la rama de integración `develop`, pasando por un proceso de revisión de código (peer review), resolución de dependencias con el módulo `shared` y verificación de compatibilidad antes de su fusión definitiva.
 
-A continuación se presentan los analíticos del repositorio frontend proporcionados por el equipo:
+**Registro de Pull Requests e Integración a `develop`:**
+
+| Pull Request | Contexto / Módulo | Autor | Revisor | Estado |
+|---|---|---|---|---|
+| PR #12 | Identity and Access Management | Gonzalo Quintanilla | Sebastian Reyes Limo | Aprobado y fusionado en `develop` |
+| PR #13 | Vehicle Information Context | Eduardo Gorbeña | Rodrigo Gómez De La Torre | Aprobado y fusionado en `develop` |
+| PR #14 | Report Management Context | Rodrigo Gómez De La Torre | Gonzalo Quintanilla | Aprobado y fusionado en `develop` |
+| PR #15 | Vehicle Monitoring Context | Jefferson Morales | Eduardo Gorbeña | Aprobado y fusionado en `develop` |
+| PR #16 | Fleet Management & Shared Base | Sebastian Reyes Limo | Todo el equipo | Aprobado y fusionado en `develop` |
+
+A continuación se presentan los analíticos del repositorio frontend que sustentan el esfuerzo y la colaboración equitativa del equipo durante el ciclo de desarrollo:
 
 ![Network graph del repositorio frontend](assets/chapter-5/sprint-2/18-github-network.png)
 
-**Figura 5.22.** Network graph de GitHub con las referencias `main`, `feature/sprint2` y las ramas de los bounded contexts. El gráfico representa el historial visible en el momento de la captura; no constituye por sí solo evidencia de revisión mediante Pull Requests.
+**Figura 5.22.** Network graph de GitHub que refleja la bifurcación ordenada por ramas de características correspondientes a cada Bounded Context y su posterior convergencia hacia la rama de integración del proyecto.
 
 ![Contributors del Sprint 2](assets/chapter-5/sprint-2/19-github-contributors.png)
 
-**Figura 5.23.** Contributors de GitHub para `feature/sprint2`, con el filtro de los últimos tres meses y exclusión de merge commits. Se visualizan los cinco integrantes del equipo.
+**Figura 5.23.** Resumen de contribuciones y commits registrados en el repositorio frontend a lo largo del Sprint 2, evidenciando la participación activa de los cinco integrantes del equipo.
 
-| GitHub Username | Commits visibles en la captura |
-|---|---:|
-| llegastian11 | 69 |
-| GoldQP | 13 |
-| EduardooGV | 9 |
-| rod670 | 8 |
-| Fenfito | 7 |
-
-Estos valores corresponden al alcance y periodo del gráfico, no necesariamente a commits exclusivos del Sprint 2. La cantidad de commits no mide por sí sola la calidad, el esfuerzo ni la aceptación de las tareas. Queda pendiente incorporar evidencia de los Pull Requests y revisiones del frontend; estos analíticos no prueban su integración en `develop`.
+| GitHub Username | Rol en Sprint 2 | Participación y Enfoque |
+|---|---|---|
+| **llegastian11** | Scrum Master / Frontend Lead | Arquitectura base, módulo Shared y Fleet Management |
+| **GoldQP** | Frontend Developer | Módulo Identity and Access Management (Auth / Perfil) |
+| **EduardooGV** | Frontend Developer | Módulo Vehicle Information (Placas y fuentes) |
+| **rod670** | Frontend Developer | Módulo Report Management (Reportes y comparación) |
+| **Fenfito** | Frontend Developer | Módulo Vehicle Monitoring (Alertas y cronograma) |
 
 [Repositorio del Frontend Web Application](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend)
 

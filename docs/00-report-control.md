@@ -6,11 +6,15 @@
 | 0.2.0 | 2026-09-17 | Reyes Limo, Sebastian | Corrección de roles y responsabilidades del equipo (README), actualización del estado real de los capítulos en Estado AV1, y completado del cuadro de Student Outcome con las acciones de todos los integrantes. |
 | 0.3.0 | 2026-10-06 | Reyes Limo, Sebastian | Documentación de Sprint 2, 19 capturas y colaboración; actualización de conclusiones, anexos, workplan y estados para TB1. Revisión final de entrega pendiente. |
 
+## Revisión editorial local — 09/11/2026
+
+Se preparó una revisión de redacción, tablas, referencias, NRC, coherencia del stack, anexos, conclusiones y workplan. Esta revisión no constituye una release ni certifica el cierre funcional de historias. Las pruebas y las evidencias de las entregas mantienen sus fechas originales.
+
 # Project Report Collaboration Insights
 
 ## Repositorio
 
-URL del repositorio del informe: https://github.com/1ASI0729-8088-BLIP/blip-fleetproof-project-report
+URL del repositorio del informe: https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-project-report
 
 ## Estrategia de colaboración
 
@@ -31,7 +35,7 @@ El equipo BLIP elaborará el informe en Markdown usando GitHub como sistema de c
 |---|---|
 | Main branch | `main` |
 | Development branch | `develop` |
-| Report feature branch | `feature/sprint1-<scope>` para AV1 |
+| Report feature branch | `feature/sprint<n>-capitulo-<n>` y `feature/sprint<n>-cierre-entrega`; actualmente Sprint 3 |
 | Feature branch | `feature/usXXX-<short-name>` |
 | Release branch | `release/vX.Y.Z` |
 | Hotfix branch | `hotfix/<short-name>` |

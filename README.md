@@ -94,15 +94,15 @@
 
 | Bloque | Responsable | Estado | Evidencia |
 |---|---|---|---|
-| GitHub, GitFlow, releases y Capítulo II | Reyes Limo Sebastian | Completado | Repositorio del informe, estructura GitFlow, control de rúbrica y Capítulo II (competidores, entrevistas, Needfinding, Big Picture Event Storming y Ubiquitous Language). |
-| Lean UX Process y Capítulo I | Quintanilla Gonzalo | Completado | Capítulo I: Startup Profile, Solution Profile, Lean UX Process y Lean UX Canvas. |
-| UX Research y competidores (colaborador) | Morales Jefferson | Completado | Apoyo en Capítulo II: diseño y registro de entrevistas, análisis competitivo. |
-| User Stories y Product Backlog | Gómez De La Torre Rodrigo | Completado | Capítulo III: User Stories con criterios de aceptación, Impact Mapping y Product Backlog. |
-| Product Design y Landing Page v1.0.0 | Gorbeña Eduardo | Completado | Capítulo IV: Style Guidelines, Information Architecture, wireframes y mock-ups. |
+| GitHub, GitFlow, releases y Capítulo II | Reyes Limo Sebastian | Documentado | Repositorio del informe, estructura GitFlow, control de rúbrica y Capítulo II (competidores, entrevistas, Needfinding, Big Picture Event Storming y Ubiquitous Language). |
+| Lean UX Process y Capítulo I | Quintanilla Gonzalo | Documentado | Capítulo I: Startup Profile, Solution Profile, Lean UX Process y Lean UX Canvas. |
+| UX Research y competidores (colaborador) | Morales Jefferson | Documentado | Apoyo en Capítulo II: diseño y registro de entrevistas, análisis competitivo. |
+| User Stories y Product Backlog | Gómez De La Torre Rodrigo | Documentado | Capítulo III: User Stories con criterios de aceptación, Impact Mapping y Product Backlog. |
+| Product Design y Landing Page v1.0.0 | Gorbeña Eduardo | Documentado | Capítulo IV: Style Guidelines, Information Architecture, wireframes y mock-ups. |
 
 ## Repositorios del Proyecto
 
-| Producto | Repositorio | Versiones requeridas |
+| Producto | Repositorio | Estado documentado |
 |---|---|---|
 | Project Report | https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-project-report | AV1 y TB1 en revisión |
 | Landing Page | https://fleetproof-landingpage.netlify.app/ | AV1 publicada; actualización TB1 pendiente de verificar |
@@ -117,5 +117,5 @@
 | Planning, LACX y backlog | Completado como documentación | Capítulo V, T12–T25; aceptación y horas por confirmar. |
 | Frontend e i18n | En revisión | Ejecución local, ES/EN, móvil y Netlify Published. |
 | Colaboración | En revisión | Network, cinco Contributors y merge 39c9d93 del capítulo V a develop; revisión frontend pendiente. |
-| Conclusiones, anexos y workplan | En revisión | Actualización TB1 preparada. |
+| Conclusiones, anexos y workplan | Revisión editorial local | Alcance y limitaciones armonizados; integración sujeta a revisión del equipo. |
 | Videos, performance report y cierre | Pendiente | Confirmar archivos finales, evaluación del Team Leader y evidencias faltantes. |

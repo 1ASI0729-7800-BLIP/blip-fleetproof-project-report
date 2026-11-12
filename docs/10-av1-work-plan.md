@@ -1,4 +1,4 @@
-# Plan de Trabajo AV1 y TB1
+# Plan de trabajo — AV1, TB1 y preparación de Sprint 3
 
 ## Criterios de estado
 
@@ -9,10 +9,10 @@ Completado indica un artefacto elaborado con evidencia del alcance descrito, no 
 | Integrante | Rol AV1 | Responsabilidad principal | Evidencia mínima |
 |---|---|---|---|
 | Reyes Limo Sebastian | Team Leader, SCM y Capítulo II Owner | Organizar el informe y elaborar investigación, entrevistas, Needfinding y artefactos del capítulo II. | Capítulo II, enlaces y evidencias del informe. |
-| Quintanilla Gonzalo | Lean UX Owner | Capítulo I: Startup Profile, Solution Profile, Problem Statement, Assumptions, Hypothesis Statements y Lean UX Canvas. | 1 rama, 3 commits, 1 Pull Request, captura de Lean UX Canvas. |
+| Quintanilla Gonzalo | Lean UX Owner | Capítulo I: Startup Profile, Solution Profile, Problem Statement, Assumptions, Hypothesis Statements y Lean UX Canvas. | Capítulo I, Lean UX Canvas e historial del aporte. |
 | Morales Jefferson | Colaborador UX Research | Apoyo en investigación y registro de perfil de integrante; no se atribuye la autoría principal del capítulo II. | Perfil y registro de apoyo AV1. |
-| Gómez De La Torre Rodrigo | Requirements Owner | Capítulo III: User Stories, Acceptance Criteria, Impact Map y Product Backlog. | 1 rama, 3 commits, 1 Pull Request, backlog público. |
-| Gorbeña Eduardo | Product Design and Landing Page Owner | Capítulo IV y Landing Page v1.0.0: wireframes, mock-ups, style guide y despliegue. | 1 rama, 5 commits, 1 Pull Request, URL desplegada y release. |
+| Gómez De La Torre Rodrigo | Requirements Owner | Capítulo III: User Stories, Acceptance Criteria, Impact Map y Product Backlog. | Capítulo III, backlog e historial del aporte. |
+| Gorbeña Eduardo | Product Design and Landing Page Owner | Capítulo IV y Landing Page v1.0.0: wireframes, mock-ups, style guide y despliegue. | Capítulo IV, historial del aporte y evidencia de despliegue. |
 
 El plan histórico y las ramas sugeridas no sustituyen la evidencia de autoría. Para TB1, la distribución vigente por bounded context se documenta en el Workplan y en la matriz LACX del capítulo V.
 
@@ -30,7 +30,7 @@ El plan histórico y las ramas sugeridas no sustituyen la evidencia de autoría.
 
 ## Entregables AV1
 
-Las ramas anteriores son propuestas de organización; se crean al iniciar cada aporte.
+Las ramas anteriores describen la organización histórica propuesta para AV1; no constituyen el inventario actual de ramas.
 AV1 corresponde al Sprint 1 según la guía del curso. El nombre de una rama no
 sustituye el Sprint Planning, el Sprint Backlog ni las evidencias del trabajo realizado.
 Las cantidades de commits indicadas en este plan son orientativas internas y no
@@ -38,14 +38,14 @@ deben interpretarse como mínimos impuestos por la rúbrica.
 
 | Entregable | Responsable | Fecha límite interna | Estado |
 |---|---|---|---|
-| Informe Markdown hasta Capítulo V | Reyes Limo Sebastian | Por confirmar | Completado: artefactos AV1 documentados. |
-| Lean UX Process | Quintanilla Gonzalo | Por confirmar | Completado: capítulo I. |
-| UX Research plan | Sebastian, con apoyo de Jefferson | Por confirmar | Completado: capítulo II. |
-| User Stories and Product Backlog | Gómez De La Torre Rodrigo | Por confirmar | Completado: capítulo III. |
-| Landing Page v1.0.0 desplegada | Gorbeña Eduardo | Por confirmar | Completado: evidencia Sprint 1. |
-| Keynote AV1 | Equipo | Por confirmar | Pendiente verificar archivo final entregado. |
-| Video de exposición AV1 | Equipo | Por confirmar | Pendiente incorporar enlace de entrega. |
-| Participant Performance Report AV1 | Team Leader | Por confirmar | Completado: documento AV1 disponible como referencia. |
+| Informe Markdown hasta Capítulo V | Reyes Limo Sebastian | No registrada | Completado: artefactos AV1 documentados. |
+| Lean UX Process | Quintanilla Gonzalo | No registrada | Completado: capítulo I. |
+| UX Research plan | Sebastian, con apoyo de Jefferson | No registrada | Completado: capítulo II. |
+| User Stories and Product Backlog | Gómez De La Torre Rodrigo | No registrada | Completado: capítulo III. |
+| Landing Page v1.0.0 desplegada | Gorbeña Eduardo | No registrada | Completado: evidencia Sprint 1. |
+| Keynote AV1 | Equipo | No registrada | Pendiente verificar archivo final entregado. |
+| Video de exposición AV1 | Equipo | No registrada | Pendiente incorporar enlace de entrega. |
+| Participant Performance Report AV1 | Team Leader | No registrada | Archivo final no enlazado en este plan; incorporar referencia antes de acreditar la entrega. |
 
 ## Workplan TB1 — Sprint 2
 
@@ -63,20 +63,32 @@ deben interpretarse como mínimos impuestos por la rúbrica.
 
 | Entregable | Responsable | Plazo interno | Estado |
 |---|---|---|---|
-| Planning, LACX, backlog y evidencias Sprint 2 | Sebastian | Por confirmar | Completado: capítulo V integrado en develop, merge 39c9d93. |
-| Conclusiones, anexos y workplan | Sebastian | Por confirmar | En revisión: actualización de cierre preparada. |
-| Frontend v1 | Equipo | Por confirmar | En revisión: publicado, criterios completos pendientes de aceptación. |
-| Landing Page actualizada TB1 | Por confirmar | Por confirmar | Pendiente verificar mejoras y nueva publicación. |
-| Presentación TB1 | Sebastian | Por confirmar | En revisión: PPTX elaborado; revisión final pendiente. |
-| Performance Report TB1 | Team Leader | Por confirmar | En revisión: tareas actualizadas; evaluar cumplimiento y notas. |
-| Student Outcome TB1 | Cada integrante | Por confirmar | Pendiente revisar aportes de esta entrega. |
-| Videos y ZIP complementario | Equipo | Por confirmar | Pendiente incorporar evidencias finales. |
-| Postman y publicación Fake API | Por confirmar | Por confirmar | Pendiente completar evidencia HTTP y Render publicado. |
+| Planning, LACX, backlog y evidencias Sprint 2 | Sebastian | No registrada | Completado: capítulo V integrado en develop, merge 39c9d93. |
+| Conclusiones, anexos y workplan | Sebastian | No registrada | En revisión: actualización de cierre preparada. |
+| Frontend v1 | Equipo | No registrada | En revisión: publicado, criterios completos pendientes de aceptación. |
+| Landing Page actualizada TB1 | No registrada | No registrada | Pendiente verificar mejoras y nueva publicación. |
+| Presentación TB1 | Sebastian | No registrada | En revisión: PPTX elaborado; revisión final pendiente. |
+| Performance Report TB1 | Team Leader | No registrada | En revisión: tareas actualizadas; evaluar cumplimiento y notas. |
+| Student Outcome TB1 | Cada integrante | No registrada | Pendiente revisar aportes de esta entrega. |
+| Videos y ZIP complementario | Equipo | No registrada | Pendiente incorporar evidencias finales. |
+| Postman y publicación Fake API | No registrada | No registrada | Pendiente completar evidencia HTTP y Render publicado. |
 
 ## Checklist diario
 
-- Cada integrante registra al menos un avance en su rama.
+- Registrar avances reales por integrante; no crear commits artificiales para aparentar participación.
 - Cada rama mantiene commits pequeños y con Conventional Commits.
 - Cada sección nueva tiene evidencia o una actividad pendiente explícita.
 - Cada imagen del informe se conserva en `docs/assets/chapter-<n>/`.
 - Cada entrega parcial se revisa contra Programación, Redacción y GitHub.
+
+## Preparación de Sprint 3 — revisión editorial del 09/11/2026
+
+Esta tabla organiza la revisión actual; no modifica el cumplimiento histórico ni asigna horas trabajadas.
+
+| Responsable propuesto | Alcance de revisión | Ubicación | Estado |
+|---|---|---|---|
+| Sebastian Reyes Limo | Redacción, coherencia tecnológica, conclusiones, anexos, referencias y workplan. | Documentación del informe | Preparado localmente; requiere revisión del equipo antes de integrarse. |
+| Rodrigo Gómez De La Torre | Investigación, trazabilidad y refinamiento de historias y backlog. | Capítulos I–III y 5.2.2.3 | Por realizar; guía adjunta con criterios de cierre. |
+| Eduardo Gorbeña | Diseño, evidencia funcional, servicios, despliegue y colaboración. | Capítulos IV–V | Por realizar; guía adjunta con criterios de cierre. |
+
+La distribución es una propuesta de coordinación, no una atribución de trabajo realizado. El equipo utiliza las ramas `feature/sprint3-capitulo-1` a `feature/sprint3-capitulo-5` y `feature/sprint3-cierre-entrega`, creadas desde `develop`. Las fechas históricas no documentadas permanecen sin reconstruir.

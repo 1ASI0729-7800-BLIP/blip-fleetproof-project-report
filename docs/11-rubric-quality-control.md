@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Este control asegura que el informe, la presentación, los videos y los repositorios de BLIP cumplan la rúbrica oficial antes de cada entrega.
+Este control permite revisar si el informe, la presentación, los videos y los repositorios de BLIP cumplan la rúbrica oficial antes de cada entrega.
 
 ## Curso y outcome evaluado
 
@@ -46,7 +46,7 @@ Este control asegura que el informe, la presentación, los videos y los reposito
 ## Reglas de evidencia
 
 - Cada sección con imagen debe incluir explicación, no solo captura.
-- Cada avance de implementación debe tener rama, commit, Pull Request, merge y captura.
+- Vincular cada avance con evidencia pertinente: rama, commit, Pull Request, merge, resultado de prueba o captura, según el artefacto y lo solicitado en la guía.
 - Cada release debe tener etiqueta, descripción y evidencia en GitHub.
 - Cada video debe tener screenshot, URL, timing y duración.
 
@@ -55,7 +55,7 @@ Este control asegura que el informe, la presentación, los videos y los reposito
 | Categoría | Pregunta de control | Estado |
 |---|---|---|
 | Programación | ¿El producto cumple el alcance técnico del hito? | En revisión: frontend publicado; aceptación completa y conexión pública con Fake API pendientes. |
-| Redacción | ¿El texto usa términos oficiales y no presenta errores de ortografía o gramática? | En revisión: cierre TB1 actualizado; revisión integral final pendiente. |
+| Redacción | ¿El texto usa términos oficiales y no presenta errores de ortografía o gramática? | Revisión editorial local del 09/11/2026 preparada; falta inspeccionar el PDF final después de integrar los aportes del equipo. |
 | GitHub | ¿Existen ramas, commits, Pull Requests, merges y releases suficientes? | En revisión: ramas, commits, Contributors y merge del capítulo V disponibles; PRs y releases pendientes de acreditar. |
 | Evidencia | ¿Cada afirmación importante tiene captura, enlace, video o fuente? | En progreso: 19 capturas Sprint 2; faltan Postman, Render publicado y videos. |
 | Trazabilidad | ¿Cada User Story se relaciona con backlog, rama, commit, sprint y evidencia? | En revisión: backlog y commits documentados; pruebas de aceptación y cierre de historias pendientes. |

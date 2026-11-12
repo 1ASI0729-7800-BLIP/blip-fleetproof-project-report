@@ -1,27 +1,25 @@
 # Conclusiones
 
-## Conclusiones y recomendaciones
+## Investigación y propuesta de valor — AV1
 
-Durante el desarrollo de este primer avance (AV1), el equipo de BLIP logró consolidar las bases estratégicas y técnicas del proyecto FleetProof. Las principales conclusiones, alineadas a nuestro proceso de investigación, son las siguientes:
+FleetProof propone reunir información vehicular y facilitar el seguimiento documentario. Las entrevistas registradas en el capítulo II aportan indicios de dispersión de información y coordinación manual; sus resúmenes no demuestran por sí solos representatividad del mercado, viabilidad comercial ni reducción del tiempo de consulta.
 
-* **Sobre el Problema:** Se validó que la dispersión de información y la falta de trazabilidad en los historiales vehiculares peruanos representan un dolor real (pain point) crítico. Esta deficiencia genera ineficiencias operativas y riesgo de multas, afectando tanto a empresas que gestionan flotas (B2B) como a particulares (B2C).
-* **Assumptions & Hypothesis Statements:** Mediante el marco de trabajo Lean UX, establecimos nuestras asunciones de negocio y usuario. Nuestra hipótesis principal concluye que, al proporcionar un ecosistema digital unificado con alertas automatizadas y semáforos de estado, reduciremos significativamente la carga administrativa y el tiempo de investigación para nuestros usuarios.
-* **Criterios de éxito:** El despliegue exitoso de la Landing Page en Netlify marca el cumplimiento de nuestro primer gran hito técnico. El interés generado y la validación inicial mediante entrevistas confirman la viabilidad del proyecto.
+Las hipótesis Lean UX orientan el diseño de reportes, alertas y gestión de flotas. Los beneficios esperados deben contrastarse con mediciones y criterios de éxito previamente definidos. El despliegue de la Landing Page constituye un avance técnico, pero no acredita demanda comercial.
 
-**Recomendaciones:**
-Para los siguientes sprints, se recomienda mantener un ciclo de validación continuo con usuarios reales para ajustar el *Product Backlog* según el feedback obtenido. Desde el punto de vista técnico, se plantea estructurar la base de datos relacional y desarrollar los endpoints del backend definitivo con Spring Boot y Java, documentados mediante OpenAPI/Swagger, de acuerdo con el stack oficial del curso.
+## Implementación y evidencia — TB1, Sprint 2
 
-## Conclusiones de TB1 — Sprint 2
+- **Frontend:** se documenta una primera versión en Angular y Angular Material, con cinco módulos de negocio y soporte transversal `shared`. El mapa de dominio objetivo debe distinguirse de los módulos efectivamente implementados.
+- **Ejecución:** el capítulo V reúne capturas de acceso, navegación, vehículos, reportes, comparación, monitoreo, alertas, perfil, idiomas y vista móvil. Estas imágenes acreditan lo visible; no sustituyen las pruebas completas de aceptación de cada historia.
+- **Despliegue:** la evidencia histórica de Netlify muestra publicación del frontend. La captura de Render muestra construcción de la Fake API; se requiere evidencia adicional para afirmar el funcionamiento del flujo público completo.
+- **Colaboración:** el historial y las capturas de GitHub muestran aportes del equipo. La cantidad de commits no mide esfuerzo, calidad ni dominio individual del producto.
+- **Alcance:** JSON Server y los datos de demostración permiten probar la interfaz. No equivalen a fuentes oficiales, autenticación de producción ni backend definitivo.
 
-* **Frontend:** FleetProof cuenta con una primera versión en Angular organizada en cinco bounded contexts. La reutilización de `shared` mantiene contratos HTTP, controles y presentación comunes.
-* **Ejecución:** Se verificaron acceso demo, navegación, apertura del diálogo CSV y cambio ES/EN. Las capturas documentan dashboard, vehículos, reportes, comparación, monitoreo, alertas, perfil y móvil. No prueban por sí solas todos los criterios de aceptación ni importación CSV o exportación PDF completadas.
-* **Publicación:** Netlify muestra el frontend publicado. Render muestra la configuración de la Fake API en construcción; falta acreditar su publicación y la conexión pública.
-* **Colaboración:** GitHub muestra aportes de los cinco integrantes. El capítulo V se integró en `develop`, conservando el historial. El número de commits no sustituye la revisión de calidad ni aceptación de historias.
-* **Validación:** Los datos y la API son de demostración. Esta entrega no acredita fuentes oficiales, autenticación de producción ni reducciones medidas del tiempo de consulta. Estas hipótesis requieren validación posterior con usuarios.
+## Recomendaciones para la siguiente entrega
 
-**Recomendaciones:** completar pruebas de registro, edición, generación y exportación PDF, CSV, monitoreo y resolución de casos; registrar solicitudes y respuestas en Postman; revisar el runtime de Render; optimizar el logo y cerrar la trazabilidad entre historias, pruebas y evidencias. El backend definitivo debe seguir el stack oficial del curso documentado en el control de rúbrica; JSON Server no constituye un backend de producción.
+Priorizar la trazabilidad entre necesidades, historias, tareas y pruebas. Descomponer el backlog en tareas estimadas de 4 a 8 horas y registrar sus estados reales. Complementar las capturas con solicitudes y respuestas HTTP, resultados de pruebas y evidencia fechada de despliegue.
 
----
-## Video About-the-Team
+Actualizar los diagramas conforme al stack del curso: Angular/TypeScript/Angular Material para el frontend y Java/Spring Boot/Spring Data JPA para el backend objetivo. Documentar la base relacional y OpenAPI cuando exista implementación verificable.
 
-**Pendiente:** incorporar resumen, pauta de secuencias, captura, URL y duración del video About-the-Team.
+Realizar pruebas con usuarios antes de concluir que FleetProof reduce tiempos, evita sanciones o satisface las necesidades del segmento. Registrar metodología, resultados y limitaciones. Las mejoras posteriores deben conservar su fecha real y no atribuirse retrospectivamente a TB1.
+
+El video About-the-Team y la exposición se registran en el inventario de anexos, junto con su enlace, duración y participantes, cuando dichos archivos estén disponibles.
