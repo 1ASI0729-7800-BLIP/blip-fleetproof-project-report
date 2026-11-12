@@ -184,40 +184,40 @@ El análisis se realizó sobre siete entrevistas distribuidas en dos segmentos. 
 
 #### Resultados generales
 
-| Hallazgo codificado | Frecuencia | Porcentaje | Interpretación para FleetProof |
+| Hallazgo codificado | Frecuencia | Evidencia (Entrevista y Minuto) | Interpretación para FleetProof |
 |---|---:|---:|---|
-| Consulta de más de una fuente antes de decidir | 7/7 | 100% | El producto debe centralizar fuentes y mostrar claramente origen, fecha y estado de cada consulta. |
-| Conservación manual de evidencia en capturas, Drive, WhatsApp u hojas de cálculo | 7/7 | 100% | Existe oportunidad para guardar evidencia dentro del historial del vehículo. |
-| Necesidad de alertas o seguimiento posterior a la primera revisión | 7/7 | 100% | El reporte puntual debe conectarse con monitoreo recurrente. |
-| Dificultad por datos inconsistentes, incompletos o fuentes no disponibles | 6/7 | 86% | FleetProof debe comunicar indisponibilidad y permitir reintentos sin ocultar incertidumbre. |
-| Coordinación con otra persona para validar o resolver observaciones | 5/7 | 71% | Se justifica incluir responsables, estado de atención y trazabilidad de resolución. |
-| Impacto operativo o comercial por no validar a tiempo | 5/7 | 71% | La propuesta debe comunicar reducción de riesgo antes de compra, venta, reparto o uso de flota. |
+| Consulta de más de una fuente antes de decidir | 7/7 | E1, E4, E2, E3, E5, E6, E7 | El producto debe centralizar fuentes y mostrar claramente origen, fecha y estado de cada consulta. |
+| Conservación manual de evidencia en capturas, Drive, WhatsApp u hojas de cálculo | 7/7 | E4, E1, E5, E6, E7 | Existe oportunidad para guardar evidencia dentro del historial del vehículo. |
+| Necesidad de alertas o seguimiento posterior a la primera revisión | 7/7 | E7, E4, E1, E6 | El reporte puntual debe conectarse con monitoreo recurrente. |
+| Dificultad por datos inconsistentes, incompletos o fuentes no disponibles | 6/7 | E3, E4, E1, E2, E5, E7 | FleetProof debe comunicar indisponibilidad y permitir reintentos sin ocultar incertidumbre. |
+| Coordinación con otra persona para validar o resolver observaciones | 5/7 | E4, E5, E6, E7, E1 | Se justifica incluir responsables, estado de atención y trazabilidad de resolución. |
+| Impacto operativo o comercial por no validar a tiempo | 5/7 | E4, E6, E7, E1, E2 | La propuesta debe comunicar reducción de riesgo antes de compra, venta, reparto o uso de flota. |
 
 #### Segmento 1: propietarios, compradores y asesores automotores
 
-Este segmento agrupa a Cristhian Amaya, Diego Salazar y Carmen Rojas. Los tres participantes relataron procesos de consulta previos a una decisión de compra, venta o recomendación. En todos los casos se utilizaron varias fuentes y se conservaron capturas o enlaces como respaldo. Cristhian y Diego, por su rol asesor, destacaron la necesidad de traducir datos técnicos a lenguaje comprensible; Carmen evidenció la dificultad de una compradora particular para interpretar diferencias entre multa, observación registral o documento pendiente.
+Este segmento agrupa a Cristhian Amaya, Diego Salazar y Carmen Rojas. Los tres participantes relataron procesos de consulta previos a una decisión de compra, venta o recomendación. Destaca el caso de Cristhian Amaya (Entrevista 1,), quien evidenció que la validación no se limita a un dato crudo, sino que requiere traducir términos técnicos a un lenguaje claro para evitar que el comprador asuma riesgos ocultos. Asimismo, Carmen Rojas (Entrevista 3,) confirmó la confusión que genera no saber si un hallazgo es grave o informativo.
 
-| Patrón del segmento | Frecuencia | Porcentaje |
+| Patrón del segmento | Frecuencia | Evidencia (Entrevista y Minuto) |
 |---|---:|---:|
-| Consulta de fuentes oficiales o especializadas | 3/3 | 100% |
-| Uso de capturas o mensajes para compartir evidencia | 3/3 | 100% |
-| Necesidad de explicar hallazgos con lenguaje simple | 3/3 | 100% |
-| Dudas por actualización o consistencia de datos | 2/3 | 67% |
-| Interés en volver a consultar si la compra se retrasa o aparece nueva información | 2/3 | 67% |
+| Consulta de fuentes oficiales o especializadas | 3/3 | E1, E2, E3 |
+| Uso de capturas o mensajes para compartir evidencia | 3/3 | E1, E2, E3 |
+| Necesidad de explicar hallazgos con lenguaje simple | 3/3 | E1, E2, E3 |
+| Dudas por actualización o consistencia de datos | 2/3 | E1, E3 |
+| Interés en volver a consultar si la compra se retrasa o aparece nueva información | 2/3 | E1, E2 |
 
 Para este segmento, FleetProof debe priorizar reportes claros, evidencia descargable, explicación de riesgo y lenguaje no técnico. El valor principal no es solo obtener información, sino convertirla en una decisión confiable y comunicable.
 
 #### Segmento 2: responsables comerciales, logísticos y flotas pequeñas
 
-Este segmento agrupa a Roxana Limo, Patricia Valdez, Jorge Quispe y Mei Lin Tanaka. Los cuatro casos muestran que la validación vehicular no ocurre de forma aislada: intervienen responsables comerciales, administración, logística, conductores, repartidores o familiares que apoyan el negocio. Las respuestas evidencian uso de WhatsApp, Drive, hojas de cálculo y carpetas compartidas para coordinar documentos y observaciones.
+Este segmento agrupa a Roxana Limo, Patricia Valdez, Jorge Quispe y Mei Lin Tanaka. Destaca fuertemente el caso de Roxana Limo (Entrevista 4,), quien demostró que una mala preparación documentaria o un registro desactualizado puede retrasar ventas e impactar comercialmente a múltiples sedes. Roxana validó que las observaciones se manejan en checklists y hojas externas, lo cual concuerda con Patricia Valdez (Entrevista 5,), quien indicó que depender de WhatsApp hace que la trazabilidad de los responsables se pierda.
 
-| Patrón del segmento | Frecuencia | Porcentaje |
+| Patrón del segmento | Frecuencia | Evidencia (Entrevista y Minuto) |
 |---|---:|---:|
-| Coordinación con más de una persona para validar o usar el vehículo | 4/4 | 100% |
-| Registro distribuido en WhatsApp, Drive, hojas o carpetas | 4/4 | 100% |
-| Necesidad de asignar responsables para resolver observaciones | 4/4 | 100% |
-| Necesidad de alertas de vencimientos, multas o cambios registrales | 4/4 | 100% |
-| Impacto operativo o comercial por retrasos en validación | 3/4 | 75% |
+| Coordinación con más de una persona para validar o usar el vehículo | 4/4 | E4, E5, E6, E7 |
+| Registro distribuido en WhatsApp, Drive, hojas o carpetas | 4/4 | E4, E5, E6, E7 |
+| Necesidad de asignar responsables para resolver observaciones | 4/4 | E4, E5, E6, E7 |
+| Necesidad de alertas de vencimientos, multas o cambios registrales | 4/4 | E4, E5, E6, E7 |
+| Impacto operativo o comercial por retrasos en validación | 3/4 | E4, E6, E7 |
 
 Para este segmento, FleetProof debe funcionar como registro colaborativo por vehículo. Además del reporte inicial, son relevantes el estado de observaciones, la asignación de responsables, el historial de consultas, las alertas y la evidencia centralizada.
 
