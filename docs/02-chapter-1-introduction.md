@@ -96,7 +96,7 @@ Sabremos que tenemos éxito cuando veamos un menor tiempo de preparación de rep
 * El monitoreo recurrente retendrá mejor a los clientes que la venta de un reporte unitario.
 * Un modelo de planes de suscripción basado en el volumen de vehículos y reportes permitirá escalar el negocio de manera sostenible.
 
-**Business Outcome Assumptions**
+**Business Outcome Assumptions (Beneficios Esperados)**
 * Aumentará el porcentaje de clientes que genera un segundo reporte o que mantiene activa su suscripción.
 * Disminuirá el tiempo promedio de preparación y revisión documentaria por cada vehículo.
 * Aumentará el porcentaje de observaciones vehiculares que cuentan con un responsable asignado y evidencia registrada.
@@ -106,7 +106,7 @@ Sabremos que tenemos éxito cuando veamos un menor tiempo de preparación de rep
 * Los supervisores necesitan un resumen claro del nivel de riesgo y la trazabilidad del estado de toda su flota.
 * Los compradores y propietarios particulares tienen grandes dificultades para interpretar los resultados registrales por su cuenta.
 
-**User Outcome and Benefit Assumptions**
+**User Outcome and Benefit Assumptions (Beneficios Esperados)**
 * Los usuarios podrán identificar unidades vehiculares críticas rápidamente para priorizar su atención.
 * Los administradores evitarán repetir consultas innecesarias y no perderán las evidencias de regularizaciones pasadas.
 * Los usuarios particulares lograrán comprender fácilmente los cambios en su vehículo y regularizar observaciones pendientes.
@@ -117,6 +117,13 @@ Sabremos que tenemos éxito cuando veamos un menor tiempo de preparación de rep
 * La comparación histórica de estados (*snapshots*) hará visible la información nueva de forma inmediata.
 * Un semáforo con explicación visual facilitará la priorización de vehículos en riesgo.
 * Un sistema de gestión de casos con responsable y evidencia mejorará el seguimiento de las observaciones.
+
+**Resultados Realmente Medidos (A la fecha):**
+Es importante precisar que los beneficios de reducción de tiempos y aumento de retención son proyecciones e hipótesis que se medirán empíricamente durante el uso de la plataforma en producción. Hasta el momento, los resultados reales y medidos que sustentan el proyecto son:
+
+*Validación del problema: El 100% de los usuarios empresariales (B2B) entrevistados en la fase de Needfinding confirmó depender de registros manuales distribuidos (WhatsApp, hojas de cálculo, Drive) para coordinar revisiones, lo que genera cuellos de botella operativos.
+
+*Tracción inicial: Despliegue exitoso de la Landing Page v1.0.0, orientada a captar el interés de los segmentos y validar la comprensión de la propuesta de valor en el mercado.
 
 
 #### 1.2.2.3 Lean UX Hypothesis Statements
@@ -172,22 +179,23 @@ El Lean UX Canvas consolida el problema de dispersión de información vehicular
 
 ## 1.3 Segmentos objetivo
 
-### Empresas con flotas
+### Cliente Principal (Prioritario): Empresas con flotas
 
-Este segmento prioritario está compuesto por empresas peruanas dedicadas al servicio de taxi, buses, turismo, reparto, logística y alquiler que operan entre 5 y 100 unidades 
-vehiculares. Estas organizaciones enfrentan graves consecuencias operativas si operan con documentos vencidos, por lo que requieren soluciones digitales que centralicen la información y profesionalicen sus procesos de control.
+Este segmento prioritario está compuesto por empresas peruanas dedicadas al servicio de taxi, buses, turismo, reparto, logística y alquiler que operan entre 5 y 100 unidades vehiculares.
+
+_Justificación de priorización:_ El Needfinding del Capítulo II validó empíricamente que este segmento sufre el mayor impacto operativo y comercial. Las entrevistas a responsables logísticos (Patricia Valdez, Jorge Quispe) demostraron que la dependencia de Excel y WhatsApp dificulta saber qué versión documentaria está actualizada y hace casi imposible hacer seguimiento de quién resolvió una observación. Asimismo, el caso de Roxana Limo (Jefa de Marcas) evidenció que trabajar con información distribuida entre distintas sedes retrasa las decisiones comerciales y genera graves riesgos antes de entregar una unidad al cliente. Debido a que el dolor de este segmento es recurrente y afecta la continuidad operativa diaria, representa la viabilidad principal para el modelo de suscripción B2B de FleetProof.
 
 *   **Edad:** 25 a 60 años.
 *   **Roles operativos:** Propietarios, gerentes, jefes de operaciones, administradores de flota y analistas documentarios.
 *   **Necesidad clave:** Conocer el estado documentario de toda la flota simultáneamente, priorizar las unidades con observaciones y reducir el trabajo manual repetitivo.
 *   **Uso de tecnología:** Dependencia actual de múltiples portales web independientes, hojas de cálculo y aplicaciones de mensajería para coordinar revisiones.
 
-### Propietarios y compradores particulares
+### Cliente Secundario (Complementario): Propietarios y compradores particulares
 
 Este segmento complementario abarca a personas que buscan reducir la incertidumbre legal o administrativa antes de tomar decisiones sobre un vehículo. Enfrentan dificultades 
 para interpretar los resultados de diversas entidades y carecen de un mecanismo de seguimiento posterior a la consulta.
 
 *   **Edad:** 20 a 65 años.
 *   **Roles operativos:** Personas naturales que compran o venden autos usados, conductores independientes y taxistas propietarios que administran uno o pocos vehículos.
-*   **Necesidad clave:** Comprender claramente los antecedentes registrales antes de una transacción comercial y recibir alertas continuas de monitoreo sobre su placa.
+*   **Necesidad clave:** Comprender claramente los antecedentes registrales antes de una transacción comercial, traduciendo datos técnicos a riesgos tangibles (como evidenciaron las entrevistas a Cristhian Amaya y Carmen Rojas), y recibir alertas continuas de monitoreo sobre su placa.
 *   **Uso de tecnología:** Uso de navegadores móviles o de escritorio para realizar consultas puntuales y aisladas en plataformas públicas o pagar por reportes unitarios privados.

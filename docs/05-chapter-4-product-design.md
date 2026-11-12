@@ -567,8 +567,7 @@ flowchart TD
     class EXT_PAY,EXT_SRC,EXT_NOT external;
 ```
 
-**Explicación, decisiones y relación con otros artefactos:** El diagrama de contexto representa los límites del sistema central y sus interacciones con los tres perfiles de usuario identificados, así como los servicios externos para procesamiento de pagos, resolución de CAPTCHA, consulta de fuentes oficiales y envío de notificaciones.
-
+**Explicación, decisiones y relación con otros artefactos:** El diagrama de contexto representa los límites del sistema central y sus interacciones con los tres perfiles de usuario identificados, así como los servicios externos para procesamiento de pagos, consulta de fuentes oficiales mediante APIs autorizadas y proveedores habilitados (con políticas formales de manejo de indisponibilidad) y despacho de notificaciones.
 
 ### 4.6.3 Software Architecture Container Diagrams
 
@@ -589,17 +588,16 @@ flowchart TB
     spa["Frontend Web Application<br/>Angular / Angular Material"]:::client
 
     %% Sistemas Externos y BD
-    db[("Core Database<br/>PostgreSQL / MySQL")]:::db
+    db[("Core Database<br/>PostgreSQL")]:::db
     ext_taypi["Taypi Payment System"]:::external
-    ext_captcha["CAPTCHA Resolution Service"]:::external
-    ext_sources["Fuentes Oficiales<br/>SUNARP / Transito"]:::external
+    ext_sources["Fuentes Oficiales Autorizadas<br/>APIs y Convenios (SUNARP / Tránsito)"]:::external
     ext_notif["Notification Provider<br/>Email / SMS / Push"]:::external
 
     %% Componentes del Backend API
     subgraph BackendAPI ["Backend RESTful API - Spring Boot / Java"]
         
         subgraph Sub_Module ["Subscriptions Context"]
-            sub_ctrl["SubscriptionController<br/>Manejo de endpoints de planes"]:::controller
+            sub_ctrl["SubscriptionController<br/>Endpoints de planes y cobros"]:::controller
             sub_srv["SubscriptionService<br/>Logica de activacion y cuotas"]:::appService
             sub_agg["Aggregate: Subscription<br/>Plan, Status, Limits"]:::domain
         end
@@ -612,9 +610,9 @@ flowchart TB
 
         subgraph Veh_Module ["Vehicle Information Context"]
             veh_ctrl["VehicleController<br/>Validacion y consultas"]:::controller
-            veh_srv["VehicleQueryService<br/>Orquestacion de consultas y retry"]:::appService
+            veh_srv["VehicleQueryService<br/>Orquestacion y resiliencia"]:::appService
             veh_agg["Aggregate: Vehicle<br/>Plate, TechnicalData, History"]:::domain
-            veh_conn["SourceConnectorAdapter<br/>Llamadas HTTP y bypass CAPTCHA"]:::infra
+            veh_conn["SourceConnectorAdapter<br/>Cliente HTTP y fallback indisponibilidad"]:::infra
         end
 
         subgraph Rep_Module ["Report Management Context"]
@@ -624,7 +622,7 @@ flowchart TB
         end
 
         subgraph Mon_Module ["Vehicle Monitoring Context"]
-            mon_wrk["MonitoringBackgroundWorker<br/>Cron/Scheduler de revisiones"]:::appService
+            mon_wrk["MonitoringBackgroundWorker<br/>Scheduler de revisiones periodicas"]:::appService
             mon_srv["ChangeDetectionService<br/>Comparador de snapshots"]:::appService
             mon_agg["Aggregate: VehicleMonitoring<br/>Schedule, Alerts, Discrepancies"]:::domain
         end
@@ -657,8 +655,7 @@ flowchart TB
     veh_ctrl --> veh_srv
     veh_srv --> veh_agg
     veh_srv --> veh_conn
-    veh_conn -->|Resuelve token| ext_captcha
-    veh_conn -->|Extrae datos| ext_sources
+    veh_conn -->|Consulta autorizada / Snapshot| ext_sources
 
     rep_ctrl --> rep_srv
     rep_srv --> rep_agg
@@ -677,14 +674,14 @@ flowchart TB
     infra_notif -->|Despacha mensaje| ext_notif
 
     %% Persistencia hacia la BD
-    user_agg --> infra_ef
-    sub_agg --> infra_ef
-    veh_agg --> infra_ef
-    rep_agg --> infra_ef
-    mon_agg --> infra_ef
-    flt_agg --> infra_ef
+    user_agg --> infra_jpa
+    sub_agg --> infra_jpa
+    veh_agg --> infra_jpa
+    rep_agg --> infra_jpa
+    mon_agg --> infra_jpa
+    flt_agg --> infra_jpa
 
-    infra_ef --> db
+    infra_jpa --> db
 ```
 
 **Explicación, decisiones y relación con otros artefactos:**
@@ -721,10 +718,9 @@ flowchart TB
         db_engine[(PostgreSQL Engine Schemas IAM / Fleet / Reports)]:::artifact
     end
 
-    subgraph External_Cloud [Servicios Externos Integrados]
+    subgraph External_Cloud [Servicios Externos Autorizados]
         srv_pay[Taypi Payment Gateway]:::extNode
-        srv_captcha[2Captcha Service]:::extNode
-        srv_gov[Portales Oficiales SUNARP / SAT]:::extNode
+        srv_gov[Portales y APIs Oficiales SUNARP / SAT]:::extNode
         srv_notif[Notification Provider Resend / SendGrid]:::extNode
         srv_media[Cloudinary Storage]:::extNode
     end
@@ -737,14 +733,13 @@ flowchart TB
     worker_art -->|TCP 5432 JPA| db_engine
 
     api_art -->|HTTPS 443| srv_pay
-    api_art -->|HTTPS 443| srv_captcha
     api_art -->|HTTPS 443| srv_gov
     worker_art -->|HTTPS 443| srv_gov
     worker_art -->|HTTPS 443| srv_notif
     api_art -->|HTTPS 443| srv_media
 ```
 
-**Explicación, decisiones y relación con otros artefactos:** El diagrama de despliegue representa la distribución en infraestructura cloud de los artefactos del sistema: Landing Page y Frontend SPA distribuidos en CDN, API RESTful y Background Workers en contenedor Linux PaaS, base de datos relacional PostgreSQL gestionada, y conexiones seguras vía HTTPS/TLS hacia servicios externos de pagos, resolución de CAPTCHA, portales vehiculares, almacenamiento y notificaciones.
+**Explicación, decisiones y relación con otros artefactos:** El diagrama de despliegue representa la distribución en infraestructura cloud de los artefactos del sistema: Landing Page y Frontend SPA distribuidos en CDN, API RESTful y Background Workers en contenedor Linux PaaS, base de datos relacional PostgreSQL gestionada, y conexiones seguras vía HTTPS/TLS hacia servicios externos autorizados para procesamiento de pagos, almacenamiento multimedia, notificaciones y consultas registrales oficiales con manejo de indisponibilidad.s.
 
 ## 4.7 Software Object-Oriented Design
 
@@ -871,8 +866,8 @@ classDiagram
         +string FleetName
         +DateTime RegisteredAt
         +RegisterFleet() void
-        +AssignVehicleToFleet(vehicleId: Guid) void
-        +AssignResponsiblePerson(personId: Guid) void
+        +AssignVehicleToFleet(Guid vehicleId) void
+        +AssignResponsiblePerson(Guid personId) void
         +CheckFleetStatus() void
         +IdentifyFleetRisk() bool
         +NotifyResponsiblePerson() void
@@ -913,6 +908,15 @@ El diagrama modela exactamente los 6 Bounded Contexts y sus respectivos comandos
 * **Report Management:** `VehicleReport` procesa reportes completos, de tránsito o SUNARP, aplicando la política de emitir el documento solo cuando los datos se encuentran consolidados.
 * **Vehicle Monitoring:** `VehicleMonitoring` maneja el cronograma de revisiones periódicas, la detección de discrepancias entre snapshots y la creación de `MonitoringAlert`.
 * **Fleet Management:** `Fleet` y `FleetVehicleAssignment` agrupan las unidades vehiculares, delegan la supervisión a una persona responsable y ejecutan la política de notificación inmediata ante la identificación de riesgos en la flota.
+
+
+**Eventos de Dominio y Flujo de Integración entre Contextos:**  
+Para garantizar el desacoplamiento y la consistencia eventual entre los módulos, la interacción entre Bounded Contexts se articula mediante eventos de dominio asíncronos:
+1. `VehiculoRegistradoEvent`: Emitido por *Vehicle Information* cuando una placa válida es ingresada; consumido por *Fleet Management* para asociar la unidad a la flota.
+2. `ObservacionDetectadaEvent`: Emitido por *Vehicle Monitoring* tras identificar un cambio crítico o documento próximo a vencer (SOAT/Revisión Técnica); consumido por *Fleet Management* para generar el registro de atención.
+3. `ResponsableAsignadoEvent`: Emitido por *Fleet Management* cuando el gestor delega la resolución de una alerta a un operador.
+4. `EvidenciaIncorporadaEvent`: Emitido cuando el responsable adjunta constancia de trámite o subsanación documental.
+5. `ObservacionRegularizadaEvent`: Emitido para el cierre formal del caso una vez validada la vigencia del documento. Solo los usuarios con rol de Gestor o Administrador tienen autorización para cerrar una observación, requiriendo evidencia verificable y registro en la trazabilidad histórica de la unidad.
 
 
 ## 4.8 Database Design
@@ -1027,11 +1031,15 @@ erDiagram
     FLEETS ||--o{ FLEET_VEHICLE_ASSIGNMENTS : "contiene"
     VEHICLE_MONITORINGS ||--o{ MONITORING_ALERTS : "dispara"
 ```
+Explicación, decisiones y relación con otros artefactos:
 
-**Explicación, decisiones y relación con otros artefactos:**
 El diseño físico de la base de datos implementa las siguientes decisiones técnicas:
-* **Normalización y consistencia:** El esquema se encuentra normalizado en Tercera Forma Normal (3FN), evitando redundancia de datos vehiculares en `VEHICLES` y desacoplando el histórico de consultas en `SOURCE_CHECKS` y reportes consolidados en `VEHICLE_REPORTS`.
-* **Identificadores UUID:** Se utilizan llaves primarias de tipo UUID en todas las tablas para evitar colisiones en entornos distribuidos y permitir sincronización segura con la API.
-* **Separación de responsabilidades de monitoreo y flota:** La tabla `FLEET_VEHICLE_ASSIGNMENTS` actúa como tabla intermedia que relaciona flotas con vehículos y delega formalmente la supervisión a un usuario responsable (`responsible_user_id`), mientras que `VEHICLE_MONITORINGS` y `MONITORING_ALERTS` administran de forma independiente las alertas generadas por cambios en las fuentes.
 
+Normalización y consistencia relacional: El esquema se encuentra normalizado en Tercera Forma Normal (3FN), desacoplando los datos estáticos de la unidad en VEHICLES, la trazabilidad de consultas externas en SOURCE_CHECKS y la consolidación histórica en VEHICLE_REPORTS.
+
+Identificadores UUID: Se emplean claves primarias de tipo UUID en todas las tablas para garantizar unicidad global sin depender de secuencias centralizadas, facilitando la integración con los agregados del dominio en Spring Boot.
+
+Persistencia con Spring Data JPA: Las relaciones entre tablas están mapeadas mediante entidades JPA gestionadas por repositorios relacionales en PostgreSQL, aplicando integridad referencial explícita a través de llaves foráneas y control transaccional declarativo (@Transactional).
+
+Separación de responsabilidades de monitoreo y flota: La tabla FLEET_VEHICLE_ASSIGNMENTS actúa como tabla intermedia que relaciona flotas con vehículos y delega formalmente la supervisión a un usuario responsable (responsible_user_id), mientras que VEHICLE_MONITORINGS y MONITORING_ALERTS administran de forma independiente las alertas generadas por cambios en las fuentes.
 

@@ -1135,3 +1135,53 @@ A continuación se presentan los analíticos del repositorio frontend que susten
 | **Fenfito** | Frontend Developer | Módulo Vehicle Monitoring (Alertas y cronograma) |
 
 [Repositorio del Frontend Web Application](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend)
+
+### 5.2.3 Sprint 3
+
+#### 5.2.3.5 Execution Evidence for Sprint Review
+
+##### Entrevistas de validación del frontend
+
+El 11 de noviembre de 2026 se realizaron dos sesiones moderadas para recoger comentarios sobre la consulta de reportes vehiculares, el monitoreo y la gestión de flotas en FleetProof. Sebastian Reyes Limo compartió su pantalla y operó la aplicación en un entorno local con datos de demostración. Los participantes observaron el recorrido, respondieron preguntas y comentaron su utilidad para sus propios casos. La validación recoge comprensión, expectativas e intención de uso. Como el moderador controló el navegador, no se midió la capacidad de completar tareas de forma autónoma ni el tiempo de ejecución por participante.
+
+| Participante | Segmento representado | Duración | Evidencia |
+|---|---|---:|---|
+| Cristhian Amaya | Particular. Escenario de compra de un vehículo usado y seguimiento posterior. | 3 min 50 s | [Ver grabación de Cristhian](https://drive.google.com/file/d/1CtNP9LyLidYjLD7K_gaAsz1zfq1H0Lq8/view?usp=sharing) |
+| Roxana Limo | Empresa. Jefa de marca con vehículos de prueba de manejo en tres ciudades. | 4 min 09 s | [Ver grabación de Roxana](https://drive.google.com/file/d/1rnyaSSVS_42uR4PmsGFv6SOQrKGxjh5N/view?usp=sharing) |
+
+Los tiempos que se indican a continuación son aproximados y se cuentan desde el inicio de cada grabación enlazada.
+
+###### Validación 1. Cristhian Amaya
+
+El moderador inició sesión y mostró la consulta por placa, el reporte `ABC-123` en su versión 3, las fuentes y hallazgos, y los planes de monitoreo individual.
+
+| Minuto | Observación | Implicación para el producto |
+|---|---|---|
+| 00:16–00:35 | Ante el escenario de compra, Cristhian indicó que buscaría por placa en distintas fuentes y tendría que consultarlas una por una. | La placa coincide con su punto de partida. Reunir los resultados en un reporte responde a la dispersión de información que describió. |
+| 01:19–01:47 | Preguntó qué datos podrían obtenerse de SUNARP. Mostró interés en el historial de propietarios, los precios anteriores y la existencia de garantías asociadas al vehículo. | Explicar qué campos están disponibles por fuente y qué datos quedan fuera de la cobertura. El interés por esos datos no acredita que la versión actual los ofrezca. |
+| 02:33–03:16 | Preguntó si la información se consulta al momento o se obtiene de una base previa. También planteó qué ocurriría si apareciera una papeleta una semana después de generar el reporte. | Mostrar la fecha de la información y diferenciar la consulta puntual del seguimiento posterior. Precisar cuándo se revisan los cambios y por qué canal se notificarían. |
+| 03:24–03:41 | Dijo que usaría el producto tanto para evaluar una compra como para monitorear su vehículo. Mencionó que algunas fotopapeletas se conocen tarde y pueden tener consecuencias en la cuenta bancaria. | Priorizar alertas comprensibles y oportunas para cambios posteriores a la consulta. El comentario expresa intención de uso. |
+
+###### Validación 2. Roxana Limo
+
+El moderador mostró el inicio con reportes recientes, el detalle del reporte `ABC-123`, la vista de Flota y la activación simulada de una suscripción mediante QR. En esta sesión se mostró un plan individual, aunque el escenario consultado correspondía al segmento empresarial.
+
+| Minuto | Observación | Implicación para el producto |
+|---|---|---|
+| 00:50–01:17 | Roxana identificó la columna **Riesgo** como lo primero que llamó su atención. El moderador abrió el reporte y mostró la explicación de un riesgo alto asociado a una papeleta del escenario. | Mantener visible el nivel de riesgo y facilitar el acceso al hallazgo que lo explica. |
+| 02:00–02:55 | Valoró tener la información centralizada. Indicó que coordina alrededor de 25 vehículos de prueba de manejo en tres ciudades y que hoy consulta a distintas personas y áreas para conocer kilometraje, movimiento y papeletas. | Explorar la agrupación por sede y el seguimiento de responsables. Kilometraje y movimiento son necesidades mencionadas en la entrevista. La sesión no acredita que FleetProof los registre. |
+| 03:06–03:12 | El moderador abrió el QR del plan semanal individual por S/ 9 y confirmó la activación. Al cerrarse el diálogo, la pantalla mostró **Semanal** y **Activa**. | Se observó el cambio de estado en el flujo simulado. Queda por validar el recorrido con una cuenta empresarial y un plan cuyo límite sea adecuado para una operación de aproximadamente 25 vehículos. |
+| 03:12–03:52 | El moderador creó una flota y la nueva agrupación apareció con cero vehículos asignados. Roxana calificó la plataforma como amigable, dijo que la usaría y señaló que la recomendaría a clientes corporativos que compran flotas. | La creación de la agrupación fue visible. Queda por observar si una persona del segmento puede asignar vehículos y responsables sin ayuda. |
+
+###### Síntesis y acciones propuestas
+
+Ambas sesiones apuntan al valor de centralizar la información vehicular. Cristhian distinguió dos momentos de uso: la decisión de compra y el seguimiento posterior. Roxana destacó la visibilidad del riesgo y la posibilidad de reunir información que hoy solicita a varias áreas. Sus respuestas sirven para orientar el siguiente refinamiento del backlog.
+
+| Prioridad propuesta | Cambio a evaluar | Cómo validarlo en la siguiente sesión |
+|---|---|---|
+| Alta | Diferenciar **Reporte por placa** de **Monitoreo** y mostrar la fecha de los datos, la frecuencia de revisión y el canal de alertas. | Pedir a una persona que explique qué ocurriría si aparece una papeleta después de generar un reporte y cómo sabría cuándo se revisó el dato. |
+| Alta | Explicar la cobertura por fuente y el alcance de cada hallazgo en el reporte. | Pedir a una persona que identifique qué información registral puede usar para una decisión de compra y qué dato tendría que verificar por otro medio. |
+| Alta | Revisar la capacidad de los planes empresariales y probar la gestión de flotas con una cuenta de empresa. | Usar un escenario de 25 vehículos en varias sedes y observar la selección del plan y la asignación de vehículos a una flota. |
+| Media | Evaluar sede, kilometraje y movimiento como requisitos para el segmento empresarial. | Confirmar qué información necesita cada responsable, cómo se obtiene y con qué frecuencia debe actualizarse. |
+
+En la demostración se mencionaron consultas en tiempo real y alertas por correo. Las grabaciones muestran el frontend local con registros de demostración y una activación simulada. La integración con fuentes externas, el envío efectivo de correos y la reducción de tiempo en la operación siguen como puntos por verificar.
