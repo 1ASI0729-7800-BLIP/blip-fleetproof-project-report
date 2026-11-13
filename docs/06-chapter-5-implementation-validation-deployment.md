@@ -44,7 +44,7 @@ En esta sección se describen las herramientas de software seleccionadas para da
 | Herramienta / Plataforma | Uso principal | Enlace / Ruta de Acceso |
 |---|---|---|
 | **Netlify** | Despliegue automático y gratuito de la Landing Page estática y el Frontend SPA. | [https://www.netlify.com](https://www.netlify.com) |
-| **Railway** | Despliegue previsto del Backend API desarrollado con Java y Spring Boot, junto con las variables de entorno requeridas para su conexión de datos. | [Railway](https://railway.com/) |
+| **Railway** | Despliegue del Backend API desarrollado con Java y Spring Boot, aprovisionamiento de MySQL y administración de variables de entorno. | [Railway](https://railway.com/) |
 
 * **Documentación de Software**
 
@@ -215,6 +215,12 @@ En caso de usar Gherkin (para especificaciones o pruebas de los escenarios descr
 
 Ahora con la Landing Page desplegada, cada vez que se realize un push en la rama correspondiente, se actualizara automáticamente, de esta manera evitamos repetir los pasos. <br>
 [Link de la Landing Page](https://fleetproof-landingpage.netlify.app/)
+
+#### Configuración del Backend en Railway
+
+El backend utiliza un `Dockerfile` multietapa con Java 21 LTS y `railway.json` para definir `/v3/api-docs` como health check. Railway construye el JAR de Spring Boot desde GitHub, inyecta el puerto de ejecución y conecta el servicio con MySQL mediante referencias internas. Las credenciales se conservan como variables protegidas y no forman parte del repositorio.
+
+La URL pública resultante es [https://blip-fleetproof-backend-production.up.railway.app](https://blip-fleetproof-backend-production.up.railway.app). Swagger UI está disponible en [https://blip-fleetproof-backend-production.up.railway.app/swagger-ui/index.html](https://blip-fleetproof-backend-production.up.railway.app/swagger-ui/index.html).
 
 ## 5.2 Landing Page, Services & Applications Implementation
 
@@ -1186,17 +1192,17 @@ La matriz LACX representa los aspectos técnicos del backend abordados durante e
     <tr><td>US03, US05</td><td>Vehicle Information API</td><td>T29</td><td>Desarrollar Vehicle Information</td><td>Implementar agregado, capa de aplicación, persistencia JPA y controladores REST para vehículos.</td><td>8</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
     <tr><td>US10, US12</td><td>Fleet Management API</td><td>T30</td><td>Desarrollar Fleet Management</td><td>Implementar flotas y casos de resolución mediante capas DDD y endpoints REST.</td><td>8</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
     <tr><td>US03, US04</td><td>Report Management API</td><td>T31</td><td>Desarrollar Report Management</td><td>Implementar reportes, fuentes, hallazgos y nivel de riesgo mediante capas DDD y endpoints REST.</td><td>8</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
-    <tr><td>US03–US12</td><td>Integración técnica</td><td>T32</td><td>Consolidar los contextos del backend</td><td>Integrar la base compartida y los tres bounded contexts en una versión común del backend.</td><td>6</td><td>Gonzalo Quintanilla</td><td>En progreso</td></tr>
-    <tr><td>US03–US12</td><td>Conexión frontend–backend</td><td>T33</td><td>Conectar servicios Angular</td><td>Reemplazar progresivamente los datos simulados por solicitudes HTTP a los contratos REST.</td><td>8</td><td>Equipo BLIP</td><td>En progreso</td></tr>
-    <tr><td>-</td><td>Persistencia de producción</td><td>T34</td><td>Configurar MySQL</td><td>Configurar la conexión MySQL mediante variables de entorno sin almacenar credenciales en el repositorio.</td><td>5</td><td>Equipo BLIP</td><td>Pendiente</td></tr>
-    <tr><td>-</td><td>Despliegue del backend</td><td>T35</td><td>Desplegar en Railway</td><td>Publicar Spring Boot en Railway, configurar la conexión de datos y verificar Swagger y endpoints públicos.</td><td>6</td><td>Equipo BLIP</td><td>Pendiente</td></tr>
+    <tr><td>US03–US12</td><td>Integración técnica</td><td>T32</td><td>Consolidar los contextos del backend</td><td>Integrar la base compartida y los bounded contexts en una versión común del backend.</td><td>6</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
+    <tr><td>US03–US12</td><td>Conexión frontend–backend</td><td>T33</td><td>Conectar servicios Angular</td><td>Eliminar el consumo de JSON Server, alinear los contratos REST y configurar la URL pública del backend en Angular.</td><td>8</td><td>Equipo BLIP</td><td>Implementado; publicación de Netlify pendiente</td></tr>
+    <tr><td>-</td><td>Persistencia de producción</td><td>T34</td><td>Configurar MySQL</td><td>Configurar la conexión MySQL mediante variables de entorno y referencias internas de Railway, sin almacenar credenciales en el repositorio.</td><td>5</td><td>Equipo BLIP</td><td>Completado</td></tr>
+    <tr><td>-</td><td>Despliegue del backend</td><td>T35</td><td>Desplegar en Railway</td><td>Publicar Spring Boot en Railway, verificar el health check, Swagger, OpenAPI, CORS y los endpoints públicos.</td><td>6</td><td>Equipo BLIP</td><td>Completado</td></tr>
 </table>
 
-Las tareas continúan la numeración de Sprint 2, desde T26 hasta T35, y suman 62 horas planificadas. El desarrollo base y los tres bounded contexts se encuentran implementados; la consolidación, la conexión con Angular, MySQL de producción y el despliegue en Railway permanecen en progreso o pendientes según la tabla.
+Las tareas continúan la numeración de Sprint 2, desde T26 hasta T35, y suman 62 horas planificadas. El backend consolidado, MySQL y el despliegue en Railway se encuentran completados. La conexión fue incorporada al código Angular y compilada correctamente; falta publicar esa versión del frontend en Netlify y ejecutar el recorrido integral desde el sitio público.
 
 #### 5.2.3.4 Development Evidence for Sprint Review
 
-El backend se desarrolló como una aplicación Spring Boot con Java 25, Gradle, Spring Web MVC, Spring Data JPA y Springdoc OpenAPI, siguiendo una organización DDD. Las ramas `feature/vehicle-information`, `feature/fleet-management` y `feature/report-management` registran la implementación de los tres bounded contexts incluidos en el Sprint 3. La conexión con Angular está en progreso y el despliegue en Railway aún no se presenta como completado.
+El backend se consolidó en `develop` como una aplicación Spring Boot con Java 21 LTS, Gradle, Spring Web MVC, Spring Data JPA y Springdoc OpenAPI, siguiendo una organización DDD. La versión desplegada reúne User Management, Subscription Management, Vehicle Information, Vehicle Monitoring, Fleet Management y Report Management, además de `shared`. El frontend dejó de utilizar JSON Server: su configuración de producción apunta al backend de Railway y sus contratos fueron alineados con `/api/v1`.
 
 <h3>Development Evidence – Sprint 3</h3>
 
@@ -1213,56 +1219,36 @@ La tabla selecciona un commit representativo por bounded context. La configuraci
 
 #### 5.2.3.5 Execution Evidence for Sprint Review
 
-En Sprint 3 se ejecutó localmente el backend y se revisaron mediante Swagger los contratos implementados en las ramas de Vehicle Information, Fleet Management y Report Management. La ejecución disponible permite demostrar:
+En Sprint 3 se desplegó el backend consolidado en Railway y se verificó su disponibilidad pública. Springdoc genera 15 rutas OpenAPI y Swagger UI permite inspeccionar los contratos de los seis bounded contexts. La comprobación realizada el 13 de noviembre de 2026 obtuvo HTTP 200 para Swagger UI, `/v3/api-docs` y `/api/v1/users`; además, la respuesta CORS autorizó el origen `https://blip-fleetproof.netlify.app`.
 
-* Inicio de la aplicación Spring Boot en `http://localhost:8080`.
-* Generación del documento OpenAPI en `/v3/api-docs`.
-* Acceso a Swagger UI en `/swagger-ui/index.html`.
-* Operaciones REST para registrar y consultar vehículos.
-* Operaciones REST para crear flotas y administrar casos de resolución.
-* Operaciones REST para crear y consultar reportes vehiculares.
+* **Backend público:** [https://blip-fleetproof-backend-production.up.railway.app](https://blip-fleetproof-backend-production.up.railway.app).
+* **Swagger UI:** [https://blip-fleetproof-backend-production.up.railway.app/swagger-ui/index.html](https://blip-fleetproof-backend-production.up.railway.app/swagger-ui/index.html).
+* **OpenAPI JSON:** [https://blip-fleetproof-backend-production.up.railway.app/v3/api-docs](https://blip-fleetproof-backend-production.up.railway.app/v3/api-docs).
+* **API base configurada en Angular:** `https://blip-fleetproof-backend-production.up.railway.app/api/v1`.
 
-##### Evidencias pendientes del backend desplegado
+##### Evidencias del backend desplegado
 
-Cuando el backend se encuentre desplegado en Railway, se deberán incorporar en este apartado capturas legibles que incluyan la URL pública y la fecha de ejecución. Los siguientes espacios dejan definida la evidencia que debe añadirse sin afirmar que el despliegue ya fue completado.
-
-**Evidencia 1: Backend desplegado en Railway**
-
-<!-- Reemplazar este comentario por:
 ![Backend de FleetProof desplegado en Railway](assets/chapter-5/sprint-3/01-railway-backend-deployed.png)
--->
 
-**Figura 5.24.** Servicio Spring Boot de FleetProof desplegado en Railway y mostrado con estado disponible.
+**Figura 5.24.** Servicio Spring Boot de FleetProof activo en Railway, con despliegue originado desde GitHub y sus etapas de inicialización, construcción y publicación completadas.
 
-**Evidencia 2: Swagger UI del backend desplegado**
-
-<!-- Reemplazar este comentario por:
 ![Swagger UI del backend de FleetProof desplegado](assets/chapter-5/sprint-3/02-railway-swagger-ui.png)
--->
 
-**Figura 5.25.** Swagger UI servido desde la URL pública de Railway con los endpoints REST del backend.
+**Figura 5.25.** Swagger UI servido desde Railway, mostrando el documento OpenAPI 3.1 y los endpoints de Monitoring y Alerts.
 
-**Evidencia 3: Ejecución de un endpoint desde Swagger**
+![Endpoints de monitoreo, alertas y suscripciones](assets/chapter-5/sprint-3/03-swagger-monitoring-subscriptions.png)
 
-<!-- Reemplazar este comentario por:
-![Ejecución de endpoint del backend desde Swagger](assets/chapter-5/sprint-3/03-swagger-endpoint-execution.png)
--->
+**Figura 5.26.** Contratos REST publicados para Alerts y Subscriptions, con operaciones GET, POST y PUT documentadas.
 
-**Figura 5.26.** Ejecución de una operación REST desde Swagger, mostrando URL, parámetros, código de estado y cuerpo de respuesta.
+![Endpoints de vehículos, casos y usuarios](assets/chapter-5/sprint-3/04-swagger-vehicles-users.png)
 
-**Evidencia 4: Contextos disponibles en Swagger**
+**Figura 5.27.** Contratos REST publicados para Vehicle Information, Resolution Cases y User Management mediante el prefijo común `/api/v1`.
 
-<!-- Reemplazar este comentario por:
-![Endpoints de los bounded contexts en Swagger](assets/chapter-5/sprint-3/04-swagger-bounded-contexts.png)
--->
-
-**Figura 5.27.** Endpoints correspondientes a Vehicle Information, Fleet Management y Report Management disponibles en el backend desplegado.
-
-El backend constituye el incremento desarrollado en este sprint. La sustitución de los datos simulados del frontend por estas APIs se encuentra en progreso; por ello todavía no se declara un recorrido frontend–backend completamente conectado.
+La conexión sustituyó las URLs de JSON Server por el backend Spring Boot. El frontend superó `npm run lint` y `npm run build`, y el backend superó `gradlew test`. No obstante, la evidencia disponible todavía no muestra el recorrido completo ejecutado desde la versión pública de Netlify; esa comprobación debe realizarse después de publicar el cambio del frontend.
 
 #### 5.2.3.6 Services Documentation Evidence for Sprint Review
 
-Los siguientes contratos corresponden al backend desarrollado durante Sprint 3. Su consumo desde Angular continúa en implementación, por lo que la tabla documenta la API y no afirma que todos los flujos del frontend ya estén conectados.
+Los siguientes contratos corresponden al backend publicado en Railway. Angular utiliza la misma base `/api/v1`; las estructuras de recursos fueron contrastadas durante la integración y la aplicación compiló correctamente.
 
 | Nombre del Endpoint | Acciones Implementadas | Sintaxis de Llamada | Especificación de Parámetros |
 |---|---|---|---|
@@ -1270,61 +1256,59 @@ Los siguientes contratos corresponden al backend desarrollado durante Sprint 3. 
 | Fleets | GET, POST | `GET /api/v1/fleets`; `POST /api/v1/fleets` | Usuario y nombre de la flota. |
 | Resolution Cases | GET, POST, PUT | `GET /api/v1/cases`; `POST /api/v1/cases`; `PUT /api/v1/cases/{id}` | Usuario, vehículo, reporte, Finding, responsable, fecha límite, estado, evidencia y notas. |
 | Reports | GET, POST | `GET /api/v1/reports`; `GET /api/v1/reports/{id}`; `POST /api/v1/reports` | Usuario, vehículo, placa, fecha, versión y snapshot de fuentes y Findings. |
+| Users | GET, POST, PATCH | `GET /api/v1/users`; `POST /api/v1/users`; `PATCH /api/v1/users/{id}` | Nombre, correo, organización, tipo de cuenta y credencial transformada por el flujo actual. |
+| Subscriptions | GET, POST, PUT | `GET /api/v1/subscriptions`; `GET /api/v1/subscriptions/{id}`; `POST /api/v1/subscriptions`; `PUT /api/v1/subscriptions/{id}` | Usuario, plan, límite vehicular, estado y monto. |
+| Monitoring | GET, POST, PUT | `GET /api/v1/monitoring`; `GET /api/v1/monitoring/{id}`; `POST /api/v1/monitoring`; `PUT /api/v1/monitoring/{id}` | Usuario, vehículo, estado y último ciclo. |
+| Alerts | GET, POST, PUT | `GET /api/v1/alerts`; `GET /api/v1/alerts/{id}`; `POST /api/v1/alerts`; `PUT /api/v1/alerts/{id}` | Usuario, vehículo, reporte, tipo, estado, fecha y clave del mensaje. |
 | OpenAPI | GET | `GET /v3/api-docs` | Documento OpenAPI generado por Springdoc. |
 | Swagger UI | GET | `GET /swagger-ui/index.html` | Interfaz de exploración de los endpoints disponibles en la rama ejecutada. |
 
-Springdoc genera el documento OpenAPI en `/v3/api-docs` y Swagger UI en `/swagger-ui/index.html`. Durante la conexión se deben unificar las URLs base, configurar CORS, acordar el contrato de búsqueda por placa o identificador y registrar solicitudes y respuestas en Postman.
+Springdoc genera el documento OpenAPI en `/v3/api-docs` y Swagger UI en `/swagger-ui/index.html`. Se unificó el prefijo `/api/v1`, se habilitó CORS para Angular local y Netlify, y se eliminó del frontend el script y la dependencia de JSON Server. La consulta por placa y la integración con fuentes oficiales continúan como evolución del contrato.
 
 #### 5.2.3.7 Software Deployment Evidence for Sprint Review
 
-El frontend conserva su despliegue en Netlify mientras el backend se ejecuta localmente. El destino acordado para publicar Spring Boot es Railway. Como el despliegue todavía no se ha completado, no se consigna una URL pública inexistente.
+El backend se publicó en Railway mediante un `Dockerfile` multietapa con Java 21 LTS y un archivo `railway.json` que utiliza `/v3/api-docs` como health check. En el mismo proyecto se aprovisionó MySQL y se configuró su conexión mediante referencias de variables, sin versionar credenciales. El frontend conserva su despliegue en Netlify y su configuración de producción ya contiene la URL pública del backend; queda desplegar ese cambio y comprobar el recorrido desde el navegador.
 
 * **Plataforma del frontend:** Netlify.
 * **URL documentada del frontend:** [https://blip-fleetproof.netlify.app/](https://blip-fleetproof.netlify.app/).
-* **Backend definitivo:** ejecución local en `http://localhost:8080`.
-* **Swagger UI local:** `http://localhost:8080/swagger-ui/index.html`.
+* **Backend desplegado:** [https://blip-fleetproof-backend-production.up.railway.app](https://blip-fleetproof-backend-production.up.railway.app).
+* **Swagger UI público:** [https://blip-fleetproof-backend-production.up.railway.app/swagger-ui/index.html](https://blip-fleetproof-backend-production.up.railway.app/swagger-ui/index.html).
+* **OpenAPI público:** [https://blip-fleetproof-backend-production.up.railway.app/v3/api-docs](https://blip-fleetproof-backend-production.up.railway.app/v3/api-docs).
 * **Base de datos local del backend:** H2 en memoria para desarrollo.
-* **Plataforma prevista para el backend:** Railway.
-* **Base de datos de producción prevista:** MySQL, configurada mediante variables de entorno.
-* **Estado del despliegue:** pendiente.
+* **Plataforma del backend:** Railway.
+* **Base de datos de producción:** MySQL en Railway, configurada mediante variables de entorno.
+* **Estado del backend:** activo y accesible públicamente.
+* **Estado de la conexión Angular:** implementada y compilada; publicación y prueba integral en Netlify pendientes.
 
-##### Evidencias pendientes de configuración y despliegue en Railway
+##### Evidencias de configuración y despliegue en Railway
 
-Cuando se configure el entorno de producción, se deberán incorporar las siguientes capturas. Las imágenes deben ocultar contraseñas, tokens, cadenas de conexión y cualquier otro dato sensible.
+Las capturas siguientes registran la creación del servicio, la integración con GitHub, la configuración protegida y el resultado del despliegue. Los valores de contraseñas y cadenas de conexión permanecen ocultos.
 
 **Evidencia 1: Creación del proyecto y servicio en Railway**
 
-<!-- Reemplazar este comentario por:
 ![Creación del proyecto y servicio backend en Railway](assets/chapter-5/sprint-3/05-railway-project-service.png)
--->
 
 **Figura 5.28.** Proyecto de FleetProof y servicio destinado al backend Spring Boot creados en Railway.
 
 **Evidencia 2: Conexión del repositorio del backend**
 
-<!-- Reemplazar este comentario por:
 ![Repositorio del backend conectado con Railway](assets/chapter-5/sprint-3/06-railway-github-repository.png)
--->
 
 **Figura 5.29.** Repositorio y rama del backend seleccionados como fuente del despliegue automático en Railway.
 
 **Evidencia 3: Configuración de variables de entorno**
 
-<!-- Reemplazar este comentario por:
 ![Variables de entorno configuradas en Railway](assets/chapter-5/sprint-3/07-railway-environment-variables.png)
--->
 
 **Figura 5.30.** Variables de entorno requeridas por Spring Boot y la conexión MySQL configuradas en Railway, con los valores sensibles ocultos.
 
 **Evidencia 4: Configuración y resultado del despliegue**
 
-<!-- Reemplazar este comentario por:
 ![Configuración y despliegue exitoso del backend en Railway](assets/chapter-5/sprint-3/08-railway-deployment-success.png)
--->
 
 **Figura 5.31.** Configuración de construcción y ejecución del servicio, junto con el despliegue exitoso del backend en Railway.
 
-Cuando se complete el despliegue se deberá registrar la URL pública de Railway, las variables de entorno utilizadas sin revelar credenciales, el estado HTTP, una captura de Swagger y una prueba de conexión desde Netlify. La ejecución local actual no se presenta como despliegue público.
+La evidencia confirma la publicación del backend y la disponibilidad de Swagger. La conexión pública completa se considerará cerrada cuando la versión de Angular con la URL de Railway sea publicada en Netlify y se adjunte una prueba del flujo ejecutado desde ese dominio.
 
 #### 5.2.3.8 Team Collaboration Insights during Sprint
 
@@ -1332,10 +1316,10 @@ El trabajo del backend se dividió por bounded context para evitar mezclar cambi
 
 | Participación registrada | Alcance técnico | Estado |
 |---|---|---|
-| Gonzalo Quintanilla (`GoldQP`) | Base Spring Boot, `shared`, Swagger, Vehicle Information, Fleet Management y Report Management. | Desarrollo completado; consolidación y conexión en progreso. |
-| Equipo BLIP | Revisión de contratos, conexión de los servicios Angular y preparación del entorno Railway. | En progreso / pendiente según el Sprint Backlog 3. |
+| Gonzalo Quintanilla (`GoldQP`) | Base Spring Boot, `shared`, Swagger, integración de contextos, configuración Railway y alineación del frontend. | Backend consolidado y desplegado; conexión incorporada al código Angular. |
+| Equipo BLIP | Revisión de contratos, conexión de los servicios Angular y comprobación del entorno público. | Backend verificado; publicación y prueba integral de Netlify pendientes. |
 
-La principal lección del sprint es que cada bounded context debe conservar la misma estructura DDD y compartir únicamente elementos transversales mediante `shared`. La conexión con el frontend requiere acordar DTOs, URLs base, CORS y manejo de errores antes de reemplazar los datos simulados. El despliegue en Railway debe realizarse después de consolidar el backend y configurar MySQL mediante variables de entorno.
+La principal lección del sprint es que cada bounded context debe conservar la misma estructura DDD y compartir únicamente elementos transversales mediante `shared`. La integración exigió unificar DTOs, prefijos `/api/v1`, CORS y manejo de errores antes de retirar JSON Server. Railway permitió publicar el backend y MySQL sin versionar credenciales; la siguiente comprobación debe ejecutar el recorrido completo desde Netlify.
 
 ## 5.3 Validation Interviews
 
