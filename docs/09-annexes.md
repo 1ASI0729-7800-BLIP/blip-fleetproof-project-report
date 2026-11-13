@@ -7,10 +7,12 @@
 | Informe | [Project Report](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-project-report) | Correcciones de capítulos I–V y validación de Sprint 3 integradas en `develop`. |
 | Frontend | [Repositorio frontend](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-frontend) | Seis bounded contexts integrados en `develop`. |
 | Fake API | [Repositorio Fake API](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-fake-api) | Configuración en Render aportada por el equipo. |
-| Backend | [Repositorio backend](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-backend) | Base Spring Boot y primeros contextos publicados en ramas; integración y despliegue pendientes. |
+| Backend | [Repositorio backend](https://github.com/1ASI0729-7800-BLIP/blip-fleetproof-backend) | Spring Boot con seis contextos, MySQL, Docker, OpenAPI y despliegue en Railway. |
 | Landing Page AV1 | [Landing Page](https://fleetproof-landingpage.netlify.app/) | Publicación documentada en Sprint 1. |
 | Frontend TB1 | [Web Application](https://blip-fleetproof.netlify.app/) | Evidencia Published en Netlify. |
 | Fake API TB1 | [Servicio Render](https://fleetproof-fake-api.onrender.com/) | URL configurada; captura Building. Conexión pública pendiente de verificar. |
+| Backend Sprint 3 | [Servicio Railway](https://blip-fleetproof-backend-production.up.railway.app/) | Backend activo; Swagger, OpenAPI y CORS verificados el 13/11/2026. |
+| Swagger UI | [Swagger público](https://blip-fleetproof-backend-production.up.railway.app/swagger-ui/index.html) | Contratos REST de los seis bounded contexts disponibles. |
 
 Los enlaces de despliegue se registran según las evidencias aportadas; no implican comprobación continua de disponibilidad.
 
@@ -40,7 +42,8 @@ Las 19 imágenes se conservan en `assets/chapter-5/sprint-2/` (ruta relativa a e
 | Contextos del frontend | Pull Requests #9–#14 del frontend | Fleet, Subscription, Vehicle Information, Report, IAM y Monitoring |
 | Validación con Cristhian Amaya | Capítulo V, 5.2.3.5 | Sesión moderada con perfil particular |
 | Validación con Roxana Limo | Capítulo V, 5.2.3.5 | Sesión moderada con perfil empresarial |
-| Servicios iniciales del backend | Capítulo V, 5.2.3.6 | Vehicle Information, Fleet Management y Report Management en ramas independientes |
+| Backend desplegado | Capítulo V, 5.2.3.5–5.2.3.7 | Railway activo, MySQL online, Swagger y 15 rutas OpenAPI |
+| Conexión Angular–Spring Boot | Capítulo V, 5.2.3.5–5.2.3.6 | Fake API retirada; URL de Railway configurada y build correcto; publicación de Netlify pendiente |
 
 ## Anexo E. Archivos finales de entrega
 
@@ -50,7 +53,7 @@ Las 19 imágenes se conservan en `assets/chapter-5/sprint-2/` (ruta relativa a e
 | Participant Performance Report TB1 | Responsabilidades documentadas; adjuntar archivo final y evaluación del Team Leader. |
 | Video de exposición y About-the-Team | Pendiente URL, captura y duración. |
 | Prototipo web | Diseño en capítulo IV; enlace público final por confirmar. |
-| Postman y Swagger | Pendiente incorporar capturas, rutas, status HTTP y payloads del backend. |
+| Postman y Swagger | Swagger y OpenAPI incorporados; falta adjuntar payloads del recorrido integral. |
 | Fake API | URL y captura de construcción disponibles; completar evidencia de publicación y prueba de conexión. |
 | ZIP complementario | Pendiente consolidar y verificar. |
 
