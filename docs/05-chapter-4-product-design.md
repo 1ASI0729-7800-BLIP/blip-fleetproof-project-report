@@ -387,34 +387,10 @@ El siguiente Wireflow modela las pantallas, componentes de interfaz y transicion
 
 ### 4.4.4 Web Applications User Flow Diagrams
 
-```mermaid
-flowchart TD
-    A([Inicio: Administrador en Módulo Flota]) --> B["Hacer clic en Importar CSV"]
-    B --> C["Seleccionar archivo local .csv"]
-    C --> D["Subir archivo a la plataforma"]
-    D --> E{"¿Formato y cabeceras<br/>del CSV correctos?"}
-    
-    E -- No --> F["Mostrar error de estructura"]
-    F --> C
-    
-    E -- Sí --> G{"¿Placas cumplen formato<br/>oficial peruano?"}
-    
-    G -- No --> H["Notificar filas con error"]
-    H --> I["Permitir omitir inválidos o corregir"]
-    I --> C
-    
-    G -- Sí --> J["Calcular: Vehículos Actuales + Nuevos"]
-    J --> K{"¿Total <= Límite<br/>del Plan Contratado?"}
-    
-    K -- No --> L["Bloquear importación masiva"]
-    L --> M["Mostrar modal de cuota excedida<br/>Sugerir Upgrade de Plan"]
-    M --> N([Fin: Operación Interrumpida])
-    
-    K -- Sí --> O[("Persistir vehículos en Base de Datos")]
-    O --> P["Actualizar métricas del Dashboard"]
-    P --> Q["Mostrar mensaje de importación exitosa"]
-    Q --> R([Fin: Flota Registrada y Monitoreada])
-```
+<img width="480" height="805" alt="image" src="https://github.com/user-attachments/assets/22e37453-ad28-4f06-a08c-c8b7f793e12a" />
+<img width="493" height="756" alt="image" src="https://github.com/user-attachments/assets/b393db43-c513-44ac-ae2c-706c0fef9f8f" />
+
+
 
 ## 4.5 Web Applications Prototyping
 
