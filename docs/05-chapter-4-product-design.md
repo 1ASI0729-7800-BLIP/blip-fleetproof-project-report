@@ -691,53 +691,8 @@ El diagrama de nivel C3 desglosa los componentes internos de la API propuesta en
 * **Capa de Persistencia (JPA):** Centraliza el acceso a la base de datos relacional mediante el patrón repositorio y Unit of Work, asegurando consistencia transaccional en el guardado de reportes, historiales de monitoreo y membresías de usuarios.
 
 ### 4.6.4 Software Architecture Components Diagrams
-```mermaid
-flowchart TB
-    classDef clientNode fill:#eceff1,stroke:#607d8b,stroke-width:2px,color:#263238;
-    classDef edgeNode fill:#e3f2fd,stroke:#1e88e5,stroke-width:2px,color:#0d47a1;
-    classDef computeNode fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px,color:#1a237e;
-    classDef dbNode fill:#e8f5e9,stroke:#43a047,stroke-width:2px,color:#1b5e20;
-    classDef extNode fill:#eeeeee,stroke:#757575,stroke-width:2px,color:#212121;
-    classDef artifact fill:#ffffff,stroke:#455a64,stroke-width:1px,color:#263238;
+<img width="709" height="670" alt="image" src="https://github.com/user-attachments/assets/7a51f6fb-e0e5-41aa-af0d-233545c0c934" />
 
-    subgraph Client_Device ["Dispositivo de Usuario Desktop / Mobile"]
-        browser["Navegador Web Chrome / Firefox / Edge"]:::artifact
-    end
-
-    subgraph Hosting_Static ["Hosting Estatico Vercel / Netlify"]
-        landing_art["Landing Page HTML5 / CSS3 / JS"]:::artifact
-        spa_art["Frontend SPA Angular / Angular Material"]:::artifact
-    end
-
-    subgraph Cloud_PaaS ["Plataforma Cloud Render / Azure Container Apps"]
-        api_art["FleetProof Web API Java / Spring Boot"]:::artifact
-        worker_art["Background Task Runner Spring Scheduled Worker"]:::artifact
-    end
-
-    subgraph Cloud_DB ["Base de Datos Gestionada"]
-        db_engine[("PostgreSQL Engine Schemas IAM / Fleet / Reports")]:::artifact
-    end
-
-    subgraph External_Cloud ["Servicios Externos Autorizados"]
-        srv_pay["Taypi Payment Gateway"]:::extNode
-        srv_gov["Portales y APIs Oficiales SUNARP / SAT"]:::extNode
-        srv_notif["Notification Provider Resend / SendGrid"]:::extNode
-        srv_media["Cloudinary Storage"]:::extNode
-    end
-
-    browser -->|"HTTPS 443"| landing_art
-    browser -->|"HTTPS 443"| spa_art
-    browser -->|"JSON HTTPS 443"| api_art
-
-    api_art -->|"TCP 5432 Spring Data JPA"| db_engine
-    worker_art -->|"TCP 5432 Spring Data JPA"| db_engine
-
-    api_art -->|"HTTPS 443"| srv_pay
-    api_art -->|"HTTPS 443"| srv_gov
-    worker_art -->|"HTTPS 443"| srv_gov
-    worker_art -->|"HTTPS 443"| srv_notif
-    api_art -->|"HTTPS 443"| srv_media
-```
 
 **Explicación, decisiones y relación con otros artefactos:** El diagrama de despliegue representa la distribución objetivo en infraestructura cloud: Landing Page y Frontend SPA en CDN, API RESTful y procesos programados en un contenedor Linux PaaS, base de datos relacional PostgreSQL gestionada y conexiones seguras vía HTTPS/TLS hacia proveedores autorizados de pagos, almacenamiento, notificaciones y consultas registrales. Estos componentes externos no se consideran implementados mientras no exista integración y evidencia verificable; la solución actual utiliza datos simulados y el backend se encuentra en desarrollo.
 
