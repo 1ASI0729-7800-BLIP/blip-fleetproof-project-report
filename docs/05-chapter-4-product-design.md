@@ -1,3 +1,4 @@
+
 # Capítulo IV: Product Design
 
 En este capítulo se presenta el diseño de FleetProof, una plataforma web de investigación y monitoreo vehicular que aplica UX/UI Design para ofrecer una experiencia clara, consistente y accesible a empresas gestoras de flotas y usuarios particulares. El diseño se fundamenta estructuralmente en las User Stories, el Impact Mapping y un vocabulario de dominio estandarizado, asegurando un sistema coherente que prioriza la legibilidad de los reportes, la identificación de riesgos y el seguimiento de observaciones. Estos prototipos y representaciones visuales servirán como base fundamental para validar los flujos con los representantes de ambos segmentos antes de su implementación.
@@ -360,71 +361,9 @@ Se presentan los mock-ups de FleetProof adaptados a dispositivos móviles, donde
 
 El siguiente Wireflow modela las pantallas, componentes de interfaz y transiciones de navegación del módulo central de **FleetProof** para el segmento B2B (Gestión de Flota y Monitoreo de Riesgo).
 
-```mermaid
-flowchart TD
-    classDef screen fill:#f8fafc,stroke:#334155,stroke-width:2px,color:#0f172a;
-    classDef modal fill:#ffffff,stroke:#2563eb,stroke-width:2px,stroke-dasharray: 4 4,color:#0f17a;
-    classDef action fill:#e0e7ff,stroke:#4338ca,stroke-width:1px,color:#1e1b4b;
-
-    subgraph SCREEN_1["Pantalla 1: Dashboard General de Flota"]
-        direction TB
-        S1_Header["Header: Logo FleetProof - Nav: Dashboard, Flota, Reportes, Alertas - Perfil"]
-        S1_KPIs["Cards KPI: Total 47 - Criticos 3 - En Observacion 8 - Alertas 12"]
-        S1_Actions["Botones de Accion: + Solicitar Revision - Importar CSV"]
-        S1_Table["DataTable: Placa - Tipo - Semaforo Riesgo - Analista - Acciones Ver Detalle"]
-        S1_Header --- S1_KPIs --- S1_Actions --- S1_Table
-    end
-    class SCREEN_1 screen;
-
-    subgraph MODAL_1["Modal 1.1: Carga Masiva CSV"]
-        direction TB
-        M1_Title["Titulo: Importar Unidades Vehiculares"]
-        M1_Dropzone["Dropzone: Arrastra tu archivo .csv aqui Max 25/100 unidades"]
-        M1_Buttons["Botones: Cancelar - Validar y Cargar"]
-        M1_Title --- M1_Dropzone --- M1_Buttons
-    end
-    class MODAL_1 modal;
-
-    subgraph SCREEN_2["Pantalla 2: Vista Detalle del Vehiculo e Historial"]
-        direction TB
-        S2_Header["Header: Placa ABC-123 - Estado CRITICO - Boton Volver a Dashboard"]
-        S2_Summary["Resumen: Marca, Modelo, VIN, Propietario, Ultimo Snapshot"]
-        S2_Actions["Botones: Generar Nuevo Reporte - Crear Caso de Regularizacion"]
-        S2_History["Timeline: Historial de Reportes v1.0, v2.0 - Alertas Pendientes"]
-        S2_Header --- S2_Summary --- S2_Actions --- S2_History
-    end
-    class SCREEN_2 screen;
-
-    subgraph SCREEN_3["Pantalla 3: Comparacion de Snapshots Side-by-Side Diff"]
-        direction TB
-        S3_Header["Header: Comparativo Historico Snapshot Ago-2026 vs Sep-2026"]
-        S3_Cols["Diff View: Columna Base vs Columna Actual Resalta nuevas papeletas SAT"]
-        S3_Footer["Botones: Descargar Reporte PDF - Asignar a Analista"]
-        S3_Header --- S3_Cols --- S3_Footer
-    end
-    class SCREEN_3 screen;
-
-    subgraph MODAL_2["Modal 2.1: Crear Caso de Regularizacion"]
-        direction TB
-        M2_Title["Titulo: Apertura de Caso de Subsanacion"]
-        M2_Form["Formulario: Motivo Papeleta SAT - Asignar a Operador J. Perez"]
-        M2_Action["Botones: Cancelar - Asignar y Notificar"]
-        M2_Title --- M2_Form --- M2_Action
-    end
-    class MODAL_2 modal;
-
-    %% Conexiones y transiciones de interaccion
-    S1_Actions -->|"Clic en Importar CSV"| MODAL_1
-    MODAL_1 -->|"Exito: Archivo persistido"| S1_Table
-
-    S1_Table -->|"Clic en fila o Ver Detalle"| SCREEN_2
-
-    S2_Actions -->|"Clic en Generar Nuevo Reporte"| SCREEN_3
-    S2_Actions -->|"Clic en Crear Caso"| MODAL_2
-
-    MODAL_2 -->|"Confirmar asignacion"| S1_KPIs
-    S3_Footer -->|"Clic en Volver"| SCREEN_2
-```
+<img width="694" height="691" alt="image" src="https://github.com/user-attachments/assets/e3b3222e-7d46-4479-819f-dd70fbff49c4" />
+<img width="778" height="561" alt="image" src="https://github.com/user-attachments/assets/236ffe5d-07f2-47aa-b30d-59bc1e37deee" />
+<img width="756" height="599" alt="image" src="https://github.com/user-attachments/assets/6f39590c-057b-436f-bd70-6155a60c3511" />
 
 
 #### Descripción de Transiciones y Componentes del Wireflow
