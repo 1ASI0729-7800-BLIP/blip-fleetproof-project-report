@@ -360,73 +360,11 @@ Se presentan los mock-ups de FleetProof adaptados a dispositivos móviles, donde
 
 El siguiente Wireflow modela las pantallas, componentes de interfaz y transiciones de navegación del módulo central de **FleetProof** para el segmento B2B (Gestión de Flota y Monitoreo de Riesgo).
 
-```mermaid
-flowchart TD
-    classDef screen fill:#f8fafc,stroke:#334155,stroke-width:2px,color:#0f172a,stroke-dasharray: 0;
-    classDef modal fill:#ffffff,stroke:#2563eb,stroke-width:2px,stroke-dasharray: 4 4,color:#0f172a;
-    classDef action fill:#e0e7ff,stroke:#4338ca,stroke-width:1px,color:#1e1b4b;
+<img width="603" height="688" alt="image" src="https://github.com/user-attachments/assets/4c0ba2e9-380a-4652-8881-1ec41550efc0" />
+<img width="615" height="602" alt="image" src="https://github.com/user-attachments/assets/6b26190e-212b-480a-bc27-22df4e0d7c37" />
+<img width="587" height="467" alt="image" src="https://github.com/user-attachments/assets/6e032297-160a-4084-a193-5d9d4ab90839" />
 
-    subgraph SCREEN_1 ["Pantalla 1: Dashboard General de Flota"]
-        direction TB
-        S1_Header["[Header] Logo FleetProof | Nav: Dashboard, Flota, Reportes, Alertas | Perfil"]
-        S1_KPIs["[Cards KPI] Total: 47 | Críticos: 3 | En Observación: 8 | Alertas: 12"]
-        S1_Actions["[Botones de Acción] '+ Solicitar Revisión' | 'Importar CSV'"]
-        S1_Table["[DataTable] Placa | Tipo | Semáforo Riesgo | Analista | Acciones ('Ver Detalle')"]
-        S1_Header --- S1_KPIs --- S1_Actions --- S1_Table
-    end
-    class SCREEN_1 screen;
 
-    subgraph MODAL_1 ["Modal 1.1: Carga Masiva CSV"]
-        direction TB
-        M1_Title["[Título] Importar Unidades Vehiculares"]
-        M1_Dropzone["[Dropzone] Arrastra tu archivo .csv aquí (Max 25/100 unidades)"]
-        M1_Buttons["[Botones] 'Cancelar' | 'Validar y Cargar'"]
-        M1_Title --- M1_Dropzone --- M1_Buttons
-    end
-    class MODAL_1 modal;
-
-    subgraph SCREEN_2 ["Pantalla 2: Vista Detalle del Vehículo / Historial"]
-        direction TB
-        S2_Header["[Header] Placa: ABC-123 | Estado: CRÍTICO | Botón 'Volver a Dashboard'"]
-        S2_Summary["[Resumen] Marca, Modelo, VIN, Propietario, Último Snapshot"]
-        S2_Actions["[Botones] 'Generar Nuevo Reporte' | 'Crear Caso de Regularización'"]
-        S2_History["[Timeline] Historial de Reportes v1.0, v2.0 | Alertas Pendientes"]
-        S2_Header --- S2_Summary --- S2_Actions --- S2_History
-    end
-    class SCREEN_2 screen;
-
-    subgraph SCREEN_3 ["Pantalla 3: Comparación de Snapshots (Side-by-Side Diff)"]
-        direction TB
-        S3_Header["[Header] Comparativo Histórico: Snapshot Ago-2026 vs Sep-2026"]
-        S3_Cols["[Diff View] Columna Base vs Columna Actual (Resalta nuevas papeletas SAT)"]
-        S3_Footer["[Botones] 'Descargar Reporte PDF' | 'Asignar a Analista'"]
-        S3_Header --- S3_Cols --- S3_Footer
-    end
-    class SCREEN_3 screen;
-
-    subgraph MODAL_2 ["Modal 2.1: Crear Caso de Regularización"]
-        direction TB
-        M2_Title["[Título] Apertura de Caso de Subsanación"]
-        M2_Form["[Formulario] Motivo: Papeleta SAT | Asignar a: Operador J. Pérez"]
-        M2_Action["[Botones] 'Cancelar' | 'Asignar y Notificar'"]
-        M2_Title --- M2_Form --- M2_Action
-    end
-    class MODAL_2 modal;
-
-    %% Conexiones y transiciones de interacción (Wireflow)
-    S1_Actions -- "Clic en 'Importar CSV'" --> MODAL_1
-    MODAL_1 -- "Éxito: Archivo persistido" --> S1_Table
-    
-    S1_Table -- "Clic en fila / botón 'Ver Detalle'" --> SCREEN_2
-    
-    S2_Actions -- "Clic en 'Generar Nuevo Reporte'" --> SCREEN_3
-    S2_Actions -- "Clic en 'Crear Caso'" --> MODAL_2
-    
-    MODAL_2 -- "Confirmar asignación" --> S1_KPIs
-    S3_Footer -- "Clic en 'Volver'" --> SCREEN_2
-```
-
----
 
 #### Descripción de Transiciones y Componentes del Wireflow
 
