@@ -398,7 +398,7 @@ https://www.figma.com/make/LkD3mKP9wjNjnOPTRRzoCt/Create-web-wireframes?t=wjEZRv
 
 ## 4.6 Domain-Driven Software Architecture
 
-**Alcance del diseño:** los diagramas de esta sección representan la arquitectura objetivo. Los conectores oficiales, pagos, servicios externos, tareas programadas y persistencia relacional requieren evidencia de implementación; no se consideran funcionalidades acreditadas por el uso de una Fake API. El frontend contiene actualmente seis módulos de negocio y `shared`; esto no significa que todos los bounded contexts estén completamente validados ni que el backend definitivo se encuentre integrado.
+**Alcance del diseño:** los diagramas de esta sección representan la arquitectura objetivo. El frontend contiene seis módulos de negocio y `shared`; el backend Spring Boot consolidado expone los contextos mediante `/api/v1`, utiliza MySQL y está desplegado en Railway. Los conectores oficiales, pagos reales, tareas programadas y fuentes vehiculares externas todavía requieren implementación y evidencia; su presencia en los diagramas no acredita funcionamiento productivo.
 
 
 ### 4.6.1 Design-Level Event Storming
@@ -513,7 +513,7 @@ Normalización y consistencia relacional: El esquema se encuentra normalizado en
 
 Identificadores UUID: El diseño objetivo propone claves primarias UUID para garantizar unicidad global. La implementación inicial del backend utiliza identificadores numéricos `Long`; antes de integrar los bounded contexts se debe decidir y documentar una única estrategia de identidad y migración.
 
-Persistencia con Spring Data JPA: El diseño objetivo contempla entidades JPA, repositorios relacionales, llaves foráneas y control transaccional declarativo (`@Transactional`) sobre PostgreSQL. Las ramas iniciales del backend utilizan H2 para ejecución local y mantienen compatibilidad de configuración con un DBMS relacional; la persistencia de producción todavía debe desplegarse y verificarse.
+Persistencia con Spring Data JPA: La implementación utiliza entidades JPA y repositorios relacionales. H2 se conserva para desarrollo local y MySQL fue aprovisionado en Railway para producción mediante variables de entorno. El modelo aún debe reforzar algunas relaciones y restricciones para alcanzar completamente el diseño objetivo.
 
 Separación de responsabilidades de monitoreo y flota: La tabla FLEET_VEHICLE_ASSIGNMENTS actúa como tabla intermedia que relaciona flotas con vehículos y delega formalmente la supervisión a un usuario responsable (responsible_user_id), mientras que VEHICLE_MONITORINGS y MONITORING_ALERTS administran de forma independiente las alertas generadas por cambios en las fuentes.
 
