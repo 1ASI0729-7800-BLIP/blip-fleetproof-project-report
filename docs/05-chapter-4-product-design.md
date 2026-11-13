@@ -700,43 +700,43 @@ flowchart TB
     classDef extNode fill:#eeeeee,stroke:#757575,stroke-width:2px,color:#212121;
     classDef artifact fill:#ffffff,stroke:#455a64,stroke-width:1px,color:#263238;
 
-    subgraph Client_Device [Dispositivo de Usuario Desktop / Mobile]
-        browser[Navegador Web Chrome / Firefox / Edge]:::artifact
+    subgraph Client_Device ["Dispositivo de Usuario Desktop / Mobile"]
+        browser["Navegador Web Chrome / Firefox / Edge"]:::artifact
     end
 
-    subgraph Hosting_Static [Hosting Estatico Vercel / Netlify]
-        landing_art[Landing Page HTML5 / CSS3 / JS]:::artifact
-        spa_art[Frontend SPA Angular / Angular Material]:::artifact
+    subgraph Hosting_Static ["Hosting Estatico Vercel / Netlify"]
+        landing_art["Landing Page HTML5 / CSS3 / JS"]:::artifact
+        spa_art["Frontend SPA Angular / Angular Material"]:::artifact
     end
 
-    subgraph Cloud_PaaS [Plataforma Cloud Render / Azure]
-        api_art[FleetProof Web API Spring Boot / Java]:::artifact
-        worker_art[Background Task Runner Monitoring Worker]:::artifact
+    subgraph Cloud_PaaS ["Plataforma Cloud Render / Azure Container Apps"]
+        api_art["FleetProof Web API Java / Spring Boot"]:::artifact
+        worker_art["Background Task Runner Spring Scheduled Worker"]:::artifact
     end
 
-    subgraph Cloud_DB [Base de Datos Gestionada]
-        db_engine[(PostgreSQL Engine Schemas IAM / Fleet / Reports)]:::artifact
+    subgraph Cloud_DB ["Base de Datos Gestionada"]
+        db_engine[("PostgreSQL Engine Schemas IAM / Fleet / Reports")]:::artifact
     end
 
-    subgraph External_Cloud [Servicios Externos Autorizados]
-        srv_pay[Taypi Payment Gateway]:::extNode
-        srv_gov[Portales y APIs Oficiales SUNARP / SAT]:::extNode
-        srv_notif[Notification Provider Resend / SendGrid]:::extNode
-        srv_media[Cloudinary Storage]:::extNode
+    subgraph External_Cloud ["Servicios Externos Autorizados"]
+        srv_pay["Taypi Payment Gateway"]:::extNode
+        srv_gov["Portales y APIs Oficiales SUNARP / SAT"]:::extNode
+        srv_notif["Notification Provider Resend / SendGrid"]:::extNode
+        srv_media["Cloudinary Storage"]:::extNode
     end
 
-    browser -->|HTTPS 443| landing_art
-    browser -->|HTTPS 443| spa_art
-    browser -->|JSON HTTPS 443| api_art
+    browser -->|"HTTPS 443"| landing_art
+    browser -->|"HTTPS 443"| spa_art
+    browser -->|"JSON HTTPS 443"| api_art
 
-    api_art -->|TCP 5432 JPA| db_engine
-    worker_art -->|TCP 5432 JPA| db_engine
+    api_art -->|"TCP 5432 Spring Data JPA"| db_engine
+    worker_art -->|"TCP 5432 Spring Data JPA"| db_engine
 
-    api_art -->|HTTPS 443| srv_pay
-    api_art -->|HTTPS 443| srv_gov
-    worker_art -->|HTTPS 443| srv_gov
-    worker_art -->|HTTPS 443| srv_notif
-    api_art -->|HTTPS 443| srv_media
+    api_art -->|"HTTPS 443"| srv_pay
+    api_art -->|"HTTPS 443"| srv_gov
+    worker_art -->|"HTTPS 443"| srv_gov
+    worker_art -->|"HTTPS 443"| srv_notif
+    api_art -->|"HTTPS 443"| srv_media
 ```
 
 **Explicación, decisiones y relación con otros artefactos:** El diagrama de despliegue representa la distribución objetivo en infraestructura cloud: Landing Page y Frontend SPA en CDN, API RESTful y procesos programados en un contenedor Linux PaaS, base de datos relacional PostgreSQL gestionada y conexiones seguras vía HTTPS/TLS hacia proveedores autorizados de pagos, almacenamiento, notificaciones y consultas registrales. Estos componentes externos no se consideran implementados mientras no exista integración y evidencia verificable; la solución actual utiliza datos simulados y el backend se encuentra en desarrollo.
