@@ -158,6 +158,7 @@ Las sesiones de Sprint 3 fueron demostraciones moderadas: el moderador controló
 - [Capítulo III: Requirements Specification](docs/04-chapter-3-requirements-specification.md)
 - [Capítulo IV: Product Design](docs/05-chapter-4-product-design.md)
 - [Capítulo V: Product Implementation, Validation & Deployment](docs/06-chapter-5-implementation-validation-deployment.md)
+- [Video About the Product](https://drive.google.com/file/d/1k0bitM5iUU-4UJTjsc9pVj1xav-0AAPJ/view?usp=sharing)
 - [Conclusiones](docs/07-conclusions.md)
 - [Bibliografía](docs/08-bibliography.md)
 - [Anexos](docs/09-annexes.md)
