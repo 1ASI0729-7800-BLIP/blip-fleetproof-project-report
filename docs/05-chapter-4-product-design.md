@@ -446,40 +446,7 @@ Step 10: Bounded Contexts
 
 ### 4.6.2 Software Architecture Context Diagram
 
-```mermaid
-flowchart TD
-    %% Actores / Usuarios
-    U1["Usuario Final"]
-    U2["Usuario de Monitoreo"]
-    U3["Gestor de Flota"]
-
-    %% Sistema Central
-    SYS["Sistema de Consulta y\nMonitoreo Vehicular\n(FleetProof)"]
-
-    %% Sistemas Externos Autorizados
-    EXT_PAY["Taypi Payment System"]
-    EXT_SRC["Fuentes Oficiales y\nProveedores Habilitados\n(APIs Autorizadas / Convenios)"]
-    EXT_NOT["Notification Provider"]
-
-    %% Relaciones Superiores
-    U1 -->|"Solicita reportes y paga consultas"| SYS
-    U2 -->|"Activa suscripción y monitorea"| SYS
-    U3 -->|"Registra flotas y atiende riesgos"| SYS
-
-    %% Relaciones Inferiores (Sistemas Externos)
-    SYS -->|"Procesa transacciones de pago"| EXT_PAY
-    SYS -->|"Consulta datos registrales, gravámenes\ny papeletas (o gestiona indisponibilidad)"| EXT_SRC
-    SYS -->|"Despacha alertas y notificaciones"| EXT_NOT
-
-    %% Estilos visuales
-    classDef user fill:#004b87,stroke:#002d54,color:#fff,font-weight:bold;
-    classDef system fill:#0066cc,stroke:#004080,color:#fff,font-weight:bold;
-    classDef external fill:#7f7f7f,stroke:#4d4d4d,color:#fff,font-weight:bold;
-
-    class U1,U2,U3 user;
-    class SYS system;
-    class EXT_PAY,EXT_SRC,EXT_NOT external;
-```
+<img width="598" height="479" alt="image" src="https://github.com/user-attachments/assets/d473c49e-8794-4d81-92dd-67952af5de81" />
 
 **Explicación, decisiones y relación con otros artefactos:** El diagrama de contexto representa los límites del sistema central y sus interacciones con los tres perfiles de usuario identificados, así como los servicios externos para procesamiento de pagos, consulta de fuentes oficiales mediante APIs autorizadas y proveedores habilitados (con políticas formales de manejo de indisponibilidad) y despacho de notificaciones.
 
@@ -487,116 +454,9 @@ flowchart TD
 
 El diagrama de componentes desglosa la aplicación backend RESTful API (monolito modular en Spring Boot / Java) en sus módulos y componentes internos organizados por Bounded Contexts, detallando el flujo desde los controladores HTTP hasta los adaptadores externos y la persistencia relacional con Spring Data JPA.
 
-```mermaid
-flowchart TB
-    %% Estilos
-    classDef client fill:#08427b,stroke:#073b6f,stroke-width:2px,color:#fff;
-    classDef controller fill:#438dd5,stroke:#2e6295,stroke-width:2px,color:#fff;
-    classDef appService fill:#1168bd,stroke:#0b4884,stroke-width:2px,color:#fff;
-    classDef domain fill:#0d47a1,stroke:#002171,stroke-width:2px,color:#fff;
-    classDef infra fill:#5c6bc0,stroke:#3949ab,stroke-width:2px,color:#fff;
-    classDef db fill:#2e7d32,stroke:#1b5e20,stroke-width:2px,color:#fff;
-    classDef external fill:#757575,stroke:#424242,stroke-width:2px,color:#fff;
+<img width="534" height="426" alt="image" src="https://github.com/user-attachments/assets/92acedae-5c34-4b7e-a955-0d3d37d1d25e" />
+<img width="559" height="344" alt="image" src="https://github.com/user-attachments/assets/9f021252-c681-4932-a614-a436a307cd9e" />
 
-    %% Clientes Frontend
-    spa["Frontend Web Application<br/>Angular / Angular Material"]:::client
-
-    %% Sistemas Externos y BD
-    db[("Core Database<br/>PostgreSQL")]:::db
-    ext_taypi["Taypi Payment System"]:::external
-    ext_sources["Fuentes Oficiales Autorizadas<br/>APIs y Convenios (SUNARP / Tránsito)"]:::external
-    ext_notif["Notification Provider<br/>Email / SMS / Push"]:::external
-
-    %% Componentes del Backend API
-    subgraph BackendAPI ["Backend RESTful API - Spring Boot / Java"]
-        
-        subgraph Sub_Module ["Subscriptions Context"]
-            sub_ctrl["SubscriptionController<br/>Endpoints de planes y cobros"]:::controller
-            sub_srv["SubscriptionService<br/>Logica de activacion y cuotas"]:::appService
-            sub_agg["Aggregate: Subscription<br/>Plan, Status, Limits"]:::domain
-        end
-
-        subgraph User_Module ["User Management Context"]
-            user_ctrl["UserController / AuthController<br/>Endpoints JWT y registro"]:::controller
-            user_srv["UserService<br/>Validacion de credenciales"]:::appService
-            user_agg["Aggregate: User<br/>Identity, Profile, Roles"]:::domain
-        end
-
-        subgraph Veh_Module ["Vehicle Information Context"]
-            veh_ctrl["VehicleController<br/>Validacion y consultas"]:::controller
-            veh_srv["VehicleQueryService<br/>Orquestacion y resiliencia"]:::appService
-            veh_agg["Aggregate: Vehicle<br/>Plate, TechnicalData, History"]:::domain
-            veh_conn["SourceConnectorAdapter<br/>Cliente HTTP y fallback indisponibilidad"]:::infra
-        end
-
-        subgraph Rep_Module ["Report Management Context"]
-            rep_ctrl["ReportController<br/>Descarga y generacion"]:::controller
-            rep_srv["ReportGenerationService<br/>Consolidacion de antecedentes"]:::appService
-            rep_agg["Aggregate: VehicleReport<br/>Findings, RiskSummary, Status"]:::domain
-        end
-
-        subgraph Mon_Module ["Vehicle Monitoring Context"]
-            mon_wrk["MonitoringBackgroundWorker<br/>Scheduler de revisiones periodicas"]:::appService
-            mon_srv["ChangeDetectionService<br/>Comparador de snapshots"]:::appService
-            mon_agg["Aggregate: VehicleMonitoring<br/>Schedule, Alerts, Discrepancies"]:::domain
-        end
-
-        subgraph Flt_Module ["Fleet Management Context"]
-            flt_ctrl["FleetController<br/>Gestion de flotas y asignacion"]:::controller
-            flt_srv["FleetRiskService<br/>Evaluacion de riesgo y casos"]:::appService
-            flt_agg["Aggregate: Fleet<br/>Vehicles, AssignedPersons, Risks"]:::domain
-        end
-
-        infra_ef["Spring Data JPA<br/>Unit of Work y Repositorios"]:::infra
-        infra_notif["NotificationAdapter<br/>Cliente HTTP para envios"]:::infra
-    end
-
-    %% Peticiones desde Frontend
-    spa -->|POST /api/v1/auth| user_ctrl
-    spa -->|POST /api/v1/subscriptions| sub_ctrl
-    spa -->|GET /api/v1/vehicles| veh_ctrl
-    spa -->|GET /api/v1/reports| rep_ctrl
-    spa -->|POST /api/v1/fleets| flt_ctrl
-
-    %% Flujos Internos de Aplicacion
-    user_ctrl --> user_srv
-    user_srv --> user_agg
-
-    sub_ctrl --> sub_srv
-    sub_srv --> sub_agg
-    sub_srv -->|Procesa cobro| ext_taypi
-
-    veh_ctrl --> veh_srv
-    veh_srv --> veh_agg
-    veh_srv --> veh_conn
-    veh_conn -->|Consulta autorizada / Snapshot| ext_sources
-
-    rep_ctrl --> rep_srv
-    rep_srv --> rep_agg
-    rep_srv -->|Solicita antecedentes| veh_srv
-
-    mon_wrk --> mon_srv
-    mon_srv --> mon_agg
-    mon_srv -->|Consulta estado actual| veh_srv
-    mon_srv -->|Dispara alerta de cambio| infra_notif
-
-    flt_ctrl --> flt_srv
-    flt_srv --> flt_agg
-    flt_srv -->|Verifica alertas| mon_srv
-    flt_srv -->|Notifica responsable| infra_notif
-
-    infra_notif -->|Despacha mensaje| ext_notif
-
-    %% Persistencia hacia la BD
-    user_agg --> infra_jpa
-    sub_agg --> infra_jpa
-    veh_agg --> infra_jpa
-    rep_agg --> infra_jpa
-    mon_agg --> infra_jpa
-    flt_agg --> infra_jpa
-
-    infra_jpa --> db
-```
 
 **Explicación, decisiones y relación con otros artefactos:**
 El diagrama de nivel C3 desglosa los componentes internos de la API propuesta en Spring Boot / Java bajo el principio de diseño dirigido por el dominio (DDD):
