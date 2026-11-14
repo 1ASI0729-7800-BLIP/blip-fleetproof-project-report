@@ -1402,12 +1402,15 @@ La escala preliminar utilizada es: 0 = no representa un problema; 1 = cosmético
 
 ## 5.4 Video About-the-Product
 
-Al cierre documental actual no se ha incorporado una URL final verificable para el video About-the-Product. Para completar esta sección sin presentar evidencia inexistente, el equipo debe añadir el enlace público, duración, fecha y una captura cuando el video esté publicado.
+El video muestra el recorrido de FleetProof para consultar una placa, interpretar el riesgo de un reporte y revisar el monitoreo y la gestión de flotas.
 
-| Elemento requerido | Estado |
+| Elemento | Evidencia |
 |---|---|
-| Enlace público del video | Pendiente de incorporar. |
-| Duración | Pendiente de registrar. |
-| Fecha de publicación | Pendiente de registrar. |
-| Contenido mínimo | Problema, segmentos, propuesta de valor, recorrido del producto, principales funcionalidades y cierre del equipo. |
-| Evidencia visual | Pendiente de incorporar una captura con el video publicado. |
+| Video | [Ver en Google Drive](https://drive.google.com/file/d/1k0bitM5iUU-4UJTjsc9pVj1xav-0AAPJ/view?usp=sharing) |
+| Duración | 2 min 23 s |
+| Incorporación a la entrega AV2 | 12 de noviembre de 2026 |
+| Reproductor | [Sobre BLIP en la landing](https://fleetproof-landingpage.netlify.app/#about-blip) |
+
+[![Reproductor About the Product en la vista local de la landing](assets/chapter-5/sprint-3/about-the-product-player.png)](https://drive.google.com/file/d/1k0bitM5iUU-4UJTjsc9pVj1xav-0AAPJ/view?usp=sharing)
+
+**Figura 5.32.** Reproductor en la vista local de la landing de FleetProof.

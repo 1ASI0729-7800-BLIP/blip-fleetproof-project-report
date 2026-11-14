@@ -34,3 +34,9 @@ El equipo utilizó ramas, commits y Pull Requests para integrar las correcciones
 8. Incorporar About-the-Team, exposición, Participant Performance Report, presentación, release y ZIP complementario.
 
 FleetProof presenta avances técnicos y documentales verificables, pero debe continuar diferenciando claramente lo diseñado, implementado, simulado, validado y desplegado.
+
+## Video About the Team
+
+Los cinco integrantes presentan sus aportes al proyecto. El video dura **7 min 32 s**.
+
+[Ver Video About the Team en Google Drive](https://drive.google.com/file/d/1_nJ6RfL8EJEy9pMxYwACRxUXkV4gmNjI/view?usp=sharing)

@@ -40,8 +40,8 @@ Las 19 imágenes se conservan en `assets/chapter-5/sprint-2/` (ruta relativa a e
 |---|---|---|
 | Correcciones del informe | Pull Requests #34–#38 del Project Report | Capítulos I–V integrados en `develop` |
 | Contextos del frontend | Pull Requests #9–#14 del frontend | Fleet, Subscription, Vehicle Information, Report, IAM y Monitoring |
-| Validación con Cristhian Amaya | Capítulo V, 5.2.3.5 | Sesión moderada con perfil particular |
-| Validación con Roxana Limo | Capítulo V, 5.2.3.5 | Sesión moderada con perfil empresarial |
+| Validación con Cristhian Amaya | [Capítulo V, 5.3.2](06-chapter-5-implementation-validation-deployment.md#532-registro-de-entrevistas) | Sesión moderada con perfil particular |
+| Validación con Roxana Limo | [Capítulo V, 5.3.2](06-chapter-5-implementation-validation-deployment.md#532-registro-de-entrevistas) | Sesión moderada con perfil empresarial |
 | Backend desplegado | Capítulo V, 5.2.3.5–5.2.3.7 | Railway activo, MySQL online, Swagger y 15 rutas OpenAPI |
 | Conexión Angular–Spring Boot | Capítulo V, 5.2.3.5–5.2.3.6 | Fake API retirada; URL de Railway configurada y build correcto; publicación de Netlify pendiente |
 
@@ -51,7 +51,9 @@ Las 19 imágenes se conservan en `assets/chapter-5/sprint-2/` (ruta relativa a e
 |---|---|
 | Presentación TB1 | Elaboración declarada en el registro histórico; incorporar enlace al archivo final antes de cerrar el inventario. |
 | Participant Performance Report TB1 | Responsabilidades documentadas; adjuntar archivo final y evaluación del Team Leader. |
-| Video de exposición y About-the-Team | Pendiente URL, captura y duración. |
+| Video About the Team | [Grabación en Drive](https://drive.google.com/file/d/1_nJ6RfL8EJEy9pMxYwACRxUXkV4gmNjI/view?usp=sharing) · 7 min 32 s. |
+| Video About the Product | [Grabación en Drive](https://drive.google.com/file/d/1k0bitM5iUU-4UJTjsc9pVj1xav-0AAPJ/view?usp=sharing) · 2 min 23 s. |
+| Video de exposición | Archivo MP4 entregado con AV2. |
 | Prototipo web | Diseño en capítulo IV; enlace público final por confirmar. |
 | Postman y Swagger | Swagger y OpenAPI incorporados; falta adjuntar payloads del recorrido integral. |
 | Fake API | URL y captura de construcción disponibles; completar evidencia de publicación y prueba de conexión. |

@@ -113,11 +113,11 @@ Las capturas acreditan las pantallas visibles en el momento de la demostración,
 - Capítulo I: beneficios esperados diferenciados de resultados medidos y priorización del segmento empresarial.
 - Capítulo II: evidencia reorganizada por entrevista y análisis diferenciado por segmento.
 - Capítulo III: criterios de aceptación ampliados y matriz inicial de trazabilidad.
-- Capítulo IV: diagramas alineados con Angular, Spring Boot, Spring Data JPA y PostgreSQL como arquitectura objetivo.
+- Capítulo IV: diagramas alineados con Angular, Spring Boot, Spring Data JPA y persistencia relacional. El despliegue del Sprint 3 usa MySQL.
 - Capítulo V: configuración, convenciones, planificación, despliegue y colaboración revisados.
 - Frontend: seis bounded contexts integrados en `develop`, incluido Subscription Management.
 - Validación: dos sesiones moderadas documentadas con Cristhian Amaya y Roxana Limo.
-- Backend: base Spring Boot con Swagger y trabajo inicial en Vehicle Information, Fleet Management y Report Management mediante ramas independientes.
+- Backend: Spring Boot y MySQL desplegados en Railway con Swagger y OpenAPI públicos.
 
 Las sesiones de Sprint 3 fueron demostraciones moderadas: el moderador controló la aplicación. Por ello, recogen comprensión, comentarios e intención de uso, pero no miden todavía la ejecución autónoma ni el tiempo por tarea.
 
@@ -132,8 +132,8 @@ Las sesiones de Sprint 3 fueron demostraciones moderadas: el moderador controló
 | Pruebas autónomas de usabilidad | Pendiente | Las sesiones actuales fueron operadas por el moderador |
 | Hipótesis de innovación | Formuladas | Falta medir tiempo, errores o mejora de trazabilidad frente al proceso actual |
 | Fuentes oficiales | No integradas | La demostración utiliza datos ficticios y Source Fixtures |
-| Backend definitivo | En desarrollo | No está conectado al frontend ni desplegado como servicio de producción |
-| Swagger | Disponible en las ramas del backend | Los contratos deben alinearse con las historias y el frontend antes de integrar |
+| Backend definitivo | Desplegado en Railway | OpenAPI público verificado. La prueba integral desde Netlify sigue pendiente de acreditar |
+| Swagger | Público en Railway | [Swagger UI](https://blip-fleetproof-backend-production.up.railway.app/swagger-ui/index.html) |
 
 ## Pendientes antes del cierre de la siguiente entrega
 
@@ -143,10 +143,10 @@ Las sesiones de Sprint 3 fueron demostraciones moderadas: el moderador controló
 4. Realizar al menos una prueba de usabilidad donde una persona del segmento empresarial opere la aplicación sin ayuda.
 5. Alinear el contrato de consulta de vehículos por `id` o por `plate` entre requisitos, frontend, backend y Swagger.
 6. Diferenciar en todos los capítulos los datos oficiales, declarados, simulados, incompletos y no disponibles.
-7. Actualizar Student Outcome con los aportes y evidencias de TB1 y Sprint 3.
+7. Complementar las evidencias del [Student Outcome de AV1, TB1 y AV2](docs/01-student-outcome.md).
 8. Incorporar capturas de Postman y Swagger, respuestas HTTP y resultados de pruebas del backend.
 9. Verificar los despliegues públicos y registrar fecha, entorno y resultado observado.
-10. Adjuntar presentación, Participant Performance Report, video de exposición, About-the-Team, capturas, URL, duración y ZIP complementario.
+10. Mantener actualizados los enlaces de los videos y archivos de entrega.
 11. Preparar una release etiquetada cuando el contenido sea aprobado por el equipo.
 
 ## Tabla de contenidos
@@ -159,6 +159,7 @@ Las sesiones de Sprint 3 fueron demostraciones moderadas: el moderador controló
 - [Capítulo IV: Product Design](docs/05-chapter-4-product-design.md)
 - [Capítulo V: Product Implementation, Validation & Deployment](docs/06-chapter-5-implementation-validation-deployment.md)
 - [Video About the Product](https://drive.google.com/file/d/1k0bitM5iUU-4UJTjsc9pVj1xav-0AAPJ/view?usp=sharing)
+- [Video About the Team](https://drive.google.com/file/d/1_nJ6RfL8EJEy9pMxYwACRxUXkV4gmNjI/view?usp=sharing)
 - [Conclusiones](docs/07-conclusions.md)
 - [Bibliografía](docs/08-bibliography.md)
 - [Anexos](docs/09-annexes.md)
