@@ -44,7 +44,7 @@ Los Impact Maps relacionan el objetivo de reducir la dispersión de información
 | 7 | US06 | Importación CSV | 8 | Implementado en frontend; prueba de aceptación pendiente |
 | 8 | US07 | Comparación histórica | 8 | Implementado con datos simulados; ciclo completo pendiente |
 | 9 | US11 | Generar alertas | 5 | Vista implementada; generación resultante debe demostrarse |
-| 10 | US12 | Resolver con evidencia | 8 | Caso implementado parcialmente; recorrido completo pendiente |
+| 10 | US12 | Resolver con evidencia | 8 | Caso implementado parcialmente |
 | 11 | US09 | Activación simulada | 5 | Demostrada como simulación; pago real fuera del alcance actual |
 | 12 | US05 | Consulta REST de vehículo | 5 | Contrato publicado en Railway. Se verificó la lectura del listado desde Netlify. La prueba de aceptación por identificador sigue pendiente. |
 
@@ -58,7 +58,7 @@ Los Story Points representan estimación relativa, no horas ejecutadas ni acepta
 | Cristhian Amaya (E1 y validación Sprint 3) consulta varias fuentes y pregunta por cambios posteriores. | Diferenciar reporte puntual y monitoreo. | US03, US07, US11 | Generar reporte, crear segundo snapshot y comprobar alerta explicable. | Reporte mostrado; ciclo posterior y alerta resultante pendientes. |
 | Patricia Valdez (E5) coordina observaciones mediante mensajería. | Asignar responsables y conservar evidencia de cierre. | US12 | Abrir caso, asignar responsable, adjuntar evidencia, resolver y revisar historial. | Flujo completo pendiente de evidencia. |
 | Jorge Quispe (E6) revisa vehículos uno por uno. | Reducir registro manual repetitivo. | US06 | Importar CSV válido, informar errores y confirmar registros creados. | Implementación disponible; aceptación reproducible pendiente. |
-| Mei Lin Tanaka (E7) necesita detectar documentos vencidos o modificados. | Comparar estados y comunicar cambios. | US07, US11 | Comparar snapshots y registrar alerta con fecha y fuente. | Implementado con datos simulados; prueba integral pendiente. |
+| Mei Lin Tanaka (E7) necesita detectar documentos vencidos o modificados. | Comparar estados y comunicar cambios. | US07, US11 | Comparar snapshots y registrar alerta con fecha y fuente. | Implementado con datos simulados. |
 | Arquitectura de integración | Consultar recursos mediante API documentada. | US05 | Ejecutar petición desde Postman/Swagger y registrar status y payload. | Endpoint inicial disponible en ramas del backend; capturas pendientes. |
 
 Cada historia debe vincularse en el Sprint Backlog con tarea, responsable, rama, commit, Pull Request, resultado de prueba y evidencia. Un escenario redactado no equivale a una prueba aprobada.

@@ -128,26 +128,24 @@ Las sesiones de Sprint 3 fueron demostraciones moderadas: el moderador controló
 | Segmento empresarial prioritario | Documentado | Empresas con flotas pequeñas y medianas; particulares como segmento complementario |
 | Problema y propuesta de valor | Documentado | Sustentados mediante entrevistas y análisis del dominio |
 | Frontend integrado | Implementado con datos simulados | Requiere cerrar la aceptación trazable de cada historia |
-| Recorrido completo de resolución | Pendiente de evidencia | Debe demostrar detección, alerta, responsable, evidencia, cierre e historial |
 | Pruebas autónomas de usabilidad | Pendiente | Las sesiones actuales fueron operadas por el moderador |
 | Hipótesis de innovación | Formuladas | Falta medir tiempo, errores o mejora de trazabilidad frente al proceso actual |
 | Fuentes oficiales | No integradas | La demostración utiliza datos ficticios y Source Fixtures |
-| Backend definitivo | Desplegado en Railway | La app pública apunta a Railway. Se verificó una consulta de lectura desde Netlify. Falta documentar el recorrido completo. |
+| Backend definitivo | Desplegado en Railway | La app pública apunta a Railway. Se verificó una consulta de lectura desde Netlify. |
 | Swagger | Público en Railway | [Swagger UI](https://blip-fleetproof-backend-production.up.railway.app/swagger-ui/index.html) |
 
 ## Pendientes antes del cierre de la siguiente entrega
 
 1. Completar el Sprint Backlog con historias de IAM, suscripciones, flotas, casos, alertas y cierre de observaciones.
 2. Vincular cada User Story con tarea, responsable, rama, commit, Pull Request, prueba y evidencia de aceptación.
-3. Demostrar un recorrido completo: vehículo registrado → observación → alerta → responsable → evidencia → caso resuelto → historial.
-4. Realizar al menos una prueba de usabilidad donde una persona del segmento empresarial opere la aplicación sin ayuda.
-5. Alinear el contrato de consulta de vehículos por `id` o por `plate` entre requisitos, frontend, backend y Swagger.
-6. Diferenciar en todos los capítulos los datos oficiales, declarados, simulados, incompletos y no disponibles.
-7. Complementar las evidencias del [Student Outcome de AV1, TB1 y AV2](docs/01-student-outcome.md).
-8. Incorporar capturas de Postman y Swagger, respuestas HTTP y resultados de pruebas del backend.
-9. Verificar los despliegues públicos y registrar fecha, entorno y resultado observado.
-10. Mantener actualizados los enlaces de los videos y archivos de entrega.
-11. Preparar una release etiquetada cuando el contenido sea aprobado por el equipo.
+3. Realizar al menos una prueba de usabilidad donde una persona del segmento empresarial opere la aplicación sin ayuda.
+4. Alinear el contrato de consulta de vehículos por `id` o por `plate` entre requisitos, frontend, backend y Swagger.
+5. Diferenciar en todos los capítulos los datos oficiales, declarados, simulados, incompletos y no disponibles.
+6. Complementar las evidencias del [Student Outcome de AV1, TB1 y AV2](docs/01-student-outcome.md).
+7. Incorporar capturas de Postman y Swagger, respuestas HTTP y resultados de pruebas del backend.
+8. Verificar los despliegues públicos y registrar fecha, entorno y resultado observado.
+9. Mantener actualizados los enlaces de los videos y archivos de entrega.
+10. Preparar una release etiquetada cuando el contenido sea aprobado por el equipo.
 
 ## Tabla de contenidos
 

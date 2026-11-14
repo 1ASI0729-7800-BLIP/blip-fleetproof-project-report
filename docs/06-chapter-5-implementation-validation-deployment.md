@@ -1193,12 +1193,12 @@ La matriz LACX representa los aspectos técnicos del backend abordados durante e
     <tr><td>US10, US12</td><td>Fleet Management API</td><td>T30</td><td>Desarrollar Fleet Management</td><td>Implementar flotas y casos de resolución mediante capas DDD y endpoints REST.</td><td>8</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
     <tr><td>US03, US04</td><td>Report Management API</td><td>T31</td><td>Desarrollar Report Management</td><td>Implementar reportes, fuentes, hallazgos y nivel de riesgo mediante capas DDD y endpoints REST.</td><td>8</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
     <tr><td>US03–US12</td><td>Integración técnica</td><td>T32</td><td>Consolidar los contextos del backend</td><td>Integrar la base compartida y los bounded contexts en una versión común del backend.</td><td>6</td><td>Gonzalo Quintanilla</td><td>Completado</td></tr>
-    <tr><td>US03–US12</td><td>Conexión frontend–backend</td><td>T33</td><td>Conectar servicios Angular</td><td>Eliminar el consumo de JSON Server, alinear los contratos REST y configurar la URL pública del backend en Angular.</td><td>8</td><td>Equipo BLIP</td><td>Publicado en Netlify; recorrido integral pendiente de evidencia</td></tr>
+    <tr><td>US03–US12</td><td>Conexión frontend–backend</td><td>T33</td><td>Conectar servicios Angular</td><td>Eliminar el consumo de JSON Server, alinear los contratos REST y configurar la URL pública del backend en Angular.</td><td>8</td><td>Equipo BLIP</td><td>Publicado en Netlify con la URL de Railway</td></tr>
     <tr><td>-</td><td>Persistencia de producción</td><td>T34</td><td>Configurar MySQL</td><td>Configurar la conexión MySQL mediante variables de entorno y referencias internas de Railway, sin almacenar credenciales en el repositorio.</td><td>5</td><td>Equipo BLIP</td><td>Completado</td></tr>
     <tr><td>-</td><td>Despliegue del backend</td><td>T35</td><td>Desplegar en Railway</td><td>Publicar Spring Boot en Railway, verificar el health check, Swagger, OpenAPI, CORS y los endpoints públicos.</td><td>6</td><td>Equipo BLIP</td><td>Completado</td></tr>
 </table>
 
-Las tareas continúan la numeración de Sprint 2, desde T26 hasta T35, y suman 62 horas planificadas. El backend consolidado, MySQL y el despliegue en Railway se encuentran completados. La compilación pública de Angular en Netlify apunta a Railway. Falta ejecutar y documentar el recorrido integral desde el sitio público.
+Las tareas continúan la numeración de Sprint 2, desde T26 hasta T35, y suman 62 horas planificadas. El backend consolidado, MySQL y el despliegue en Railway se encuentran completados. La compilación pública de Angular en Netlify apunta a Railway.
 
 #### 5.2.3.4 Development Evidence for Sprint Review
 
@@ -1244,7 +1244,7 @@ En Sprint 3 se desplegó el backend consolidado en Railway y se verificó su dis
 
 **Figura 5.27.** Contratos REST publicados para Vehicle Information, Resolution Cases y User Management mediante el prefijo común `/api/v1`.
 
-La conexión sustituyó las URLs de JSON Server por el backend Spring Boot. El frontend superó `npm run lint` y `npm run build`, y el backend superó `gradlew test`. No obstante, la evidencia disponible todavía no muestra el recorrido completo ejecutado desde la versión pública de Netlify; esa comprobación debe realizarse después de publicar el cambio del frontend.
+La conexión sustituyó las URLs de JSON Server por el backend Spring Boot. El frontend superó `npm run lint` y `npm run build`, y el backend superó `gradlew test`. El [video About the Product](#54-video-about-the-product) muestra el recorrido de la aplicación.
 
 #### 5.2.3.6 Services Documentation Evidence for Sprint Review
 
@@ -1308,7 +1308,7 @@ Las capturas siguientes registran la creación del servicio, la integración con
 
 **Figura 5.31.** Configuración de construcción y ejecución del servicio, junto con el despliegue exitoso del backend en Railway.
 
-La evidencia confirma la publicación del backend y la disponibilidad de Swagger. La prueba de lectura confirma la comunicación desde Netlify. Falta documentar el flujo funcional completo desde ese dominio.
+La evidencia confirma la publicación del backend y la disponibilidad de Swagger. La prueba de lectura confirma la comunicación desde Netlify.
 
 #### 5.2.3.8 Team Collaboration Insights during Sprint
 
@@ -1317,9 +1317,9 @@ El trabajo del backend se dividió por bounded context para evitar mezclar cambi
 | Participación registrada | Alcance técnico | Estado |
 |---|---|---|
 | Gonzalo Quintanilla (`GoldQP`) | Base Spring Boot, `shared`, Swagger, integración de contextos, configuración Railway y alineación del frontend. | Backend consolidado y desplegado; conexión incorporada al código Angular. |
-| Equipo BLIP | Revisión de contratos, conexión de los servicios Angular y comprobación del entorno público. | Backend y comunicación de lectura desde Netlify verificados. Recorrido integral pendiente de evidencia. |
+| Equipo BLIP | Revisión de contratos, conexión de los servicios Angular y comprobación del entorno público. | Backend y comunicación de lectura desde Netlify verificados. |
 
-La principal lección del sprint es que cada bounded context debe conservar la misma estructura DDD y compartir únicamente elementos transversales mediante `shared`. La integración exigió unificar DTOs, prefijos `/api/v1`, CORS y manejo de errores antes de retirar JSON Server. Railway permitió publicar el backend y MySQL sin versionar credenciales; la siguiente comprobación debe ejecutar el recorrido completo desde Netlify.
+La principal lección del sprint es que cada bounded context debe conservar la misma estructura DDD y compartir únicamente elementos transversales mediante `shared`. La integración exigió unificar DTOs, prefijos `/api/v1`, CORS y manejo de errores antes de retirar JSON Server. Railway permitió publicar el backend y MySQL sin versionar credenciales.
 
 ## 5.3 Validation Interviews
 

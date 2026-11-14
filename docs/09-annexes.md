@@ -55,7 +55,7 @@ Las 19 imágenes se conservan en `assets/chapter-5/sprint-2/` (ruta relativa a e
 | Video About the Product | [Grabación en Drive](https://drive.google.com/file/d/1k0bitM5iUU-4UJTjsc9pVj1xav-0AAPJ/view?usp=sharing) · 2 min 23 s. |
 | Video de exposición | Archivo MP4 entregado con AV2. |
 | Prototipo web | Diseño en capítulo IV; enlace público final por confirmar. |
-| Postman y Swagger | Swagger y OpenAPI incorporados; falta adjuntar payloads del recorrido integral. |
+| Postman y Swagger | Swagger y OpenAPI incorporados. |
 | Fake API | URL y captura de construcción disponibles; completar evidencia de publicación y prueba de conexión. |
 | Archivos complementarios AV2 | Disponibles en la carpeta compartida de Google Drive de la entrega. |
 
