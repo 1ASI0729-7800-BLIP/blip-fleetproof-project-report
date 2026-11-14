@@ -1411,6 +1411,6 @@ El video muestra el recorrido de FleetProof para consultar una placa, interpreta
 | Incorporación a la entrega AV2 | 12 de noviembre de 2026 |
 | Reproductor | [Sobre BLIP en la landing](https://fleetproof-landingpage.netlify.app/#about-blip) |
 
-[![Reproductor About the Product en la vista local de la landing](assets/chapter-5/sprint-3/about-the-product-player.png)](https://drive.google.com/file/d/1k0bitM5iUU-4UJTjsc9pVj1xav-0AAPJ/view?usp=sharing)
+[![Reproductor del video recortado en la landing publicada](assets/chapter-5/sprint-3/about-the-product-player.png)](https://drive.google.com/file/d/1k0bitM5iUU-4UJTjsc9pVj1xav-0AAPJ/view?usp=sharing)
 
-**Figura 5.32.** Reproductor en la vista local de la landing de FleetProof.
+**Figura 5.32.** Reproductor del video recortado en la landing de FleetProof publicada en Netlify.
