@@ -132,7 +132,7 @@ Las sesiones de Sprint 3 fueron demostraciones moderadas: el moderador controló
 | Pruebas autónomas de usabilidad | Pendiente | Las sesiones actuales fueron operadas por el moderador |
 | Hipótesis de innovación | Formuladas | Falta medir tiempo, errores o mejora de trazabilidad frente al proceso actual |
 | Fuentes oficiales | No integradas | La demostración utiliza datos ficticios y Source Fixtures |
-| Backend definitivo | Desplegado en Railway | OpenAPI público verificado. La prueba integral desde Netlify sigue pendiente de acreditar |
+| Backend definitivo | Desplegado en Railway | La app pública apunta a Railway. Se verificó una consulta de lectura desde Netlify. Falta documentar el recorrido completo. |
 | Swagger | Público en Railway | [Swagger UI](https://blip-fleetproof-backend-production.up.railway.app/swagger-ui/index.html) |
 
 ## Pendientes antes del cierre de la siguiente entrega

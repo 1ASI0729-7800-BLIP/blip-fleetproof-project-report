@@ -46,7 +46,7 @@ Los Impact Maps relacionan el objetivo de reducir la dispersión de información
 | 9 | US11 | Generar alertas | 5 | Vista implementada; generación resultante debe demostrarse |
 | 10 | US12 | Resolver con evidencia | 8 | Caso implementado parcialmente; recorrido completo pendiente |
 | 11 | US09 | Activación simulada | 5 | Demostrada como simulación; pago real fuera del alcance actual |
-| 12 | US05 | Consulta REST de vehículo | 5 | Implementada inicialmente en rama del backend; integración pendiente |
+| 12 | US05 | Consulta REST de vehículo | 5 | Contrato publicado en Railway. Se verificó la lectura del listado desde Netlify. La prueba de aceptación por identificador sigue pendiente. |
 
 Los Story Points representan estimación relativa, no horas ejecutadas ni aceptación. El estado se actualiza únicamente con evidencia verificable.
 

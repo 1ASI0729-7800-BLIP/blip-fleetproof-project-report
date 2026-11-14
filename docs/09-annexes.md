@@ -43,7 +43,7 @@ Las 19 imágenes se conservan en `assets/chapter-5/sprint-2/` (ruta relativa a e
 | Validación con Cristhian Amaya | [Capítulo V, 5.3.2](06-chapter-5-implementation-validation-deployment.md#532-registro-de-entrevistas) | Sesión moderada con perfil particular |
 | Validación con Roxana Limo | [Capítulo V, 5.3.2](06-chapter-5-implementation-validation-deployment.md#532-registro-de-entrevistas) | Sesión moderada con perfil empresarial |
 | Backend desplegado | Capítulo V, 5.2.3.5–5.2.3.7 | Railway activo, MySQL online, Swagger y 15 rutas OpenAPI |
-| Conexión Angular–Spring Boot | Capítulo V, 5.2.3.5–5.2.3.6 | Fake API retirada; URL de Railway configurada y build correcto; publicación de Netlify pendiente |
+| Conexión Angular–Spring Boot | Capítulo V, 5.2.3.5–5.2.3.6 | Frontend publicado con la URL de Railway. Consulta de vehículos desde Netlify verificada con HTTP 200. |
 
 ## Anexo E. Archivos finales de entrega
 
@@ -57,7 +57,7 @@ Las 19 imágenes se conservan en `assets/chapter-5/sprint-2/` (ruta relativa a e
 | Prototipo web | Diseño en capítulo IV; enlace público final por confirmar. |
 | Postman y Swagger | Swagger y OpenAPI incorporados; falta adjuntar payloads del recorrido integral. |
 | Fake API | URL y captura de construcción disponibles; completar evidencia de publicación y prueba de conexión. |
-| ZIP complementario | Pendiente consolidar y verificar. |
+| Archivos complementarios AV2 | Disponibles en la carpeta compartida de Google Drive de la entrega. |
 
 ## Anexo F. Criterios de incorporación de nuevas evidencias
 

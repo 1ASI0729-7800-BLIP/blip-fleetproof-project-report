@@ -28,10 +28,10 @@ El equipo utilizó ramas, commits y Pull Requests para integrar las correcciones
 2. Ejecutar pruebas autónomas con administradores de flota y medir tiempo, errores y comprensión.
 3. Demostrar el recorrido completo de resolución y conservar su historial.
 4. Alinear la consulta de vehículos por identificador o placa en requisitos, backend, frontend y Swagger.
-5. Publicar en Netlify la configuración que apunta a Railway y ejecutar pruebas integrales sobre MySQL.
+5. Ejecutar y documentar el recorrido integral desde Netlify con el backend de Railway y MySQL.
 6. Registrar solicitudes y respuestas de Postman o Swagger, incluyendo status HTTP y payloads del recorrido completo.
 7. Monitorear las URLs públicas de Netlify y Railway y conservar evidencia diferenciada de construcción, publicación y funcionamiento.
-8. Incorporar About-the-Team, exposición, Participant Performance Report, presentación, release y ZIP complementario.
+8. Mantener accesibles los archivos de la entrega AV2 y los complementarios compartidos en Drive.
 
 FleetProof presenta avances técnicos y documentales verificables, pero debe continuar diferenciando claramente lo diseñado, implementado, simulado, validado y desplegado.
 
